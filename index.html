@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminaBox — Accessible English Learning Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0284C7',
+                            sky: '#E0F2FE',
+                            navy: '#0F172A',
+                            accent: '#38BDF8',
+                            card: '#FFFFFF',
+                            bg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dyslexic-mode {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Lexend', sans-serif !important;
+            letter-spacing: 0.1em !important;
+            word-spacing: 0.2em !important;
+            line-height: 1.9 !important;
+        }
+        .warm-overlay {
+            background-color: #fef3c7 !important;
+        }
+        .clean-shadow {
+            box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+        }
+        .bouncy-hover {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bouncy-hover:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body id="app-body" class="bg-slate-50 text-slate-700 font-sans min-h-screen selection:bg-sky-100 transition-colors duration-300">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 lg:px-8 py-3.5 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="switchSection('main-site')">
+                <div class="w-10 h-10 rounded-xl bg-sky-600 flex items-center justify-center text-white shadow-sm">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black text-slate-900 tracking-tight">Lumina<span class="text-sky-600">Box</span></h1>
+                    <p class="text-[11px] text-slate-500 font-bold hidden sm:block">Backed by Bridge to English</p>
+                </div>
+            </div>
+
+            <nav id="nav-main-site" class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
+                <a href="#about" class="hover:text-sky-600 transition">About Kit</a>
+                <a href="#sen-tools" class="hover:text-sky-600 transition">SEN Features</a>
+                <a href="#mission" class="hover:text-sky-600 transition">Our Mission</a>
+                <a href="#shop" class="hover:text-sky-600 transition">Get Kit ($20)</a>
+            </nav>
+
+            <nav id="nav-lumina-web" class="hidden md:flex items-center gap-6 text-xs font-bold text-sky-800">
+                <a href="#ai-playground" class="hover:text-sky-600 transition">AI Playground</a>
+                <a href="#code-entry" class="hover:text-sky-600 transition">Physical Code Dial</a>
+                <a href="#avatar-shop" class="hover:text-sky-600 transition">Rewards & Stages</a>
+            </nav>
+
+            <div class="flex items-center gap-1.5">
+                <button onclick="toggleDyslexiaMode()" title="Toggle Dyslexia Font" class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-semibold text-slate-700 transition">
+                    <i data-lucide="eye" class="w-4 h-4 text-sky-600"></i>
+                    <span class="hidden xl:inline">Dyslexia Font</span>
+                </button>
+                <button onclick="toggleWarmOverlay()" title="Soft Warm Tint for Focus" class="px-2.5 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 text-xs font-semibold transition">
+                    ☀️ <span class="hidden xl:inline">Warm Tint</span>
+                </button>
+                
+                <button id="btn-toggle-portal" onclick="togglePortal()" class="ml-2 flex items-center gap-2 px-4 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold transition shadow-sm bouncy-hover">
+                    <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                    <span id="lbl-toggle-portal">Launch Lumina Web</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="view-main-site" class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-12">
+
+        <section id="about" class="relative overflow-hidden rounded-2xl bg-white border border-slate-200 p-8 lg:p-12 clean-shadow">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-bold">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-600"></i>
+                        <span>Bridge to English Support Project</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
+                        Empowering Every Child with <span class="text-sky-600">Accessible English</span> Learning.
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <b>LuminaBox (啟迪語言連繫箱)</b> provides primary school students—including neurodivergent and SEN learners—with structured, low-stress language tools. Created in collaboration with <b>Bridge to English</b>, our $20 physical box combines sensory cards with AI interactive games to build genuine confidence.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="#shop" class="px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-sm transition bouncy-hover flex items-center gap-2">
+                            <span>Get Physical Kit ($20)</span>
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        </a>
+                        <button onclick="switchSection('lumina-web')" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 font-bold text-xs transition bouncy-hover flex items-center gap-2">
+                            <span>Open Digital Web Portal</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-sky-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-4">
+                    <div class="w-full rounded-xl overflow-hidden border border-slate-200 bg-white relative group">
+                        <img id="main-product-img" src="https://i.imgur.com/8Qp49X0.jpeg" alt="LuminaBox Physical Kit and Cards" class="w-full h-64 object-cover">
+                        <div class="absolute bottom-2 right-2 bg-slate-900/80 text-white text-[10px] px-2 py-1 rounded backdrop-blur">
+                            Official Kit Photo
+                        </div>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-2">Kit Contents Overview ($20)</h3>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600"></i>
+                            <span>Superhero & Social Interaction Flashcards</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600"></i>
+                            <span>LuminaCode Question & Community Helpers Booklets</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600"></i>
+                            <span>Dyslexia-friendly visual layouts & accessible design</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600"></i>
+                            <span>Digital Access Pass for LuminaWeb AI Portal</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="sen-tools" class="bg-sky-50/60 rounded-2xl border border-sky-200 p-8 space-y-6">
+            <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-sky-200/60 pb-4 gap-2">
+                <div>
+                    <span class="text-xs font-bold text-sky-700 uppercase tracking-wider">Universal Design</span>
+                    <h3 class="text-2xl font-black text-slate-900">Built Specifically for Primary & SEN Students</h3>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-sky-800">
+                    <i data-lucide="heart-handshake" class="w-5 h-5 text-sky-600"></i>
+                    <span>Neurodiversity First Approach</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-4 text-xs">
+                <div class="bg-white p-4 rounded-xl border border-sky-200 space-y-2">
+                    <div class="text-lg">🔊</div>
+                    <h4 class="font-bold text-slate-800">Text-to-Speech Ready</h4>
+                    <p class="text-slate-600">Kids can listen to prompts read out loud to aid auditory processing.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-sky-200 space-y-2">
+                    <div class="text-lg">🎨</div>
+                    <h4 class="font-bold text-slate-800">Sensory Calming Palette</h4>
+                    <p class="text-slate-600">Balanced sky blues and soft backgrounds eliminate visual strain.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-sky-200 space-y-2">
+                    <div class="text-lg">📖</div>
+                    <h4 class="font-bold text-slate-800">Dyslexia Support</h4>
+                    <p class="text-slate-600">Switchable high-readability spacing and typography on demand.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-sky-200 space-y-2">
+                    <div class="text-lg">🧩</div>
+                    <h4 class="font-bold text-slate-800">Step-by-Step Chunks</h4>
+                    <p class="text-slate-600">Activities broken down into digestible, low-anxiety steps.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="bg-white rounded-2xl border border-slate-200 p-8 space-y-6 clean-shadow">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 text-[10px] font-bold bg-sky-100 text-sky-800 rounded">Official Store</span>
+                        <h3 class="text-2xl font-black text-slate-900">Select Your LuminaBox Kit</h3>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1">Sponsor a student or buy directly for home learning.</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-3xl font-black text-slate-900">$20 <span class="text-xs text-slate-500 font-normal">USD / HKD $155</span></span>
+                    <p class="text-[10px] text-emerald-600 font-bold">Includes Local Hong Kong Delivery</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                    <div class="space-y-3">
+                        <div class="w-full h-32 rounded-lg overflow-hidden border border-slate-200">
+                            <img src="https://i.imgur.com/8Qp49X0.jpeg" alt="Primary Kit" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Primary Foundation Kit (P1-P3)</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Focuses on essential phonics, basic sentence building, sensory cards, and AI voice practice.</p>
+                    </div>
+                    <button onclick="addToCart('P1-P3 Kit')" class="w-full py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition">Order Kit ($20)</button>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                    <div class="space-y-3">
+                        <div class="w-full h-32 rounded-lg overflow-hidden border border-slate-200">
+                            <img src="https://i.imgur.com/8Qp49X0.jpeg" alt="Advanced Kit" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Primary Advanced Kit (P4-P6)</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Focuses on practical social dialogues, decoding school notices, story ciphers, and fluency games.</p>
+                    </div>
+                    <button onclick="addToCart('P4-P6 Kit')" class="w-full py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition">Order Kit ($20)</button>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                    <div class="space-y-3">
+                        <div class="w-full h-32 rounded-lg overflow-hidden border border-slate-200">
+                            <img src="https://i.imgur.com/8Qp49X0.jpeg" alt="Sponsor Gift" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Sponsor a Grassroots Student</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">100% Subsidized gift. Directly provides 1 kit and digital tutoring access to a family in need.</p>
+                    </div>
+                    <button onclick="addToCart('Sponsor Gift')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded-lg transition">Sponsor Now ($20)</button>
+                </div>
+            </div>
+            
+            <div id="cart-notification" class="hidden p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-lg text-center font-bold"></div>
+        </section>
+
+    </main>
+
+    <main id="view-lumina-web" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-12">
+
+        <div class="bg-slate-800 rounded-2xl p-6 text-white flex flex-col md:flex-row justify-between items-center gap-4 shadow-sm">
+            <div class="space-y-1 text-center md:text-left">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-sky-500/20 text-sky-300 rounded text-xs font-bold border border-sky-500/30">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>LuminaWeb Digital Companion</span>
+                </div>
+                <h2 class="text-2xl font-bold">Student AI Practice Portal</h2>
+                <p class="text-xs text-slate-300">Practice speech, decode activity cards, and unlock learning badges!</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-700 px-4 py-2.5 rounded-xl border border-slate-600">
+                <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center text-amber-950 font-black text-sm">💎</div>
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-300 block">Lumina Shards</span>
+                    <span id="shard-count" class="text-lg font-black text-amber-300">0</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="code-entry" class="bg-white rounded-2xl border border-slate-200 p-8 space-y-5 text-center clean-shadow">
+            <div class="max-w-md mx-auto space-y-2">
+                <span class="px-2.5 py-0.5 bg-sky-100 text-sky-800 text-xs font-bold rounded">Step From Physical Kit</span>
+                <h3 class="text-xl font-bold text-slate-900">Enter Card Dial Code</h3>
+                <p class="text-xs text-slate-500">Solved your physical card? Enter the 4-digit code here to sync your offline progress!</p>
+            </div>
+
+            <div class="flex justify-center gap-3">
+                <input type="text" maxlength="1" id="c1" value="3" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-sky-500">
+                <input type="text" maxlength="1" id="c2" value="1" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-sky-500">
+                <input type="text" maxlength="1" id="c3" value="4" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-sky-500">
+                <input type="text" maxlength="1" id="c4" value="2" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-sky-500">
+            </div>
+
+            <button onclick="submitPhysicalCode()" class="px-6 py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded-lg transition bouncy-hover shadow-sm">
+                Verify Card Code (+50 Shards 💎)
+            </button>
+            <div id="code-feedback" class="text-xs font-bold min-h-[1rem]"></div>
+        </section>
+
+        <section id="ai-playground" class="bg-white rounded-2xl border border-slate-200 p-8 space-y-6 clean-shadow">
+            <div class="border-b border-slate-100 pb-3 flex justify-between items-center">
+                <div>
+                    <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Interactive Hub</span>
+                    <h3 class="text-2xl font-bold text-slate-900">AI Learning Playground</h3>
+                </div>
+                <div class="text-xs text-slate-500 font-semibold">Includes Text-to-Speech Guidance</div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-sky-600 text-white font-bold text-xs flex items-center justify-center">AI</span>
+                                <h4 class="font-bold text-slate-800 text-sm">Speech Assistant</h4>
+                            </div>
+                            <button onclick="speakText('Introduce yourself to a family member or volunteer as a superhero!')" class="text-xs text-sky-600 hover:text-sky-800 flex items-center gap-1">
+                                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                                <span>Listen</span>
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-600">Practice saying this card phrase aloud:</p>
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 text-center font-semibold text-sky-700 text-xs">
+                            "Introduce yourself as a superhero!"
+                        </div>
+                        <button onclick="startVoiceDetector()" id="btn-mic" class="w-full py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition">
+                            <i data-lucide="mic" class="w-4 h-4"></i>
+                            <span id="lbl-mic">Record & Evaluate</span>
+                        </button>
+                    </div>
+                    <div id="speech-feedback" class="text-[11px] font-bold text-slate-600 text-center min-h-[1.5rem]"></div>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-sky-600 text-white font-bold text-xs flex items-center justify-center">AI</span>
+                                <h4 class="font-bold text-slate-800 text-sm">Notice Reader Assistant</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600">Translates complex school letters into simplified bilingual bullet points:</p>
+                        <button onclick="runNoticeDecoder()" class="w-full py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            <span>Decode Sample Notice</span>
+                        </button>
+                    </div>
+                    <div id="notice-feedback" class="hidden text-[11px] bg-white p-2.5 rounded-lg border border-slate-200 space-y-1">
+                        <p class="font-bold text-slate-800">📋 Summary / 通告簡要:</p>
+                        <p class="text-slate-600">• Community Helpers activity on Friday. (星期五社區小幫手活動)</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-sky-600 text-white font-bold text-xs flex items-center justify-center">AI</span>
+                                <h4 class="font-bold text-slate-800 text-sm">Vocabulary Detective</h4>
+                            </div>
+                            <button onclick="speakText('A room or building containing books to read.')" class="text-xs text-sky-600 hover:text-sky-800 flex items-center gap-1">
+                                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                                <span>Listen</span>
+                            </button>
+                        </div>
+                        <p class="text-xs font-semibold text-slate-700">"A room or building containing books to read."</p>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <button onclick="checkWordCraft(false)" class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 font-semibold text-slate-700">Playground</button>
+                            <button onclick="checkWordCraft(true)" class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-100 font-semibold text-slate-700">Library</button>
+                        </div>
+                    </div>
+                    <div id="wordcraft-feedback" class="text-[11px] font-bold text-slate-600 text-center min-h-[1.5rem]"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="avatar-shop" class="bg-white rounded-2xl border border-slate-200 p-8 space-y-6 clean-shadow">
+            <div class="border-b border-slate-100 pb-3">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Progress Gallery</span>
+                <h3 class="text-2xl font-bold text-slate-900">Unlock Achievements & Companions</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-14 h-14 mx-auto rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-2xl font-bold">🐱</div>
+                    <h4 class="font-bold text-slate-800 text-sm">Lumina Cat Companion</h4>
+                    <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded">Unlocked</span>
+                </div>
+
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-14 h-14 mx-auto rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-2xl font-bold">🦉</div>
+                    <h4 class="font-bold text-slate-800 text-sm">Professor Owl Companion</h4>
+                    <button id="btn-unlock-1" onclick="unlockReward('btn-unlock-1', 20)" class="w-full py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold transition">
+                        Unlock (20 Shards 💎)
+                    </button>
+                </div>
+
+                <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-14 h-14 mx-auto rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-2xl font-bold">🏛️</div>
+                    <h4 class="font-bold text-slate-800 text-sm">Stage 2: Community Explorer</h4>
+                    <button id="btn-unlock-2" onclick="unlockReward('btn-unlock-2', 50)" class="w-full py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition">
+                        Unlock (50 Shards 💎)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500 space-y-1">
+        <p><b>LuminaBox Initiative</b> • Supported by Bridge to English Partnership</p>
+        <p>Accessible & Inclusive Learning For Primary Students</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        let luminaShards = 0;
+
+        function addShards(amount) {
+            luminaShards += amount;
+            document.getElementById('shard-count').innerText = luminaShards;
+        }
+
+        function switchSection(section) {
+            const mainSite = document.getElementById('view-main-site');
+            const luminaWeb = document.getElementById('view-lumina-web');
+            const navMain = document.getElementById('nav-main-site');
+            const navWeb = document.getElementById('nav-lumina-web');
+            const toggleBtnLbl = document.getElementById('lbl-toggle-portal');
+
+            if (section === 'lumina-web') {
+                mainSite.classList.add('hidden');
+                luminaWeb.classList.remove('hidden');
+                navMain.classList.add('hidden');
+                navWeb.classList.remove('hidden');
+                toggleBtnLbl.innerText = "Back to Main Site";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                luminaWeb.classList.add('hidden');
+                mainSite.classList.remove('hidden');
+                navWeb.classList.add('hidden');
+                navMain.classList.remove('hidden');
+                toggleBtnLbl.innerText = "Launch Lumina Web";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function togglePortal() {
+            const isWebVisible = !document.getElementById('view-lumina-web').classList.contains('hidden');
+            if (isWebVisible) {
+                switchSection('main-site');
+            } else {
+                switchSection('lumina-web');
+            }
+        }
+
+        function toggleDyslexiaMode() {
+            document.body.classList.toggle('dyslexic-mode');
+        }
+
+        function toggleWarmOverlay() {
+            document.body.classList.toggle('warm-overlay');
+        }
+
+        function speakText(phrase) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(phrase);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.85;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Speech synthesis is not supported in this browser mode.");
+            }
+        }
+
+        function submitPhysicalCode() {
+            const c1 = document.getElementById('c1').value;
+            const c2 = document.getElementById('c2').value;
+            const c3 = document.getElementById('c3').value;
+            const c4 = document.getElementById('c4').value;
+            const feedback = document.getElementById('code-feedback');
+
+            if (c1 === '3' && c2 === '1' && c3 === '4' && c4 === '2') {
+                feedback.className = "text-xs font-bold text-emerald-600 mt-2";
+                feedback.innerText = "Verified! Code 3-1-4-2 accepted (+50 Lumina Shards).";
+                addShards(50);
+            } else {
+                feedback.className = "text-xs font-bold text-rose-600 mt-2";
+                feedback.innerText = "Incorrect code. Please check the dial numbers on your card.";
+            }
+        }
+
+        function startVoiceDetector() {
+            const btnMic = document.getElementById('btn-mic');
+            const feedback = document.getElementById('speech-feedback');
+
+            btnMic.className = "w-full py-2 bg-amber-500 text-slate-950 rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition animate-pulse";
+            document.getElementById('lbl-mic').innerText = "Listening...";
+
+            setTimeout(() => {
+                btnMic.className = "w-full py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition";
+                document.getElementById('lbl-mic').innerText = "Record & Evaluate";
+                feedback.className = "text-[11px] font-bold text-emerald-600 text-center min-h-[1.5rem]";
+                feedback.innerText = "Great job! Accuracy: 96% (+15 Shards earned).";
+                addShards(15);
+            }, 2200);
+        }
+
+        function runNoticeDecoder() {
+            document.getElementById('notice-feedback').classList.remove('hidden');
+            addShards(10);
+        }
+
+        function checkWordCraft(isCorrect) {
+            const feedback = document.getElementById('wordcraft-feedback');
+            if (isCorrect) {
+                feedback.className = "text-[11px] font-bold text-emerald-600 text-center min-h-[1.5rem]";
+                feedback.innerText = "Correct! Library is the right answer (+15 Shards).";
+                addShards(15);
+            } else {
+                feedback.className = "text-[11px] font-bold text-rose-600 text-center min-h-[1.5rem]";
+                feedback.innerText = "Try again! Think of where books are stored.";
+            }
+        }
+
+        function unlockReward(btnId, cost) {
+            const btn = document.getElementById(btnId);
+            if (luminaShards >= cost) {
+                luminaShards -= cost;
+                document.getElementById('shard-count').innerText = luminaShards;
+                btn.className = "w-full py-2 bg-emerald-100 text-emerald-800 rounded-lg text-xs font-bold";
+                btn.innerText = "Unlocked";
+                btn.disabled = true;
+            } else {
+                alert(`You need ${cost - luminaShards} more Lumina Shards to unlock this reward.`);
+            }
+        }
+
+        function addToCart(item) {
+            const notif = document.getElementById('cart-notification');
+            notif.classList.remove('hidden');
+            notif.innerText = `Added "${item}" ($20 USD) to cart. Proceeding to checkout...`;
+            setTimeout(() => { notif.classList.add('hidden'); }, 3000);
+        }
+    </script>
+</body>
+</html>
