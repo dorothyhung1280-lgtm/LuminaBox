@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuminaBox — AI for Social Good English Platform</title>
+    <title>LuminaBox — Reinventing English for Social Good</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons CDN -->
@@ -13,18 +13,15 @@
             theme: {
                 extend: {
                     colors: {
-                        pastel: {
-                            blue: '#E0F2FE',
-                            sky: '#38BDF8',
-                            lavender: '#F3E8FF',
-                            purple: '#A855F7',
-                            pink: '#FCE7F3',
-                            rose: '#F43F5E',
-                            mint: '#D1FAE5',
-                            emerald: '#10B981',
-                            cream: '#FEF9C3',
-                            amber: '#F59E0B',
-                            bg: '#FAF5FF'
+                        brand: {
+                            blue: '#2563EB',      /* Primary Blue */
+                            sky: '#E0F2FE',       /* Soft Blue Tint */
+                            darkblue: '#1E3A8A',  /* Deep Navy Accent */
+                            pink: '#F472B6',      /* Secondary Pink */
+                            softpink: '#FCE7F3',  /* Soft Pink Tint */
+                            yellow: '#FBBF24',    /* Secondary Yellow */
+                            softyellow: '#FEF9C3',/* Soft Yellow Tint */
+                            bg: '#F8FAFC'         /* Clean Soft Background */
                         }
                     }
                 }
@@ -41,63 +38,62 @@
         .warm-overlay {
             background-color: #FEF3C7 !important;
         }
-        .pastel-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.08);
+        .flat-card {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
         .bouncy-hover {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.2s ease-in-out;
         }
         .bouncy-hover:hover {
-            transform: translateY(-5px) scale(1.01);
+            transform: translateY(-3px);
         }
     </style>
 </head>
-<body id="app-body" class="bg-gradient-to-br from-purple-50/60 via-sky-50/50 to-pink-50/60 text-slate-700 font-sans min-h-screen selection:bg-purple-100 transition-colors duration-300">
+<body id="app-body" class="bg-slate-50 text-slate-800 font-sans min-h-screen selection:bg-brand-softpink transition-colors duration-300">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-purple-100/80 px-4 lg:px-8 py-3.5 shadow-sm">
+    <header class="sticky top-0 z-50 bg-white border-b-2 border-slate-100 px-4 lg:px-8 py-3.5 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="switchSection('main-site')">
-                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-400 via-sky-400 to-pink-400 flex items-center justify-center text-white shadow-md shadow-purple-200">
+                <div class="w-10 h-10 rounded-2xl bg-brand-blue flex items-center justify-center text-white shadow-sm">
                     <i data-lucide="sparkles" class="w-5 h-5"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-black text-slate-900 tracking-tight">Lumina<span class="text-purple-600">Box</span></h1>
-                    <p class="text-[10px] text-slate-500 font-bold hidden sm:block">AI for Social Good • Bridge to English</p>
+                    <h1 class="text-xl font-black text-slate-900 tracking-tight">Lumina<span class="text-brand-blue">Box</span></h1>
+                    <p class="text-[10px] text-slate-500 font-bold hidden sm:block">AI for Social Good • Reinventing English</p>
                 </div>
             </div>
 
             <!-- Main Nav Links -->
             <nav id="nav-main-site" class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600">
-                <a href="#about" class="hover:text-purple-600 transition">About Box</a>
-                <a href="#ai-social-good" class="hover:text-purple-600 transition">AI Impact</a>
-                <a href="#box-details" class="hover:text-purple-600 transition">Monthly Journey</a>
-                <a href="#sponsors" class="hover:text-purple-600 transition">Partners</a>
-                <a href="#shop" class="hover:text-purple-600 transition">Get Box ($20 HKD)</a>
+                <a href="#about" class="hover:text-brand-blue transition">About Box</a>
+                <a href="#ai-social-good" class="hover:text-brand-blue transition">AI Impact</a>
+                <a href="#box-details" class="hover:text-brand-blue transition">Monthly Journey</a>
+                <a href="#sponsors" class="hover:text-brand-blue transition">Partners</a>
+                <a href="#shop" class="hover:text-brand-blue transition">Get Box ($20 HKD)</a>
             </nav>
 
             <!-- Student Portal Nav Links -->
-            <nav id="nav-lumina-portal" class="hidden lg:flex items-center gap-6 text-xs font-bold text-purple-800">
-                <a href="#ai-arcade" class="hover:text-purple-600 transition">AI Interactive Arcade</a>
-                <a href="#volunteer-hub" class="hover:text-purple-600 transition">Volunteer Mentors</a>
-                <a href="#code-entry" class="hover:text-purple-600 transition">Dial Code Sync</a>
-                <a href="#avatar-shop" class="hover:text-purple-600 transition">Rewards Gallery</a>
+            <nav id="nav-lumina-portal" class="hidden lg:flex items-center gap-6 text-xs font-bold text-brand-blue">
+                <a href="#ai-arcade" class="hover:text-brand-darkblue transition">AI Interactive Arcade</a>
+                <a href="#volunteer-hub" class="hover:text-brand-darkblue transition">Volunteer Mentors</a>
+                <a href="#code-entry" class="hover:text-brand-darkblue transition">Dial Code Sync</a>
+                <a href="#avatar-shop" class="hover:text-brand-darkblue transition">Rewards Gallery</a>
             </nav>
 
             <!-- Accessibility Toolbar -->
             <div class="flex items-center gap-2">
-                <button onclick="toggleDyslexiaMode()" title="Toggle Dyslexia Readability Font" class="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-purple-100/70 hover:bg-purple-200/80 border border-purple-200 text-xs font-bold text-purple-900 transition">
-                    <i data-lucide="eye" class="w-4 h-4 text-purple-600"></i>
+                <button onclick="toggleDyslexiaMode()" title="Toggle Dyslexia Readability Font" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-sky border border-blue-200 text-xs font-bold text-brand-darkblue transition">
+                    <i data-lucide="eye" class="w-4 h-4 text-brand-blue"></i>
                     <span class="hidden sm:inline">Dyslexia Font</span>
                 </button>
-                <button onclick="toggleWarmOverlay()" title="Soft Tint for Visual Comfort" class="px-3 py-1.5 rounded-2xl bg-amber-100/80 hover:bg-amber-200 text-amber-900 border border-amber-300/60 text-xs font-bold transition">
+                <button onclick="toggleWarmOverlay()" title="Soft Tint for Visual Comfort" class="px-3 py-1.5 rounded-xl bg-brand-softyellow hover:bg-yellow-200 text-amber-900 border border-yellow-300 text-xs font-bold transition">
                     ☀️ <span class="hidden sm:inline">Warm Tint</span>
                 </button>
                 
-                <button id="btn-toggle-portal" onclick="togglePortal()" class="ml-1 flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-r from-purple-500 to-sky-500 hover:from-purple-600 hover:to-sky-600 text-white text-xs font-bold transition shadow-md shadow-purple-200 bouncy-hover">
+                <button id="btn-toggle-portal" onclick="togglePortal()" class="ml-1 flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-darkblue text-white text-xs font-bold transition shadow-sm bouncy-hover">
                     <i data-lucide="bot" class="w-4 h-4"></i>
                     <span id="lbl-toggle-portal">Launch LuminaPortal AI</span>
                 </button>
@@ -109,39 +105,39 @@
     <main id="view-main-site" class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-16">
 
         <!-- Hero Presentation -->
-        <section id="about" class="relative overflow-hidden rounded-3xl bg-white/80 border border-purple-100/80 p-8 lg:p-12 shadow-sm backdrop-blur-md">
+        <section id="about" class="relative overflow-hidden rounded-3xl bg-white border-2 border-slate-100 p-8 lg:p-12 shadow-sm">
             <div class="grid lg:grid-cols-12 gap-10 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100/80 border border-purple-200 text-purple-800 text-xs font-bold">
-                        <i data-lucide="heart" class="w-4 h-4 text-purple-600"></i>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-softpink border border-pink-200 text-slate-800 text-xs font-bold">
+                        <i data-lucide="heart" class="w-4 h-4 text-brand-pink"></i>
                         <span>AI for Social Good • Kids4Kids Youth Summit</span>
                     </div>
                     
                     <h2 class="text-3xl sm:text-5xl font-black text-slate-900 leading-tight">
-                        Democratizing English Learning with <span class="bg-gradient-to-r from-purple-600 via-sky-500 to-pink-500 bg-clip-text text-transparent">Social Good AI</span>.
+                        <span class="text-brand-blue">Reinventing English</span> Learning with Social Good AI.
                     </h2>
                     
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        <b>LuminaBox (啟迪語言連繫箱)</b> bridges the educational opportunity gap for underprivileged families and neurodivergent/SEN children across Hong Kong. For just <b>HKD $20</b>, LuminaBox pairs physical monthly activity cards with tailored, low-stress AI games and live volunteer tutoring—making language learning accessible, encouraging, and completely fun!
+                        <b>LuminaBox (啟迪語言連繫箱)</b> is <b>Reinventing English</b> education for underprivileged families and neurodivergent/SEN children across Hong Kong. For just <b>HKD $20</b>, LuminaBox pairs physical monthly activity cards with tailored, low-stress AI games and live volunteer tutoring—making language learning accessible, encouraging, and completely fun!
                     </p>
 
                     <!-- Core Value Pills -->
                     <div class="grid sm:grid-cols-3 gap-3 pt-2">
-                        <div class="p-3.5 bg-sky-50/70 rounded-2xl border border-sky-100 shadow-sm flex items-center gap-3">
+                        <div class="p-3.5 bg-brand-sky rounded-2xl border border-blue-200 shadow-sm flex items-center gap-3">
                             <span class="text-2xl">🤖</span>
                             <div>
-                                <h4 class="font-bold text-slate-800 text-xs">Social Good AI</h4>
+                                <h4 class="font-bold text-brand-darkblue text-xs">Social Good AI</h4>
                                 <p class="text-[10px] text-slate-500">Bite-sized Speech & Grammar AI</p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-pink-50/70 rounded-2xl border border-pink-100 shadow-sm flex items-center gap-3">
+                        <div class="p-3.5 bg-brand-softpink rounded-2xl border border-pink-200 shadow-sm flex items-center gap-3">
                             <span class="text-2xl">💖</span>
                             <div>
                                 <h4 class="font-bold text-slate-800 text-xs">Inclusive Design</h4>
                                 <p class="text-[10px] text-slate-500">Dyslexia & Sensory Friendly</p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-purple-50/70 rounded-2xl border border-purple-100 shadow-sm flex items-center gap-3">
+                        <div class="p-3.5 bg-brand-softyellow rounded-2xl border border-yellow-200 shadow-sm flex items-center gap-3">
                             <span class="text-2xl">🤝</span>
                             <div>
                                 <h4 class="font-bold text-slate-800 text-xs">Human Mentorship</h4>
@@ -151,50 +147,48 @@
                     </div>
 
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#shop" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-sky-500 hover:from-purple-700 hover:to-sky-600 text-white font-bold text-xs shadow-lg shadow-purple-200 transition bouncy-hover flex items-center gap-2">
+                        <a href="#shop" class="px-7 py-3.5 rounded-xl bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs shadow-md transition bouncy-hover flex items-center gap-2">
                             <span>Get LuminaBox ($20 HKD)</span>
                             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                         </a>
-                        <button onclick="switchSection('lumina-portal')" class="px-7 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 border border-purple-200 font-bold text-xs transition bouncy-hover flex items-center gap-2 shadow-sm">
+                        <button onclick="switchSection('lumina-portal')" class="px-7 py-3.5 rounded-xl bg-brand-softyellow hover:bg-yellow-200 text-slate-900 border border-yellow-300 font-bold text-xs transition bouncy-hover flex items-center gap-2 shadow-sm">
                             <span>Launch LuminaPortal AI</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 text-purple-600"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-900"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Product Display Panel -->
-                <div class="lg:col-span-5 bg-white/90 rounded-3xl border border-purple-100 p-6 space-y-5 shadow-lg">
-                    <div class="w-full h-64 rounded-2xl overflow-hidden border border-purple-100 relative bg-gradient-to-br from-purple-300 via-sky-300 to-pink-300 p-1 group">
-                        <div class="w-full h-full rounded-xl bg-gradient-to-br from-purple-500 via-sky-500 to-pink-500 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
-                            <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center text-3xl shadow-inner">
-                                🎁
-                            </div>
-                            <div>
-                                <h4 class="font-black text-lg">LuminaBox Physical Kit</h4>
-                                <p class="text-xs text-purple-100 mt-0.5">Physical Flashcards • Dial Ciphers • AI Portal Access</p>
-                            </div>
-                            <span class="px-3.5 py-1 bg-amber-300 text-amber-950 font-black text-[10px] rounded-full uppercase tracking-wider shadow">Official HKD $20 Edition</span>
+                <div class="lg:col-span-5 bg-slate-50 rounded-3xl border-2 border-slate-100 p-6 space-y-5 shadow-sm">
+                    <div class="w-full h-64 rounded-2xl overflow-hidden border-2 border-brand-blue relative bg-brand-blue text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
+                        <div class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-3xl">
+                            🎁
                         </div>
+                        <div>
+                            <h4 class="font-black text-xl">LuminaBox Physical Kit</h4>
+                            <p class="text-xs text-blue-100 mt-1">Flashcards • Dial Ciphers • AI Portal</p>
+                        </div>
+                        <span class="px-4 py-1.5 bg-brand-yellow text-slate-900 font-black text-xs rounded-full uppercase tracking-wider shadow-sm">Official HKD $20 Edition</span>
                     </div>
 
                     <div>
-                        <h3 class="text-xs font-black uppercase tracking-wider text-purple-700 mb-2">What's Inside Every LuminaBox?</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-3">Each kit contains <b>1 Monthly Chapter</b> engineered with neurodivergent accessibility features to eliminate learning anxiety:</p>
+                        <h3 class="text-xs font-black uppercase tracking-wider text-brand-blue mb-2">What's Inside Every LuminaBox?</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-3">Each kit contains <b>1 Monthly Chapter</b> engineered for <b>Reinventing English</b> through stress-free learning:</p>
                         <ul class="space-y-2 text-xs text-slate-600">
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 shrink-0"></i>
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
                                 <span>4 Weekly Targeted Activity Sheets (Speak, Read, Write, Connect)</span>
                             </li>
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 shrink-0"></i>
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
                                 <span>4-Digit Interactive Code Dial Cipher Card</span>
                             </li>
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 shrink-0"></i>
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
                                 <span>Dyslexia-friendly high readability card layouts & soft color schemes</span>
                             </li>
                             <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 shrink-0"></i>
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
                                 <span>Bridge2English Volunteer Mentorship Pass + Unlimited AI Arcade Access</span>
                             </li>
                         </ul>
@@ -204,71 +198,71 @@
         </section>
 
         <!-- AI for Social Good Pillars -->
-        <section id="ai-social-good" class="bg-gradient-to-r from-purple-900 via-slate-900 to-sky-950 text-white rounded-3xl p-8 lg:p-10 space-y-8 shadow-xl">
-            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-purple-800/60 pb-6">
+        <section id="ai-social-good" class="bg-brand-darkblue text-white rounded-3xl p-8 lg:p-10 space-y-8 shadow-md">
+            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-blue-800 pb-6">
                 <div>
-                    <span class="px-3 py-1 rounded-full bg-purple-500/30 text-purple-300 text-xs font-bold uppercase tracking-wider border border-purple-400/30">AI Competition Theme</span>
-                    <h3 class="text-3xl font-black mt-2">How LuminaBox Applies AI for Social Good</h3>
+                    <span class="px-3 py-1 rounded-full bg-brand-yellow text-slate-900 text-xs font-bold uppercase tracking-wider">AI Competition Theme</span>
+                    <h3 class="text-3xl font-black mt-2">Reinventing English via Social Good AI</h3>
                 </div>
-                <p class="text-xs text-slate-300 max-w-md">Equalizing access to personalized tutoring by embedding adaptive, non-judgmental AI feedback directly into affordable $20 HKD community kits.</p>
+                <p class="text-xs text-blue-200 max-w-md">Equalizing access to personalized tutoring by embedding adaptive, non-judgmental AI feedback directly into affordable $20 HKD community kits.</p>
             </div>
 
             <div class="grid md:grid-cols-4 gap-5 text-xs">
-                <div class="p-5 bg-purple-950/60 rounded-2xl border border-purple-800/50 space-y-2.5">
+                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
                     <div class="text-2xl">🗣️</div>
-                    <h4 class="font-bold text-purple-300 text-sm">AI Speech Evaluator</h4>
-                    <p class="text-slate-300 leading-relaxed">Provides instant, low-anxiety oral feedback on English pronunciation without fear of embarrassment.</p>
+                    <h4 class="font-bold text-brand-yellow text-sm">AI Speech Evaluator</h4>
+                    <p class="text-blue-100 leading-relaxed">Provides instant, low-anxiety oral feedback on English pronunciation without fear of embarrassment.</p>
                 </div>
 
-                <div class="p-5 bg-purple-950/60 rounded-2xl border border-purple-800/50 space-y-2.5">
+                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
                     <div class="text-2xl">📋</div>
-                    <h4 class="font-bold text-sky-300 text-sm">AI Notice Simplifier</h4>
-                    <p class="text-slate-300 leading-relaxed">Translates dense school notices into simple bilingual bullet points to support ESL and underprivileged parents.</p>
+                    <h4 class="font-bold text-brand-pink text-sm">AI Notice Simplifier</h4>
+                    <p class="text-blue-100 leading-relaxed">Translates dense school notices into simple bilingual bullet points to support ESL and underprivileged parents.</p>
                 </div>
 
-                <div class="p-5 bg-purple-950/60 rounded-2xl border border-purple-800/50 space-y-2.5">
+                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
                     <div class="text-2xl">✨</div>
-                    <h4 class="font-bold text-pink-300 text-sm">AI Story Crafting</h4>
-                    <p class="text-slate-300 leading-relaxed">Generates personalized mini-stories based on student choices to boost intrinsic reading motivation.</p>
+                    <h4 class="font-bold text-brand-yellow text-sm">AI Story Crafting</h4>
+                    <p class="text-blue-100 leading-relaxed">Generates personalized mini-stories based on student choices to boost intrinsic reading motivation.</p>
                 </div>
 
-                <div class="p-5 bg-purple-950/60 rounded-2xl border border-purple-800/50 space-y-2.5">
+                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
                     <div class="text-2xl">🤖</div>
-                    <h4 class="font-bold text-emerald-300 text-sm">Adaptive MCQ Coach</h4>
-                    <p class="text-slate-300 leading-relaxed">Dynamically adjusts question difficulty based on student responses to build continuous confidence.</p>
+                    <h4 class="font-bold text-brand-pink text-sm">Adaptive MCQ Coach</h4>
+                    <p class="text-blue-100 leading-relaxed">Dynamically adjusts question difficulty based on student responses to build continuous confidence.</p>
                 </div>
             </div>
         </section>
 
         <!-- The 4-Week Monthly Chapter System -->
-        <section id="box-details" class="bg-white/80 rounded-3xl border border-purple-100 p-8 lg:p-10 space-y-8 shadow-sm backdrop-blur-md">
+        <section id="box-details" class="bg-white rounded-3xl border-2 border-slate-100 p-8 lg:p-10 space-y-8 shadow-sm">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold uppercase tracking-wider">Structured Learning</span>
-                <h3 class="text-3xl font-black text-slate-900">1 Month Chapter • 4 Weekly Skill Targets</h3>
+                <span class="px-3 py-1 rounded-full bg-brand-sky text-brand-darkblue text-xs font-bold uppercase tracking-wider">Structured Learning</span>
+                <h3 class="text-3xl font-black text-slate-900">Reinventing English in 4 Weekly Steps</h3>
                 <p class="text-xs text-slate-500">Instead of overwhelming textbooks, students conquer one bite-sized target per week using simple yet powerful MCQ exercises.</p>
             </div>
 
             <div class="grid md:grid-cols-4 gap-5">
-                <div class="p-6 rounded-2xl bg-sky-50/70 border border-sky-100 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-sky-500 text-white font-black text-sm flex items-center justify-center shadow-sm">W1</div>
+                <div class="p-6 rounded-2xl bg-brand-sky border border-blue-200 space-y-3 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-blue text-white font-black text-sm flex items-center justify-center shadow-sm">W1</div>
                     <h4 class="font-bold text-slate-900 text-sm">Week 1: SPEAK 🗣️</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Phonics matching and AI voice coaching to practice speaking out loud with zero stress.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-amber-50/70 border border-amber-100 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-white font-black text-sm flex items-center justify-center shadow-sm">W2</div>
+                <div class="p-6 rounded-2xl bg-brand-softyellow border border-yellow-300 space-y-3 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-yellow text-slate-900 font-black text-sm flex items-center justify-center shadow-sm">W2</div>
                     <h4 class="font-bold text-slate-900 text-sm">Week 2: READ 📖</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Decoding everyday signs and school notices into simple, digestible English chunks.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-100 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white font-black text-sm flex items-center justify-center shadow-sm">W3</div>
+                <div class="p-6 rounded-2xl bg-brand-softpink border border-pink-200 space-y-3 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-pink text-white font-black text-sm flex items-center justify-center shadow-sm">W3</div>
                     <h4 class="font-bold text-slate-900 text-sm">Week 3: WRITE ✍️</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Targeted MCQ vocabulary detective puzzles and grammar sentence building.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-pink-50/70 border border-pink-100 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-pink-500 text-white font-black text-sm flex items-center justify-center shadow-sm">W4</div>
+                <div class="p-6 rounded-2xl bg-blue-50 border border-blue-200 space-y-3 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-darkblue text-white font-black text-sm flex items-center justify-center shadow-sm">W4</div>
                     <h4 class="font-bold text-slate-900 text-sm">Week 4: CONNECT 💬</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Applying learning to real conversations with Bridge2English volunteers via live chat or Zoom.</p>
                 </div>
@@ -276,28 +270,28 @@
         </section>
 
         <!-- Partners & Sponsor Section -->
-        <section id="sponsors" class="bg-white/80 rounded-3xl border border-purple-100 p-8 space-y-6 shadow-sm backdrop-blur-md">
+        <section id="sponsors" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
             <div class="text-center max-w-xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-900 text-xs font-bold uppercase tracking-wider">Community Ecosystem</span>
+                <span class="px-3 py-1 rounded-full bg-brand-softpink text-slate-800 text-xs font-bold uppercase tracking-wider">Community Ecosystem</span>
                 <h3 class="text-2xl font-black text-slate-900">Partnering for Social Good</h3>
                 <p class="text-xs text-slate-500">Collaborating with trusted NGOs to distribute LuminaBox directly to grassroots and SEN families.</p>
             </div>
 
             <div class="grid sm:grid-cols-3 gap-6 pt-2">
-                <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-600 font-black text-xl flex items-center justify-center mx-auto">✝️</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-sky text-brand-blue font-black text-xl flex items-center justify-center mx-auto">✝️</div>
                     <h4 class="font-bold text-slate-800 text-sm">Caritas Hong Kong</h4>
                     <p class="text-xs text-slate-500">Distributing subsidized LuminaBox kits through community centers to low-income families.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 font-black text-xl flex items-center justify-center mx-auto">🌟</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-softyellow text-slate-900 font-black text-xl flex items-center justify-center mx-auto">🌟</div>
                     <h4 class="font-bold text-slate-800 text-sm">Kids4Kids Youth Summit</h4>
-                    <p class="text-xs text-slate-500">Incubating student social innovation projects to drive youth empowerment and literacy equality.</p>
+                    <p class="text-xs text-slate-500">Incubating student social innovation projects dedicated to <b>Reinventing English</b> access.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 font-black text-xl flex items-center justify-center mx-auto">🌉</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-softpink text-slate-800 font-black text-xl flex items-center justify-center mx-auto">🌉</div>
                     <h4 class="font-bold text-slate-800 text-sm">Bridge to English</h4>
                     <p class="text-xs text-slate-500">Providing student volunteer mentors for online 1-on-1 chat support and live Zoom tutoring sessions.</p>
                 </div>
@@ -305,55 +299,55 @@
         </section>
 
         <!-- Storefront Order Section -->
-        <section id="shop" class="bg-white/90 rounded-3xl border border-purple-100 p-8 lg:p-10 space-y-8 shadow-sm backdrop-blur-md">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-purple-50 pb-6 gap-4">
+        <section id="shop" class="bg-white rounded-3xl border-2 border-slate-100 p-8 lg:p-10 space-y-8 shadow-sm">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-6 gap-4">
                 <div>
-                    <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold uppercase tracking-wider">Official Distribution</span>
+                    <span class="px-3 py-1 rounded-full bg-brand-sky text-brand-blue text-xs font-bold uppercase tracking-wider">Official Distribution</span>
                     <h3 class="text-3xl font-black text-slate-900 mt-2">Get Your LuminaBox Kit</h3>
                     <p class="text-xs text-slate-500 mt-1">Order for your child or sponsor a kit for a grassroots family in need.</p>
                 </div>
                 <div class="text-right">
                     <span class="text-4xl font-black text-slate-900">$20 <span class="text-sm text-slate-500 font-normal">HKD / Kit</span></span>
-                    <p class="text-[11px] text-emerald-600 font-bold">100% Subsidized Local Hong Kong Delivery</p>
+                    <p class="text-[11px] text-brand-blue font-bold">100% Subsidized Local Hong Kong Delivery</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl bg-sky-50/40 border border-sky-100 space-y-4 flex flex-col justify-between bouncy-hover">
+                <div class="p-6 rounded-2xl bg-brand-sky border border-blue-200 space-y-4 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
-                        <div class="w-full h-28 rounded-xl bg-gradient-to-r from-sky-400 to-sky-500 flex items-center justify-center text-white font-black text-base shadow-inner">
+                        <div class="w-full h-24 rounded-xl bg-brand-blue flex items-center justify-center text-white font-black text-base shadow-sm">
                             Primary Level 1 (P1–P3)
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">Foundation Chapter ($20 HKD)</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">Focuses on phonics sound matching, beginner flashcards, basic MCQ games, and AI speech practice.</p>
                     </div>
-                    <button onclick="addToCart('P1-P3 LuminaBox')" class="w-full py-3 bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold rounded-xl shadow transition">Order Foundation Box ($20 HKD)</button>
+                    <button onclick="addToCart('P1-P3 LuminaBox')" class="w-full py-3 bg-brand-blue hover:bg-brand-darkblue text-white text-xs font-bold rounded-xl shadow transition">Order Foundation Box ($20 HKD)</button>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-purple-50/40 border border-purple-100 space-y-4 flex flex-col justify-between bouncy-hover">
+                <div class="p-6 rounded-2xl bg-brand-softyellow border border-yellow-300 space-y-4 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
-                        <div class="w-full h-28 rounded-xl bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center text-white font-black text-base shadow-inner">
+                        <div class="w-full h-24 rounded-xl bg-brand-yellow flex items-center justify-center text-slate-900 font-black text-base shadow-sm">
                             Primary Level 2 (P4–P6)
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">Advanced Chapter ($20 HKD)</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">Focuses on social dialogues, school letter decoding, AI story prompts, and cipher dial games.</p>
                     </div>
-                    <button onclick="addToCart('P4-P6 LuminaBox')" class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold rounded-xl shadow transition">Order Advanced Box ($20 HKD)</button>
+                    <button onclick="addToCart('P4-P6 LuminaBox')" class="w-full py-3 bg-slate-900 hover:bg-black text-white text-xs font-bold rounded-xl shadow transition">Order Advanced Box ($20 HKD)</button>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-pink-50/40 border border-pink-100 space-y-4 flex flex-col justify-between bouncy-hover">
+                <div class="p-6 rounded-2xl bg-brand-softpink border border-pink-200 space-y-4 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
-                        <div class="w-full h-28 rounded-xl bg-gradient-to-r from-pink-400 to-rose-500 flex items-center justify-center text-white font-black text-base shadow-inner">
+                        <div class="w-full h-24 rounded-xl bg-brand-pink flex items-center justify-center text-white font-black text-base shadow-sm">
                             Sponsor a Family
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">Grassroots Gift ($20 HKD)</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">Directly funds 1 physical box delivered via Caritas HK with full volunteer mentoring and AI portal access.</p>
                     </div>
-                    <button onclick="addToCart('Sponsorship Gift')" class="w-full py-3 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded-xl shadow transition">Sponsor 1 Box ($20 HKD)</button>
+                    <button onclick="addToCart('Sponsorship Gift')" class="w-full py-3 bg-brand-pink hover:bg-rose-500 text-white text-xs font-bold rounded-xl shadow transition">Sponsor 1 Box ($20 HKD)</button>
                 </div>
             </div>
             
-            <div id="cart-notification" class="hidden p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-xl text-center font-bold"></div>
+            <div id="cart-notification" class="hidden p-4 bg-blue-50 border border-blue-200 text-brand-darkblue text-xs rounded-xl text-center font-bold"></div>
         </section>
 
     </main>
@@ -362,34 +356,34 @@
     <main id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-12">
 
         <!-- Student Banner -->
-        <div class="bg-gradient-to-r from-purple-900 via-sky-950 to-pink-950 rounded-3xl p-6 lg:p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-lg">
+        <div class="bg-brand-blue rounded-3xl p-6 lg:p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-md">
             <div class="space-y-2 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-500/30 text-purple-200 rounded-full text-xs font-bold border border-purple-400/30">
-                    <i data-lucide="bot" class="w-4 h-4 text-sky-400"></i>
-                    <span>LuminaPortal • AI Social Good Hub</span>
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold border border-white/20">
+                    <i data-lucide="bot" class="w-4 h-4 text-brand-yellow"></i>
+                    <span>LuminaPortal • Reinventing English with AI</span>
                 </div>
                 <h2 class="text-3xl font-black">Welcome to LuminaPortal AI! 🤖✨</h2>
-                <p class="text-xs text-slate-300">Play interactive AI games, practice speech out loud, and earn Lumina Shards!</p>
+                <p class="text-xs text-blue-100">Play interactive AI games, practice speech out loud, and earn Lumina Shards!</p>
             </div>
 
             <!-- Shard Wallet Display -->
-            <div class="flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3.5 rounded-2xl border border-white/15">
-                <div class="w-10 h-10 rounded-xl bg-amber-300 flex items-center justify-center text-amber-950 font-black text-xl shadow">💎</div>
+            <div class="flex items-center gap-4 bg-brand-yellow px-6 py-3.5 rounded-2xl border-2 border-yellow-300 text-slate-900">
+                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-xl shadow-sm">💎</div>
                 <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-300 block">Lumina Shards</span>
-                    <span id="shard-count" class="text-2xl font-black text-amber-300">0</span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 block">Lumina Shards</span>
+                    <span id="shard-count" class="text-2xl font-black text-slate-900">0</span>
                 </div>
             </div>
         </div>
 
         <!-- 1. EXPANDED AI INTERACTIVE ARCADE -->
-        <section id="ai-arcade" class="bg-white/80 rounded-3xl border border-purple-100 p-8 space-y-6 shadow-sm backdrop-blur-md">
-            <div class="border-b border-purple-100 pb-4 flex justify-between items-center">
+        <section id="ai-arcade" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
+            <div class="border-b border-slate-100 pb-4 flex justify-between items-center">
                 <div>
-                    <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">AI Interactive Hub</span>
+                    <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">AI Interactive Hub</span>
                     <h3 class="text-2xl font-bold text-slate-900">AI Games & Exercises Arcade</h3>
                 </div>
-                <div class="text-xs text-purple-700 font-bold bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-200">
+                <div class="text-xs text-brand-darkblue font-bold bg-brand-sky px-3 py-1.5 rounded-xl border border-blue-200">
                     ✨ 4 Social Good AI Tools
                 </div>
             </div>
@@ -397,20 +391,20 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
                 <!-- AI Game 1: Voice Coach -->
-                <div class="p-5 bg-sky-50/60 rounded-2xl border border-sky-100 space-y-3 flex flex-col justify-between bouncy-hover">
+                <div class="p-5 bg-brand-sky rounded-2xl border border-blue-200 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-sky-500 text-white font-bold text-[10px]">W1: SPEAK</span>
-                            <button onclick="speakText('Hello! My name is Lumina.')" class="text-[11px] text-sky-600 hover:text-sky-800 flex items-center gap-1 font-bold">
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-blue text-white font-bold text-[10px]">W1: SPEAK</span>
+                            <button onclick="speakText('Hello! My name is Lumina.')" class="text-[11px] text-brand-blue hover:text-brand-darkblue flex items-center gap-1 font-bold">
                                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
                             </button>
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">AI Speech Evaluator</h4>
                         <p class="text-xs text-slate-600">Practice saying this out loud:</p>
-                        <div class="p-2.5 bg-white rounded-xl border border-sky-100 text-center font-bold text-sky-700 text-xs">
+                        <div class="p-2.5 bg-white rounded-xl border border-blue-200 text-center font-bold text-brand-blue text-xs">
                             "Hello! My name is Lumina."
                         </div>
-                        <button onclick="runAIVoiceCoach()" id="btn-ai-mic" class="w-full py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
+                        <button onclick="runAIVoiceCoach()" id="btn-ai-mic" class="w-full py-2 bg-brand-blue hover:bg-brand-darkblue text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
                             <i data-lucide="mic" class="w-4 h-4"></i> <span id="lbl-ai-mic">Record Voice</span>
                         </button>
                     </div>
@@ -418,28 +412,28 @@
                 </div>
 
                 <!-- AI Game 2: Notice Simplifier -->
-                <div class="p-5 bg-purple-50/60 rounded-2xl border border-purple-100 space-y-3 flex flex-col justify-between bouncy-hover">
+                <div class="p-5 bg-brand-softyellow rounded-2xl border border-yellow-300 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-purple-600 text-white font-bold text-[10px]">W2: READ</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-yellow text-slate-900 font-bold text-[10px]">W2: READ</span>
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">AI Notice Simplifier</h4>
                         <p class="text-xs text-slate-600">Translates school notices into simple bilingual points:</p>
-                        <button onclick="runNoticeDecoder()" class="w-full py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
+                        <button onclick="runNoticeDecoder()" class="w-full py-2 bg-slate-900 hover:bg-black text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
                             <i data-lucide="file-text" class="w-4 h-4"></i> Decode Sample Notice
                         </button>
                     </div>
-                    <div id="notice-feedback" class="hidden text-[11px] bg-white p-2.5 rounded-xl border border-purple-200 space-y-1">
-                        <p class="font-bold text-purple-900">📋 AI Summary / 通告簡要:</p>
+                    <div id="notice-feedback" class="hidden text-[11px] bg-white p-2.5 rounded-xl border border-yellow-300 space-y-1">
+                        <p class="font-bold text-slate-900">📋 AI Summary / 通告簡要:</p>
                         <p class="text-slate-600">• School picnic on Friday. Wear sports shoes. (星期五學校野餐，請穿運動鞋)</p>
                     </div>
                 </div>
 
                 <!-- AI Game 3: Story Generator -->
-                <div class="p-5 bg-pink-50/60 rounded-2xl border border-pink-100 space-y-3 flex flex-col justify-between bouncy-hover">
+                <div class="p-5 bg-brand-softpink rounded-2xl border border-pink-200 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-pink-500 text-white font-bold text-[10px]">W3: WRITE</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-pink text-white font-bold text-[10px]">W3: WRITE</span>
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">AI Story Crafting</h4>
                         <p class="text-xs text-slate-600">Choose a hero to generate a custom 2-sentence story:</p>
@@ -448,24 +442,24 @@
                             <option>🦉 Professor Owl</option>
                             <option>🚀 Space Explorer</option>
                         </select>
-                        <button onclick="generateAIStory()" class="w-full py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-xl text-xs font-bold transition shadow-sm">
+                        <button onclick="generateAIStory()" class="w-full py-2 bg-brand-pink hover:bg-rose-500 text-white rounded-xl text-xs font-bold transition shadow-sm">
                             Generate Story ✨
                         </button>
                     </div>
-                    <div id="story-feedback" class="text-[11px] font-bold text-pink-700 text-center min-h-[1.5rem]"></div>
+                    <div id="story-feedback" class="text-[11px] font-bold text-slate-800 text-center min-h-[1.5rem]"></div>
                 </div>
 
                 <!-- AI Game 4: MCQ Coach -->
-                <div class="p-5 bg-emerald-50/60 rounded-2xl border border-emerald-100 space-y-3 flex flex-col justify-between bouncy-hover">
+                <div class="p-5 bg-blue-50 rounded-2xl border border-blue-200 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-emerald-600 text-white font-bold text-[10px]">W4: CONNECT</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-darkblue text-white font-bold text-[10px]">W4: CONNECT</span>
                         </div>
                         <h4 class="font-bold text-slate-800 text-sm">AI MCQ Coach</h4>
                         <p class="text-xs text-slate-600 font-medium">Where do you borrow books?</p>
                         <div class="space-y-1.5 text-xs">
-                            <button onclick="checkMCQAnswer(this, false)" class="w-full p-2 bg-white border border-emerald-200 rounded-xl text-left font-medium">A) Playground</button>
-                            <button onclick="checkMCQAnswer(this, true)" class="w-full p-2 bg-white border border-emerald-200 rounded-xl text-left font-medium">B) Library</button>
+                            <button onclick="checkMCQAnswer(this, false)" class="w-full p-2 bg-white border border-blue-200 rounded-xl text-left font-medium">A) Playground</button>
+                            <button onclick="checkMCQAnswer(this, true)" class="w-full p-2 bg-white border border-blue-200 rounded-xl text-left font-medium">B) Library</button>
                         </div>
                     </div>
                     <div class="mcq-feedback text-[11px] font-bold text-center min-h-[1.5rem]"></div>
@@ -475,53 +469,53 @@
         </section>
 
         <!-- 2. VOLUNTEER PLATFORM HUB -->
-        <section id="volunteer-hub" class="bg-white/80 rounded-3xl border border-purple-100 p-8 space-y-6 shadow-sm backdrop-blur-md">
-            <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-purple-50 pb-4 gap-2">
+        <section id="volunteer-hub" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-slate-100 pb-4 gap-2">
                 <div>
-                    <span class="px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 text-[11px] font-bold">Bridge2English Mentorship</span>
+                    <span class="px-2.5 py-0.5 rounded bg-brand-sky text-brand-darkblue text-[11px] font-bold">Bridge2English Mentorship</span>
                     <h3 class="text-2xl font-black text-slate-900 mt-1">Student Volunteer Support</h3>
                 </div>
-                <div class="flex items-center gap-2 text-xs text-emerald-600 font-bold bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <div class="flex items-center gap-2 text-xs text-brand-darkblue font-bold bg-brand-sky px-3 py-1.5 rounded-xl border border-blue-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-blue animate-pulse"></span>
                     <span>12 Volunteers Online Now</span>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Live Volunteer Chatbox -->
-                <div class="bg-slate-50/70 p-5 rounded-2xl border border-purple-100 space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
-                            <i data-lucide="message-square" class="w-5 h-5 text-purple-600"></i>
+                            <i data-lucide="message-square" class="w-5 h-5 text-brand-blue"></i>
                             <h4 class="font-bold text-slate-800 text-sm">Quick Chatbox with Mentor</h4>
                         </div>
                         <p class="text-xs text-slate-600">Stuck on an activity card? Message a friendly volunteer!</p>
                         
-                        <div id="chat-messages" class="h-32 bg-white rounded-xl border border-purple-100 p-3 overflow-y-auto space-y-2 text-xs">
-                            <div class="bg-purple-50 text-purple-900 p-2 rounded-lg max-w-[85%] font-medium">
+                        <div id="chat-messages" class="h-32 bg-white rounded-xl border border-slate-200 p-3 overflow-y-auto space-y-2 text-xs">
+                            <div class="bg-brand-sky text-slate-900 p-2 rounded-lg max-w-[85%] font-medium border border-blue-100">
                                 <b>Volunteer Sarah:</b> Hi there! Need help with your activity card today? 😊
                             </div>
                         </div>
                     </div>
 
                     <div class="flex gap-2">
-                        <input type="text" id="chat-input" placeholder="Type your message..." class="flex-grow px-3 py-2 bg-white border border-purple-200 rounded-xl text-xs focus:outline-none focus:border-purple-500">
-                        <button onclick="sendChatMessage()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl transition">Send</button>
+                        <input type="text" id="chat-input" placeholder="Type your message..." class="flex-grow px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-brand-blue">
+                        <button onclick="sendChatMessage()" class="px-4 py-2 bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs rounded-xl transition">Send</button>
                     </div>
                 </div>
 
                 <!-- Zoom Meeting Request -->
-                <div class="bg-slate-50/70 p-5 rounded-2xl border border-purple-100 space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
-                            <i data-lucide="video" class="w-5 h-5 text-sky-600"></i>
+                            <i data-lucide="video" class="w-5 h-5 text-brand-blue"></i>
                             <h4 class="font-bold text-slate-800 text-sm">Request 1-on-1 Zoom Mentorship</h4>
                         </div>
                         <p class="text-xs text-slate-600">Schedule a 15-minute friendly Zoom session to practice speaking out loud!</p>
                         
                         <div class="space-y-2 text-xs">
                             <label class="block font-bold text-slate-700">Select Target Topic:</label>
-                            <select id="zoom-topic" class="w-full p-2.5 bg-white border border-purple-200 rounded-xl text-xs font-bold text-slate-700">
+                            <select id="zoom-topic" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700">
                                 <option>Week 1: Practice Superhero Speaking 🗣️</option>
                                 <option>Week 2: Read School Notices Together 📖</option>
                                 <option>Week 3: Sentence Writing Practice ✍️</option>
@@ -530,7 +524,7 @@
                         </div>
                     </div>
 
-                    <button onclick="requestZoomCall()" class="w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs rounded-xl transition shadow-sm bouncy-hover">
+                    <button onclick="requestZoomCall()" class="w-full py-2.5 bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs rounded-xl transition shadow-sm bouncy-hover">
                         Request Zoom Session
                     </button>
                 </div>
@@ -539,52 +533,52 @@
         </section>
 
         <!-- 3. PHYSICAL CODE DIAL SYNC -->
-        <section id="code-entry" class="bg-white/80 rounded-3xl border border-purple-100 p-8 space-y-5 text-center shadow-sm backdrop-blur-md">
+        <section id="code-entry" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-5 text-center shadow-sm">
             <div class="max-w-md mx-auto space-y-2">
-                <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full">Physical Box Gateway</span>
+                <span class="px-3 py-1 bg-brand-softyellow text-slate-900 text-xs font-bold rounded-full border border-yellow-300">Physical Box Gateway</span>
                 <h3 class="text-xl font-bold text-slate-900">Enter Card Dial Code</h3>
                 <p class="text-xs text-slate-500">Solved your physical card cipher? Enter the 4-digit code here to sync your offline progress!</p>
             </div>
 
             <div class="flex justify-center gap-3">
-                <input type="text" maxlength="1" id="c1" value="3" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-purple-200 rounded-xl text-slate-800 focus:outline-none focus:border-purple-500">
-                <input type="text" maxlength="1" id="c2" value="1" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-purple-200 rounded-xl text-slate-800 focus:outline-none focus:border-purple-500">
-                <input type="text" maxlength="1" id="c3" value="4" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-purple-200 rounded-xl text-slate-800 focus:outline-none focus:border-purple-500">
-                <input type="text" maxlength="1" id="c4" value="2" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-purple-200 rounded-xl text-slate-800 focus:outline-none focus:border-purple-500">
+                <input type="text" maxlength="1" id="c1" value="3" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c2" value="1" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c3" value="4" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c4" value="2" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
             </div>
 
-            <button onclick="submitPhysicalCode()" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl transition bouncy-hover shadow-md shadow-purple-200">
+            <button onclick="submitPhysicalCode()" class="px-6 py-3 bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs rounded-xl transition bouncy-hover shadow-sm">
                 Verify Dial Code (+50 Shards 💎)
             </button>
             <div id="code-feedback" class="text-xs font-bold min-h-[1rem]"></div>
         </section>
 
         <!-- 4. REWARDS & AVATARS -->
-        <section id="avatar-shop" class="bg-white/80 rounded-3xl border border-purple-100 p-8 space-y-6 shadow-sm backdrop-blur-md">
-            <div class="border-b border-purple-50 pb-3">
-                <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Progress Gallery</span>
+        <section id="avatar-shop" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
+            <div class="border-b border-slate-100 pb-3">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Progress Gallery</span>
                 <h3 class="text-2xl font-bold text-slate-900">Unlock Achievements & Companions</h3>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-5 bg-purple-50/50 rounded-2xl border border-purple-100 text-center space-y-3 bouncy-hover">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-3xl font-bold shadow-inner">🐱</div>
+                <div class="p-5 bg-brand-sky rounded-2xl border border-blue-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white text-brand-blue flex items-center justify-center text-3xl font-bold shadow-sm">🐱</div>
                     <h4 class="font-bold text-slate-800 text-sm">Lumina Cat Companion</h4>
-                    <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">Starter Unlocked</span>
+                    <span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold rounded-full">Starter Unlocked</span>
                 </div>
 
-                <div class="p-5 bg-sky-50/50 rounded-2xl border border-sky-100 text-center space-y-3 bouncy-hover">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-3xl font-bold shadow-inner">🦉</div>
+                <div class="p-5 bg-brand-softyellow rounded-2xl border border-yellow-300 text-center space-y-3 bouncy-hover">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white text-slate-900 flex items-center justify-center text-3xl font-bold shadow-sm">🦉</div>
                     <h4 class="font-bold text-slate-800 text-sm">Professor Owl Companion</h4>
-                    <button id="btn-unlock-1" onclick="unlockReward('btn-unlock-1', 20)" class="w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white rounded-xl text-xs font-bold transition">
+                    <button id="btn-unlock-1" onclick="unlockReward('btn-unlock-1', 20)" class="w-full py-2.5 bg-brand-yellow hover:bg-yellow-500 text-slate-900 rounded-xl text-xs font-bold transition">
                         Unlock (20 Shards 💎)
                     </button>
                 </div>
 
-                <div class="p-5 bg-pink-50/50 rounded-2xl border border-pink-100 text-center space-y-3 bouncy-hover">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 text-pink-700 flex items-center justify-center text-3xl font-bold shadow-inner">🏛️</div>
+                <div class="p-5 bg-brand-softpink rounded-2xl border border-pink-200 text-center space-y-3 bouncy-hover">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white text-brand-pink flex items-center justify-center text-3xl font-bold shadow-sm">🏛️</div>
                     <h4 class="font-bold text-slate-800 text-sm">Stage 2: AI Explorer Badge</h4>
-                    <button id="btn-unlock-2" onclick="unlockReward('btn-unlock-2', 50)" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold transition">
+                    <button id="btn-unlock-2" onclick="unlockReward('btn-unlock-2', 50)" class="w-full py-2.5 bg-brand-pink hover:bg-rose-500 text-white rounded-xl text-xs font-bold transition">
                         Unlock (50 Shards 💎)
                     </button>
                 </div>
@@ -594,9 +588,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-purple-100 py-8 text-center text-xs text-slate-500 space-y-1">
+    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500 space-y-1">
         <p><b>LuminaBox Initiative</b> • Supported by Kids4Kids & Bridge to English Partnership</p>
-        <p>AI for Social Good • Equal Opportunity English Learning ($20 HKD Edition)</p>
+        <p>AI for Social Good • Reinventing English Learning ($20 HKD Edition)</p>
     </footer>
 
     <!-- JavaScript Interactive Logic -->
@@ -663,13 +657,13 @@
         function runAIVoiceCoach() {
             const btn = document.getElementById('btn-ai-mic');
             const feedback = document.getElementById('ai-voice-feedback');
-            btn.className = "w-full py-2 bg-amber-400 text-slate-950 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition animate-pulse";
+            btn.className = "w-full py-2 bg-brand-yellow text-slate-900 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition animate-pulse";
             document.getElementById('lbl-ai-mic').innerText = "AI Evaluating Speech...";
 
             setTimeout(() => {
-                btn.className = "w-full py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm";
+                btn.className = "w-full py-2 bg-brand-blue hover:bg-brand-darkblue text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm";
                 document.getElementById('lbl-ai-mic').innerText = "Record Voice";
-                feedback.className = "text-[11px] font-bold text-emerald-600 text-center min-h-[1.5rem]";
+                feedback.className = "text-[11px] font-bold text-brand-blue text-center min-h-[1.5rem]";
                 feedback.innerText = "Awesome! Speech Accuracy: 98% (+15 Shards 💎)";
                 addShards(15);
             }, 2000);
@@ -692,12 +686,12 @@
             const feedbackElem = container.querySelector('.mcq-feedback');
 
             if (isCorrect) {
-                buttonElem.className = "w-full p-2 bg-emerald-100 border border-emerald-300 rounded-xl text-left font-bold text-emerald-900";
-                feedbackElem.className = "mcq-feedback text-[11px] font-bold text-emerald-600 text-center min-h-[1.5rem]";
+                buttonElem.className = "w-full p-2 bg-blue-100 border border-blue-300 rounded-xl text-left font-bold text-brand-darkblue";
+                feedbackElem.className = "mcq-feedback text-[11px] font-bold text-brand-blue text-center min-h-[1.5rem]";
                 feedbackElem.innerText = "Correct! AI Coach awarded +15 Shards! 💎";
                 addShards(15);
             } else {
-                buttonElem.className = "w-full p-2 bg-rose-100 border border-rose-300 rounded-xl text-left font-bold text-rose-900";
+                buttonElem.className = "w-full p-2 bg-pink-100 border border-pink-300 rounded-xl text-left font-bold text-rose-900";
                 feedbackElem.className = "mcq-feedback text-[11px] font-bold text-rose-600 text-center min-h-[1.5rem]";
                 feedbackElem.innerText = "Try another option!";
             }
@@ -711,7 +705,7 @@
             const feedback = document.getElementById('code-feedback');
 
             if (c1 === '3' && c2 === '1' && c3 === '4' && c4 === '2') {
-                feedback.className = "text-xs font-bold text-emerald-600 mt-2";
+                feedback.className = "text-xs font-bold text-brand-blue mt-2";
                 feedback.innerText = "Code 3-1-4-2 Verified! Physical card synced (+50 Lumina Shards 💎).";
                 addShards(50);
             } else {
@@ -726,7 +720,7 @@
             
             if (chatInput.value.trim() !== "") {
                 const userMsg = document.createElement('div');
-                userMsg.className = "bg-purple-100 text-purple-900 p-2 rounded-lg max-w-[85%] ml-auto font-medium";
+                userMsg.className = "bg-blue-100 text-slate-900 p-2 rounded-lg max-w-[85%] ml-auto font-medium border border-blue-200";
                 userMsg.innerText = chatInput.value;
                 chatBox.appendChild(userMsg);
                 
@@ -735,7 +729,7 @@
 
                 setTimeout(() => {
                     const replyMsg = document.createElement('div');
-                    replyMsg.className = "bg-purple-50 text-purple-900 p-2 rounded-lg max-w-[85%] font-medium";
+                    replyMsg.className = "bg-brand-sky text-slate-900 p-2 rounded-lg max-w-[85%] font-medium border border-blue-100";
                     replyMsg.innerHTML = "<b>Volunteer Alex:</b> Thanks for reaching out! Let's work on this card together.";
                     chatBox.appendChild(replyMsg);
                     chatBox.scrollTop = chatBox.scrollHeight;
@@ -746,7 +740,7 @@
         function requestZoomCall() {
             const topic = document.getElementById('zoom-topic').value;
             const feedback = document.getElementById('volunteer-feedback');
-            feedback.className = "text-xs font-bold text-emerald-600 text-center mt-2";
+            feedback.className = "text-xs font-bold text-brand-blue text-center mt-2";
             feedback.innerText = `Zoom session requested for "${topic}"! A Bridge2English volunteer link will be sent to your student dashboard.`;
         }
 
@@ -755,7 +749,7 @@
             if (luminaShards >= cost) {
                 luminaShards -= cost;
                 document.getElementById('shard-count').innerText = luminaShards;
-                btn.className = "w-full py-2.5 bg-emerald-100 text-emerald-800 rounded-xl text-xs font-bold";
+                btn.className = "w-full py-2.5 bg-brand-blue text-white rounded-xl text-xs font-bold";
                 btn.innerText = "Unlocked";
                 btn.disabled = true;
             } else {
