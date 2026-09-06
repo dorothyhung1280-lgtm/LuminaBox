@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuminaBox — Out of the Box into the World</title>
+    <title>LuminaBox 光啟盒 — Out of the box, into the world</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons CDN -->
@@ -14,14 +14,15 @@
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#2563EB',      /* Primary Blue */
-                            sky: '#E0F2FE',       /* Soft Blue Tint */
-                            darkblue: '#1E3A8A',  /* Deep Navy Accent */
-                            pink: '#F472B6',      /* Secondary Pink */
-                            softpink: '#FCE7F3',  /* Soft Pink Tint */
-                            yellow: '#FBBF24',    /* Secondary Yellow */
-                            softyellow: '#FEF9C3',/* Soft Yellow Tint */
-                            bg: '#F8FAFC'         /* Clean Soft Background */
+                            blue: '#60A5FA',        /* Soft Muted Sky Blue */
+                            darkblue: '#1E40AF',    /* Muted Slate Accent */
+                            sky: '#F0F9FF',         /* Pastel Blue Background Tint */
+                            pink: '#F472B6',        /* Muted Rose Pink */
+                            softpink: '#FDF2F8',    /* Pastel Pink Tint */
+                            yellow: '#FBBF24',      /* Warm Pastel Yellow */
+                            softyellow: '#FEFCE8',  /* Pastel Yellow Tint */
+                            lavender: '#E0E7FF',    /* Pastel Lavender Tint */
+                            bg: '#FAF5FF'           /* Soft Clean Page Background */
                         }
                     }
                 }
@@ -38,11 +39,6 @@
         .warm-overlay {
             background-color: #FEF3C7 !important;
         }
-        .flat-card {
-            background: #FFFFFF;
-            border: 2px solid #E2E8F0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        }
         .bouncy-hover {
             transition: all 0.2s ease-in-out;
         }
@@ -51,141 +47,225 @@
         }
     </style>
 </head>
-<body id="app-body" class="bg-slate-50 text-slate-800 font-sans min-h-screen selection:bg-brand-softpink transition-colors duration-300">
+<body id="app-body" class="bg-slate-50 text-slate-700 font-sans min-h-screen selection:bg-brand-softpink transition-colors duration-300">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white border-b-2 border-slate-100 px-4 lg:px-8 py-3.5 shadow-sm">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 px-4 lg:px-8 py-3.5 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="switchSection('main-site')">
                 <div class="w-10 h-10 rounded-2xl bg-brand-blue flex items-center justify-center text-white shadow-sm">
                     <i data-lucide="sparkles" class="w-5 h-5"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-black text-slate-900 tracking-tight">Lumina<span class="text-brand-blue">Box</span></h1>
-                    <p class="text-[10px] text-slate-500 font-bold hidden sm:block">Out of the Box into the World • Reinventing English</p>
+                    <h1 class="text-xl font-black text-slate-800 tracking-tight">LuminaBox <span class="text-brand-blue font-bold text-base">光啟盒</span></h1>
+                    <p class="text-[10px] text-slate-500 font-medium hidden sm:block">
+                        <span class="lang-en">Out of the box, into the world</span>
+                        <span class="lang-zh hidden">以光啟智，以語啟思</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Main Nav Links -->
-            <nav id="nav-main-site" class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600">
-                <a href="#about" class="hover:text-brand-blue transition">About Box</a>
-                <a href="#ai-social-good" class="hover:text-brand-blue transition">AI Impact</a>
-                <a href="#box-details" class="hover:text-brand-blue transition">Monthly Journey</a>
-                <a href="#sponsors" class="hover:text-brand-blue transition">Partners</a>
-                <a href="#shop" class="hover:text-brand-blue transition">Get Box ($20 HKD)</a>
+            <nav id="nav-main-site" class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600">
+                <a href="#about" class="hover:text-brand-blue transition">
+                    <span class="lang-en">About Us</span><span class="lang-zh hidden">關於我們</span>
+                </a>
+                <a href="#box-details" class="hover:text-brand-blue transition">
+                    <span class="lang-en">What's Inside</span><span class="lang-zh hidden">套裝內容</span>
+                </a>
+                <a href="#sponsors" class="hover:text-brand-blue transition">
+                    <span class="lang-en">Community</span><span class="lang-zh hidden">社區合作</span>
+                </a>
+                <a href="#shop" class="hover:text-brand-blue transition">
+                    <span class="lang-en">Get Kit ($30 HKD)</span><span class="lang-zh hidden">訂購套裝 (HKD $30)</span>
+                </a>
             </nav>
 
-            <!-- Student Portal Nav Links -->
-            <nav id="nav-lumina-portal" class="hidden lg:flex items-center gap-6 text-xs font-bold text-brand-blue">
-                <a href="#ai-arcade" class="hover:text-brand-darkblue transition">AI Interactive Arcade</a>
-                <a href="#volunteer-hub" class="hover:text-brand-darkblue transition">Volunteer Mentors</a>
-                <a href="#code-entry" class="hover:text-brand-darkblue transition">Dial Code Sync</a>
-                <a href="#avatar-shop" class="hover:text-brand-darkblue transition">Rewards Gallery</a>
+            <!-- Portal Nav Links -->
+            <nav id="nav-lumina-portal" class="hidden lg:flex items-center gap-6 text-xs font-semibold text-brand-darkblue">
+                <a href="#ai-games" class="hover:text-brand-blue transition">
+                    <span class="lang-en">AI Arcade</span><span class="lang-zh hidden">AI 遊戲樂園</span>
+                </a>
+                <a href="#volunteer-hub" class="hover:text-brand-blue transition">
+                    <span class="lang-en">Volunteer Mentors</span><span class="lang-zh hidden">導師連繫</span>
+                </a>
+                <a href="#avatar-customizer" class="hover:text-brand-blue transition">
+                    <span class="lang-en">Avatar & Titles</span><span class="lang-zh hidden">造型與稱號</span>
+                </a>
             </nav>
 
-            <!-- Accessibility Toolbar -->
+            <!-- Language & Accessibility Controls -->
             <div class="flex items-center gap-2">
-                <button onclick="toggleDyslexiaMode()" title="Toggle Dyslexia Readability Font" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-sky border border-blue-200 text-xs font-bold text-brand-darkblue transition">
-                    <i data-lucide="eye" class="w-4 h-4 text-brand-blue"></i>
-                    <span class="hidden sm:inline">Dyslexia Font</span>
+                <!-- Language Toggle Button -->
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 transition flex items-center gap-1">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-brand-blue"></i>
+                    <span id="lang-btn-text">繁體中文</span>
                 </button>
-                <button onclick="toggleWarmOverlay()" title="Soft Tint for Visual Comfort" class="px-3 py-1.5 rounded-xl bg-brand-softyellow hover:bg-yellow-200 text-amber-900 border border-yellow-300 text-xs font-bold transition">
-                    ☀️ <span class="hidden sm:inline">Warm Tint</span>
+
+                <!-- Accessibility Font & Tint Buttons -->
+                <button onclick="toggleDyslexiaMode()" title="Toggle Dyslexia Readability Font" class="hidden sm:flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-brand-sky border border-blue-200 text-xs font-semibold text-slate-700 transition">
+                    <i data-lucide="eye" class="w-3.5 h-3.5 text-brand-blue"></i>
+                    <span>Font</span>
+                </button>
+                <button onclick="toggleWarmOverlay()" title="Soft Tint for Visual Comfort" class="px-2.5 py-1.5 rounded-xl bg-brand-softyellow text-amber-900 border border-yellow-200 text-xs font-semibold transition">
+                    ☀️
                 </button>
                 
-                <button id="btn-toggle-portal" onclick="togglePortal()" class="ml-1 flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-darkblue text-white text-xs font-bold transition shadow-sm bouncy-hover">
+                <button id="btn-toggle-portal" onclick="togglePortal()" class="ml-1 flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-blue hover:bg-blue-500 text-white text-xs font-bold transition shadow-sm bouncy-hover">
                     <i data-lucide="bot" class="w-4 h-4"></i>
-                    <span id="lbl-toggle-portal">Launch LuminaPortal AI</span>
+                    <span id="lbl-toggle-portal">
+                        <span class="lang-en">LuminaPortal AI</span>
+                        <span class="lang-zh hidden">進入 LuminaPortal AI</span>
+                    </span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- SECTION 1: MAIN STOREFRONT & AI SOCIAL GOOD LANDING PAGE -->
+    <!-- SECTION 1: MAIN STOREFRONT & PRODUCT LANDING PAGE -->
     <main id="view-main-site" class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-16">
 
         <!-- Hero Presentation -->
-        <section id="about" class="relative overflow-hidden rounded-3xl bg-white border-2 border-slate-100 p-8 lg:p-12 shadow-sm">
+        <section id="about" class="relative overflow-hidden rounded-3xl bg-white border border-slate-100 p-8 lg:p-12 shadow-sm">
             <div class="grid lg:grid-cols-12 gap-10 items-center">
                 <div class="lg:col-span-7 space-y-6">
                     
-                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 leading-tight">
-                        Out of the Box into the World
-                    </h2>
+                    <div class="space-y-2">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 leading-tight">
+                            <span class="lang-en">Out of the box, into the world</span>
+                            <span class="lang-zh hidden">以光啟智，以語啟思</span>
+                        </h2>
+                        <p class="text-sm font-semibold text-brand-blue">
+                            <span class="lang-en">LuminaBox 光啟盒</span>
+                            <span class="lang-zh hidden">LuminaBox 光啟盒學習套裝</span>
+                        </p>
+                    </div>
                     
+                    <!-- Refined English / Chinese Intro -->
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        <b>LuminaBox (啟迪語言連繫箱)</b> is <b>Reinventing English</b> education for underprivileged families and neurodivergent/SEN children across Hong Kong. For just <b>HKD $20</b>, LuminaBox pairs physical monthly activity cards with tailored, low-stress AI games and live volunteer tutoring—making language learning accessible, encouraging, and completely fun!
+                        <span class="lang-en">
+                            LuminaBox is a bilingual learning kit and digital platform designed to help children gain confidence in English while staying connected to their schools, families, and communities.<br><br>
+                            Created by Bridge to English, a student-led charity with over 200 volunteers, LuminaBox makes learning fun, practical, and supportive. Families can use it at home with ease, while children enjoy gamified missions, rewards, and mentorship.
+                        </span>
+                        <span class="lang-zh hidden">
+                            LuminaBox（光啟盒）是一套雙語學習套裝及數位平台，旨在幫助兒童建立英語自信，同時加強與學校、家庭及社區的連繫。<br><br>
+                            由擁有超過 200 名志工的學生慈善機構 Bridge to English 研發，LuminaBox 讓學習變得有趣、實用且充滿支持。家長可以在家中輕鬆輔導，孩子則能在遊戲化任務、獎勵與導師陪伴中快樂成長。
+                        </span>
                     </p>
 
-                    <!-- Core Value Pills -->
+                    <!-- Feature Pills with Star Suitable for SEN Label -->
                     <div class="grid sm:grid-cols-3 gap-3 pt-2">
-                        <div class="p-3.5 bg-brand-sky rounded-2xl border border-blue-200 shadow-sm flex items-center gap-3">
+                        <div class="p-3.5 bg-brand-sky rounded-2xl border border-blue-100 shadow-sm flex items-center gap-3">
+                            <span class="text-2xl text-brand-blue">⭐</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-xs">
+                                    <span class="lang-en">Suitable for SEN</span>
+                                    <span class="lang-zh hidden">適合 SEN 學生</span>
+                                </h4>
+                                <p class="text-[10px] text-slate-500">
+                                    <span class="lang-en">Dyslexia & Sensory Gentle</span>
+                                    <span class="lang-zh hidden">讀寫友善及視覺舒適設計</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-3.5 bg-brand-softpink rounded-2xl border border-pink-100 shadow-sm flex items-center gap-3">
                             <span class="text-2xl">🤖</span>
                             <div>
-                                <h4 class="font-bold text-brand-darkblue text-xs">Social Good AI</h4>
-                                <p class="text-[10px] text-slate-500">Bite-sized Speech & Grammar AI</p>
+                                <h4 class="font-bold text-slate-800 text-xs">
+                                    <span class="lang-en">AI Learning Hub</span>
+                                    <span class="lang-zh hidden">AI 智慧學習平台</span>
+                                </h4>
+                                <p class="text-[10px] text-slate-500">
+                                    <span class="lang-en">Interactive Speech & Games</span>
+                                    <span class="lang-zh hidden">語音互動與趣味遊戲</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-brand-softpink rounded-2xl border border-pink-200 shadow-sm flex items-center gap-3">
-                            <span class="text-2xl">💖</span>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-xs">Inclusive Design</h4>
-                                <p class="text-[10px] text-slate-500">Dyslexia & Sensory Friendly</p>
-                            </div>
-                        </div>
-                        <div class="p-3.5 bg-brand-softyellow rounded-2xl border border-yellow-200 shadow-sm flex items-center gap-3">
+                        <div class="p-3.5 bg-brand-softyellow rounded-2xl border border-yellow-100 shadow-sm flex items-center gap-3">
                             <span class="text-2xl">🤝</span>
                             <div>
-                                <h4 class="font-bold text-slate-800 text-xs">Human Mentorship</h4>
-                                <p class="text-[10px] text-slate-500">Bridge2English Zoom Mentors</p>
+                                <h4 class="font-bold text-slate-800 text-xs">
+                                    <span class="lang-en">1-to-1 Mentorship</span>
+                                    <span class="lang-zh hidden">一對一志工輔導</span>
+                                </h4>
+                                <p class="text-[10px] text-slate-500">
+                                    <span class="lang-en">Free lessons anytime</span>
+                                    <span class="lang-zh hidden">隨時預約免費課堂</span>
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#shop" class="px-7 py-3.5 rounded-xl bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs shadow-md transition bouncy-hover flex items-center gap-2">
-                            <span>Get LuminaBox ($20 HKD)</span>
+                        <a href="#shop" class="px-6 py-3 rounded-xl bg-brand-blue hover:bg-blue-500 text-white font-bold text-xs shadow-sm transition bouncy-hover flex items-center gap-2">
+                            <span class="lang-en">Get LuminaBox ($30 HKD)</span>
+                            <span class="lang-zh hidden">訂購 LuminaBox ($30 HKD)</span>
                             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                         </a>
-                        <button onclick="switchSection('lumina-portal')" class="px-7 py-3.5 rounded-xl bg-brand-softyellow hover:bg-yellow-200 text-slate-900 border border-yellow-300 font-bold text-xs transition bouncy-hover flex items-center gap-2 shadow-sm">
-                            <span>Launch LuminaPortal AI</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-900"></i>
+                        <button onclick="switchSection('lumina-portal')" class="px-6 py-3 rounded-xl bg-brand-softyellow hover:bg-yellow-100 text-slate-800 border border-yellow-200 font-bold text-xs transition bouncy-hover flex items-center gap-2 shadow-sm">
+                            <span class="lang-en">Explore LuminaPortal AI</span>
+                            <span class="lang-zh hidden">體驗 LuminaPortal AI</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-700"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Product Display Panel -->
-                <div class="lg:col-span-5 bg-slate-50 rounded-3xl border-2 border-slate-100 p-6 space-y-5 shadow-sm">
-                    <div class="w-full h-64 rounded-2xl overflow-hidden border-2 border-brand-blue relative bg-brand-blue text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
-                        <div class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-3xl">
+                <!-- Kit Preview Display Card -->
+                <div class="lg:col-span-5 bg-slate-50 rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+                    <div class="w-full h-56 rounded-2xl overflow-hidden border border-blue-200 relative bg-gradient-to-br from-blue-300 to-indigo-300 text-white p-6 flex flex-col items-center justify-center text-center space-y-3">
+                        <div class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl shadow-sm">
                             🎁
                         </div>
                         <div>
-                            <h4 class="font-black text-xl">LuminaBox Physical Kit</h4>
-                            <p class="text-xs text-blue-100 mt-1">Flashcards • Dial Ciphers • AI Portal</p>
+                            <h4 class="font-extrabold text-xl text-slate-800">LuminaBox 光啟盒</h4>
+                            <p class="text-xs text-slate-700 font-medium mt-0.5">
+                                <span class="lang-en">Physical Learning Kit + AI Digital Portal</span>
+                                <span class="lang-zh hidden">實體學習套裝 + AI 數位平台</span>
+                            </p>
                         </div>
-                        <span class="px-4 py-1.5 bg-brand-yellow text-slate-900 font-black text-xs rounded-full uppercase tracking-wider shadow-sm">Official HKD $20 Edition</span>
+                        <span class="px-4 py-1.5 bg-white text-slate-800 font-bold text-xs rounded-full uppercase tracking-wider shadow-sm">
+                            HKD $30
+                        </span>
                     </div>
 
                     <div>
-                        <h3 class="text-xs font-black uppercase tracking-wider text-brand-blue mb-2">What's Inside Every LuminaBox?</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-3">Each kit contains <b>1 Monthly Chapter</b> engineered for <b>Reinventing English</b> through stress-free learning:</p>
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-brand-darkblue mb-2">
+                            <span class="lang-en">Concise Kit Overview</span>
+                            <span class="lang-zh hidden">套裝簡介</span>
+                        </h3>
                         <ul class="space-y-2 text-xs text-slate-600">
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
-                                <span>4 Weekly Targeted Activity Sheets (Speak, Read, Write, Connect)</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>
+                                <span>
+                                    <strong class="text-slate-800">
+                                        <span class="lang-en">4 Weekly Hands-On Activity Sheets</span>
+                                        <span class="lang-zh hidden">4 張每週實體學習卡</span>
+                                    </strong>: 
+                                    <span class="lang-en">Guided missions covering Read, Speak, Write, and Connect topics.</span>
+                                    <span class="lang-zh hidden">涵蓋閱讀、口語、寫作及社區連繫的主題任務。</span>
+                                </span>
                             </li>
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
-                                <span>4-Digit Interactive Code Dial Cipher Card</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>
+                                <span>
+                                    <strong class="text-slate-800">
+                                        <span class="lang-en">Interactive Dial Cipher Card</span>
+                                        <span class="lang-zh hidden">實體密碼解密解鎖卡</span>
+                                    </strong>: 
+                                    <span class="lang-en">Bridge offline activity completion to online AI rewards.</span>
+                                    <span class="lang-zh hidden">將紙本任務成果輕鬆同步至線上 AI 平台。</span>
+                                </span>
                             </li>
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
-                                <span>Dyslexia-friendly high readability card layouts & soft color schemes</span>
-                            </li>
-                            <li class="flex items-center gap-2.5">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0"></i>
-                                <span>Bridge2English Volunteer Mentorship Pass + Unlimited AI Arcade Access</span>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>
+                                <span>
+                                    <strong class="text-slate-800">
+                                        <span class="lang-en">1-to-1 Volunteer Mentorship Pass</span>
+                                        <span class="lang-zh hidden">免費志工導師通行證</span>
+                                    </strong>: 
+                                    <span class="lang-en">Includes access to free 1-to-1 online lessons with volunteer mentors whenever needed.</span>
+                                    <span class="lang-zh hidden">包含隨時可預約的免費 1 對 1 志工線上輔導。</span>
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -193,153 +273,170 @@
             </div>
         </section>
 
-        <!-- AI for Social Good Pillars -->
-        <section id="ai-social-good" class="bg-brand-darkblue text-white rounded-3xl p-8 lg:p-10 space-y-8 shadow-md">
-            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-blue-800 pb-6">
-                <div>
-                    <span class="px-3 py-1 rounded-full bg-brand-yellow text-slate-900 text-xs font-bold uppercase tracking-wider">AI Competition Theme</span>
-                    <h3 class="text-3xl font-black mt-2">Reinventing English via Social Good AI</h3>
-                </div>
-                <p class="text-xs text-blue-200 max-w-md">Equalizing access to personalized tutoring by embedding adaptive, non-judgmental AI feedback directly into affordable $20 HKD community kits.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-5 text-xs">
-                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
-                    <div class="text-2xl">🗣️</div>
-                    <h4 class="font-bold text-brand-yellow text-sm">AI Speech Evaluator</h4>
-                    <p class="text-blue-100 leading-relaxed">Provides instant, low-anxiety oral feedback on English pronunciation without fear of embarrassment.</p>
-                </div>
-
-                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
-                    <div class="text-2xl">📋</div>
-                    <h4 class="font-bold text-brand-pink text-sm">AI Notice Simplifier</h4>
-                    <p class="text-blue-100 leading-relaxed">Translates dense school notices into simple bilingual bullet points to support ESL and underprivileged parents.</p>
-                </div>
-
-                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
-                    <div class="text-2xl">✨</div>
-                    <h4 class="font-bold text-brand-yellow text-sm">AI Story Crafting</h4>
-                    <p class="text-blue-100 leading-relaxed">Generates personalized mini-stories based on student choices to boost intrinsic reading motivation.</p>
-                </div>
-
-                <div class="p-5 bg-blue-900/50 rounded-2xl border border-blue-700/50 space-y-2.5">
-                    <div class="text-2xl">🤖</div>
-                    <h4 class="font-bold text-brand-pink text-sm">Adaptive MCQ Coach</h4>
-                    <p class="text-blue-100 leading-relaxed">Dynamically adjusts question difficulty based on student responses to build continuous confidence.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- The 4-Week Monthly Chapter System -->
-        <section id="box-details" class="bg-white rounded-3xl border-2 border-slate-100 p-8 lg:p-10 space-y-8 shadow-sm">
+        <!-- Community Ecosystem Section (SDG Goals) -->
+        <section id="sponsors" class="bg-white rounded-3xl border border-slate-100 p-8 lg:p-10 space-y-8 shadow-sm">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-brand-sky text-brand-darkblue text-xs font-bold uppercase tracking-wider">Structured Learning</span>
-                <h3 class="text-3xl font-black text-slate-900">Reinventing English in 4 Weekly Steps</h3>
-                <p class="text-xs text-slate-500">Instead of overwhelming textbooks, students conquer one bite-sized target per week using simple yet powerful MCQ exercises.</p>
+                <span class="px-3 py-1 rounded-full bg-brand-sky text-brand-darkblue text-xs font-bold uppercase tracking-wider">
+                    <span class="lang-en">Global Goals Alignment</span>
+                    <span class="lang-zh hidden">永續發展目標</span>
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-800">
+                    <span class="lang-en">Building an Inclusive Community</span>
+                    <span class="lang-zh hidden">推動優質與平等教育</span>
+                </h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    <span class="lang-en">LuminaBox partners with local NGOs and youth organizations to advance United Nations Sustainable Development Goals (SDG 4 & SDG 10).</span>
+                    <span class="lang-zh hidden">LuminaBox 與在地 NGO 及青年機構合作，積極響應聯合國永續發展目標（SDG 4 優質教育 & SDG 10 減少不平等）。</span>
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-5">
-                <div class="p-6 rounded-2xl bg-brand-sky border border-blue-200 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-brand-blue text-white font-black text-sm flex items-center justify-center shadow-sm">W1</div>
-                    <h4 class="font-bold text-slate-900 text-sm">Week 1: SPEAK 🗣️</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Phonics matching and AI voice coaching to practice speaking out loud with zero stress.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="p-5 rounded-2xl bg-brand-sky border border-blue-100 space-y-2.5 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-blue text-white font-bold text-sm flex items-center justify-center shadow-sm">
+                        SDG 4
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-sm">
+                        <span class="lang-en">Quality Education</span>
+                        <span class="lang-zh hidden">優質教育</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        <span class="lang-en">Delivering supportive, high-quality learning tools directly to children at home.</span>
+                        <span class="lang-zh hidden">為孩子提供充滿支持、高質量的雙語學習資源。</span>
+                    </p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-brand-softyellow border border-yellow-300 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-brand-yellow text-slate-900 font-black text-sm flex items-center justify-center shadow-sm">W2</div>
-                    <h4 class="font-bold text-slate-900 text-sm">Week 2: READ 📖</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Decoding everyday signs and school notices into simple, digestible English chunks.</p>
+                <div class="p-5 rounded-2xl bg-brand-softpink border border-pink-100 space-y-2.5 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-pink text-white font-bold text-sm flex items-center justify-center shadow-sm">
+                        SDG 10
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-sm">
+                        <span class="lang-en">Reduced Inequality</span>
+                        <span class="lang-zh hidden">減少不平等</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        <span class="lang-en">Making education accessible and affordable ($30 HKD) for every family.</span>
+                        <span class="lang-zh hidden">以親民價格 ($30 HKD) 讓每個家庭都能獲得同等的輔導資源。</span>
+                    </p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-brand-softpink border border-pink-200 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-brand-pink text-white font-black text-sm flex items-center justify-center shadow-sm">W3</div>
-                    <h4 class="font-bold text-slate-900 text-sm">Week 3: WRITE ✍️</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Targeted MCQ vocabulary detective puzzles and grammar sentence building.</p>
+                <div class="p-5 rounded-2xl bg-brand-softyellow border border-yellow-100 space-y-2.5 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-brand-yellow text-slate-800 font-bold text-sm flex items-center justify-center shadow-sm">
+                        🤝
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-sm">
+                        <span class="lang-en">Bridge to English</span>
+                        <span class="lang-zh hidden">Bridge to English</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        <span class="lang-en">Driven by 200+ passionate student volunteers providing friendly mentorship.</span>
+                        <span class="lang-zh hidden">由超過 200 名熱心學生志工提供親切的線上輔導陪伴。</span>
+                    </p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-blue-50 border border-blue-200 space-y-3 bouncy-hover">
-                    <div class="w-10 h-10 rounded-xl bg-brand-darkblue text-white font-black text-sm flex items-center justify-center shadow-sm">W4</div>
-                    <h4 class="font-bold text-slate-900 text-sm">Week 4: CONNECT 💬</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Applying learning to real conversations with Bridge2English volunteers via live chat or Zoom.</p>
+                <div class="p-5 rounded-2xl bg-brand-lavender border border-indigo-100 space-y-2.5 bouncy-hover">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-400 text-white font-bold text-sm flex items-center justify-center shadow-sm">
+                        🏡
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-sm">
+                        <span class="lang-en">Community Partners</span>
+                        <span class="lang-zh hidden">社區合作夥伴</span>
+                    </h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        <span class="lang-en">Working alongside NGOs to support families and SEN learners effectively.</span>
+                        <span class="lang-zh hidden">攜手非營利組織，深入社區服務 SEN 學童與家庭。</span>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Partners & Sponsor Section -->
-        <section id="sponsors" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-brand-softpink text-slate-800 text-xs font-bold uppercase tracking-wider">Community Ecosystem</span>
-                <h3 class="text-2xl font-black text-slate-900">Partnering for Social Good</h3>
-                <p class="text-xs text-slate-500">Collaborating with trusted NGOs to distribute LuminaBox directly to grassroots and SEN families.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-3 gap-6 pt-2">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-sky text-brand-blue font-black text-xl flex items-center justify-center mx-auto">✝️</div>
-                    <h4 class="font-bold text-slate-800 text-sm">Caritas Hong Kong</h4>
-                    <p class="text-xs text-slate-500">Distributing subsidized LuminaBox kits through community centers to low-income families.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-softyellow text-slate-900 font-black text-xl flex items-center justify-center mx-auto">🌟</div>
-                    <h4 class="font-bold text-slate-800 text-sm">Kids4Kids Youth Summit</h4>
-                    <p class="text-xs text-slate-500">Incubating student social innovation projects dedicated to <b>Reinventing English</b> access.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-softpink text-slate-800 font-black text-xl flex items-center justify-center mx-auto">🌉</div>
-                    <h4 class="font-bold text-slate-800 text-sm">Bridge to English</h4>
-                    <p class="text-xs text-slate-500">Providing student volunteer mentors for online 1-on-1 chat support and live Zoom tutoring sessions.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Storefront Order Section -->
-        <section id="shop" class="bg-white rounded-3xl border-2 border-slate-100 p-8 lg:p-10 space-y-8 shadow-sm">
+        <!-- Storefront / Order Section -->
+        <section id="shop" class="bg-white rounded-3xl border border-slate-100 p-8 lg:p-10 space-y-8 shadow-sm">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-6 gap-4">
                 <div>
-                    <span class="px-3 py-1 rounded-full bg-brand-sky text-brand-blue text-xs font-bold uppercase tracking-wider">Official Distribution</span>
-                    <h3 class="text-3xl font-black text-slate-900 mt-2">Get Your LuminaBox Kit</h3>
-                    <p class="text-xs text-slate-500 mt-1">Order for your child or sponsor a kit for a grassroots family in need.</p>
+                    <span class="px-3 py-1 rounded-full bg-brand-sky text-brand-darkblue text-xs font-bold uppercase tracking-wider">
+                        <span class="lang-en">Order LuminaBox</span>
+                        <span class="lang-zh hidden">訂購 LuminaBox</span>
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-800 mt-2">
+                        <span class="lang-en">Get Your Learning Kit</span>
+                        <span class="lang-zh hidden">獲取您的學習套裝</span>
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-1">
+                        <span class="lang-en">Order a kit for your child or sponsor one for a family in need.</span>
+                        <span class="lang-zh hidden">為您的孩子訂購，或贊助一份套裝給需要的家庭。</span>
+                    </p>
                 </div>
                 <div class="text-right">
-                    <span class="text-4xl font-black text-slate-900">$20 <span class="text-sm text-slate-500 font-normal">HKD / Kit</span></span>
-                    <p class="text-[11px] text-brand-blue font-bold">100% Subsidized Local Hong Kong Delivery</p>
+                    <span class="text-3xl sm:text-4xl font-extrabold text-slate-800">HKD $30</span>
+                    <p class="text-[11px] text-brand-blue font-semibold">
+                        <span class="lang-en">Includes Physical Kit + Full AI Portal Access</span>
+                        <span class="lang-zh hidden">包含實體套裝 + AI 平台完整存取權</span>
+                    </p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl bg-brand-sky border border-blue-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                <div class="p-6 rounded-2xl bg-brand-sky border border-blue-100 space-y-4 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
-                        <div class="w-full h-24 rounded-xl bg-brand-blue flex items-center justify-center text-white font-black text-base shadow-sm">
-                            Primary Level 1 (P1–P3)
+                        <div class="w-full h-20 rounded-xl bg-brand-blue/30 text-slate-800 font-bold text-sm flex items-center justify-center">
+                            <span class="lang-en">Primary Edition (P1–P3)</span>
+                            <span class="lang-zh hidden">初小版 (P1–P3)</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Foundation Chapter ($20 HKD)</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">Focuses on phonics sound matching, beginner flashcards, basic MCQ games, and AI speech practice.</p>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">Foundation Kit ($30 HKD)</span>
+                            <span class="lang-zh hidden">基礎學習套裝 ($30 HKD)</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Fun phonics, high-readability cards, basic AI speech activities, and free volunteer mentor sessions.</span>
+                            <span class="lang-zh hidden">自然發音、高可讀性卡片、基礎 AI 語音練習及免費志工導師課堂。</span>
+                        </p>
                     </div>
-                    <button onclick="addToCart('P1-P3 LuminaBox')" class="w-full py-3 bg-brand-blue hover:bg-brand-darkblue text-white text-xs font-bold rounded-xl shadow transition">Order Foundation Box ($20 HKD)</button>
+                    <button onclick="addToCart('P1-P3 LuminaBox')" class="w-full py-2.5 bg-brand-blue hover:bg-blue-500 text-white text-xs font-bold rounded-xl shadow-sm transition">
+                        <span class="lang-en">Order Kit ($30 HKD)</span>
+                        <span class="lang-zh hidden">訂購套裝 ($30 HKD)</span>
+                    </button>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-brand-softyellow border border-yellow-300 space-y-4 flex flex-col justify-between bouncy-hover">
+                <div class="p-6 rounded-2xl bg-brand-softyellow border border-yellow-200 space-y-4 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
-                        <div class="w-full h-24 rounded-xl bg-brand-yellow flex items-center justify-center text-slate-900 font-black text-base shadow-sm">
-                            Primary Level 2 (P4–P6)
+                        <div class="w-full h-20 rounded-xl bg-brand-yellow/30 text-slate-800 font-bold text-sm flex items-center justify-center">
+                            <span class="lang-en">Primary Edition (P4–P6)</span>
+                            <span class="lang-zh hidden">高小版 (P4–P6)</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Advanced Chapter ($20 HKD)</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">Focuses on social dialogues, school letter decoding, AI story prompts, and cipher dial games.</p>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">Discovery Kit ($30 HKD)</span>
+                            <span class="lang-zh hidden">進階探索套裝 ($30 HKD)</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Interactive daily scenarios, sentence building, advanced AI games, and free volunteer mentorship.</span>
+                            <span class="lang-zh hidden">實用生活情境、句子建構、高級 AI 互動遊戲及免費志工導師輔導。</span>
+                        </p>
                     </div>
-                    <button onclick="addToCart('P4-P6 LuminaBox')" class="w-full py-3 bg-slate-900 hover:bg-black text-white text-xs font-bold rounded-xl shadow transition">Order Advanced Box ($20 HKD)</button>
+                    <button onclick="addToCart('P4-P6 LuminaBox')" class="w-full py-2.5 bg-slate-700 hover:bg-slate-800 text-white text-xs font-bold rounded-xl shadow-sm transition">
+                        <span class="lang-en">Order Kit ($30 HKD)</span>
+                        <span class="lang-zh hidden">訂購套裝 ($30 HKD)</span>
+                    </button>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-brand-softpink border border-pink-200 space-y-4 flex flex-col justify-between bouncy-hover">
+                <div class="p-6 rounded-2xl bg-brand-softpink border border-pink-100 space-y-4 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
-                        <div class="w-full h-24 rounded-xl bg-brand-pink flex items-center justify-center text-white font-black text-base shadow-sm">
-                            Sponsor a Family
+                        <div class="w-full h-20 rounded-xl bg-brand-pink/30 text-slate-800 font-bold text-sm flex items-center justify-center">
+                            <span class="lang-en">Community Sponsorship</span>
+                            <span class="lang-zh hidden">社區關懷贊助</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Grassroots Gift ($20 HKD)</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">Directly funds 1 physical box delivered via Caritas HK with full volunteer mentoring and AI portal access.</p>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">Sponsor a Gift Kit ($30 HKD)</span>
+                            <span class="lang-zh hidden">贊助一份學習套裝 ($30 HKD)</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Directly gifts 1 physical kit to a child through our NGO partner network with full AI access.</span>
+                            <span class="lang-zh hidden">透過 NGO 合作網絡直接轉贈 1 份實體套裝予有需要的家庭。</span>
+                        </p>
                     </div>
-                    <button onclick="addToCart('Sponsorship Gift')" class="w-full py-3 bg-brand-pink hover:bg-rose-500 text-white text-xs font-bold rounded-xl shadow transition">Sponsor 1 Box ($20 HKD)</button>
+                    <button onclick="addToCart('Sponsorship Gift')" class="w-full py-2.5 bg-brand-pink hover:bg-rose-400 text-white text-xs font-bold rounded-xl shadow-sm transition">
+                        <span class="lang-en">Sponsor 1 Kit ($30 HKD)</span>
+                        <span class="lang-zh hidden">贊助 1 份套裝 ($30 HKD)</span>
+                    </button>
                 </div>
             </div>
             
@@ -348,252 +445,425 @@
 
     </main>
 
-    <!-- SECTION 2: LUMINA PORTAL (STUDENT AI INTERACTIVE HUB) -->
+    <!-- SECTION 2: LUMINA PORTAL (STUDENT AI DIGITAL HUB) -->
     <main id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-12">
 
-        <!-- Student Banner -->
-        <div class="bg-brand-blue rounded-3xl p-6 lg:p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-md">
+        <!-- Student Portal Banner -->
+        <div class="bg-gradient-to-r from-blue-400 to-indigo-400 rounded-3xl p-6 lg:p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
             <div class="space-y-2 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold border border-white/20">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold">
                     <i data-lucide="bot" class="w-4 h-4 text-brand-yellow"></i>
-                    <span>LuminaPortal • Reinventing English with AI</span>
+                    <span>
+                        <span class="lang-en">LuminaPortal Interactive AI</span>
+                        <span class="lang-zh hidden">LuminaPortal AI 數位平台</span>
+                    </span>
                 </div>
-                <h2 class="text-3xl font-black">Welcome to LuminaPortal AI! 🤖✨</h2>
-                <p class="text-xs text-blue-100">Play interactive AI games, practice speech out loud, and earn Lumina Shards!</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold">
+                    <span class="lang-en">Welcome to LuminaPortal AI! 🤖✨</span>
+                    <span class="lang-zh hidden">歡迎來到 LuminaPortal AI！🤖✨</span>
+                </h2>
+                <p class="text-xs text-blue-50">
+                    <span class="lang-en">Play interactive AI games, practice speech, customize your avatar, and collect Lumina Shards!</span>
+                    <span class="lang-zh hidden">體驗 AI 互動遊戲、練習口語發音、裝扮專屬角色並收集 Lumina 水晶！</span>
+                </p>
             </div>
 
             <!-- Shard Wallet Display -->
-            <div class="flex items-center gap-4 bg-brand-yellow px-6 py-3.5 rounded-2xl border-2 border-yellow-300 text-slate-900">
-                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-xl shadow-sm">💎</div>
+            <div class="flex items-center gap-4 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/50 text-slate-800 shadow-sm">
+                <div class="w-10 h-10 rounded-xl bg-brand-softyellow flex items-center justify-center text-xl">💎</div>
                 <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 block">Lumina Shards</span>
-                    <span id="shard-count" class="text-2xl font-black text-slate-900">0</span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Lumina Shards</span>
+                    <span id="shard-count" class="text-2xl font-black text-slate-800">120</span>
                 </div>
             </div>
         </div>
 
-        <!-- 1. EXPANDED AI INTERACTIVE ARCADE -->
-        <section id="ai-arcade" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
+        <!-- 1. CREATIVE AI-POWERED GAMES & EXERCISES -->
+        <section id="ai-games" class="bg-white rounded-3xl border border-slate-100 p-8 space-y-6 shadow-sm">
             <div class="border-b border-slate-100 pb-4 flex justify-between items-center">
                 <div>
-                    <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">AI Interactive Hub</span>
-                    <h3 class="text-2xl font-bold text-slate-900">AI Games & Exercises Arcade</h3>
+                    <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">
+                        <span class="lang-en">Interactive Learning</span>
+                        <span class="lang-zh hidden">互動學習區</span>
+                    </span>
+                    <h3 class="text-2xl font-bold text-slate-800">
+                        <span class="lang-en">AI Games & Adaptive Exercises</span>
+                        <span class="lang-zh hidden">AI 遊戲與智慧練習</span>
+                    </h3>
                 </div>
-                <div class="text-xs text-brand-darkblue font-bold bg-brand-sky px-3 py-1.5 rounded-xl border border-blue-200">
-                    ✨ 4 Social Good AI Tools
-                </div>
+                <span class="text-xs font-bold text-brand-darkblue bg-brand-sky px-3 py-1.5 rounded-xl border border-blue-100">
+                    ✨ 4 Interactive AI Features
+                </span>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
-                <!-- AI Game 1: Voice Coach -->
-                <div class="p-5 bg-brand-sky rounded-2xl border border-blue-200 space-y-3 flex flex-col justify-between bouncy-hover">
+                <!-- Feature 1: AI Speech Coach -->
+                <div class="p-5 bg-brand-sky rounded-2xl border border-blue-100 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-blue text-white font-bold text-[10px]">W1: SPEAK</span>
-                            <button onclick="speakText('Hello! My name is Lumina.')" class="text-[11px] text-brand-blue hover:text-brand-darkblue flex items-center gap-1 font-bold">
-                                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-blue text-white font-bold text-[10px]">SPEECH</span>
+                            <button onclick="speakText('Today is a sunny and wonderful day!')" class="text-[11px] text-brand-darkblue hover:text-blue-700 flex items-center gap-1 font-semibold">
+                                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> 
+                                <span class="lang-en">Listen</span><span class="lang-zh hidden">聆聽</span>
                             </button>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">AI Speech Evaluator</h4>
-                        <p class="text-xs text-slate-600">Practice saying this out loud:</p>
-                        <div class="p-2.5 bg-white rounded-xl border border-blue-200 text-center font-bold text-brand-blue text-xs">
-                            "Hello! My name is Lumina."
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">AI Speech Coach</span>
+                            <span class="lang-zh hidden">AI 語音教練</span>
+                        </h4>
+                        <p class="text-xs text-slate-500">
+                            <span class="lang-en">Practice reading aloud:</span>
+                            <span class="lang-zh hidden">大聲朗讀以下句子：</span>
+                        </p>
+                        <div class="p-2.5 bg-white rounded-xl border border-blue-100 text-center font-semibold text-brand-darkblue text-xs">
+                            "Today is a sunny day!"
                         </div>
-                        <button onclick="runAIVoiceCoach()" id="btn-ai-mic" class="w-full py-2 bg-brand-blue hover:bg-brand-darkblue text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
+                        <button onclick="runAIVoiceCoach()" id="btn-ai-mic" class="w-full py-2 bg-brand-blue hover:bg-blue-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
                             <i data-lucide="mic" class="w-4 h-4"></i> <span id="lbl-ai-mic">Record Voice</span>
                         </button>
                     </div>
                     <div id="ai-voice-feedback" class="text-[11px] font-bold text-center min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- AI Game 2: Notice Simplifier -->
-                <div class="p-5 bg-brand-softyellow rounded-2xl border border-yellow-300 space-y-3 flex flex-col justify-between bouncy-hover">
+                <!-- Feature 2: AI Adaptive Learning Quest -->
+                <div class="p-5 bg-brand-softyellow rounded-2xl border border-yellow-200 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-yellow text-slate-900 font-bold text-[10px]">W2: READ</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-yellow text-slate-800 font-bold text-[10px]">ADAPTIVE</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">AI Notice Simplifier</h4>
-                        <p class="text-xs text-slate-600">Translates school notices into simple bilingual points:</p>
-                        <button onclick="runNoticeDecoder()" class="w-full py-2 bg-slate-900 hover:bg-black text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm">
-                            <i data-lucide="file-text" class="w-4 h-4"></i> Decode Sample Notice
-                        </button>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">AI Adaptive Quest</span>
+                            <span class="lang-zh hidden">AI 智慧自適應挑戰</span>
+                        </h4>
+                        <p class="text-xs text-slate-500">
+                            <span class="lang-en">Adjusts challenge dynamically:</span>
+                            <span class="lang-zh hidden">根據答題情況動態調整難度：</span>
+                        </p>
+                        <p class="text-xs font-semibold text-slate-700">Q: "Select the action verb:"</p>
+                        <div class="grid grid-cols-2 gap-1.5 text-xs">
+                            <button onclick="checkAdaptiveAnswer(this, true)" class="p-2 bg-white border border-yellow-200 rounded-xl text-center font-medium">Run 🏃</button>
+                            <button onclick="checkAdaptiveAnswer(this, false)" class="p-2 bg-white border border-yellow-200 rounded-xl text-center font-medium">Blue 💙</button>
+                        </div>
                     </div>
-                    <div id="notice-feedback" class="hidden text-[11px] bg-white p-2.5 rounded-xl border border-yellow-300 space-y-1">
-                        <p class="font-bold text-slate-900">📋 AI Summary / 通告簡要:</p>
-                        <p class="text-slate-600">• School picnic on Friday. Wear sports shoes. (星期五學校野餐，請穿運動鞋)</p>
-                    </div>
+                    <div id="adaptive-feedback" class="text-[11px] font-bold text-center min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- AI Game 3: Story Generator -->
-                <div class="p-5 bg-brand-softpink rounded-2xl border border-pink-200 space-y-3 flex flex-col justify-between bouncy-hover">
+                <!-- Feature 3: AI Creative Storybuilder -->
+                <div class="p-5 bg-brand-softpink rounded-2xl border border-pink-100 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-pink text-white font-bold text-[10px]">W3: WRITE</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-pink text-white font-bold text-[10px]">STORY</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">AI Story Crafting</h4>
-                        <p class="text-xs text-slate-600">Choose a hero to generate a custom 2-sentence story:</p>
-                        <select id="story-hero" class="w-full p-2 bg-white border border-pink-200 rounded-xl text-xs font-bold text-slate-700">
-                            <option>🐱 Lumina Cat</option>
-                            <option>🦉 Professor Owl</option>
-                            <option>🚀 Space Explorer</option>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">AI Story Builder</span>
+                            <span class="lang-zh hidden">AI 創意思考故事屋</span>
+                        </h4>
+                        <p class="text-xs text-slate-500">
+                            <span class="lang-en">Pick a theme to craft a story:</span>
+                            <span class="lang-zh hidden">選擇主題生成冒險故事：</span>
+                        </p>
+                        <select id="story-theme" class="w-full p-2 bg-white border border-pink-200 rounded-xl text-xs font-semibold text-slate-700">
+                            <option>🐱 Space Cat Explorer</option>
+                            <option>🦉 Magic School Library</option>
+                            <option>🚀 Ocean Adventure</option>
                         </select>
-                        <button onclick="generateAIStory()" class="w-full py-2 bg-brand-pink hover:bg-rose-500 text-white rounded-xl text-xs font-bold transition shadow-sm">
-                            Generate Story ✨
+                        <button onclick="generateAIStory()" class="w-full py-2 bg-brand-pink hover:bg-rose-400 text-white rounded-xl text-xs font-bold transition shadow-sm">
+                            <span class="lang-en">Create Story ✨</span>
+                            <span class="lang-zh hidden">生成故事 ✨</span>
                         </button>
                     </div>
-                    <div id="story-feedback" class="text-[11px] font-bold text-slate-800 text-center min-h-[1.5rem]"></div>
+                    <div id="story-feedback" class="text-[11px] font-semibold text-slate-700 text-center min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- AI Game 4: MCQ Coach -->
-                <div class="p-5 bg-blue-50 rounded-2xl border border-blue-200 space-y-3 flex flex-col justify-between bouncy-hover">
+                <!-- Feature 4: AI Parent Companion -->
+                <div class="p-5 bg-brand-lavender rounded-2xl border border-indigo-100 space-y-3 flex flex-col justify-between bouncy-hover">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-brand-darkblue text-white font-bold text-[10px]">W4: CONNECT</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-indigo-400 text-white font-bold text-[10px]">PARENT</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">AI MCQ Coach</h4>
-                        <p class="text-xs text-slate-600 font-medium">Where do you borrow books?</p>
-                        <div class="space-y-1.5 text-xs">
-                            <button onclick="checkMCQAnswer(this, false)" class="w-full p-2 bg-white border border-blue-200 rounded-xl text-left font-medium">A) Playground</button>
-                            <button onclick="checkMCQAnswer(this, true)" class="w-full p-2 bg-white border border-blue-200 rounded-xl text-left font-medium">B) Library</button>
-                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">AI Parent Companion</span>
+                            <span class="lang-zh hidden">AI 家長隨行助手</span>
+                        </h4>
+                        <p class="text-xs text-slate-500">
+                            <span class="lang-en">Simplifies school notices and provides home activity tips:</span>
+                            <span class="lang-zh hidden">簡化學校通告並提供家庭親輔指導：</span>
+                        </p>
+                        <button onclick="toggleParentTip()" class="w-full py-2 bg-indigo-400 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition shadow-sm">
+                            <span class="lang-en">Get Home Tip 💡</span>
+                            <span class="lang-zh hidden">獲取家庭學習建議 💡</span>
+                        </button>
                     </div>
-                    <div class="mcq-feedback text-[11px] font-bold text-center min-h-[1.5rem]"></div>
+                    <div id="parent-tip-display" class="hidden text-[11px] bg-white p-2.5 rounded-xl border border-indigo-100 text-slate-700 leading-snug">
+                        💡 <strong>Tip / 建議:</strong> Praise effort over accuracy to build positive English confidence! (多鼓勵孩子的嘗試而非要求完美)
+                    </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- 2. VOLUNTEER PLATFORM HUB -->
-        <section id="volunteer-hub" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
+        <!-- 2. VOLUNTEER MENTOR PLATFORM HUB -->
+        <section id="volunteer-hub" class="bg-white rounded-3xl border border-slate-100 p-8 space-y-6 shadow-sm">
             <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-slate-100 pb-4 gap-2">
                 <div>
-                    <span class="px-2.5 py-0.5 rounded bg-brand-sky text-brand-darkblue text-[11px] font-bold">Bridge2English Mentorship</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1">Student Volunteer Support</h3>
+                    <span class="px-2.5 py-0.5 rounded bg-brand-sky text-brand-darkblue text-[11px] font-bold">
+                        Bridge to English
+                    </span>
+                    <h3 class="text-2xl font-bold text-slate-800 mt-1">
+                        <span class="lang-en">1-to-1 Volunteer Mentorship</span>
+                        <span class="lang-zh hidden">免費一對一志工輔導</span>
+                    </h3>
                 </div>
-                <div class="flex items-center gap-2 text-xs text-brand-darkblue font-bold bg-brand-sky px-3 py-1.5 rounded-xl border border-blue-200">
-                    <span class="w-2.5 h-2.5 rounded-full bg-brand-blue animate-pulse"></span>
-                    <span>12 Volunteers Online Now</span>
+                <div class="flex items-center gap-2 text-xs font-semibold text-brand-darkblue bg-brand-sky px-3 py-1.5 rounded-xl border border-blue-100">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>
+                        <span class="lang-en">200+ Mentors Ready</span>
+                        <span class="lang-zh hidden">超過 200 位志工線上支援</span>
+                    </span>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Live Volunteer Chatbox -->
+                <!-- Friendly Mentor Chatbox -->
                 <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
                             <i data-lucide="message-square" class="w-5 h-5 text-brand-blue"></i>
-                            <h4 class="font-bold text-slate-800 text-sm">Quick Chatbox with Mentor</h4>
+                            <h4 class="font-bold text-slate-800 text-sm">
+                                <span class="lang-en">Mentor Chatbox</span>
+                                <span class="lang-zh hidden">志工導師對話區</span>
+                            </h4>
                         </div>
-                        <p class="text-xs text-slate-600">Stuck on an activity card? Message a friendly volunteer!</p>
+                        <p class="text-xs text-slate-500">
+                            <span class="lang-en">Ask questions or practice friendly conversation anytime!</span>
+                            <span class="lang-zh hidden">隨時發問或進行友好的英語對話！</span>
+                        </p>
                         
                         <div id="chat-messages" class="h-32 bg-white rounded-xl border border-slate-200 p-3 overflow-y-auto space-y-2 text-xs">
-                            <div class="bg-brand-sky text-slate-900 p-2 rounded-lg max-w-[85%] font-medium border border-blue-100">
-                                <b>Volunteer Sarah:</b> Hi there! Need help with your activity card today? 😊
+                            <div class="bg-brand-sky text-slate-800 p-2.5 rounded-lg max-w-[85%] font-medium border border-blue-100">
+                                <b>Mentor Sarah:</b> Hello! Need help with your activity kit or want to practice reading? 😊
                             </div>
                         </div>
                     </div>
 
                     <div class="flex gap-2">
-                        <input type="text" id="chat-input" placeholder="Type your message..." class="flex-grow px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-brand-blue">
-                        <button onclick="sendChatMessage()" class="px-4 py-2 bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs rounded-xl transition">Send</button>
+                        <input type="text" id="chat-input" placeholder="Type a message..." class="flex-grow px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-brand-blue">
+                        <button onclick="sendChatMessage()" class="px-4 py-2 bg-brand-blue hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition">Send</button>
                     </div>
                 </div>
 
-                <!-- Zoom Meeting Request -->
+                <!-- Easy Lesson Request -->
                 <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
                             <i data-lucide="video" class="w-5 h-5 text-brand-blue"></i>
-                            <h4 class="font-bold text-slate-800 text-sm">Request 1-on-1 Zoom Mentorship</h4>
+                            <h4 class="font-bold text-slate-800 text-sm">
+                                <span class="lang-en">Schedule Free 1-to-1 Lesson</span>
+                                <span class="lang-zh hidden">預約免費 1 對 1 線上課程</span>
+                            </h4>
                         </div>
-                        <p class="text-xs text-slate-600">Schedule a 15-minute friendly Zoom session to practice speaking out loud!</p>
+                        <p class="text-xs text-slate-500">
+                            <span class="lang-en">Connect with a student mentor for friendly 1-to-1 practice anytime.</span>
+                            <span class="lang-zh hidden">隨時安排志工導師進行 15 分鐘輕鬆口語練習。</span>
+                        </p>
                         
                         <div class="space-y-2 text-xs">
-                            <label class="block font-bold text-slate-700">Select Target Topic:</label>
-                            <select id="zoom-topic" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-700">
-                                <option>Week 1: Practice Superhero Speaking 🗣️</option>
-                                <option>Week 2: Read School Notices Together 📖</option>
-                                <option>Week 3: Sentence Writing Practice ✍️</option>
-                                <option>General Conversation Practice 💬</option>
+                            <label class="block font-bold text-slate-700">
+                                <span class="lang-en">Select Activity Topic:</span>
+                                <span class="lang-zh hidden">選擇練習主題：</span>
+                            </label>
+                            <select id="zoom-topic" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl text-xs font-semibold text-slate-700">
+                                <option>Friendly Conversation & Greetings 🗣️</option>
+                                <option>Read Activity Cards Together 📖</option>
+                                <option>Vocabulary Puzzles ✍️</option>
                             </select>
                         </div>
                     </div>
 
-                    <button onclick="requestZoomCall()" class="w-full py-2.5 bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs rounded-xl transition shadow-sm bouncy-hover">
-                        Request Zoom Session
+                    <button onclick="requestZoomCall()" class="w-full py-2.5 bg-brand-blue hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition shadow-sm bouncy-hover">
+                        <span class="lang-en">Request Free Lesson</span>
+                        <span class="lang-zh hidden">預約免費課堂</span>
                     </button>
                 </div>
             </div>
             <div id="volunteer-feedback" class="text-xs font-bold text-center min-h-[1rem]"></div>
         </section>
 
-        <!-- 3. PHYSICAL CODE DIAL SYNC -->
-        <section id="code-entry" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-5 text-center shadow-sm">
+        <!-- 3. EXPANDED AVATAR CUSTOMIZER & TITLES -->
+        <section id="avatar-customizer" class="bg-white rounded-3xl border border-slate-100 p-8 space-y-6 shadow-sm">
+            <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                <div>
+                    <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">
+                        <span class="lang-en">Personalization</span>
+                        <span class="lang-zh hidden">個人化造型</span>
+                    </span>
+                    <h3 class="text-2xl font-bold text-slate-800">
+                        <span class="lang-en">Avatar Customizer & Achievement Titles</span>
+                        <span class="lang-zh hidden">角色造型與成就稱號</span>
+                    </h3>
+                </div>
+                <div class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-xl">
+                    <span class="lang-en">Active Title:</span><span class="lang-zh hidden">當前稱號:</span> 
+                    <span id="current-title-display" class="font-bold text-brand-darkblue">"Star Reader ⭐"</span>
+                </div>
+            </div>
+
+            <!-- Avatar Studio Box -->
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Live Avatar Preview Frame -->
+                <div class="lg:col-span-4 bg-gradient-to-b from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 p-6 text-center space-y-4">
+                    <div id="avatar-display-box" class="w-32 h-32 mx-auto rounded-3xl bg-white border-2 border-brand-blue flex items-center justify-center text-6xl shadow-sm relative transition-transform duration-300">
+                        <span id="avatar-base">🐱</span>
+                        <span id="avatar-hat" class="absolute -top-3 text-2xl">🎓</span>
+                    </div>
+                    <div>
+                        <h4 id="avatar-name" class="font-bold text-slate-800 text-base">Lumina Companion</h4>
+                        <p id="unlocked-title" class="text-xs font-semibold text-brand-blue mt-0.5">Star Reader ⭐</p>
+                    </div>
+                    <div class="p-2.5 bg-white rounded-xl border border-slate-200 text-[11px] text-slate-500">
+                        <span class="lang-en">Spend Lumina Shards to unlock outfits & titles!</span>
+                        <span class="lang-zh hidden">使用 Lumina 水晶解鎖時尚配件與稱號！</span>
+                    </div>
+                </div>
+
+                <!-- Customization Options Grid -->
+                <div class="lg:col-span-8 space-y-5">
+                    
+                    <!-- Base Companions -->
+                    <div>
+                        <h5 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">1. Base Character / 基本角色</h5>
+                        <div class="grid grid-cols-4 gap-3">
+                            <button onclick="setBaseAvatar('🐱', 'Lumina Cat')" class="p-3 bg-slate-50 hover:bg-blue-50 rounded-xl border border-slate-200 text-center transition">
+                                <span class="text-2xl block">🐱</span>
+                                <span class="text-[10px] font-bold text-slate-700">Cat</span>
+                            </button>
+                            <button onclick="setBaseAvatar('🦉', 'Prof. Owl')" class="p-3 bg-slate-50 hover:bg-blue-50 rounded-xl border border-slate-200 text-center transition">
+                                <span class="text-2xl block">🦉</span>
+                                <span class="text-[10px] font-bold text-slate-700">Owl</span>
+                            </button>
+                            <button onclick="setBaseAvatar('🐻', 'Buddy Bear')" class="p-3 bg-slate-50 hover:bg-blue-50 rounded-xl border border-slate-200 text-center transition">
+                                <span class="text-2xl block">🐻</span>
+                                <span class="text-[10px] font-bold text-slate-700">Bear</span>
+                            </button>
+                            <button onclick="setBaseAvatar('🤖', 'Robo Spark')" class="p-3 bg-slate-50 hover:bg-blue-50 rounded-xl border border-slate-200 text-center transition">
+                                <span class="text-2xl block">🤖</span>
+                                <span class="text-[10px] font-bold text-slate-700">Robo</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Accessories & Outfits -->
+                    <div>
+                        <h5 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">2. Hats & Accessories / 帽子配件 (20 Shards 💎)</h5>
+                        <div class="grid grid-cols-4 gap-3">
+                            <button onclick="buyHat('🎓', 20)" class="p-2.5 bg-brand-softyellow hover:bg-yellow-100 rounded-xl border border-yellow-200 text-center transition">
+                                <span class="text-xl block">🎓</span>
+                                <span class="text-[10px] font-bold text-slate-700">Grad Cap</span>
+                            </button>
+                            <button onclick="buyHat('👑', 20)" class="p-2.5 bg-brand-softyellow hover:bg-yellow-100 rounded-xl border border-yellow-200 text-center transition">
+                                <span class="text-xl block">👑</span>
+                                <span class="text-[10px] font-bold text-slate-700">Crown</span>
+                            </button>
+                            <button onclick="buyHat('🚀', 20)" class="p-2.5 bg-brand-softyellow hover:bg-yellow-100 rounded-xl border border-yellow-200 text-center transition">
+                                <span class="text-xl block">🚀</span>
+                                <span class="text-[10px] font-bold text-slate-700">Rocket</span>
+                            </button>
+                            <button onclick="buyHat('🎧', 20)" class="p-2.5 bg-brand-softyellow hover:bg-yellow-100 rounded-xl border border-yellow-200 text-center transition">
+                                <span class="text-xl block">🎧</span>
+                                <span class="text-[10px] font-bold text-slate-700">Headset</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Titles -->
+                    <div>
+                        <h5 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">3. Unlock Titles / 成就稱號 (30 Shards 💎)</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="buyTitle('Star Reader ⭐', 30)" class="px-3 py-1.5 bg-brand-sky hover:bg-blue-100 border border-blue-200 rounded-xl text-xs font-bold text-brand-darkblue transition">
+                                Star Reader ⭐
+                            </button>
+                            <button onclick="buyTitle('Word Wizard 🧙‍♂️', 30)" class="px-3 py-1.5 bg-brand-softpink hover:bg-pink-100 border border-pink-200 rounded-xl text-xs font-bold text-pink-700 transition">
+                                Word Wizard 🧙‍♂️
+                            </button>
+                            <button onclick="buyTitle('Community Hero 🦸', 30)" class="px-3 py-1.5 bg-brand-softyellow hover:bg-yellow-100 border border-yellow-200 rounded-xl text-xs font-bold text-amber-800 transition">
+                                Community Hero 🦸
+                            </button>
+                            <button onclick="buyTitle('AI Explorer 🤖', 30)" class="px-3 py-1.5 bg-brand-lavender hover:bg-indigo-100 border border-indigo-200 rounded-xl text-xs font-bold text-indigo-800 transition">
+                                AI Explorer 🤖
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PHYSICAL CARD DIAL CODE SYNC -->
+        <section id="code-entry" class="bg-white rounded-3xl border border-slate-100 p-8 space-y-5 text-center shadow-sm">
             <div class="max-w-md mx-auto space-y-2">
-                <span class="px-3 py-1 bg-brand-softyellow text-slate-900 text-xs font-bold rounded-full border border-yellow-300">Physical Box Gateway</span>
-                <h3 class="text-xl font-bold text-slate-900">Enter Card Dial Code</h3>
-                <p class="text-xs text-slate-500">Solved your physical card cipher? Enter the 4-digit code here to sync your offline progress!</p>
+                <span class="px-3 py-1 bg-brand-softyellow text-slate-800 text-xs font-bold rounded-full border border-yellow-200">
+                    <span class="lang-en">Sync Progress</span><span class="lang-zh hidden">卡片同步</span>
+                </span>
+                <h3 class="text-xl font-bold text-slate-800">
+                    <span class="lang-en">Enter Card Dial Code</span>
+                    <span class="lang-zh hidden">輸入卡片密碼碼</span>
+                </h3>
+                <p class="text-xs text-slate-500">
+                    <span class="lang-en">Finished a physical activity card? Enter the 4-digit cipher code to claim shards!</span>
+                    <span class="lang-zh hidden">完成了實體活動卡片？輸入 4 位數解密密碼即可領取 Shards 水晶！</span>
+                </p>
             </div>
 
             <div class="flex justify-center gap-3">
-                <input type="text" maxlength="1" id="c1" value="3" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
-                <input type="text" maxlength="1" id="c2" value="1" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
-                <input type="text" maxlength="1" id="c3" value="4" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
-                <input type="text" maxlength="1" id="c4" value="2" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c1" value="2" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c2" value="0" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c3" value="2" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
+                <input type="text" maxlength="1" id="c4" value="6" class="w-12 h-12 text-center text-xl font-bold bg-slate-50 border border-slate-300 rounded-xl text-slate-800 focus:outline-none focus:border-brand-blue">
             </div>
 
-            <button onclick="submitPhysicalCode()" class="px-6 py-3 bg-brand-blue hover:bg-brand-darkblue text-white font-bold text-xs rounded-xl transition bouncy-hover shadow-sm">
-                Verify Dial Code (+50 Shards 💎)
+            <button onclick="submitPhysicalCode()" class="px-6 py-2.5 bg-brand-blue hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition bouncy-hover shadow-sm">
+                <span class="lang-en">Verify Code (+50 Shards 💎)</span>
+                <span class="lang-zh hidden">驗證密碼 (+50 水晶 💎)</span>
             </button>
             <div id="code-feedback" class="text-xs font-bold min-h-[1rem]"></div>
-        </section>
-
-        <!-- 4. REWARDS & AVATARS -->
-        <section id="avatar-shop" class="bg-white rounded-3xl border-2 border-slate-100 p-8 space-y-6 shadow-sm">
-            <div class="border-b border-slate-100 pb-3">
-                <span class="text-xs font-bold text-brand-blue uppercase tracking-wider">Progress Gallery</span>
-                <h3 class="text-2xl font-bold text-slate-900">Unlock Achievements & Companions</h3>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-5 bg-brand-sky rounded-2xl border border-blue-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white text-brand-blue flex items-center justify-center text-3xl font-bold shadow-sm">🐱</div>
-                    <h4 class="font-bold text-slate-800 text-sm">Lumina Cat Companion</h4>
-                    <span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold rounded-full">Starter Unlocked</span>
-                </div>
-
-                <div class="p-5 bg-brand-softyellow rounded-2xl border border-yellow-300 text-center space-y-3 bouncy-hover">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white text-slate-900 flex items-center justify-center text-3xl font-bold shadow-sm">🦉</div>
-                    <h4 class="font-bold text-slate-800 text-sm">Professor Owl Companion</h4>
-                    <button id="btn-unlock-1" onclick="unlockReward('btn-unlock-1', 20)" class="w-full py-2.5 bg-brand-yellow hover:bg-yellow-500 text-slate-900 rounded-xl text-xs font-bold transition">
-                        Unlock (20 Shards 💎)
-                    </button>
-                </div>
-
-                <div class="p-5 bg-brand-softpink rounded-2xl border border-pink-200 text-center space-y-3 bouncy-hover">
-                    <div class="w-16 h-16 mx-auto rounded-2xl bg-white text-brand-pink flex items-center justify-center text-3xl font-bold shadow-sm">🏛️</div>
-                    <h4 class="font-bold text-slate-800 text-sm">Stage 2: AI Explorer Badge</h4>
-                    <button id="btn-unlock-2" onclick="unlockReward('btn-unlock-2', 50)" class="w-full py-2.5 bg-brand-pink hover:bg-rose-500 text-white rounded-xl text-xs font-bold transition">
-                        Unlock (50 Shards 💎)
-                    </button>
-                </div>
-            </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500 space-y-1">
-        <p><b>LuminaBox Initiative</b> • Supported by Kids4Kids & Bridge to English Partnership</p>
-        <p>Out of the Box into the World • Reinventing English Learning ($20 HKD Edition)</p>
+    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p><b>LuminaBox 光啟盒</b> • Created by Bridge to English Partnership</p>
+        <p>
+            <span class="lang-en">Out of the box, into the world • HKD $30 Edition</span>
+            <span class="lang-zh hidden">以光啟智，以語啟思 • HKD $30 社區推廣版</span>
+        </p>
     </footer>
 
-    <!-- JavaScript Interactive Logic -->
+    <!-- JavaScript Interactivity -->
     <script>
         lucide.createIcons();
 
-        let luminaShards = 0;
+        let currentLang = 'en';
+        let luminaShards = 120;
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'en') ? 'zh' : 'en';
+            const enElems = document.querySelectorAll('.lang-en');
+            const zhElems = document.querySelectorAll('.lang-zh');
+            const langBtnText = document.getElementById('lang-btn-text');
+
+            if (currentLang === 'zh') {
+                enElems.forEach(el => el.classList.add('hidden'));
+                zhElems.forEach(el => el.classList.remove('hidden'));
+                langBtnText.innerText = 'English';
+            } else {
+                zhElems.forEach(el => el.classList.add('hidden'));
+                enElems.forEach(el => el.classList.remove('hidden'));
+                langBtnText.innerText = '繁體中文';
+            }
+        }
 
         function addShards(amount) {
             luminaShards += amount;
@@ -605,21 +875,18 @@
             const luminaPortal = document.getElementById('view-lumina-portal');
             const navMain = document.getElementById('nav-main-site');
             const navPortal = document.getElementById('nav-lumina-portal');
-            const toggleBtnLbl = document.getElementById('lbl-toggle-portal');
 
             if (section === 'lumina-portal') {
                 mainSite.classList.add('hidden');
                 luminaPortal.classList.remove('hidden');
                 navMain.classList.add('hidden');
                 navPortal.classList.remove('hidden');
-                toggleBtnLbl.innerText = "Back to Storefront";
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 luminaPortal.classList.add('hidden');
                 mainSite.classList.remove('hidden');
                 navPortal.classList.add('hidden');
                 navMain.classList.remove('hidden');
-                toggleBtnLbl.innerText = "Launch LuminaPortal AI";
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
@@ -653,43 +920,65 @@
         function runAIVoiceCoach() {
             const btn = document.getElementById('btn-ai-mic');
             const feedback = document.getElementById('ai-voice-feedback');
-            btn.className = "w-full py-2 bg-brand-yellow text-slate-900 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition animate-pulse";
-            document.getElementById('lbl-ai-mic').innerText = "AI Evaluating Speech...";
+            btn.className = "w-full py-2 bg-brand-yellow text-slate-800 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition animate-pulse";
+            document.getElementById('lbl-ai-mic').innerText = "Evaluating Speech...";
 
             setTimeout(() => {
-                btn.className = "w-full py-2 bg-brand-blue hover:bg-brand-darkblue text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm";
+                btn.className = "w-full py-2 bg-brand-blue hover:bg-blue-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm";
                 document.getElementById('lbl-ai-mic').innerText = "Record Voice";
-                feedback.className = "text-[11px] font-bold text-brand-blue text-center min-h-[1.5rem]";
-                feedback.innerText = "Awesome! Speech Accuracy: 98% (+15 Shards 💎)";
+                feedback.className = "text-[11px] font-bold text-brand-darkblue text-center min-h-[1.5rem]";
+                feedback.innerText = "Great pronunciation! Accuracy 95% (+15 Shards 💎)";
                 addShards(15);
-            }, 2000);
+            }, 1800);
         }
 
-        function runNoticeDecoder() {
-            document.getElementById('notice-feedback').classList.remove('hidden');
-            addShards(10);
+        function checkAdaptiveAnswer(btnElem, isCorrect) {
+            const feedback = document.getElementById('adaptive-feedback');
+            if (isCorrect) {
+                feedback.className = "text-[11px] font-bold text-emerald-600 text-center min-h-[1.5rem]";
+                feedback.innerText = "Correct action verb! Difficulty leveled up. (+15 Shards 💎)";
+                addShards(15);
+            } else {
+                feedback.className = "text-[11px] font-bold text-rose-500 text-center min-h-[1.5rem]";
+                feedback.innerText = "Try again! 'Run' is an action.";
+            }
         }
 
         function generateAIStory() {
-            const hero = document.getElementById('story-hero').value;
+            const theme = document.getElementById('story-theme').value;
             const feedback = document.getElementById('story-feedback');
-            feedback.innerText = `AI Story Generated: "${hero} went on an exciting vocabulary quest today and found a magic golden book!" (+15 Shards 💎)`;
+            feedback.innerText = `Generated Story: "The hero in ${theme} discovered a magical dictionary that brought words to life!" (+15 Shards 💎)`;
             addShards(15);
         }
 
-        function checkMCQAnswer(buttonElem, isCorrect) {
-            const container = buttonElem.closest('.p-5');
-            const feedbackElem = container.querySelector('.mcq-feedback');
+        function toggleParentTip() {
+            const tipBox = document.getElementById('parent-tip-display');
+            tipBox.classList.toggle('hidden');
+        }
 
-            if (isCorrect) {
-                buttonElem.className = "w-full p-2 bg-blue-100 border border-blue-300 rounded-xl text-left font-bold text-brand-darkblue";
-                feedbackElem.className = "mcq-feedback text-[11px] font-bold text-brand-blue text-center min-h-[1.5rem]";
-                feedbackElem.innerText = "Correct! AI Coach awarded +15 Shards! 💎";
-                addShards(15);
+        function setBaseAvatar(emoji, name) {
+            document.getElementById('avatar-base').innerText = emoji;
+            document.getElementById('avatar-name').innerText = name;
+        }
+
+        function buyHat(hatEmoji, cost) {
+            if (luminaShards >= cost) {
+                luminaShards -= cost;
+                document.getElementById('shard-count').innerText = luminaShards;
+                document.getElementById('avatar-hat').innerText = hatEmoji;
             } else {
-                buttonElem.className = "w-full p-2 bg-pink-100 border border-pink-300 rounded-xl text-left font-bold text-rose-900";
-                feedbackElem.className = "mcq-feedback text-[11px] font-bold text-rose-600 text-center min-h-[1.5rem]";
-                feedbackElem.innerText = "Try another option!";
+                alert("You need more Lumina Shards to purchase this hat!");
+            }
+        }
+
+        function buyTitle(titleText, cost) {
+            if (luminaShards >= cost) {
+                luminaShards -= cost;
+                document.getElementById('shard-count').innerText = luminaShards;
+                document.getElementById('unlocked-title').innerText = titleText;
+                document.getElementById('current-title-display').innerText = `"${titleText}"`;
+            } else {
+                alert("You need more Lumina Shards to unlock this title!");
             }
         }
 
@@ -700,13 +989,13 @@
             const c4 = document.getElementById('c4').value;
             const feedback = document.getElementById('code-feedback');
 
-            if (c1 === '3' && c2 === '1' && c3 === '4' && c4 === '2') {
-                feedback.className = "text-xs font-bold text-brand-blue mt-2";
-                feedback.innerText = "Code 3-1-4-2 Verified! Physical card synced (+50 Lumina Shards 💎).";
+            if (c1 === '2' && c2 === '0' && c3 === '2' && c4 === '6') {
+                feedback.className = "text-xs font-bold text-brand-darkblue mt-2";
+                feedback.innerText = "Code 2-0-2-6 Verified! Physical card progress synced (+50 Shards 💎).";
                 addShards(50);
             } else {
-                feedback.className = "text-xs font-bold text-rose-600 mt-2";
-                feedback.innerText = "Incorrect code. Please check your card dial numbers.";
+                feedback.className = "text-xs font-bold text-rose-500 mt-2";
+                feedback.innerText = "Code not recognized. Please check your physical card cipher numbers.";
             }
         }
 
@@ -716,7 +1005,7 @@
             
             if (chatInput.value.trim() !== "") {
                 const userMsg = document.createElement('div');
-                userMsg.className = "bg-blue-100 text-slate-900 p-2 rounded-lg max-w-[85%] ml-auto font-medium border border-blue-200";
+                userMsg.className = "bg-slate-100 text-slate-800 p-2.5 rounded-lg max-w-[85%] ml-auto font-medium border border-slate-200";
                 userMsg.innerText = chatInput.value;
                 chatBox.appendChild(userMsg);
                 
@@ -725,8 +1014,8 @@
 
                 setTimeout(() => {
                     const replyMsg = document.createElement('div');
-                    replyMsg.className = "bg-brand-sky text-slate-900 p-2 rounded-lg max-w-[85%] font-medium border border-blue-100";
-                    replyMsg.innerHTML = "<b>Volunteer Alex:</b> Thanks for reaching out! Let's work on this card together.";
+                    replyMsg.className = "bg-brand-sky text-slate-800 p-2.5 rounded-lg max-w-[85%] font-medium border border-blue-100";
+                    replyMsg.innerHTML = "<b>Mentor Alex:</b> Great job practicing! I am here whenever you want to read aloud.";
                     chatBox.appendChild(replyMsg);
                     chatBox.scrollTop = chatBox.scrollHeight;
                 }, 1000);
@@ -736,27 +1025,14 @@
         function requestZoomCall() {
             const topic = document.getElementById('zoom-topic').value;
             const feedback = document.getElementById('volunteer-feedback');
-            feedback.className = "text-xs font-bold text-brand-blue text-center mt-2";
-            feedback.innerText = `Zoom session requested for "${topic}"! A Bridge2English volunteer link will be sent to your student dashboard.`;
-        }
-
-        function unlockReward(btnId, cost) {
-            const btn = document.getElementById(btnId);
-            if (luminaShards >= cost) {
-                luminaShards -= cost;
-                document.getElementById('shard-count').innerText = luminaShards;
-                btn.className = "w-full py-2.5 bg-brand-blue text-white rounded-xl text-xs font-bold";
-                btn.innerText = "Unlocked";
-                btn.disabled = true;
-            } else {
-                alert(`You need ${cost - luminaShards} more Lumina Shards to unlock this reward.`);
-            }
+            feedback.className = "text-xs font-bold text-brand-darkblue text-center mt-2";
+            feedback.innerText = `1-to-1 session requested for "${topic}"! A Bridge to English volunteer mentor will contact you.`;
         }
 
         function addToCart(item) {
             const notif = document.getElementById('cart-notification');
             notif.classList.remove('hidden');
-            notif.innerText = `Added "${item}" ($20 HKD) to order request. Subsidized delivery confirmed!`;
+            notif.innerText = `Added "${item}" ($30 HKD) to order request!`;
             setTimeout(() => { notif.classList.add('hidden'); }, 3500);
         }
     </script>
