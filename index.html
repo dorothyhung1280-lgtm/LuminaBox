@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuminaBox 光啟盒 — Out of the Box, Into the World</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts: Plus Jakarta Sans & Lexend -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -23,45 +20,31 @@
                     },
                     colors: {
                         pastel: {
-                            blue: '#93C5FD',      /* Soft Sky Blue */
-                            blueBg: '#EFF6FF',    /* Ultra Light Blue Tint */
-                            blueCard: '#DBEAFE',  /* Gentle Pastel Blue Card */
-                            yellow: '#FDE047',    /* Warm Soft Yellow */
-                            yellowBg: '#FEFCE8',  /* Ultra Light Yellow Canvas */
-                            yellowCard: '#FEF08A',/* Soft Pastel Yellow */
-                            pink: '#F9A8D4',      /* Gentle Soft Pink */
-                            pinkBg: '#FDF2F8',    /* Ultra Light Pink Tint */
-                            pinkCard: '#FBCFE8',  /* Soft Pastel Pink */
-                            slate: '#334155',    /* Soft Dark Text (No Harsh Pure Black) */
-                            muted: '#64748B'     /* Muted Secondary Text */
+                            yellowBg: '#FEF9C3',  /* Creamy Pale Yellow Background for Dyslexia Readability */
+                            blueBg: '#EFF6FF',
+                            pinkBg: '#FDF2F8',
+                            slate: '#334155'
                         }
                     },
                     boxShadow: {
                         'soft-sm': '0 2px 10px rgba(148, 163, 184, 0.08)',
                         'soft-md': '0 8px 24px rgba(148, 163, 184, 0.12)',
                         'soft-lg': '0 16px 36px rgba(148, 163, 184, 0.15)',
-                        'glow-blue': '0 0 20px rgba(147, 197, 253, 0.35)',
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Modern Aesthetic Global Styling: Soft Soft Background, Rounded Corners, Clean Typography */
+        /* Modern Aesthetic Global Styling: Pale Warm Yellow Canvas for Minimal Visual Stress & High Dyslexia Comfort */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #334155;
-            background-color: #FEFCE8; /* Warm Pastel Yellow Canvas like reference photo */
+            background-color: #FEF9C3; /* Pale Yellow Background default */
             letter-spacing: -0.01em;
         }
 
-        /* Clean Glassmorphic & Rounded Elements without stark borders */
-        .glass-card {
-            background-color: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-        }
-
-        /* SEN Dyslexic Accessibility Overrides (Subtle, readable & soft) */
+        /* SEN Dyslexic Mode Overrides */
         .sen-mode {
             font-family: 'Lexend', sans-serif !important;
             letter-spacing: 0.08em !important;
@@ -84,53 +67,47 @@
         }
     </style>
 </head>
-<body id="app-body" class="min-h-screen text-pastel-slate selection:bg-pastel-pinkCard">
+<body id="app-body" class="min-h-screen text-slate-700 selection:bg-pink-200">
 
-    <!-- Top Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md px-4 lg:px-8 py-3.5 border-b border-slate-100/60 shadow-soft-sm">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md px-4 lg:px-8 py-3.5 border-b border-amber-200/60 shadow-soft-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
             
-            <!-- Brand Logo -->
             <div class="flex items-center gap-3 cursor-pointer" onclick="switchSection('main-site')">
-                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-400 to-sky-300 flex items-center justify-center text-white shadow-soft-sm">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-soft-sm">
                     <i data-lucide="sparkles" class="w-5 h-5"></i>
                 </div>
                 <div>
                     <h1 class="text-lg font-bold text-slate-800 tracking-tight leading-none">
                         LuminaBox <span class="text-sky-500 font-semibold text-xs ml-0.5">光啟盒</span>
                     </h1>
-                    <p class="text-[11px] text-slate-400 font-medium tracking-normal mt-1">
+                    <p class="text-[11px] text-slate-500 font-medium tracking-normal mt-1">
                         <span class="lang-en">Out of the box, into the world</span>
                         <span class="lang-zh hidden">以光啟智，走出課室，邁向世界</span>
                     </p>
                 </div>
             </div>
 
-            <!-- Header Navigation Links -->
             <nav id="nav-main-site" class="hidden xl:flex items-center gap-6 text-xs font-semibold text-slate-600">
                 <a href="#about" class="hover:text-sky-500 transition"><span class="lang-en">About Us</span><span class="lang-zh hidden">關於我們</span></a>
+                <a href="#impact-stats" class="hover:text-sky-500 transition"><span class="lang-en">Results & Stats</span><span class="lang-zh hidden">成效數據</span></a>
                 <a href="#sdg" class="hover:text-sky-500 transition"><span class="lang-en">SDGs Impact</span><span class="lang-zh hidden">永續目標</span></a>
                 <a href="#partners" class="hover:text-sky-500 transition"><span class="lang-en">Partners</span><span class="lang-zh hidden">合作夥伴</span></a>
-                <a href="#sen-features" class="hover:text-sky-500 transition"><span class="lang-en">SEN Features</span><span class="lang-zh hidden">SEN 特殊支援</span></a>
+                <a href="#sen-features" class="hover:text-sky-500 transition"><span class="lang-en">SEN Support</span><span class="lang-zh hidden">SEN 特殊支援</span></a>
                 <a href="#ai-tools" class="hover:text-sky-500 transition"><span class="lang-en">AI Tools</span><span class="lang-zh hidden">AI 工具</span></a>
                 <a href="#reviews" class="hover:text-sky-500 transition"><span class="lang-en">Reviews</span><span class="lang-zh hidden">社區評價</span></a>
                 <a href="#shop" class="hover:text-sky-500 transition"><span class="lang-en">Get Kit ($30 HKD)</span><span class="lang-zh hidden">訂購套裝</span></a>
             </nav>
 
-            <!-- Language & Utility Controls -->
             <div class="flex items-center gap-2">
-                <!-- Language Toggle Button -->
-                <button onclick="toggleLanguage()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200/80 text-slate-700 text-xs font-semibold transition shadow-soft-sm">
+                <button onclick="toggleLanguage()" class="px-3.5 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-slate-800 text-xs font-semibold transition shadow-soft-sm">
                     <span id="lang-btn-text">繁體中文</span>
                 </button>
 
-                <!-- Soft SEN Mode Toggle Button -->
-                <button onclick="toggleSENMode()" id="sen-toggle-btn" class="px-3.5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100/80 text-amber-800 text-xs font-semibold transition flex items-center gap-1.5 shadow-soft-sm">
-                    <i data-lucide="eye" class="w-3.5 h-3.5 text-amber-600"></i>
+                <button onclick="toggleSENMode()" id="sen-toggle-btn" class="px-3.5 py-2 rounded-xl bg-amber-200/70 hover:bg-amber-300 text-amber-900 text-xs font-semibold transition flex items-center gap-1.5 shadow-soft-sm">
+                    <i data-lucide="eye" class="w-3.5 h-3.5 text-amber-700"></i>
                     <span id="sen-btn-text">SEN Mode</span>
                 </button>
                 
-                <!-- Arcade Portal Launch Button -->
                 <button id="btn-toggle-portal" onclick="togglePortal()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-semibold transition shadow-soft-sm flex items-center gap-2 smooth-hover">
                     <i data-lucide="gamepad-2" class="w-4 h-4"></i>
                     <span id="lbl-toggle-portal">
@@ -142,10 +119,8 @@
         </div>
     </header>
 
-    <!-- MAIN STOREFRONT CONTAINER -->
     <main id="view-main-site" class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-10">
 
-        <!-- Hero Presentation Section (Matching Soft Canvas Aesthetic) -->
         <section id="about" class="relative overflow-hidden rounded-[2.5rem] bg-white p-8 lg:p-12 shadow-soft-md">
             <div class="grid lg:grid-cols-12 gap-10 items-center">
                 
@@ -155,8 +130,8 @@
                             <span class="lang-en">Out of the box, into the world</span>
                             <span class="lang-zh hidden">走出課室 • 邁向世界</span>
                         </h2>
-                        <p class="text-base font-semibold text-sky-500 mt-2">
-                            <span class="lang-en">LuminaBox 光啟盒</span>
+                        <p class="text-base font-semibold text-sky-600 mt-2">
+                            <span class="lang-en">LuminaBox — Bilingual SEN Learning Support Kit</span>
                             <span class="lang-zh hidden">LuminaBox 光啟盒 — 雙語 SEN 特殊學習需要輔助套裝</span>
                         </p>
                     </div>
@@ -172,87 +147,108 @@
                         </p>
                     </div>
 
-                    <!-- Soft Key Feature Badges (Styled similar to Reference Image) -->
                     <div class="grid sm:grid-cols-3 gap-3 pt-2">
-                        <div class="p-3.5 bg-sky-50/80 rounded-2xl flex items-center gap-3">
+                        <div class="p-3.5 bg-sky-50/80 rounded-2xl flex items-center gap-3 border border-sky-100">
                             <div class="w-8 h-8 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 text-sm">⭐</div>
                             <div>
                                 <h4 class="font-bold text-slate-700 text-xs">
                                     <span class="lang-en">Suitable for SEN</span>
                                     <span class="lang-zh hidden">SEN 學習友善</span>
                                 </h4>
-                                <p class="text-[10px] text-slate-500">Dyslexia & Sensory Gentle</p>
+                                <p class="text-[10px] text-slate-500">
+                                    <span class="lang-en">Dyslexia Gentle</span>
+                                    <span class="lang-zh hidden">讀寫障礙友善</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-pink-50/80 rounded-2xl flex items-center gap-3">
+                        <div class="p-3.5 bg-pink-50/80 rounded-2xl flex items-center gap-3 border border-pink-100">
                             <div class="w-8 h-8 rounded-xl bg-pink-100 flex items-center justify-center text-pink-500 text-sm">🤖</div>
                             <div>
                                 <h4 class="font-bold text-slate-700 text-xs">
                                     <span class="lang-en">AI Learning Hub</span>
                                     <span class="lang-zh hidden">AI 智能學習館</span>
                                 </h4>
-                                <p class="text-[10px] text-slate-500">Interactive Speech & Games</p>
+                                <p class="text-[10px] text-slate-500">
+                                    <span class="lang-en">Games & Codes</span>
+                                    <span class="lang-zh hidden">互動遊戲與密碼</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-amber-50/80 rounded-2xl flex items-center gap-3">
+                        <div class="p-3.5 bg-amber-50/80 rounded-2xl flex items-center gap-3 border border-amber-100">
                             <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-sm">💎</div>
                             <div>
                                 <h4 class="font-bold text-slate-700 text-xs">
                                     <span class="lang-en">1-to-1 Mentorship</span>
                                     <span class="lang-zh hidden">1對1 義工輔導</span>
                                 </h4>
-                                <p class="text-[10px] text-slate-500">Free lessons anytime</p>
+                                <p class="text-[10px] text-slate-500">
+                                    <span class="lang-en">Free lessons anytime</span>
+                                    <span class="lang-zh hidden">免費線上輔導</span>
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Call to Action Buttons -->
                     <div class="flex flex-wrap gap-3 pt-2">
                         <a href="#shop" class="px-6 py-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs shadow-soft-sm transition smooth-hover flex items-center gap-2">
                             <span class="lang-en">Get LuminaBox ($30 HKD)</span>
                             <span class="lang-zh hidden">訂購套裝 (港幣 $30)</span>
                             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                         </a>
-                        <button onclick="switchSection('lumina-portal')" class="px-6 py-3 rounded-xl bg-amber-100/80 hover:bg-amber-200/80 text-amber-900 font-semibold text-xs transition smooth-hover flex items-center gap-2">
+                        <button onclick="switchSection('lumina-portal')" class="px-6 py-3 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 font-semibold text-xs transition smooth-hover flex items-center gap-2">
                             <span class="lang-en">Explore LuminaPortal AI</span>
-                            <span class="lang-zh hidden">進入 LuminaPortal AI</span>
+                            <span class="lang-zh hidden">進入 LuminaPortal AI 遊戲館</span>
                             <i data-lucide="arrow-right" class="w-4 h-4 text-amber-700"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Right Side Interactive Presentation Card (Matching uploaded layout style) -->
                 <div class="lg:col-span-5">
-                    <div class="rounded-[2rem] bg-gradient-to-b from-sky-50 to-blue-50/40 p-6 shadow-soft-sm space-y-6">
+                    <div class="rounded-[2rem] bg-gradient-to-b from-sky-50 to-blue-50/40 p-6 shadow-soft-sm space-y-6 border border-sky-100">
                         
-                        <!-- Box Product Preview Card -->
-                        <div class="bg-gradient-to-tr from-blue-300 via-sky-300 to-indigo-200 rounded-2xl p-8 text-center text-slate-800 space-y-3 shadow-soft-sm relative overflow-hidden">
-                            <div class="w-12 h-12 bg-white/80 backdrop-blur-md rounded-2xl mx-auto flex items-center justify-center text-2xl shadow-soft-sm">🎁</div>
+                        <div class="bg-gradient-to-tr from-blue-300 via-sky-300 to-indigo-200 rounded-2xl p-4 text-center text-slate-800 space-y-3 shadow-soft-sm relative overflow-hidden">
+                            <div class="w-full h-52 rounded-xl overflow-hidden shadow-soft-sm bg-white">
+                                <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="Original LuminaBox Physical Kit" class="w-full h-full object-cover">
+                            </div>
                             <div>
                                 <h3 class="font-extrabold text-lg text-slate-800">LuminaBox 光啟盒</h3>
-                                <p class="text-[11px] text-slate-600 font-medium">Physical Learning Kit + AI Digital Portal</p>
+                                <p class="text-[11px] text-slate-600 font-medium">
+                                    <span class="lang-en">Physical Learning Kit + AI Digital Portal</span>
+                                    <span class="lang-zh hidden">實體學習套裝 + AI 數位學習平台</span>
+                                </p>
                             </div>
                             <div class="inline-block px-4 py-1.5 bg-white/90 rounded-full text-slate-800 font-bold text-xs shadow-soft-sm">
                                 HKD $30
                             </div>
                         </div>
 
-                        <!-- Concise Kit Overview Checklist -->
                         <div class="space-y-3 px-1">
-                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Concise Kit Overview</h4>
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                                <span class="lang-en">Concise Kit Overview</span>
+                                <span class="lang-zh hidden">套裝內容摘要</span>
+                            </h4>
                             
                             <div class="space-y-2.5 text-xs text-slate-600 font-medium">
                                 <div class="flex items-start gap-2.5">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                                    <span><b>4 Weekly Hands-On Activity Sheets:</b> Guided missions covering Read, Speak, Write, and Connect topics.</span>
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-500 shrink-0 mt-0.5"></i>
+                                    <span>
+                                        <span class="lang-en"><b>4 Weekly Hands-On Activity Sheets:</b> Guided missions covering Read, Speak, Write, and Connect topics.</span>
+                                        <span class="lang-zh hidden"><b>4 週主題實作工作紙：</b> 涵蓋「閱讀、口說、寫作與社區連結」引導式任務。</span>
+                                    </span>
                                 </div>
                                 <div class="flex items-start gap-2.5">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                                    <span><b>Interactive Dial Cipher Card:</b> Bridge offline activity completion to online AI rewards.</span>
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-500 shrink-0 mt-0.5"></i>
+                                    <span>
+                                        <span class="lang-en"><b>Interactive Dial Cipher Card:</b> Bridge offline activity completion to online AI rewards.</span>
+                                        <span class="lang-zh hidden"><b>解密字碼轉盤卡：</b> 連結實體學習完成度，在線上解鎖 LuminaCode 獎勵。</span>
+                                    </span>
                                 </div>
                                 <div class="flex items-start gap-2.5">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                                    <span><b>1-to-1 Volunteer Mentorship Pass:</b> Includes access to free 1-to-1 online lessons whenever needed.</span>
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-500 shrink-0 mt-0.5"></i>
+                                    <span>
+                                        <span class="lang-en"><b>1-to-1 Volunteer Mentorship Pass:</b> Includes access to free 1-to-1 online lessons whenever needed.</span>
+                                        <span class="lang-zh hidden"><b>1對1 義工導師輔導卡：</b> 免費預約由 Bridge to English 提供的線上陪伴輔導。</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -263,12 +259,79 @@
             </div>
         </section>
 
-        <!-- SDG SUSTAINABILITY SECTION (USING USER'S UPLOADED PHOTO AS IMAGE CARD) -->
+        <section id="impact-stats" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
+                    <span class="lang-en">Measured Learning Impact</span>
+                    <span class="lang-zh hidden">實測學習成效與數據</span>
+                </span>
+                <h3 class="text-2xl font-bold text-slate-800">
+                    <span class="lang-en">Empowering 1,200+ Children Across Hong Kong</span>
+                    <span class="lang-zh hidden">賦能超過 1,200 名香港學童</span>
+                </h3>
+                <p class="text-xs text-slate-500">
+                    <span class="lang-en">Our blend of tactile learning materials and supportive AI games produces tangible growth in language confidence and engagement.</span>
+                    <span class="lang-zh hidden">結合實體觸感教材與溫暖 AI 遊戲，顯著提升學童的英語自信與自主學習興趣。</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+                <div class="p-5 rounded-3xl bg-amber-50/70 border border-amber-100 text-center space-y-1.5">
+                    <div class="text-3xl font-extrabold text-amber-700">+87%</div>
+                    <div class="text-xs font-bold text-slate-800">
+                        <span class="lang-en">Reading Confidence</span>
+                        <span class="lang-zh hidden">英語閱讀自信提升</span>
+                    </div>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Reported by SEN parents after 4 weeks</span>
+                        <span class="lang-zh hidden">4週後家長問卷實測</span>
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-3xl bg-sky-50/70 border border-sky-100 text-center space-y-1.5">
+                    <div class="text-3xl font-extrabold text-sky-600">3.5x</div>
+                    <div class="text-xs font-bold text-slate-800">
+                        <span class="lang-en">Daily Practice Time</span>
+                        <span class="lang-zh hidden">每日自主練習時間</span>
+                    </div>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Increased through LuminaPortal Arcade</span>
+                        <span class="lang-zh hidden">透過 AI 遊戲館增長 3.5 倍</span>
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-3xl bg-pink-50/70 border border-pink-100 text-center space-y-1.5">
+                    <div class="text-3xl font-extrabold text-pink-600">92%</div>
+                    <div class="text-xs font-bold text-slate-800">
+                        <span class="lang-en">Vocabulary Retention</span>
+                        <span class="lang-zh hidden">詞彙記憶留存率</span>
+                    </div>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Multi-sensory tactile booklet method</span>
+                        <span class="lang-zh hidden">多感官卡片學習法</span>
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-3xl bg-purple-50/70 border border-purple-100 text-center space-y-1.5">
+                    <div class="text-3xl font-extrabold text-purple-600">200+</div>
+                    <div class="text-xs font-bold text-slate-800">
+                        <span class="lang-en">Volunteer Student Mentors</span>
+                        <span class="lang-zh hidden">大專及高中義工導師</span>
+                    </div>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Bridge to English active network</span>
+                        <span class="lang-zh hidden">Bridge to English 網絡支持</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold">
-                        UN Sustainable Development Goals
+                        <span class="lang-en">UN Sustainable Development Goals</span>
+                        <span class="lang-zh hidden">聯合國永續發展目標</span>
                     </span>
                     <h3 class="text-2xl font-bold text-slate-800 mt-2">
                         <span class="lang-en">Aligned with Global Social Impact</span>
@@ -276,47 +339,61 @@
                     </h3>
                 </div>
                 <p class="text-xs text-slate-500 max-w-md font-normal">
-                    LuminaBox directly advances Quality Education (SDG 4), Reduced Inequalities (SDG 10), and Partnerships (SDG 17) through subsidized access and student mentorship.
+                    <span class="lang-en">LuminaBox directly advances Quality Education (SDG 4), Reduced Inequalities (SDG 10), and Partnerships (SDG 17) through subsidized access and student mentorship.</span>
+                    <span class="lang-zh hidden">LuminaBox 透過資助模式與義工導師，直接推動「優質教育（SDG 4）」、「減少不平等（SDG 10）」與「多元夥伴關係（SDG 17）」。</span>
                 </p>
             </div>
 
-            <!-- Custom SDG Showcase featuring the Uploaded Kit Image -->
-            <div class="grid lg:grid-cols-12 gap-8 items-center bg-amber-50/50 rounded-3xl p-6">
-                
-                <!-- Display User Uploaded Photo -->
-                <div class="lg:col-span-5 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                    <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="LuminaBox Physical Kit SDG Display" class="w-full h-64 object-cover">
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="rounded-3xl bg-amber-50/60 p-5 space-y-3 border border-amber-100">
+                    <div class="w-full h-44 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
+                        <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="SDG 4 Quality Education" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-red-500 text-white flex items-center justify-center font-extrabold text-xs">4</div>
+                        <h4 class="font-bold text-slate-800 text-xs">SDG 4: Quality Education</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        <span class="lang-en">Inclusive multi-sensory physical worksheets paired with dyslexic-friendly fonts and adaptive speech AI.</span>
+                        <span class="lang-zh hidden">專為讀寫障礙設計的多感官工作紙，配合 AI 語音輔導，確保無障礙優質教育。</span>
+                    </p>
                 </div>
 
-                <!-- SDG Cards -->
-                <div class="lg:col-span-7 grid sm:grid-cols-3 gap-4">
-                    <div class="p-4 rounded-2xl bg-white shadow-soft-sm space-y-2">
-                        <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-xs">4</div>
-                        <h4 class="font-bold text-slate-800 text-xs">Quality Education</h4>
-                        <p class="text-[11px] text-slate-500">Inclusive multi-sensory tools for dyslexic learners.</p>
+                <div class="rounded-3xl bg-sky-50/60 p-5 space-y-3 border border-sky-100">
+                    <div class="w-full h-44 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
+                        <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="SDG 10 Reduced Inequalities" class="w-full h-full object-cover">
                     </div>
-
-                    <div class="p-4 rounded-2xl bg-white shadow-soft-sm space-y-2">
-                        <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xs">10</div>
-                        <h4 class="font-bold text-slate-800 text-xs">Reduced Inequalities</h4>
-                        <p class="text-[11px] text-slate-500">Subsidized at $30 HKD for grassroot families.</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-amber-500 text-white flex items-center justify-center font-extrabold text-xs">10</div>
+                        <h4 class="font-bold text-slate-800 text-xs">SDG 10: Reduced Inequalities</h4>
                     </div>
-
-                    <div class="p-4 rounded-2xl bg-white shadow-soft-sm space-y-2">
-                        <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">17</div>
-                        <h4 class="font-bold text-slate-800 text-xs">Partnerships</h4>
-                        <p class="text-[11px] text-slate-500">Mobilizing 200+ volunteer student mentors.</p>
-                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        <span class="lang-en">Subsidized at only $30 HKD per kit for grassroots families, eliminating financial barriers to interactive AI learning.</span>
+                        <span class="lang-zh hidden">套裝以港幣 $30 非牟利資助價提供予基層家庭，消除貧富差異造成的學習資源鴻溝。</span>
+                    </p>
                 </div>
 
+                <div class="rounded-3xl bg-pink-50/60 p-5 space-y-3 border border-pink-100">
+                    <div class="w-full h-44 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
+                        <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="SDG 17 Partnerships for the Goals" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-xs">17</div>
+                        <h4 class="font-bold text-slate-800 text-xs">SDG 17: Partnerships for Goals</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        <span class="lang-en">Mobilizing 200+ student volunteers from Bridge to English alongside local NGOs and primary school networks.</span>
+                        <span class="lang-zh hidden">凝聚 200+ 名學生義工導師，深化與本地小學及社區 NGO 合作網絡。</span>
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- COMMUNITY PARTNERS SECTION -->
         <section id="partners" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    Community Ecosystem
+                    <span class="lang-en">Community Ecosystem</span>
+                    <span class="lang-zh hidden">社區合作生態</span>
                 </span>
                 <h3 class="text-2xl font-bold text-slate-800">
                     <span class="lang-en">Our Valued Community Partners</span>
@@ -325,37 +402,49 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
-                <div class="p-5 rounded-2xl bg-slate-50/80 text-center space-y-2 flex flex-col items-center justify-center">
+                <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-lg">🎓</div>
                     <h4 class="font-bold text-slate-800 text-xs">Bridge to English</h4>
-                    <p class="text-[10px] text-slate-400">Student Charity Founder</p>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Student Charity Founder</span>
+                        <span class="lang-zh hidden">學生慈善創辦團體</span>
+                    </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-slate-50/80 text-center space-y-2 flex flex-col items-center justify-center">
+                <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-pink-100 flex items-center justify-center text-lg">🏫</div>
                     <h4 class="font-bold text-slate-800 text-xs">Primary Schools Network</h4>
-                    <p class="text-[10px] text-slate-400">15+ Primary Schools in HK</p>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">15+ Primary Schools in HK</span>
+                        <span class="lang-zh hidden">全港 15+ 所合作小學</span>
+                    </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-slate-50/80 text-center space-y-2 flex flex-col items-center justify-center">
+                <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-lg">🏛️</div>
                     <h4 class="font-bold text-slate-800 text-xs">NGO Community Hubs</h4>
-                    <p class="text-[10px] text-slate-400">Grassroots Learning Centers</p>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Grassroots Learning Centers</span>
+                        <span class="lang-zh hidden">社區基層學習中心</span>
+                    </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-slate-50/80 text-center space-y-2 flex flex-col items-center justify-center">
+                <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-lg">🌟</div>
                     <h4 class="font-bold text-slate-800 text-xs">SEN Parent Alliances</h4>
-                    <p class="text-[10px] text-slate-400">Family Support Networks</p>
+                    <p class="text-[10px] text-slate-500">
+                        <span class="lang-en">Family Support Networks</span>
+                        <span class="lang-zh hidden">SEN 家長互助聯盟</span>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- SEN ACCESSIBILITY & SUPPORT SECTION (REFINED & AESTHETIC) -->
         <section id="sen-features" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="space-y-1">
                 <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-[11px] font-semibold">
-                    Accessibility & Design
+                    <span class="lang-en">Accessibility & Design</span>
+                    <span class="lang-zh hidden">無障礙輔助設計</span>
                 </span>
                 <h3 class="text-2xl font-bold text-slate-800">
                     <span class="lang-en">Tailored Dyslexia & SEN Adaptations</span>
@@ -364,37 +453,61 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="p-5 rounded-2xl bg-amber-50/60 space-y-2">
+                <div class="p-5 rounded-2xl bg-amber-50/60 border border-amber-100 space-y-2">
                     <div class="text-xl">👁️</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Lexend Dyslexic Font</h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">Expanded letter spacing and distinct letterforms to reduce character crowding.</p>
+                    <h4 class="font-bold text-slate-800 text-xs">
+                        <span class="lang-en">Lexend Dyslexic Font</span>
+                        <span class="lang-zh hidden">Lexend 讀寫障礙友善字體</span>
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        <span class="lang-en">Expanded letter spacing and distinct letterforms to reduce character crowding.</span>
+                        <span class="lang-zh hidden">加大字距與清楚避開視覺混淆的字型設計，降低閱讀壓力。</span>
+                    </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-sky-50/60 space-y-2">
+                <div class="p-5 rounded-2xl bg-sky-50/60 border border-sky-100 space-y-2">
                     <div class="text-xl">📜</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Warm Yellow Tint Mode</h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">Soft contrast palette that eliminates glaring white screen reflections.</p>
+                    <h4 class="font-bold text-slate-800 text-xs">
+                        <span class="lang-en">Warm Yellow Tint Mode</span>
+                        <span class="lang-zh hidden">柔和淡黃護眼模式</span>
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        <span class="lang-en">Soft contrast pale yellow palette that eliminates glaring white screen reflections.</span>
+                        <span class="lang-zh hidden">採用柔和淡黃底色，有效消除刺眼白光，適合視覺敏感的學童。</span>
+                    </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-pink-50/60 space-y-2">
+                <div class="p-5 rounded-2xl bg-pink-50/60 border border-pink-100 space-y-2">
                     <div class="text-xl">🎧</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Syllable Read-Aloud</h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">Text-to-speech engine breaks down multi-syllable vocabulary effortlessly.</p>
+                    <h4 class="font-bold text-slate-800 text-xs">
+                        <span class="lang-en">Syllable Read-Aloud</span>
+                        <span class="lang-zh hidden">音節拆解朗讀引擎</span>
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        <span class="lang-en">Text-to-speech engine breaks down multi-syllable vocabulary effortlessly.</span>
+                        <span class="lang-zh hidden">語音系統提供清晰逐字與分音節發音示範，聽覺輔助學習。</span>
+                    </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-purple-50/60 space-y-2">
+                <div class="p-5 rounded-2xl bg-purple-50/60 border border-purple-100 space-y-2">
                     <div class="text-xl">🎯</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Calm Low-Distraction UI</h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">No stressful countdown timers or clutter—focus on one step at a time.</p>
+                    <h4 class="font-bold text-slate-800 text-xs">
+                        <span class="lang-en">Calm Low-Distraction UI</span>
+                        <span class="lang-zh hidden">低干擾專注介面</span>
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        <span class="lang-en">No stressful countdown timers or clutter—focus on one step at a time.</span>
+                        <span class="lang-zh hidden">無倒數計時等焦慮元素，提供漸進式解題，提升專注度。</span>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- AI SPEECH DETECTOR & HOMEWORK HELPER INTERACTIVE SECTION -->
         <section id="ai-tools" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    Smart AI Features
+                    <span class="lang-en">Smart AI Features</span>
+                    <span class="lang-zh hidden">智能 AI 輔助</span>
                 </span>
                 <h3 class="text-2xl font-bold text-slate-800">
                     <span class="lang-en">AI Speech Pronunciation & Homework Helper</span>
@@ -403,79 +516,98 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-6">
-                
-                <!-- TOOL 1: AI Speech Detector -->
-                <div class="p-6 rounded-3xl bg-sky-50/60 space-y-4 flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-sky-50/60 border border-sky-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
                             <i data-lucide="mic" class="w-5 h-5 text-sky-500"></i>
-                            <h4 class="text-sm font-bold text-slate-800">1. AI Speech Pronunciation Detector</h4>
+                            <h4 class="text-sm font-bold text-slate-800">
+                                <span class="lang-en">1. AI Speech Pronunciation Detector</span>
+                                <span class="lang-zh hidden">1. AI 英語發音評測偵測器</span>
+                            </h4>
                         </div>
                         <p class="text-xs text-slate-500 leading-relaxed">
-                            Read the target sentence aloud into your microphone. The AI will analyze your pronunciation and give visual feedback!
+                            <span class="lang-en">Read the target sentence aloud into your microphone. The AI will analyze your pronunciation and give visual feedback!</span>
+                            <span class="lang-zh hidden">請對著麥克風朗讀目標句子，AI 將即時分析發音正確度並給予水晶獎勵！</span>
                         </p>
 
                         <div class="p-4 bg-white rounded-2xl space-y-3 shadow-soft-sm">
-                            <p class="text-[10px] font-semibold text-slate-400 uppercase">Target Sentence:</p>
-                            <p id="target-speech-text" class="text-xs font-semibold text-slate-800 bg-slate-50 p-3 rounded-xl">
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase">
+                                <span class="lang-en">Target Sentence:</span>
+                                <span class="lang-zh hidden">目標句子：</span>
+                            </p>
+                            <p id="target-speech-text" class="text-xs font-semibold text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-100">
                                 "LuminaBox makes learning English fun and easy."
                             </p>
 
                             <div class="flex items-center gap-2 pt-1">
                                 <button onclick="simulateMicRecord()" id="btn-mic-test" class="px-4 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs transition shadow-soft-sm flex items-center gap-2">
                                     <i data-lucide="mic" class="w-3.5 h-3.5"></i>
-                                    <span id="mic-btn-label">Start Speaking</span>
+                                    <span id="mic-btn-label">
+                                        <span class="lang-en">Start Speaking</span>
+                                        <span class="lang-zh hidden">開始語音測驗</span>
+                                    </span>
                                 </button>
                                 <button onclick="listenTargetSentence()" class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs flex items-center gap-1.5">
                                     <i data-lucide="volume-2" class="w-3.5 h-3.5 text-sky-500"></i>
-                                    <span>Listen Standard</span>
+                                    <span>
+                                        <span class="lang-en">Listen Standard</span>
+                                        <span class="lang-zh hidden">聆聽示範發音</span>
+                                    </span>
                                 </button>
                             </div>
 
                             <div id="speech-feedback" class="hidden p-3 bg-emerald-50 text-emerald-800 text-xs rounded-xl font-medium">
-                                🎯 Pronunciation Score: 96/100! Excellent clarity! (+15 Shards 💎)
+                                🎯 <span class="lang-en">Pronunciation Score: 96/100! Excellent clarity! (+15 Shards 💎)</span>
+                                <span class="lang-zh hidden">發音得分：96/100！發音非常清晰！（獲得 +15 碎水晶 💎）</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- TOOL 2: AI Homework Helper -->
-                <div class="p-6 rounded-3xl bg-amber-50/60 space-y-4 flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-amber-50/60 border border-amber-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
                             <i data-lucide="help-circle" class="w-5 h-5 text-amber-600"></i>
-                            <h4 class="text-sm font-bold text-slate-800">2. SEN Smart Homework Helper</h4>
+                            <h4 class="text-sm font-bold text-slate-800">
+                                <span class="lang-en">2. SEN Smart Homework Helper</span>
+                                <span class="lang-zh hidden">2. SEN 智能功課解題助手</span>
+                            </h4>
                         </div>
                         <p class="text-xs text-slate-500 leading-relaxed">
-                            Stuck on an English question? Type it below for step-by-step SEN friendly explanation.
+                            <span class="lang-en">Stuck on an English question? Type it below for step-by-step SEN friendly explanation.</span>
+                            <span class="lang-zh hidden">遇到不懂的英文題目嗎？請在下方輸入，AI 將為你進行簡化拆解說明！</span>
                         </p>
 
                         <div class="p-4 bg-white rounded-2xl space-y-3 shadow-soft-sm">
-                            <label class="text-[10px] font-semibold text-slate-400 uppercase block">Ask a Question:</label>
+                            <label class="text-[10px] font-semibold text-slate-400 uppercase block">
+                                <span class="lang-en">Ask a Question:</span>
+                                <span class="lang-zh hidden">輸入問題：</span>
+                            </label>
                             <input type="text" id="hw-input" placeholder="e.g. When do I use 'has' vs 'have'?" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-sky-400">
                             
                             <div class="pt-1">
                                 <button onclick="askHomeworkHelper()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs transition shadow-soft-sm flex items-center gap-2">
                                     <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
-                                    <span>Explain Step-by-Step</span>
+                                    <span>
+                                        <span class="lang-en">Explain Step-by-Step</span>
+                                        <span class="lang-zh hidden">步驟拆解說明</span>
+                                    </span>
                                 </button>
                             </div>
 
                             <div id="hw-response" class="hidden p-3 bg-amber-50 text-slate-800 text-xs rounded-xl font-normal leading-relaxed space-y-1">
-                                <!-- AI Output injected via JS -->
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- COMMUNITY REVIEWS & REVIEWS (INCLUDES KID REVIEWS) -->
         <section id="reviews" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-[11px] font-semibold">
-                    Community Feedback
+                    <span class="lang-en">Community Feedback</span>
+                    <span class="lang-zh hidden">社區真心評價</span>
                 </span>
                 <h3 class="text-2xl font-bold text-slate-800">
                     <span class="lang-en">What Parents, Kids & Mentors Say</span>
@@ -484,42 +616,51 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Kid Feedback -->
-                <div class="p-6 rounded-3xl bg-pink-50/50 space-y-3 relative">
+                <div class="p-6 rounded-3xl bg-pink-50/50 border border-pink-100 space-y-3 relative">
                     <div class="flex justify-between items-center">
                         <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-                        <span class="px-2 py-0.5 bg-pink-200/60 text-pink-800 rounded-md text-[10px] font-bold">STUDENT REVIEW 👦</span>
+                        <span class="px-2 py-0.5 bg-pink-200/60 text-pink-800 rounded-md text-[10px] font-bold">
+                            <span class="lang-en">STUDENT REVIEW 👦</span>
+                            <span class="lang-zh hidden">學生評價 👦</span>
+                        </span>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        "I love unlocking game levels on LuminaPortal! Collecting Lumina Shards by answering English questions makes studying feel like playing games with my friends!"
+                        <span class="lang-en">"I love unlocking game levels on LuminaPortal! Collecting Lumina Shards by answering English questions makes studying feel like playing games with my friends!"</span>
+                        <span class="lang-zh hidden">「我很喜歡在 LuminaPortal 解開遊戲關卡！一邊答英文題一邊收集 Lumina 碎水晶解鎖頭像，學習就像玩遊戲一樣有趣！」</span>
                     </p>
                     <div class="text-[11px] font-bold text-pink-600">
                         — Marcus, Primary 4 Student
                     </div>
                 </div>
 
-                <!-- Parent Feedback -->
-                <div class="p-6 rounded-3xl bg-sky-50/50 space-y-3 relative">
+                <div class="p-6 rounded-3xl bg-sky-50/50 border border-sky-100 space-y-3 relative">
                     <div class="flex justify-between items-center">
                         <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-                        <span class="px-2 py-0.5 bg-sky-200/60 text-sky-800 rounded-md text-[10px] font-bold">PARENT REVIEW 👩</span>
+                        <span class="px-2 py-0.5 bg-sky-200/60 text-sky-800 rounded-md text-[10px] font-bold">
+                            <span class="lang-en">PARENT REVIEW 👩</span>
+                            <span class="lang-zh hidden">家長評價 👩</span>
+                        </span>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        "My son has dyslexia and used to fear English books. LuminaBox's friendly format and soft contrast mode made him eager to read every single day!"
+                        <span class="lang-en">"My son has dyslexia and used to fear English books. LuminaBox's friendly format and soft contrast mode made him eager to read every single day!"</span>
+                        <span class="lang-zh hidden">「我兒子有讀寫障礙，以前很害怕英文書。LuminaBox 的柔和黃色底色與讀寫友善字體，讓他現在每天都主動想打開卡片閱讀！」</span>
                     </p>
                     <div class="text-[11px] font-bold text-sky-600">
                         — Mrs. Chan, Parent (Sham Shui Po)
                     </div>
                 </div>
 
-                <!-- Mentor Feedback -->
-                <div class="p-6 rounded-3xl bg-amber-50/50 space-y-3 relative">
+                <div class="p-6 rounded-3xl bg-amber-50/50 border border-amber-100 space-y-3 relative">
                     <div class="flex justify-between items-center">
                         <span class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</span>
-                        <span class="px-2 py-0.5 bg-amber-200/60 text-amber-800 rounded-md text-[10px] font-bold">MENTOR REVIEW 🤝</span>
+                        <span class="px-2 py-0.5 bg-amber-200/60 text-amber-800 rounded-md text-[10px] font-bold">
+                            <span class="lang-en">MENTOR REVIEW 🤝</span>
+                            <span class="lang-zh hidden">導師評價 🤝</span>
+                        </span>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        "Entering booklet cipher codes into LuminaPortal gives my students so much pride. The AI mini-games keep them genuinely motivated!"
+                        <span class="lang-en">"Entering booklet cipher codes into LuminaPortal gives my students so much pride. The AI mini-games keep them genuinely motivated!"</span>
+                        <span class="lang-zh hidden">「學童把實體卡片上的轉盤 LuminaCode 輸入平台時非常有成就感！AI 互動練習讓輔導過程變得非常活潑輕鬆。」</span>
                     </p>
                     <div class="text-[11px] font-bold text-amber-700">
                         — Volunteer Mentor, Bridge to English
@@ -528,7 +669,6 @@
             </div>
         </section>
 
-        <!-- SHOP & ORDERING SECTION -->
         <section id="shop" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-slate-100 gap-2">
                 <div>
@@ -536,42 +676,66 @@
                         <span class="lang-en">Order LuminaBox Kit</span>
                         <span class="lang-zh hidden">訂購 LuminaBox 光啟盒</span>
                     </h3>
-                    <p class="text-xs text-slate-400 font-normal">Subsidized community edition ($30 HKD)</p>
+                    <p class="text-xs text-slate-400 font-normal">
+                        <span class="lang-en">Subsidized community edition ($30 HKD)</span>
+                        <span class="lang-zh hidden">社區資助專案價（港幣 $30）</span>
+                    </p>
                 </div>
                 <div class="text-2xl font-bold text-slate-800">HKD $30</div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-3xl bg-sky-50/50 space-y-4 flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-sky-50/50 border border-sky-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <span class="px-2 py-0.5 rounded-md bg-sky-200/80 text-sky-800 font-semibold text-[10px]">P1–P3</span>
-                        <h4 class="font-bold text-slate-800 text-sm">Foundation Kit ($30 HKD)</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">Phonics cards, visual vocabulary, and simple sentence scrambles.</p>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">Foundation Kit ($30 HKD)</span>
+                            <span class="lang-zh hidden">初階基礎套裝 ($30 HKD)</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Phonics cards, visual vocabulary, and simple sentence scrambles.</span>
+                            <span class="lang-zh hidden">包含自然拼讀卡、圖像化視覺詞彙與基礎重組句卡。</span>
+                        </p>
                     </div>
                     <button onclick="addToCart('P1-P3 Foundation Kit')" class="w-full py-2.5 bg-sky-400 hover:bg-sky-500 text-white text-xs font-semibold rounded-xl transition shadow-soft-sm">
-                        Order Foundation Kit
+                        <span class="lang-en">Order Foundation Kit</span>
+                        <span class="lang-zh hidden">訂購初階套裝</span>
                     </button>
                 </div>
 
-                <div class="p-6 rounded-3xl bg-amber-50/50 space-y-4 flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-amber-50/50 border border-amber-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <span class="px-2 py-0.5 rounded-md bg-amber-200/80 text-amber-800 font-semibold text-[10px]">P4–P6</span>
-                        <h4 class="font-bold text-slate-800 text-sm">Discovery Kit ($30 HKD)</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">Community missions, grammar doctor exercises, and story writing puzzles.</p>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">Discovery Kit ($30 HKD)</span>
+                            <span class="lang-zh hidden">高階探索套裝 ($30 HKD)</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Community missions, grammar doctor exercises, and story writing puzzles.</span>
+                            <span class="lang-zh hidden">包含社區探索任務、文法小醫生與創意故事解密。</span>
+                        </p>
                     </div>
                     <button onclick="addToCart('P4-P6 Discovery Kit')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-xs font-semibold rounded-xl transition shadow-soft-sm">
-                        Order Discovery Kit
+                        <span class="lang-en">Order Discovery Kit</span>
+                        <span class="lang-zh hidden">訂購高階套裝</span>
                     </button>
                 </div>
 
-                <div class="p-6 rounded-3xl bg-pink-50/50 space-y-4 flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-pink-50/50 border border-pink-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <span class="px-2 py-0.5 rounded-md bg-pink-200/80 text-pink-800 font-semibold text-[10px]">GIFT / SPONSOR</span>
-                        <h4 class="font-bold text-slate-800 text-sm">Sponsor a Kit ($30 HKD)</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">Gifts 1 complete kit directly to a low-income family or SEN student.</p>
+                        <h4 class="font-bold text-slate-800 text-sm">
+                            <span class="lang-en">Sponsor a Kit ($30 HKD)</span>
+                            <span class="lang-zh hidden">贊助愛心套裝 ($30 HKD)</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Gifts 1 complete kit directly to a low-income family or SEN student.</span>
+                            <span class="lang-zh hidden">直接為一名基層家庭學童或 SEN 學童贊助完整套裝。</span>
+                        </p>
                     </div>
                     <button onclick="addToCart('Sponsorship Kit Gift')" class="w-full py-2.5 bg-pink-400 hover:bg-pink-500 text-white text-xs font-semibold rounded-xl transition shadow-soft-sm">
-                        Sponsor 1 Kit
+                        <span class="lang-en">Sponsor 1 Kit</span>
+                        <span class="lang-zh hidden">即刻贊助 1 套</span>
                     </button>
                 </div>
             </div>
@@ -580,50 +744,135 @@
 
     </main>
 
-    <!-- SECTION 2: LUMINA PORTAL (4 FULLY PLAYABLE REFRESHING GAMES) -->
     <main id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
 
-        <!-- Portal Banner -->
         <div class="bg-white rounded-[2.5rem] p-6 sm:p-8 text-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 shadow-soft-md">
             <div class="space-y-1 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-sky-50 rounded-full text-xs font-semibold text-sky-700">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-sky-50 rounded-full text-xs font-semibold text-sky-700 border border-sky-100">
                     <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i>
                     <span>LuminaPortal AI Arcade</span>
                 </div>
                 <h2 class="text-2xl font-bold tracking-tight text-slate-800">
-                    Playable AI Arcade Games 🎮
+                    <span class="lang-en">Playable AI Arcade & Avatar Rewards 🎮</span>
+                    <span class="lang-zh hidden">AI 互動遊戲館 & 角色解鎖 🎮</span>
                 </h2>
                 <p class="text-xs text-slate-500">
-                    Questions automatically refresh & advance upon submission! Earn Lumina Shards to level up!
+                    <span class="lang-en">Solve practice questions or redeem booklet LuminaCodes to collect Lumina Shards!</span>
+                    <span class="lang-zh hidden">回答練習題或兌換實體卡片 LuminaCode，即可累積 Lumina 水晶解鎖夥伴頭像！</span>
                 </p>
             </div>
 
-            <div class="flex items-center gap-3 bg-amber-50 px-5 py-3 rounded-2xl text-slate-800">
-                <div class="w-10 h-10 rounded-xl bg-amber-200/70 flex items-center justify-center text-xl">💎</div>
+            <div class="flex items-center gap-3 bg-amber-50 border border-amber-200/60 px-5 py-3 rounded-2xl text-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-amber-200/80 flex items-center justify-center text-xl shadow-soft-sm">💎</div>
                 <div>
-                    <span class="text-[10px] font-semibold text-slate-400 block uppercase">Lumina Shards</span>
+                    <span class="text-[10px] font-semibold text-slate-400 block uppercase">
+                        <span class="lang-en">Lumina Shards</span>
+                        <span class="lang-zh hidden">Lumina 碎水晶</span>
+                    </span>
                     <span id="shard-count" class="text-2xl font-bold text-slate-800">120</span>
                 </div>
             </div>
         </div>
 
-        <!-- 4 PLAYABLE GAMES CONTAINER -->
+        <section class="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 rounded-[2.5rem] p-6 text-white shadow-soft-md">
+            <div class="max-w-xl space-y-3">
+                <div class="flex items-center gap-2 text-xs font-bold bg-white/20 w-fit px-3 py-1 rounded-full backdrop-blur-sm">
+                    <i data-lucide="key" class="w-3.5 h-3.5"></i>
+                    <span class="lang-en">Physical Booklet Dial Cipher</span>
+                    <span class="lang-zh hidden">實體卡片轉盤 LuminaCode 兌換</span>
+                </div>
+                <h3 class="text-xl font-bold">
+                    <span class="lang-en">Redeem LuminaCode from Booklet</span>
+                    <span class="lang-zh hidden">輸入轉盤密碼 兌換 50 水晶 💎</span>
+                </h3>
+                <p class="text-xs text-white/80">
+                    <span class="lang-en">Turn your LuminaBox card dial to find your unique 4-digit LuminaCode (Try typing: <b>LUMINA2026</b>)</span>
+                    <span class="lang-zh hidden">轉動 LuminaBox 實體卡片轉盤，即可取得 4 位數密碼（測試請輸入：<b>LUMINA2026</b>）</span>
+                </p>
+
+                <div class="flex gap-2 pt-1">
+                    <input type="text" id="code-input" placeholder="Enter LuminaCode..." class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-800 bg-white border-none focus:outline-none focus:ring-2 focus:ring-amber-300 uppercase flex-grow">
+                    <button onclick="redeemLuminaCode()" class="px-5 py-2.5 bg-amber-300 hover:bg-amber-400 text-slate-900 font-bold text-xs rounded-xl transition shadow-soft-sm">
+                        <span class="lang-en">Redeem Code</span>
+                        <span class="lang-zh hidden">立即兌換</span>
+                    </button>
+                </div>
+                <div id="code-feedback" class="text-xs font-semibold min-h-[1.2rem]"></div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-4">
+            <div class="border-b border-slate-100 pb-3 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-800">
+                        <span class="lang-en">Unlockable Lumina Companions</span>
+                        <span class="lang-zh hidden">Lumina 專屬角色頭像館</span>
+                    </h3>
+                    <p class="text-xs text-slate-400">
+                        <span class="lang-en">Spend 100 Shards to unlock rare avatars!</span>
+                        <span class="lang-zh hidden">消耗 100 碎水晶即可解鎖稀有專屬角色頭像！</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="p-4 rounded-2xl bg-sky-50 border border-sky-100 text-center space-y-2 relative">
+                    <span class="absolute top-2 right-2 px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[9px] font-bold rounded-full">UNLOCKED</span>
+                    <div class="w-16 h-16 mx-auto rounded-full bg-sky-200 flex items-center justify-center text-3xl shadow-soft-sm">🐱</div>
+                    <h4 class="font-bold text-slate-800 text-xs">Sparky Cat</h4>
+                    <p class="text-[10px] text-slate-400">Starter Companion</p>
+                </div>
+
+                <div id="avatar-card-owl" class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center space-y-2 relative">
+                    <span id="badge-owl" class="absolute top-2 right-2 px-2 py-0.5 bg-amber-100 text-amber-800 text-[9px] font-bold rounded-full">100 💎</span>
+                    <div class="w-16 h-16 mx-auto rounded-full bg-amber-100 flex items-center justify-center text-3xl shadow-soft-sm">🦉</div>
+                    <h4 class="font-bold text-slate-800 text-xs">Professor Owl</h4>
+                    <button id="btn-unlock-owl" onclick="unlockAvatar('owl', 100)" class="px-3 py-1 bg-amber-300 hover:bg-amber-400 text-slate-900 font-bold text-[10px] rounded-lg transition shadow-soft-sm w-full">
+                        Unlock (100 💎)
+                    </button>
+                </div>
+
+                <div id="avatar-card-dragon" class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center space-y-2 relative">
+                    <span id="badge-dragon" class="absolute top-2 right-2 px-2 py-0.5 bg-pink-100 text-pink-800 text-[9px] font-bold rounded-full">150 💎</span>
+                    <div class="w-16 h-16 mx-auto rounded-full bg-pink-100 flex items-center justify-center text-3xl shadow-soft-sm">🐉</div>
+                    <h4 class="font-bold text-slate-800 text-xs">Lumina Dragon</h4>
+                    <button id="btn-unlock-dragon" onclick="unlockAvatar('dragon', 150)" class="px-3 py-1 bg-pink-300 hover:bg-pink-400 text-slate-900 font-bold text-[10px] rounded-lg transition shadow-soft-sm w-full">
+                        Unlock (150 💎)
+                    </button>
+                </div>
+
+                <div id="avatar-card-robot" class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center space-y-2 relative">
+                    <span id="badge-robot" class="absolute top-2 right-2 px-2 py-0.5 bg-purple-100 text-purple-800 text-[9px] font-bold rounded-full">200 💎</span>
+                    <div class="w-16 h-16 mx-auto rounded-full bg-purple-100 flex items-center justify-center text-3xl shadow-soft-sm">🤖</div>
+                    <h4 class="font-bold text-slate-800 text-xs">Cyber Bot</h4>
+                    <button id="btn-unlock-robot" onclick="unlockAvatar('robot', 200)" class="px-3 py-1 bg-purple-300 hover:bg-purple-400 text-slate-900 font-bold text-[10px] rounded-lg transition shadow-soft-sm w-full">
+                        Unlock (200 💎)
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <section id="ai-arcade" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="border-b border-slate-100 pb-3">
-                <h3 class="text-xl font-bold text-slate-800">Choose Your Learning Game</h3>
+                <h3 class="text-xl font-bold text-slate-800">
+                    <span class="lang-en">Choose Your AI Practice Game</span>
+                    <span class="lang-zh hidden">選擇你的 AI 練習遊戲</span>
+                </h3>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
 
-                <!-- GAME 1: Word Scramble -->
-                <div class="p-6 bg-sky-50/50 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div class="p-6 bg-sky-50/50 border border-sky-100 rounded-3xl space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-sky-200 text-sky-800 font-bold text-[10px]">GAME 1: WORD SCRAMBLE</span>
                             <span id="scramble-progress" class="text-xs font-semibold text-sky-600">Question 1/3</span>
                         </div>
                         
-                        <h4 class="font-bold text-slate-800 text-xs">Unscramble the Target Word!</h4>
+                        <h4 class="font-bold text-slate-800 text-xs">
+                            <span class="lang-en">Unscramble the Target Word!</span>
+                            <span class="lang-zh hidden">重組英文字母！</span>
+                        </h4>
                         <p id="scramble-hint" class="text-xs text-slate-500">Hint: Loading...</p>
                         
                         <div class="p-4 bg-white rounded-2xl text-center shadow-soft-sm">
@@ -638,61 +887,64 @@
                     <div id="scramble-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- GAME 2: Grammar Doctor -->
-                <div class="p-6 bg-amber-50/50 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div class="p-6 bg-amber-50/50 border border-amber-100 rounded-3xl space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-800 font-bold text-[10px]">GAME 2: GRAMMAR DOCTOR</span>
                             <span id="grammar-progress" class="text-xs font-semibold text-amber-700">Question 1/3</span>
                         </div>
 
-                        <h4 class="font-bold text-slate-800 text-xs">Fix the Sentence Grammar!</h4>
+                        <h4 class="font-bold text-slate-800 text-xs">
+                            <span class="lang-en">Fix the Sentence Grammar!</span>
+                            <span class="lang-zh hidden">修復句中的文法錯誤！</span>
+                        </h4>
                         <div id="grammar-q-text" class="p-3 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
                             Loading...
                         </div>
 
                         <div id="grammar-options" class="grid grid-cols-2 gap-2 text-xs">
-                            <!-- Options injected dynamically -->
                         </div>
                     </div>
                     <div id="grammar-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- GAME 3: Vocabulary Matcher -->
-                <div class="p-6 bg-pink-50/50 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div class="p-6 bg-pink-50/50 border border-pink-100 rounded-3xl space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-pink-200 text-pink-800 font-bold text-[10px]">GAME 3: VOCAB MATCHER</span>
                             <span id="vocab-progress" class="text-xs font-semibold text-pink-600">Question 1/3</span>
                         </div>
 
-                        <h4 class="font-bold text-slate-800 text-xs">Match Definition with Correct Word!</h4>
+                        <h4 class="font-bold text-slate-800 text-xs">
+                            <span class="lang-en">Match Definition with Correct Word!</span>
+                            <span class="lang-zh hidden">選擇對應的正確單字！</span>
+                        </h4>
                         <div id="vocab-def" class="p-3 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
                             Loading...
                         </div>
 
                         <div id="vocab-options" class="grid grid-cols-2 gap-2 text-xs">
-                            <!-- Options injected dynamically -->
                         </div>
                     </div>
                     <div id="vocab-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- GAME 4: Sentence Builder -->
-                <div class="p-6 bg-purple-50/50 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div class="p-6 bg-purple-50/50 border border-purple-100 rounded-3xl space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-purple-200 text-purple-800 font-bold text-[10px]">GAME 4: SENTENCE BUILDER</span>
                             <span id="builder-progress" class="text-xs font-semibold text-purple-700">Question 1/3</span>
                         </div>
 
-                        <h4 class="font-bold text-slate-800 text-xs">Complete Missing Word!</h4>
+                        <h4 class="font-bold text-slate-800 text-xs">
+                            <span class="lang-en">Complete Missing Word!</span>
+                            <span class="lang-zh hidden">填入最適當的單字！</span>
+                        </h4>
                         <div id="builder-q-text" class="p-3 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
                             Loading...
                         </div>
 
                         <div id="builder-options" class="grid grid-cols-2 gap-2 text-xs">
-                            <!-- Options injected dynamically -->
                         </div>
                     </div>
                     <div id="builder-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
@@ -703,21 +955,19 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center text-xs text-slate-400 space-y-1 mt-12">
+    <footer class="py-8 text-center text-xs text-slate-500 space-y-1 mt-12 border-t border-amber-200/50">
         <p><b>LuminaBox 光啟盒</b> • Bridge to English Partnership</p>
         <p>Out of the box, into the world • Subsidized Edition ($30 HKD)</p>
     </footer>
 
-    <!-- Interactive Logic Script -->
     <script>
         lucide.createIcons();
 
         let currentLang = 'en';
         let senModeActive = false;
         let luminaShards = 120;
+        let redeemedCodes = new Set();
 
-        // BILINGUAL TOGGLE SYSTEM
         function toggleLanguage() {
             currentLang = (currentLang === 'en') ? 'zh' : 'en';
             const enElems = document.querySelectorAll('.lang-en');
@@ -735,7 +985,6 @@
             }
         }
 
-        // Soft SEN Mode Toggle
         function toggleSENMode() {
             senModeActive = !senModeActive;
             const body = document.getElementById('app-body');
@@ -772,7 +1021,46 @@
             switchSection(isPortalVisible ? 'main-site' : 'lumina-portal');
         }
 
-        // SIMULATED AI SPEECH DETECTOR
+        function redeemLuminaCode() {
+            const codeInput = document.getElementById('code-input').value.trim().toUpperCase();
+            const feedback = document.getElementById('code-feedback');
+
+            if (codeInput === 'LUMINA2026') {
+                if (redeemedCodes.has('LUMINA2026')) {
+                    feedback.className = "text-xs font-semibold text-amber-200";
+                    feedback.innerText = (currentLang === 'en') ? "⚠️ LuminaCode already redeemed!" : "⚠️ 此 LuminaCode 已經兌換過囉！";
+                } else {
+                    redeemedCodes.add('LUMINA2026');
+                    addShards(50);
+                    feedback.className = "text-xs font-semibold text-emerald-200";
+                    feedback.innerText = (currentLang === 'en') ? "✨ Valid LuminaCode! +50 Lumina Shards unlocked! 💎" : "✨ 驗證成功！獲得 +50 碎水晶獎勵！💎";
+                }
+            } else {
+                feedback.className = "text-xs font-semibold text-rose-200";
+                feedback.innerText = (currentLang === 'en') ? "❌ Invalid LuminaCode! Try typing LUMINA2026" : "❌ 密碼錯誤！可測試輸入 LUMINA2026";
+            }
+        }
+
+        function unlockAvatar(avatarId, cost) {
+            if (luminaShards >= cost) {
+                luminaShards -= cost;
+                document.getElementById('shard-count').innerText = luminaShards;
+                
+                const card = document.getElementById(`avatar-card-${avatarId}`);
+                const badge = document.getElementById(`badge-${avatarId}`);
+                const btn = document.getElementById(`btn-unlock-${avatarId}`);
+
+                card.className = "p-4 rounded-2xl bg-emerald-50 border border-emerald-100 text-center space-y-2 relative";
+                badge.className = "absolute top-2 right-2 px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[9px] font-bold rounded-full";
+                badge.innerText = "UNLOCKED";
+                btn.className = "px-3 py-1 bg-emerald-200 text-emerald-900 font-bold text-[10px] rounded-lg cursor-default w-full";
+                btn.innerText = "Active Companion";
+                btn.disabled = true;
+            } else {
+                alert((currentLang === 'en') ? `You need ${cost} Lumina Shards! Play games or redeem codes to earn more!` : `需要 ${cost} 碎水晶才可解鎖！請多玩遊戲或兌換轉盤密碼！`);
+            }
+        }
+
         function simulateMicRecord() {
             const btn = document.getElementById('btn-mic-test');
             const label = document.getElementById('mic-btn-label');
@@ -798,7 +1086,6 @@
             }
         }
 
-        // SIMULATED AI HOMEWORK HELPER
         function askHomeworkHelper() {
             const resp = document.getElementById('hw-response');
             resp.classList.remove('hidden');
@@ -812,9 +1099,10 @@
                 `;
             } else {
                 resp.innerHTML = `
-                    <p class="text-sky-800 font-semibold">💡 <b>AI 步驟拆解：</b></p>
+                    <p class="text-sky-800 font-semibold">💡 <b>AI 步驟拆解說明：</b></p>
                     <p>1. 當主詞為單數（He、She、It）時使用 <b>"has"</b>。</p>
                     <p>2. 當主詞為複數（They、We、You）或 <b>"I"</b> 時使用 <b>"have"</b>。</p>
+                    <p class="text-emerald-700 font-medium">例句：She <u>has</u> a LuminaBox kit.</p>
                 `;
             }
         }
@@ -831,11 +1119,7 @@
             setTimeout(() => { notif.classList.add('hidden'); }, 3000);
         }
 
-        // ===============================================
-        // 4 AUTO-ADVANCING ARCADE MINI-GAMES
-        // ===============================================
-
-        // GAME 1: SCRAMBLE
+        // SCRAMBLE GAME
         const scrambleQ = [
             { scrambled: "E R O H", answer: "HERO", hint: "A brave person with courage" },
             { scrambled: "K O O B", answer: "BOOK", hint: "Something you open and read" },
@@ -869,7 +1153,7 @@
             }
         }
 
-        // GAME 2: GRAMMAR DOCTOR
+        // GRAMMAR GAME
         const grammarQ = [
             { text: "She _____ to school every morning.", options: ["walks", "walking"], correct: 0 },
             { text: "They _____ playing soccer now.", options: ["is", "are"], correct: 1 },
@@ -908,7 +1192,7 @@
             });
         }
 
-        // GAME 3: VOCABULARY MATCHER
+        // VOCABULARY GAME
         const vocabQ = [
             { def: "A place where kids go to learn subjects", options: ["School", "Park"], correct: 0 },
             { def: "An animal that barks and wags its tail", options: ["Cat", "Dog"], correct: 1 },
@@ -947,7 +1231,7 @@
             });
         }
 
-        // GAME 4: SENTENCE BUILDER
+        // BUILDER GAME
         const builderQ = [
             { text: "LuminaBox helps children build _____ in English.", options: ["confidence", "fear"], correct: 0 },
             { text: "Volunteers give 1-to-1 _____ guidance.", options: ["free", "expensive"], correct: 0 },
