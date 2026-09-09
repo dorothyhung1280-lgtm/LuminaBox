@@ -43,11 +43,10 @@
             color: #334155;
             background-color: #FEF9C3;
             letter-spacing: -0.01em;
-            /* Requirement 2: Made normal mode font slightly bolder */
             font-weight: 500;
         }
 
-        /* Requirement 1: Pale yellow background for dyslexia support */
+        /* Pale yellow background for dyslexia support */
         .sen-mode {
             font-family: 'Lexend', sans-serif !important;
             letter-spacing: 0.08em !important;
@@ -100,6 +99,7 @@
 
             <nav id="nav-main-site" class="hidden xl:flex items-center gap-6 text-xs font-semibold text-slate-600">
                 <a href="#about" class="hover:text-sky-500 transition"><span class="lang-en">About Us</span><span class="lang-zh hidden">關於我們</span></a>
+                <a href="#team" class="hover:text-sky-500 transition"><span class="lang-en">Meet the Team</span><span class="lang-zh hidden">團隊簡介</span></a>
                 <a href="#impact-stats" class="hover:text-sky-500 transition"><span class="lang-en">Results & Stats</span><span class="lang-zh hidden">成效數據</span></a>
                 <a href="#sdg" class="hover:text-sky-500 transition"><span class="lang-en">SDGs Impact</span><span class="lang-zh hidden">永續目標</span></a>
                 <a href="#partners" class="hover:text-sky-500 transition"><span class="lang-en">Partners</span><span class="lang-zh hidden">合作夥伴</span></a>
@@ -269,6 +269,85 @@
             </div>
         </section>
 
+        <!-- MEET THE TEAM SECTION -->
+        <section id="team" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
+                    <span class="lang-en">Diocesan Girls' School (DGS) Team</span>
+                    <span class="lang-zh hidden">拔萃女書院 (DGS) 團隊</span>
+                </span>
+                <h3 class="text-2xl font-bold text-slate-800">
+                    <span class="lang-en">Meet Our Founders & Developers</span>
+                    <span class="lang-zh hidden">團隊成員與分工介紹</span>
+                </h3>
+                <p class="text-xs text-slate-500 font-medium">
+                    <span class="lang-en">We are a passionate team of students from Diocesan Girls' School (DGS), combining our strengths in operational logistics, community outreach, and creative design to empower SEN children across Hong Kong.</span>
+                    <span class="lang-zh hidden">我們是一群來自拔萃女書院 (DGS) 的熱血學生，結合營運物流、社區拓展與創意設計的專長，致力推動香港 SEN 兒童無障礙學習。</span>
+                </p>
+            </div>
+
+            <!-- Team Photo Container -->
+            <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-soft-sm bg-slate-100 border border-slate-200">
+                <img src="48ea0585-db1a-4ab9-a878-6141909f2deb.jpeg" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="LuminaBox DGS Team Photo" class="w-full h-auto object-cover max-h-[420px]">
+            </div>
+
+            <!-- Team Member Cards -->
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                
+                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-lg">
+                        💻
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Dorothy</h4>
+                        <p class="text-xs font-semibold text-sky-600">
+                            <span class="lang-en">Main Logistics & Website Platform</span>
+                            <span class="lang-zh hidden">主要物流營運與網站開發</span>
+                        </p>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Oversees project timelines and operational logistics; develops and maintains the official website and LuminaPortal AI platform.</span>
+                        <span class="lang-zh hidden">負責整體項目進度與營運物流管理，並一手搭建 LuminaBox 官方網站及 LuminaPortal AI 平台。</span>
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-200/80 flex items-center justify-center text-amber-800 font-extrabold text-lg">
+                        🤝
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Hayley</h4>
+                        <p class="text-xs font-semibold text-amber-700">
+                            <span class="lang-en">Community Collaborations & Pitching</span>
+                            <span class="lang-zh hidden">社區合作與外展宣傳</span>
+                        </p>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Drives community outreach, builds partnerships with local District Community Centres, and leads investor pitching presentations.</span>
+                        <span class="lang-zh hidden">主導社區對外拓展，積極對接地區社區中心，並負責專案展示與合作簡報。</span>
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-lg">
+                        🎨
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
+                        <p class="text-xs font-semibold text-pink-600">
+                            <span class="lang-en">Physical Prototype & Content Design</span>
+                            <span class="lang-zh hidden">實體原型製作與內容設計</span>
+                        </p>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Leads the tangible box design, crafts physical activity sheet prototypes, and curates SEN-friendly learning contents.</span>
+                        <span class="lang-zh hidden">統籌 LuminaBox 實體外盒與工作紙原型製作，用心研發適合 SEN 學童的多感官視覺教材。</span>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
         <section id="impact-stats" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
@@ -336,7 +415,6 @@
             </div>
         </section>
 
-        <!-- Requirement 4: SUSTAINABLE DEVELOPMENT GOALS SECTION WITH SWAPPED / CORRECTED IMAGES -->
         <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
@@ -356,7 +434,6 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-6">
-                <!-- SDG 4 Image Corrected: Swapped back to IMG_5251.png -->
                 <div class="rounded-3xl bg-amber-50/60 p-5 space-y-3 border border-amber-100 hover:shadow-soft-md transition">
                     <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
                         <img src="IMG_5251.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 4 Quality Education Photo" class="w-full h-full object-cover">
@@ -371,7 +448,6 @@
                     </p>
                 </div>
 
-                <!-- SDG 10 Image Corrected: Swapped back to IMG_5250.png -->
                 <div class="rounded-3xl bg-sky-50/60 p-5 space-y-3 border border-sky-100 hover:shadow-soft-md transition">
                     <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
                         <img src="IMG_5250.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 10 Reduced Inequalities Photo" class="w-full h-full object-cover">
@@ -386,7 +462,6 @@
                     </p>
                 </div>
 
-                <!-- SDG 17 Image: IMG_5259.png -->
                 <div class="rounded-3xl bg-pink-50/60 p-5 space-y-3 border border-pink-100 hover:shadow-soft-md transition">
                     <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
                         <img src="IMG_5259.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 17 Partnerships for Goals Photo" class="w-full h-full object-cover">
@@ -403,7 +478,6 @@
             </div>
         </section>
 
-        <!-- Requirement 5: Updated Community Partners Copy to District Community Centres -->
         <section id="partners" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
@@ -426,7 +500,6 @@
                     </p>
                 </div>
 
-                <!-- Requirement 5: Changed Primary Schools to District Community Centres -->
                 <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-pink-100 flex items-center justify-center text-lg">🏛️</div>
                     <h4 class="font-bold text-slate-800 text-xs">District Community Centres</h4>
@@ -715,25 +788,21 @@
                 <div class="bg-white/10 backdrop-blur-md p-4 rounded-3xl border border-white/20 space-y-3 w-full lg:w-auto">
                     <span class="text-[11px] font-bold text-amber-200 uppercase tracking-wider block text-center">4-Digit Dial Dials (1 to 4)</span>
                     <div class="flex justify-center items-center gap-2">
-                        <!-- Digit 1 -->
                         <div class="flex flex-col items-center">
                             <button onclick="changeDigit(1, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
                             <span id="digit-1" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">1</span>
                             <button onclick="changeDigit(1, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
                         </div>
-                        <!-- Digit 2 -->
                         <div class="flex flex-col items-center">
                             <button onclick="changeDigit(2, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
                             <span id="digit-2" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">2</span>
                             <button onclick="changeDigit(2, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
                         </div>
-                        <!-- Digit 3 -->
                         <div class="flex flex-col items-center">
                             <button onclick="changeDigit(3, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
                             <span id="digit-3" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">3</span>
                             <button onclick="changeDigit(3, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
                         </div>
-                        <!-- Digit 4 -->
                         <div class="flex flex-col items-center">
                             <button onclick="changeDigit(4, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
                             <span id="digit-4" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">4</span>
@@ -751,7 +820,7 @@
             <div id="code-feedback" class="text-xs font-semibold text-center min-h-[1.2rem] transition-all"></div>
         </section>
 
-        <!-- MOVED AI TOOLS SECTION -->
+        <!-- AI TOOLS SECTION -->
         <section id="ai-tools" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-1">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
@@ -765,7 +834,6 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-6">
-                <!-- AI SPEECH EVALUATOR -->
                 <div class="p-6 rounded-3xl bg-sky-50/60 border border-sky-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
@@ -814,7 +882,6 @@
                     </div>
                 </div>
 
-                <!-- SEN HOMEWORK HELPER -->
                 <div class="p-6 rounded-3xl bg-amber-50/60 border border-amber-100 space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
                         <div class="flex items-center gap-2">
@@ -854,7 +921,7 @@
             </div>
         </section>
 
-        <!-- Requirement 3: EXPANDED 6-LEVEL LUMINA COMPANIONS SECTION -->
+        <!-- COMPANIONS EVOLUTION SECTION -->
         <section class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <div>
@@ -871,7 +938,6 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <!-- COMPANION 1: SPARKY CAT -->
                 <div class="p-5 rounded-3xl bg-gradient-to-b from-sky-50 to-blue-50/80 border border-sky-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
                     <div id="cat-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold rounded-full">
                         LEVEL 1 UNLOCKED
@@ -893,7 +959,6 @@
                     </div>
                 </div>
 
-                <!-- COMPANION 2: PROFESSOR OWL -->
                 <div id="card-owl" class="p-5 rounded-3xl bg-gradient-to-b from-amber-50 to-yellow-50/80 border border-amber-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
                     <div id="owl-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-amber-200 text-amber-900 text-[10px] font-extrabold rounded-full">
                         LOCKED (60 💎)
@@ -915,7 +980,6 @@
                     </div>
                 </div>
 
-                <!-- COMPANION 3: LUMINA DRAGON -->
                 <div id="card-dragon" class="p-5 rounded-3xl bg-gradient-to-b from-pink-50 to-purple-50/80 border border-pink-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
                     <div id="dragon-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-pink-200 text-pink-900 text-[10px] font-extrabold rounded-full">
                         LOCKED (80 💎)
@@ -940,7 +1004,7 @@
             </div>
         </section>
 
-        <!-- ENHANCED AI PRACTICE GAMES SECTION -->
+        <!-- AI PRACTICE GAMES SECTION -->
         <section id="ai-arcade" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-3 gap-2">
                 <div>
@@ -960,7 +1024,6 @@
 
             <div class="grid md:grid-cols-2 gap-6">
 
-                <!-- GAME 1: WORD SCRAMBLE -->
                 <div class="p-6 bg-sky-50/60 border border-sky-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
@@ -986,7 +1049,6 @@
                     <div id="scramble-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- GAME 2: GRAMMAR DOCTOR -->
                 <div class="p-6 bg-amber-50/60 border border-amber-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
@@ -1008,7 +1070,6 @@
                     <div id="grammar-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- GAME 3: VOCAB MATCHER -->
                 <div class="p-6 bg-pink-50/60 border border-pink-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
@@ -1030,7 +1091,6 @@
                     <div id="vocab-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <!-- GAME 4: SENTENCE BUILDER -->
                 <div class="p-6 bg-purple-50/60 border border-purple-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
@@ -1071,7 +1131,6 @@
         let streakCount = 0;
         let redeemedCodes = new Set();
 
-        // Dial digits for booklet 4-digit code
         let dialDigits = [1, 2, 3, 4];
         const validBookletCodes = ["1234", "3214", "4321", "2413", "1423"];
 
@@ -1128,7 +1187,6 @@
             switchSection(isPortalVisible ? 'main-site' : 'lumina-portal');
         }
 
-        // 4-DIGIT DIAL CIPHER SYSTEM
         function changeDigit(index, delta) {
             let val = dialDigits[index - 1] + delta;
             if (val > 4) val = 1;
@@ -1157,7 +1215,6 @@
             }
         }
 
-        // Requirement 3: EXPANDED 6-LEVEL COMPANIONS EVOLUTION DATA STRUCTURE
         const companions = {
             cat: {
                 stage: 1,
@@ -1215,7 +1272,6 @@
                 comp.stage += 1;
                 comp.unlocked = true;
 
-                // Update UI elements
                 const badge = document.getElementById(`${id}-badge`);
                 const display = document.getElementById(`${id}-avatar-display`);
                 const title = document.getElementById(`${id}-title`);
@@ -1250,7 +1306,6 @@
             }
         }
 
-        // AI SPEECH & HOMEWORK
         function simulateMicRecord() {
             const btn = document.getElementById('btn-mic-test');
             const label = document.getElementById('mic-btn-label');
@@ -1319,11 +1374,7 @@
             setTimeout(() => { notif.classList.add('hidden'); }, 3000);
         }
 
-        // ==========================================
-        // MINI-GAMES LOGIC (10 QUESTIONS EACH)
-        // ==========================================
-
-        // 1. SCRAMBLE GAME
+        // MINI-GAMES DATA & FUNCTIONS
         const scrambleQ = [
             { scrambled: "E R O H", answer: "HERO", hint: "A brave person with courage" },
             { scrambled: "K O O B", answer: "BOOK", hint: "Something you open and read" },
@@ -1366,7 +1417,6 @@
             }
         }
 
-        // 2. GRAMMAR GAME
         const grammarQ = [
             { text: "She _____ to school every morning.", options: ["walks", "walking"], correct: 0 },
             { text: "They _____ playing soccer now.", options: ["is", "are"], correct: 1 },
@@ -1414,7 +1464,6 @@
             });
         }
 
-        // 3. VOCABULARY GAME
         const vocabQ = [
             { def: "A place where students go to learn subjects", options: ["School", "Park"], correct: 0 },
             { def: "An animal that barks and wags its tail", options: ["Cat", "Dog"], correct: 1 },
@@ -1462,7 +1511,6 @@
             });
         }
 
-        // 4. SENTENCE BUILDER GAME
         const builderQ = [
             { text: "LuminaBox helps children build _____ in English.", options: ["confidence", "fear"], correct: 0 },
             { text: "Volunteers give 1-to-1 _____ guidance.", options: ["free", "expensive"], correct: 0 },
