@@ -20,7 +20,7 @@
                     },
                     colors: {
                         pastel: {
-                            yellowBg: '#FEF9C3',
+                            yellowBg: '#FFFDD0',
                             blueBg: '#EFF6FF',
                             pinkBg: '#FDF2F8',
                             slate: '#334155'
@@ -43,14 +43,17 @@
             color: #334155;
             background-color: #FEF9C3;
             letter-spacing: -0.01em;
+            /* Requirement 2: Made normal mode font slightly bolder */
+            font-weight: 500;
         }
 
+        /* Requirement 1: Pale yellow background for dyslexia support */
         .sen-mode {
             font-family: 'Lexend', sans-serif !important;
             letter-spacing: 0.08em !important;
             word-spacing: 0.25em !important;
             line-height: 2.1 !important;
-            background-color: #FEF08A !important;
+            background-color: #FFFDD0 !important;
         }
 
         .sen-mode section, 
@@ -143,7 +146,7 @@
                         </p>
                     </div>
 
-                    <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                         <p>
                             <span class="lang-en">LuminaBox is a bilingual learning kit and digital platform designed to help children gain confidence in English while staying connected to their schools, families, and communities.</span>
                             <span class="lang-zh hidden">LuminaBox 光啟盒是一套結合實體教材與線上 AI 平台的雙語學習套裝，旨在協助兒童建立英語自信，並深化與學校、家庭及社區的連結。</span>
@@ -162,7 +165,7 @@
                                     <span class="lang-en">Suitable for SEN</span>
                                     <span class="lang-zh hidden">SEN 學習友善</span>
                                 </h4>
-                                <p class="text-[10px] text-slate-500">
+                                <p class="text-[10px] text-slate-500 font-medium">
                                     <span class="lang-en">Dyslexia Gentle</span>
                                     <span class="lang-zh hidden">讀寫障礙友善</span>
                                 </p>
@@ -175,7 +178,7 @@
                                     <span class="lang-en">AI Learning Hub</span>
                                     <span class="lang-zh hidden">AI 智能學習館</span>
                                 </h4>
-                                <p class="text-[10px] text-slate-500">
+                                <p class="text-[10px] text-slate-500 font-medium">
                                     <span class="lang-en">Games & Dial Codes</span>
                                     <span class="lang-zh hidden">遊戲與轉盤密碼</span>
                                 </p>
@@ -188,7 +191,7 @@
                                     <span class="lang-en">1-to-1 Mentorship</span>
                                     <span class="lang-zh hidden">1對1 義工輔導</span>
                                 </h4>
-                                <p class="text-[10px] text-slate-500">
+                                <p class="text-[10px] text-slate-500 font-medium">
                                     <span class="lang-en">Free lessons anytime</span>
                                     <span class="lang-zh hidden">免費線上輔導</span>
                                 </p>
@@ -276,7 +279,7 @@
                     <span class="lang-en">Empowering 1,200+ Children Across Hong Kong</span>
                     <span class="lang-zh hidden">賦能超過 1,200 名香港學童</span>
                 </h3>
-                <p class="text-xs text-slate-500">
+                <p class="text-xs text-slate-500 font-medium">
                     <span class="lang-en">Our blend of tactile learning materials and supportive AI games produces tangible growth in language confidence and engagement.</span>
                     <span class="lang-zh hidden">結合實體觸感教材與溫暖 AI 遊戲，顯著提升學童的英語自信與自主學習興趣。</span>
                 </p>
@@ -289,7 +292,7 @@
                         <span class="lang-en">Reading Confidence</span>
                         <span class="lang-zh hidden">英語閱讀自信提升</span>
                     </div>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Reported by SEN parents after 4 weeks</span>
                         <span class="lang-zh hidden">4週後家長問卷實測</span>
                     </p>
@@ -301,7 +304,7 @@
                         <span class="lang-en">Daily Practice Time</span>
                         <span class="lang-zh hidden">每日自主練習時間</span>
                     </div>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Increased through LuminaPortal Arcade</span>
                         <span class="lang-zh hidden">透過 AI 遊戲館增長 3.5 倍</span>
                     </p>
@@ -313,7 +316,7 @@
                         <span class="lang-en">Vocabulary Retention</span>
                         <span class="lang-zh hidden">詞彙記憶留存率</span>
                     </div>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Multi-sensory tactile booklet method</span>
                         <span class="lang-zh hidden">多感官卡片學習法</span>
                     </p>
@@ -325,7 +328,7 @@
                         <span class="lang-en">Volunteer Student Mentors</span>
                         <span class="lang-zh hidden">大專及高中義工導師</span>
                     </div>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Bridge to English active network</span>
                         <span class="lang-zh hidden">Bridge to English 網絡支持</span>
                     </p>
@@ -333,7 +336,7 @@
             </div>
         </section>
 
-        <!-- SUSTAINABLE DEVELOPMENT GOALS SECTION WITH CUSTOM PROVIDED IMAGES -->
+        <!-- Requirement 4: SUSTAINABLE DEVELOPMENT GOALS SECTION WITH SWAPPED / CORRECTED IMAGES -->
         <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
@@ -346,38 +349,38 @@
                         <span class="lang-zh hidden">踐行聯合國永續使命</span>
                     </h3>
                 </div>
-                <p class="text-xs text-slate-500 max-w-md font-normal">
+                <p class="text-xs text-slate-500 max-w-md font-medium">
                     <span class="lang-en">LuminaBox directly advances Quality Education (SDG 4), Reduced Inequalities (SDG 10), and Partnerships (SDG 17) through subsidized access and student mentorship.</span>
                     <span class="lang-zh hidden">LuminaBox 透過資助模式與義工導師，直接推動「優質教育（SDG 4）」、「減少不平等（SDG 10）」與「多元夥伴關係（SDG 17）」。</span>
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-6">
-                <!-- SDG 4 Image: IMG_5250.png -->
+                <!-- SDG 4 Image Corrected: Swapped back to IMG_5251.png -->
                 <div class="rounded-3xl bg-amber-50/60 p-5 space-y-3 border border-amber-100 hover:shadow-soft-md transition">
                     <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_5250.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 4 Quality Education Photo" class="w-full h-full object-cover">
+                        <img src="IMG_5251.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 4 Quality Education Photo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="w-7 h-7 rounded-lg bg-red-500 text-white flex items-center justify-center font-extrabold text-xs">4</div>
                         <h4 class="font-bold text-slate-800 text-xs">SDG 4: Quality Education</h4>
                     </div>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                    <p class="text-[11px] text-slate-600 leading-relaxed font-medium">
                         <span class="lang-en">Inclusive multi-sensory physical worksheets paired with dyslexic-friendly fonts and adaptive speech AI.</span>
                         <span class="lang-zh hidden">專為讀寫障礙設計的多感官工作紙，配合 AI 語音輔導，確保無障礙優質教育。</span>
                     </p>
                 </div>
 
-                <!-- SDG 10 Image: IMG_5251.png -->
+                <!-- SDG 10 Image Corrected: Swapped back to IMG_5250.png -->
                 <div class="rounded-3xl bg-sky-50/60 p-5 space-y-3 border border-sky-100 hover:shadow-soft-md transition">
                     <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_5251.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 10 Reduced Inequalities Photo" class="w-full h-full object-cover">
+                        <img src="IMG_5250.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 10 Reduced Inequalities Photo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="w-7 h-7 rounded-lg bg-amber-500 text-white flex items-center justify-center font-extrabold text-xs">10</div>
                         <h4 class="font-bold text-slate-800 text-xs">SDG 10: Reduced Inequalities</h4>
                     </div>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                    <p class="text-[11px] text-slate-600 leading-relaxed font-medium">
                         <span class="lang-en">Subsidized at only $30 HKD per kit for grassroots families, eliminating financial barriers to interactive AI learning.</span>
                         <span class="lang-zh hidden">套裝以港幣 $30 非牟利資助價提供予基層家庭，消除貧富差異造成的學習資源鴻溝。</span>
                     </p>
@@ -392,14 +395,15 @@
                         <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-xs">17</div>
                         <h4 class="font-bold text-slate-800 text-xs">SDG 17: Partnerships for Goals</h4>
                     </div>
-                    <p class="text-[11px] text-slate-600 leading-relaxed">
-                        <span class="lang-en">Mobilizing 200+ student volunteers from Bridge to English alongside local NGOs and primary school networks.</span>
-                        <span class="lang-zh hidden">凝聚 200+ 名學生義工導師，深化與本地小學及社區 NGO 合作網絡。</span>
+                    <p class="text-[11px] text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Mobilizing 200+ student volunteers from Bridge to English alongside local NGOs and district community centres.</span>
+                        <span class="lang-zh hidden">凝聚 200+ 名學生義工導師，深化與 District Community Centres 及社區 NGO 合作網絡。</span>
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Requirement 5: Updated Community Partners Copy to District Community Centres -->
         <section id="partners" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
@@ -408,7 +412,7 @@
                 </span>
                 <h3 class="text-2xl font-bold text-slate-800">
                     <span class="lang-en">Our Valued Community Partners</span>
-                    <span class="lang-zh hidden">攜手同行 • 合作夥伴與學校網絡</span>
+                    <span class="lang-zh hidden">攜手同行 • 合作夥伴與地區網絡</span>
                 </h3>
             </div>
 
@@ -416,25 +420,26 @@
                 <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-lg">🎓</div>
                     <h4 class="font-bold text-slate-800 text-xs">Bridge to English</h4>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Student Charity Founder</span>
                         <span class="lang-zh hidden">學生慈善創辦團體</span>
                     </p>
                 </div>
 
+                <!-- Requirement 5: Changed Primary Schools to District Community Centres -->
                 <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
-                    <div class="w-10 h-10 rounded-xl bg-pink-100 flex items-center justify-center text-lg">🏫</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Primary Schools Network</h4>
-                    <p class="text-[10px] text-slate-500">
-                        <span class="lang-en">15+ Primary Schools in HK</span>
-                        <span class="lang-zh hidden">全港 15+ 所合作小學</span>
+                    <div class="w-10 h-10 rounded-xl bg-pink-100 flex items-center justify-center text-lg">🏛️</div>
+                    <h4 class="font-bold text-slate-800 text-xs">District Community Centres</h4>
+                    <p class="text-[10px] text-slate-500 font-medium">
+                        <span class="lang-en">District Community Centres Network</span>
+                        <span class="lang-zh hidden">地區社區中心網絡</span>
                     </p>
                 </div>
 
                 <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
-                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-lg">🏛️</div>
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-lg">🏢</div>
                     <h4 class="font-bold text-slate-800 text-xs">NGO Community Hubs</h4>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Grassroots Learning Centers</span>
                         <span class="lang-zh hidden">社區基層學習中心</span>
                     </p>
@@ -443,7 +448,7 @@
                 <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-center space-y-2 flex flex-col items-center justify-center">
                     <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-lg">🌟</div>
                     <h4 class="font-bold text-slate-800 text-xs">SEN Parent Alliances</h4>
-                    <p class="text-[10px] text-slate-500">
+                    <p class="text-[10px] text-slate-500 font-medium">
                         <span class="lang-en">Family Support Networks</span>
                         <span class="lang-zh hidden">SEN 家長互助聯盟</span>
                     </p>
@@ -470,7 +475,7 @@
                         <span class="lang-en">Lexend Dyslexic Font</span>
                         <span class="lang-zh hidden">Lexend 讀寫障礙友善字體</span>
                     </h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
                         <span class="lang-en">Expanded letter spacing and distinct letterforms to reduce character crowding.</span>
                         <span class="lang-zh hidden">加大字距與清楚避開視覺混淆的字型設計，降低閱讀壓力。</span>
                     </p>
@@ -479,12 +484,12 @@
                 <div class="p-5 rounded-2xl bg-sky-50/60 border border-sky-100 space-y-2">
                     <div class="text-xl">📜</div>
                     <h4 class="font-bold text-slate-800 text-xs">
-                        <span class="lang-en">Warm Yellow Tint Mode</span>
+                        <span class="lang-en">Pale Yellow Tint Mode</span>
                         <span class="lang-zh hidden">柔和淡黃護眼模式</span>
                     </h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">
-                        <span class="lang-en">Soft contrast pale yellow palette that eliminates glaring white screen reflections.</span>
-                        <span class="lang-zh hidden">採用柔和淡黃底色，有效消除刺眼白光，適合視覺敏感的學童。</span>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        <span class="lang-en">Soft contrast pale yellow palette that eliminates glaring white screen reflections for dyslexia support.</span>
+                        <span class="lang-zh hidden">採用柔和淡黃底色，有效消除刺眼白光，最適合讀寫障礙學童。</span>
                     </p>
                 </div>
 
@@ -494,7 +499,7 @@
                         <span class="lang-en">Syllable Read-Aloud</span>
                         <span class="lang-zh hidden">音節拆解朗讀引擎</span>
                     </h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
                         <span class="lang-en">Text-to-speech engine breaks down multi-syllable vocabulary effortlessly.</span>
                         <span class="lang-zh hidden">語音系統提供清晰逐字與分音節發音示範，聽覺輔助學習。</span>
                     </p>
@@ -506,7 +511,7 @@
                         <span class="lang-en">Calm Low-Distraction UI</span>
                         <span class="lang-zh hidden">低干擾專注介面</span>
                     </h4>
-                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
                         <span class="lang-en">No stressful countdown timers or clutter—focus on one step at a time.</span>
                         <span class="lang-zh hidden">無倒數計時等焦慮元素，提供漸進式解題，提升專注度。</span>
                     </p>
@@ -535,7 +540,7 @@
                             <span class="lang-zh hidden">學生評價 👦</span>
                         </span>
                     </div>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
                         <span class="lang-en">"I love unlocking game levels on LuminaPortal! Entering the 4-digit codes from my MC booklet and unlocking evolving Lumina Companions makes studying so cool!"</span>
                         <span class="lang-zh hidden">「我很喜歡在 LuminaPortal 解開遊戲關卡！把實體選擇題的 4 位數轉盤密碼輸入進去，解鎖進化型的 Lumina 角色，超有成就感！」</span>
                     </p>
@@ -552,9 +557,9 @@
                             <span class="lang-zh hidden">家長評價 👩</span>
                         </span>
                     </div>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        <span class="lang-en">"My son has dyslexia and used to fear English books. LuminaBox's friendly format and soft contrast mode made him eager to read every single day!"</span>
-                        <span class="lang-zh hidden">「我兒子有讀寫障礙，以前很害怕英文書。LuminaBox 的柔和黃色底色與讀寫友善字體，讓他現在每天都主動想打開卡片閱讀！」</span>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">"My son has dyslexia and used to fear English books. LuminaBox's friendly format and soft contrast pale yellow mode made him eager to read every single day!"</span>
+                        <span class="lang-zh hidden">「我兒子有讀寫障礙，以前很害怕英文書。LuminaBox 的柔和淡黃底色與讀寫友善字體，讓他現在每天都主動想打開卡片閱讀！」</span>
                     </p>
                     <div class="text-[11px] font-bold text-sky-600">
                         — Mrs. Chan, Parent (Sham Shui Po)
@@ -569,7 +574,7 @@
                             <span class="lang-zh hidden">導師評價 🤝</span>
                         </span>
                     </div>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
                         <span class="lang-en">"Entering booklet cipher codes into LuminaPortal gives my students so much pride. The AI mini-games keep them genuinely motivated!"</span>
                         <span class="lang-zh hidden">「學童把實體卡片上的轉盤 LuminaCode 輸入平台時非常有成就感！AI 互動練習讓輔導過程變得非常活潑輕鬆。」</span>
                     </p>
@@ -587,7 +592,7 @@
                         <span class="lang-en">Order LuminaBox Kit</span>
                         <span class="lang-zh hidden">訂購 LuminaBox 光啟盒</span>
                     </h3>
-                    <p class="text-xs text-slate-400 font-normal">
+                    <p class="text-xs text-slate-400 font-medium">
                         <span class="lang-en">Subsidized community edition ($30 HKD)</span>
                         <span class="lang-zh hidden">社區資助專案價（港幣 $30）</span>
                     </p>
@@ -603,7 +608,7 @@
                             <span class="lang-en">Foundation Kit ($30 HKD)</span>
                             <span class="lang-zh hidden">初階基礎套裝 ($30 HKD)</span>
                         </h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
                             <span class="lang-en">Phonics cards, visual vocabulary, and simple sentence scrambles with MC 4-digit LuminaCodes.</span>
                             <span class="lang-zh hidden">包含自然拼讀卡、圖像化視覺詞彙與 4 位數轉盤密碼工作紙。</span>
                         </p>
@@ -621,7 +626,7 @@
                             <span class="lang-en">Discovery Kit ($30 HKD)</span>
                             <span class="lang-zh hidden">高階探索套裝 ($30 HKD)</span>
                         </h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
                             <span class="lang-en">Community missions, grammar doctor exercises, and story writing puzzles.</span>
                             <span class="lang-zh hidden">包含社區探索任務、文法小醫生與創意故事解密。</span>
                         </p>
@@ -639,7 +644,7 @@
                             <span class="lang-en">Sponsor a Kit ($30 HKD)</span>
                             <span class="lang-zh hidden">贊助愛心套裝 ($30 HKD)</span>
                         </h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
                             <span class="lang-en">Gifts 1 complete kit directly to a low-income family or SEN student.</span>
                             <span class="lang-zh hidden">直接為一名基層家庭學童或 SEN 學童贊助完整套裝。</span>
                         </p>
@@ -655,7 +660,7 @@
 
     </main>
 
-    <!-- LUMINA PORTAL AI PLATFORM (CONTAINS MOVED AI TOOLS, CIPHER DIAL, EVOLVING AVATARS & 10+ EXPANDED GAMES) -->
+    <!-- LUMINA PORTAL AI PLATFORM -->
     <main id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
 
         <!-- HEADER BANNER & SHARD COUNTER -->
@@ -666,10 +671,10 @@
                     <span>LuminaPortal AI Arcade & Platform</span>
                 </div>
                 <h2 class="text-2xl font-bold tracking-tight text-slate-800">
-                    <span class="lang-en">Playable AI Arcade & Multi-Stage Companions 🎮</span>
-                    <span class="lang-zh hidden">AI 互動遊戲館 & 多階段進化角色頭像 🎮</span>
+                    <span class="lang-en">Playable AI Arcade & Multi-Level Companions 🎮</span>
+                    <span class="lang-zh hidden">AI 互動遊戲館 & 多階進化角色夥伴 🎮</span>
                 </h2>
-                <p class="text-xs text-slate-500">
+                <p class="text-xs text-slate-500 font-medium">
                     <span class="lang-en">Solve practice questions or redeem physical 4-digit LuminaCodes (1-4) from your booklet!</span>
                     <span class="lang-zh hidden">回答練習題或輸入實體工作紙 MC 題的 4 位數（1-4）轉盤密碼，累積 Lumina 水晶！</span>
                 </p>
@@ -700,7 +705,7 @@
                         <span class="lang-en">Enter Booklet MC LuminaCode (+50 💎)</span>
                         <span class="lang-zh hidden">輸入工作紙選擇題密碼 兌換 50 水晶 💎</span>
                     </h3>
-                    <p class="text-xs text-white/80 leading-relaxed">
+                    <p class="text-xs text-white/80 leading-relaxed font-medium">
                         <span class="lang-en">Answer the 4 Multiple Choice questions in your physical booklet. Each option selected (1, 2, 3, or 4) forms a 4-digit code! <br><b>Valid Booklet Codes:</b> <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1234</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">3214</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">4321</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">2413</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1423</code></span>
                         <span class="lang-zh hidden">回答實體工作紙中的 4 題選擇題，每題選項（1, 2, 3, 4）組合成 4 位數密碼！<br><b>可用實體解密密碼：</b> <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1234</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">3214</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">4321</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">2413</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1423</code></span>
                     </p>
@@ -746,7 +751,7 @@
             <div id="code-feedback" class="text-xs font-semibold text-center min-h-[1.2rem] transition-all"></div>
         </section>
 
-        <!-- MOVED AI TOOLS SECTION (SPEECH EVALUATOR & HOMEWORK HELPER) -->
+        <!-- MOVED AI TOOLS SECTION -->
         <section id="ai-tools" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-1">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
@@ -770,7 +775,7 @@
                                 <span class="lang-zh hidden">1. AI 英語發音評測與糾錯器</span>
                             </h4>
                         </div>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
                             <span class="lang-en">Read the target sentence aloud into your microphone. The AI will analyze your speech and award Lumina Shards!</span>
                             <span class="lang-zh hidden">對著麥克風朗讀目標句子，AI 即時評估發音清晰度並發放碎水晶獎勵！</span>
                         </p>
@@ -819,7 +824,7 @@
                                 <span class="lang-zh hidden">2. SEN 智能功課解題助手</span>
                             </h4>
                         </div>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
                             <span class="lang-en">Stuck on an English question? Type it below for step-by-step SEN friendly explanation.</span>
                             <span class="lang-zh hidden">遇到不懂的英文題目嗎？在下方輸入，AI 將為你進行簡化步驟拆解！</span>
                         </p>
@@ -849,17 +854,17 @@
             </div>
         </section>
 
-        <!-- IMPRESSIVE MULTI-STAGE LUMINA COMPANIONS SECTION -->
+        <!-- Requirement 3: EXPANDED 6-LEVEL LUMINA COMPANIONS SECTION -->
         <section class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <div>
                     <h3 class="text-xl font-bold text-slate-800">
-                        <span class="lang-en">Evolving Lumina Companions 🌟</span>
-                        <span class="lang-zh hidden">多階段進化 Lumina 夥伴館 🌟</span>
+                        <span class="lang-en">Evolving Lumina Companions (Expanded 6 Progression Levels) 🌟</span>
+                        <span class="lang-zh hidden">多階進化 Lumina 夥伴館 (擴展 6 階成長等級) 🌟</span>
                     </h3>
-                    <p class="text-xs text-slate-400">
-                        <span class="lang-en">Evolve your companions through Stage 1 (Baby), Stage 2 (Ascended), and Stage 3 (Supreme)!</span>
-                        <span class="lang-zh hidden">解鎖並培養夥伴從「一階幼體」、「二階覺醒」至「三階至尊型態」！</span>
+                    <p class="text-xs text-slate-400 font-medium">
+                        <span class="lang-en">Unlock and evolve your Lumina companions across 6 distinct power levels!</span>
+                        <span class="lang-zh hidden">累積碎水晶，培育夥伴跨越全部 6 個等級型態！</span>
                     </p>
                 </div>
             </div>
@@ -869,7 +874,7 @@
                 <!-- COMPANION 1: SPARKY CAT -->
                 <div class="p-5 rounded-3xl bg-gradient-to-b from-sky-50 to-blue-50/80 border border-sky-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
                     <div id="cat-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold rounded-full">
-                        STAGE 1 ACTIVE
+                        LEVEL 1 UNLOCKED
                     </div>
 
                     <div id="cat-avatar-display" class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-sky-200 to-blue-300 flex items-center justify-center text-5xl shadow-soft-md mt-2 transition-all duration-300">
@@ -877,13 +882,13 @@
                     </div>
 
                     <div>
-                        <h4 id="cat-title" class="font-bold text-slate-800 text-sm">Sparky Kitten</h4>
-                        <p id="cat-desc" class="text-[11px] text-slate-500 font-medium">Stage 1: Energetic Language Learner</p>
+                        <h4 id="cat-title" class="font-bold text-slate-800 text-sm">Level 1: Sparky Kitten</h4>
+                        <p id="cat-desc" class="text-[11px] text-slate-500 font-medium">Stage 1: Energetic Language Pupil</p>
                     </div>
 
                     <div class="space-y-2 pt-1">
                         <button id="cat-evolve-btn" onclick="evolveCompanion('cat')" class="w-full py-2 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xs rounded-xl transition shadow-soft-sm">
-                            Evolve to Stage 2 (80 💎)
+                            Upgrade to Level 2 (50 💎)
                         </button>
                     </div>
                 </div>
@@ -891,7 +896,7 @@
                 <!-- COMPANION 2: PROFESSOR OWL -->
                 <div id="card-owl" class="p-5 rounded-3xl bg-gradient-to-b from-amber-50 to-yellow-50/80 border border-amber-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
                     <div id="owl-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-amber-200 text-amber-900 text-[10px] font-extrabold rounded-full">
-                        LOCKED (100 💎)
+                        LOCKED (60 💎)
                     </div>
 
                     <div id="owl-avatar-display" class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-amber-200 to-yellow-300 flex items-center justify-center text-5xl shadow-soft-md mt-2 transition-all duration-300 opacity-60">
@@ -905,7 +910,7 @@
 
                     <div class="space-y-2 pt-1">
                         <button id="owl-evolve-btn" onclick="evolveCompanion('owl')" class="w-full py-2 bg-amber-300 hover:bg-amber-400 text-amber-950 font-bold text-xs rounded-xl transition shadow-soft-sm">
-                            Unlock Stage 1 (100 💎)
+                            Unlock Level 1 (60 💎)
                         </button>
                     </div>
                 </div>
@@ -913,7 +918,7 @@
                 <!-- COMPANION 3: LUMINA DRAGON -->
                 <div id="card-dragon" class="p-5 rounded-3xl bg-gradient-to-b from-pink-50 to-purple-50/80 border border-pink-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
                     <div id="dragon-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-pink-200 text-pink-900 text-[10px] font-extrabold rounded-full">
-                        LOCKED (150 💎)
+                        LOCKED (80 💎)
                     </div>
 
                     <div id="dragon-avatar-display" class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-pink-200 to-purple-300 flex items-center justify-center text-5xl shadow-soft-md mt-2 transition-all duration-300 opacity-60">
@@ -927,7 +932,7 @@
 
                     <div class="space-y-2 pt-1">
                         <button id="dragon-evolve-btn" onclick="evolveCompanion('dragon')" class="w-full py-2 bg-pink-300 hover:bg-pink-400 text-pink-950 font-bold text-xs rounded-xl transition shadow-soft-sm">
-                            Unlock Stage 1 (150 💎)
+                            Unlock Level 1 (80 💎)
                         </button>
                     </div>
                 </div>
@@ -935,7 +940,7 @@
             </div>
         </section>
 
-        <!-- ENHANCED AI PRACTICE GAMES SECTION (10+ QUESTIONS PER GAME) -->
+        <!-- ENHANCED AI PRACTICE GAMES SECTION -->
         <section id="ai-arcade" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-3 gap-2">
                 <div>
@@ -943,7 +948,7 @@
                         <span class="lang-en">AI Practice Games Arcade (10+ Questions Each) 🕹️</span>
                         <span class="lang-zh hidden">AI 互動練習遊戲館（每館 10+ 題極限挑戰）🕹️</span>
                     </h3>
-                    <p class="text-xs text-slate-400">
+                    <p class="text-xs text-slate-400 font-medium">
                         <span class="lang-en">Build streaks, win Lumina Shards, and level up!</span>
                         <span class="lang-zh hidden">累積連續答對 Streak，贏取更多 Lumina 水晶！</span>
                     </p>
@@ -967,7 +972,7 @@
                             <span class="lang-en">Unscramble the English Word!</span>
                             <span class="lang-zh hidden">重組英文字母！</span>
                         </h4>
-                        <p id="scramble-hint" class="text-xs text-slate-500 italic">Hint: Loading...</p>
+                        <p id="scramble-hint" class="text-xs text-slate-500 italic font-medium">Hint: Loading...</p>
                         
                         <div class="p-4 bg-white rounded-2xl text-center shadow-soft-sm">
                             <span id="scramble-letters" class="text-2xl font-extrabold tracking-widest text-sky-600 font-mono">E R O H</span>
@@ -1052,7 +1057,7 @@
 
     </main>
 
-    <footer class="py-8 text-center text-xs text-slate-500 space-y-1 mt-12 border-t border-amber-200/50">
+    <footer class="py-8 text-center text-xs text-slate-500 space-y-1 mt-12 border-t border-amber-200/50 font-medium">
         <p><b>LuminaBox 光啟盒</b> • Bridge to English Partnership</p>
         <p>Out of the box, into the world • Subsidized Edition ($30 HKD)</p>
     </footer>
@@ -1066,7 +1071,7 @@
         let streakCount = 0;
         let redeemedCodes = new Set();
 
-        // Dial digits for booklet 4-digit code (1 to 4 each)
+        // Dial digits for booklet 4-digit code
         let dialDigits = [1, 2, 3, 4];
         const validBookletCodes = ["1234", "3214", "4321", "2413", "1423"];
 
@@ -1152,33 +1157,42 @@
             }
         }
 
-        // MULTI-STAGE COMPANION EVOLUTION SYSTEM
+        // Requirement 3: EXPANDED 6-LEVEL COMPANIONS EVOLUTION DATA STRUCTURE
         const companions = {
             cat: {
                 stage: 1,
                 unlocked: true,
                 stages: [
-                    { name: "Sparky Kitten 🐱", desc: "Stage 1: Energetic Language Learner", cost: 0 },
-                    { name: "Cyber Spark Cat ⚡🐱", desc: "Stage 2: Ascended Electro Reader", cost: 80, icon: "⚡🐱" },
-                    { name: "Supreme Astral Lion 🦁✨", desc: "Stage 3: Supreme Celestial Scholar", cost: 160, icon: "🦁" }
+                    { name: "Level 1: Sparky Kitten 🐱", desc: "Stage 1: Energetic Language Pupil", cost: 0, icon: "🐱" },
+                    { name: "Level 2: Cyber Spark Cat ⚡🐱", desc: "Stage 2: Electro Reader", cost: 50, icon: "⚡🐱" },
+                    { name: "Level 3: Astral Saber Panther 🐆✨", desc: "Stage 3: Astral Grammar Sentinel", cost: 80, icon: "🐆" },
+                    { name: "Level 4: Stellar Lion Guard 🦁🛡️", desc: "Stage 4: Champion Defender", cost: 120, icon: "🦁" },
+                    { name: "Level 5: Supreme Sun Emperor 👑🦁", desc: "Stage 5: Solar Light Overlord", cost: 180, icon: "👑🦁" },
+                    { name: "Level 6: Cosmic Apex Panther 🌌🐱", desc: "Stage 6: Ultimate Cosmic God", cost: 250, icon: "🌌🐱" }
                 ]
             },
             owl: {
                 stage: 0,
                 unlocked: false,
                 stages: [
-                    { name: "Fledgling Owl 🦉", desc: "Stage 1: Wise Words Apprentice", cost: 100, icon: "🦉" },
-                    { name: "Professor Grand Owl 🎓🦉", desc: "Stage 2: Master Grammar Scholar", cost: 120, icon: "🎓🦉" },
-                    { name: "Archmage Phoenix Owl 🦅🔥", desc: "Stage 3: Supreme Phoenix Sage", cost: 200, icon: "🦅" }
+                    { name: "Level 1: Fledgling Owl 🦉", desc: "Stage 1: Wise Words Apprentice", cost: 60, icon: "🦉" },
+                    { name: "Level 2: Scholar Owl 📖🦉", desc: "Stage 2: Bookworm Explorer", cost: 90, icon: "📖🦉" },
+                    { name: "Level 3: Professor Grand Owl 🎓🦉", desc: "Stage 3: Master Grammar Scholar", cost: 130, icon: "🎓🦉" },
+                    { name: "Level 4: Celestial Archmage Owl 🔮🦉", desc: "Stage 4: Spellbound Polyglot", cost: 170, icon: "🔮🦉" },
+                    { name: "Level 5: Archmage Phoenix Owl 🦅🔥", desc: "Stage 5: Supreme Phoenix Sage", cost: 220, icon: "🦅" },
+                    { name: "Level 6: Cosmic Wisdom Sovereign 🌌🦉", desc: "Stage 6: Omniscient Galaxy Sage", cost: 300, icon: "🌌🦉" }
                 ]
             },
             dragon: {
                 stage: 0,
                 unlocked: false,
                 stages: [
-                    { name: "Hatchling Dragon 🐲", desc: "Stage 1: Mythic Flame Pupil", cost: 150, icon: "🐲" },
-                    { name: "Flame Lumina Dragon 🐉🔥", desc: "Stage 2: Ascended Vocabulary Guardian", cost: 180, icon: "🐉" },
-                    { name: "Supreme Galaxy Dragon 🌌🐉", desc: "Stage 3: Supreme Cosmic Overlord", cost: 250, icon: "✨🐉" }
+                    { name: "Level 1: Hatchling Dragon 🐲", desc: "Stage 1: Mythic Flame Pupil", cost: 80, icon: "🐲" },
+                    { name: "Level 2: Ember Drake 🌋🐲", desc: "Stage 2: Fiery Vocabulary Scout", cost: 110, icon: "🌋🐲" },
+                    { name: "Level 3: Flame Lumina Dragon 🐉🔥", desc: "Stage 3: Vocab Guardian", cost: 150, icon: "🐉" },
+                    { name: "Level 4: Thunder Blaze Dragon ⚡🐉", desc: "Stage 4: Lightning Wordsmith", cost: 200, icon: "⚡🐉" },
+                    { name: "Level 5: Celestial Astral Dragon 🌟🐉", desc: "Stage 5: Cosmic Flame Titan", cost: 260, icon: "🌟🐉" },
+                    { name: "Level 6: Supreme Galaxy Dragon 🌌🐉", desc: "Stage 6: Universal Legend", cost: 350, icon: "✨🐉" }
                 ]
             }
         };
@@ -1188,7 +1202,7 @@
             const nextStageIndex = comp.stage;
 
             if (nextStageIndex >= comp.stages.length) {
-                alert((currentLang === 'en') ? "Companion is already at MAX Supreme Stage!" : "該夥伴已達到最高【三階至尊型態】！");
+                alert((currentLang === 'en') ? "Companion is already at MAX Level 6 Form!" : "該夥伴已達到最高【Level 6 終極型態】！");
                 return;
             }
 
@@ -1211,15 +1225,12 @@
                 display.classList.remove('opacity-60');
                 display.innerText = nextStageData.icon || display.innerText;
 
-                if (comp.stage === 1) {
-                    badge.innerText = "STAGE 1 UNLOCKED";
-                    badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold rounded-full";
-                } else if (comp.stage === 2) {
-                    badge.innerText = "STAGE 2 ASCENDED";
-                    badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-sky-200 text-sky-900 text-[10px] font-extrabold rounded-full";
-                } else if (comp.stage === 3) {
-                    badge.innerText = "STAGE 3 SUPREME MAX";
+                badge.innerText = `LEVEL ${comp.stage} UNLOCKED`;
+                if (comp.stage === 6) {
+                    badge.innerText = "LEVEL 6 MAX SUPREME";
                     badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-amber-300 text-amber-950 text-[10px] font-extrabold rounded-full animate-pulse";
+                } else {
+                    badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-sky-200 text-sky-900 text-[10px] font-extrabold rounded-full";
                 }
 
                 title.innerText = nextStageData.name;
@@ -1227,19 +1238,19 @@
 
                 if (comp.stage < comp.stages.length) {
                     const futureStage = comp.stages[comp.stage];
-                    btn.innerText = `Evolve to Stage ${comp.stage + 1} (${futureStage.cost} 💎)`;
+                    btn.innerText = `Upgrade to Level ${comp.stage + 1} (${futureStage.cost} 💎)`;
                 } else {
-                    btn.innerText = "✨ MAX SUPREME FORM ✨";
+                    btn.innerText = "✨ MAX LEVEL 6 REACHED ✨";
                     btn.disabled = true;
                     btn.className = "w-full py-2 bg-slate-300 text-slate-600 font-bold text-xs rounded-xl cursor-default";
                 }
 
             } else {
-                alert((currentLang === 'en') ? `You need ${cost} Lumina Shards! Solve practice questions or enter booklet codes to earn more!` : `需要 ${cost} 碎水晶才可進化/解鎖！請多答題或輸入轉盤密碼！`);
+                alert((currentLang === 'en') ? `You need ${cost} Lumina Shards! Solve practice questions or enter booklet codes to earn more!` : `需要 ${cost} 碎水晶才可升級/解鎖！請多答題或輸入轉盤密碼！`);
             }
         }
 
-        // MOVED AI SPEECH & HOMEWORK
+        // AI SPEECH & HOMEWORK
         function simulateMicRecord() {
             const btn = document.getElementById('btn-mic-test');
             const label = document.getElementById('mic-btn-label');
@@ -1309,10 +1320,10 @@
         }
 
         // ==========================================
-        // ENHANCED MINI-GAMES (10+ QUESTIONS EACH)
+        // MINI-GAMES LOGIC (10 QUESTIONS EACH)
         // ==========================================
 
-        // 1. SCRAMBLE GAME (10 QUESTIONS)
+        // 1. SCRAMBLE GAME
         const scrambleQ = [
             { scrambled: "E R O H", answer: "HERO", hint: "A brave person with courage" },
             { scrambled: "K O O B", answer: "BOOK", hint: "Something you open and read" },
@@ -1355,7 +1366,7 @@
             }
         }
 
-        // 2. GRAMMAR GAME (10 QUESTIONS)
+        // 2. GRAMMAR GAME
         const grammarQ = [
             { text: "She _____ to school every morning.", options: ["walks", "walking"], correct: 0 },
             { text: "They _____ playing soccer now.", options: ["is", "are"], correct: 1 },
@@ -1403,7 +1414,7 @@
             });
         }
 
-        // 3. VOCABULARY GAME (10 QUESTIONS)
+        // 3. VOCABULARY GAME
         const vocabQ = [
             { def: "A place where students go to learn subjects", options: ["School", "Park"], correct: 0 },
             { def: "An animal that barks and wags its tail", options: ["Cat", "Dog"], correct: 1 },
@@ -1451,7 +1462,7 @@
             });
         }
 
-        // 4. SENTENCE BUILDER GAME (10 QUESTIONS)
+        // 4. SENTENCE BUILDER GAME
         const builderQ = [
             { text: "LuminaBox helps children build _____ in English.", options: ["confidence", "fear"], correct: 0 },
             { text: "Volunteers give 1-to-1 _____ guidance.", options: ["free", "expensive"], correct: 0 },
