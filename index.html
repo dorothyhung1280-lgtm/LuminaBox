@@ -1,4 +1,3 @@
-Here is the complete HTML code. All interactivity, language switching, SEN accessibility modes, AI simulations, and mini-games are built directly into the file.
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -9,7 +8,7 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -21,7 +20,7 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                     },
                     colors: {
                         pastel: {
-                            yellowBg: '#FEF9C3',  /* Creamy Pale Yellow Background for Dyslexia Readability */
+                            yellowBg: '#FEF9C3',
                             blueBg: '#EFF6FF',
                             pinkBg: '#FDF2F8',
                             slate: '#334155'
@@ -31,21 +30,21 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                         'soft-sm': '0 2px 10px rgba(148, 163, 184, 0.08)',
                         'soft-md': '0 8px 24px rgba(148, 163, 184, 0.12)',
                         'soft-lg': '0 16px 36px rgba(148, 163, 184, 0.15)',
+                        'glow-amber': '0 0 20px rgba(251, 191, 36, 0.4)',
+                        'glow-sky': '0 0 20px rgba(56, 189, 248, 0.4)'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Modern Aesthetic Global Styling: Pale Warm Yellow Canvas for Minimal Visual Stress & High Dyslexia Comfort */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #334155;
-            background-color: #FEF9C3; /* Pale Yellow Background default */
+            background-color: #FEF9C3;
             letter-spacing: -0.01em;
         }
 
-        /* SEN Dyslexic Mode Overrides */
         .sen-mode {
             font-family: 'Lexend', sans-serif !important;
             letter-spacing: 0.08em !important;
@@ -65,6 +64,14 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
         }
         .smooth-hover:hover {
             transform: translateY(-2px);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.85; }
+        }
+        .animate-glow {
+            animation: pulseGlow 2s infinite ease-in-out;
         }
     </style>
 </head>
@@ -94,7 +101,6 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                 <a href="#sdg" class="hover:text-sky-500 transition"><span class="lang-en">SDGs Impact</span><span class="lang-zh hidden">永續目標</span></a>
                 <a href="#partners" class="hover:text-sky-500 transition"><span class="lang-en">Partners</span><span class="lang-zh hidden">合作夥伴</span></a>
                 <a href="#sen-features" class="hover:text-sky-500 transition"><span class="lang-en">SEN Support</span><span class="lang-zh hidden">SEN 特殊支援</span></a>
-                <a href="#ai-tools" class="hover:text-sky-500 transition"><span class="lang-en">AI Tools</span><span class="lang-zh hidden">AI 工具</span></a>
                 <a href="#reviews" class="hover:text-sky-500 transition"><span class="lang-en">Reviews</span><span class="lang-zh hidden">社區評價</span></a>
                 <a href="#shop" class="hover:text-sky-500 transition"><span class="lang-en">Get Kit ($30 HKD)</span><span class="lang-zh hidden">訂購套裝</span></a>
             </nav>
@@ -170,8 +176,8 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                                     <span class="lang-zh hidden">AI 智能學習館</span>
                                 </h4>
                                 <p class="text-[10px] text-slate-500">
-                                    <span class="lang-en">Games & Codes</span>
-                                    <span class="lang-zh hidden">互動遊戲與密碼</span>
+                                    <span class="lang-en">Games & Dial Codes</span>
+                                    <span class="lang-zh hidden">遊戲與轉盤密碼</span>
                                 </p>
                             </div>
                         </div>
@@ -240,8 +246,8 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                                 <div class="flex items-start gap-2.5">
                                     <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-500 shrink-0 mt-0.5"></i>
                                     <span>
-                                        <span class="lang-en"><b>Interactive Dial Cipher Card:</b> Bridge offline activity completion to online AI rewards.</span>
-                                        <span class="lang-zh hidden"><b>解密字碼轉盤卡：</b> 連結實體學習完成度，在線上解鎖 LuminaCode 獎勵。</span>
+                                        <span class="lang-en"><b>4-Digit Dial Cipher System:</b> Turn MC booklet answers into 4-digit codes (1-4 each digit) to unlock AI rewards.</span>
+                                        <span class="lang-zh hidden"><b>4 位數轉盤解密系統：</b> 完成實體選擇題取得 4 位數轉盤密碼（每位 1-4），解鎖線上獎勵。</span>
                                     </span>
                                 </div>
                                 <div class="flex items-start gap-2.5">
@@ -327,6 +333,7 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             </div>
         </section>
 
+        <!-- SUSTAINABLE DEVELOPMENT GOALS SECTION WITH CUSTOM PROVIDED IMAGES -->
         <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
@@ -346,9 +353,10 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             </div>
 
             <div class="grid lg:grid-cols-3 gap-6">
-                <div class="rounded-3xl bg-amber-50/60 p-5 space-y-3 border border-amber-100">
-                    <div class="w-full h-44 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="SDG 4 Quality Education" class="w-full h-full object-cover">
+                <!-- SDG 4 Image: IMG_5250.png -->
+                <div class="rounded-3xl bg-amber-50/60 p-5 space-y-3 border border-amber-100 hover:shadow-soft-md transition">
+                    <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
+                        <img src="IMG_5250.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 4 Quality Education Photo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="w-7 h-7 rounded-lg bg-red-500 text-white flex items-center justify-center font-extrabold text-xs">4</div>
@@ -360,9 +368,10 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                     </p>
                 </div>
 
-                <div class="rounded-3xl bg-sky-50/60 p-5 space-y-3 border border-sky-100">
-                    <div class="w-full h-44 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="SDG 10 Reduced Inequalities" class="w-full h-full object-cover">
+                <!-- SDG 10 Image: IMG_5251.png -->
+                <div class="rounded-3xl bg-sky-50/60 p-5 space-y-3 border border-sky-100 hover:shadow-soft-md transition">
+                    <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
+                        <img src="IMG_5251.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 10 Reduced Inequalities Photo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="w-7 h-7 rounded-lg bg-amber-500 text-white flex items-center justify-center font-extrabold text-xs">10</div>
@@ -374,9 +383,10 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                     </p>
                 </div>
 
-                <div class="rounded-3xl bg-pink-50/60 p-5 space-y-3 border border-pink-100">
-                    <div class="w-full h-44 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="SDG 17 Partnerships for the Goals" class="w-full h-full object-cover">
+                <!-- SDG 17 Image: IMG_5259.png -->
+                <div class="rounded-3xl bg-pink-50/60 p-5 space-y-3 border border-pink-100 hover:shadow-soft-md transition">
+                    <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
+                        <img src="IMG_5259.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 17 Partnerships for Goals Photo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-xs">17</div>
@@ -504,106 +514,6 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             </div>
         </section>
 
-        <section id="ai-tools" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    <span class="lang-en">Smart AI Features</span>
-                    <span class="lang-zh hidden">智能 AI 輔助</span>
-                </span>
-                <h3 class="text-2xl font-bold text-slate-800">
-                    <span class="lang-en">AI Speech Pronunciation & Homework Helper</span>
-                    <span class="lang-zh hidden">AI 發音偵測 與 功課解題助手</span>
-                </h3>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-6">
-                <div class="p-6 rounded-3xl bg-sky-50/60 border border-sky-100 space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="mic" class="w-5 h-5 text-sky-500"></i>
-                            <h4 class="text-sm font-bold text-slate-800">
-                                <span class="lang-en">1. AI Speech Pronunciation Detector</span>
-                                <span class="lang-zh hidden">1. AI 英語發音評測偵測器</span>
-                            </h4>
-                        </div>
-                        <p class="text-xs text-slate-500 leading-relaxed">
-                            <span class="lang-en">Read the target sentence aloud into your microphone. The AI will analyze your pronunciation and give visual feedback!</span>
-                            <span class="lang-zh hidden">請對著麥克風朗讀目標句子，AI 將即時分析發音正確度並給予水晶獎勵！</span>
-                        </p>
-
-                        <div class="p-4 bg-white rounded-2xl space-y-3 shadow-soft-sm">
-                            <p class="text-[10px] font-semibold text-slate-400 uppercase">
-                                <span class="lang-en">Target Sentence:</span>
-                                <span class="lang-zh hidden">目標句子：</span>
-                            </p>
-                            <p id="target-speech-text" class="text-xs font-semibold text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                                "LuminaBox makes learning English fun and easy."
-                            </p>
-
-                            <div class="flex items-center gap-2 pt-1">
-                                <button onclick="simulateMicRecord()" id="btn-mic-test" class="px-4 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs transition shadow-soft-sm flex items-center gap-2">
-                                    <i data-lucide="mic" class="w-3.5 h-3.5"></i>
-                                    <span id="mic-btn-label">
-                                        <span class="lang-en">Start Speaking</span>
-                                        <span class="lang-zh hidden">開始語音測驗</span>
-                                    </span>
-                                </button>
-                                <button onclick="listenTargetSentence()" class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs flex items-center gap-1.5">
-                                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-sky-500"></i>
-                                    <span>
-                                        <span class="lang-en">Listen Standard</span>
-                                        <span class="lang-zh hidden">聆聽示範發音</span>
-                                    </span>
-                                </button>
-                            </div>
-
-                            <div id="speech-feedback" class="hidden p-3 bg-emerald-50 text-emerald-800 text-xs rounded-xl font-medium">
-                                🎯 <span class="lang-en">Pronunciation Score: 96/100! Excellent clarity! (+15 Shards 💎)</span>
-                                <span class="lang-zh hidden">發音得分：96/100！發音非常清晰！（獲得 +15 碎水晶 💎）</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-3xl bg-amber-50/60 border border-amber-100 space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="help-circle" class="w-5 h-5 text-amber-600"></i>
-                            <h4 class="text-sm font-bold text-slate-800">
-                                <span class="lang-en">2. SEN Smart Homework Helper</span>
-                                <span class="lang-zh hidden">2. SEN 智能功課解題助手</span>
-                            </h4>
-                        </div>
-                        <p class="text-xs text-slate-500 leading-relaxed">
-                            <span class="lang-en">Stuck on an English question? Type it below for step-by-step SEN friendly explanation.</span>
-                            <span class="lang-zh hidden">遇到不懂的英文題目嗎？請在下方輸入，AI 將為你進行簡化拆解說明！</span>
-                        </p>
-
-                        <div class="p-4 bg-white rounded-2xl space-y-3 shadow-soft-sm">
-                            <label class="text-[10px] font-semibold text-slate-400 uppercase block">
-                                <span class="lang-en">Ask a Question:</span>
-                                <span class="lang-zh hidden">輸入問題：</span>
-                            </label>
-                            <input type="text" id="hw-input" placeholder="e.g. When do I use 'has' vs 'have'?" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-sky-400">
-                            
-                            <div class="pt-1">
-                                <button onclick="askHomeworkHelper()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs transition shadow-soft-sm flex items-center gap-2">
-                                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
-                                    <span>
-                                        <span class="lang-en">Explain Step-by-Step</span>
-                                        <span class="lang-zh hidden">步驟拆解說明</span>
-                                    </span>
-                                </button>
-                            </div>
-
-                            <div id="hw-response" class="hidden p-3 bg-amber-50 text-slate-800 text-xs rounded-xl font-normal leading-relaxed space-y-1">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="reviews" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-[11px] font-semibold">
@@ -626,8 +536,8 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                         </span>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        <span class="lang-en">"I love unlocking game levels on LuminaPortal! Collecting Lumina Shards by answering English questions makes studying feel like playing games with my friends!"</span>
-                        <span class="lang-zh hidden">「我很喜歡在 LuminaPortal 解開遊戲關卡！一邊答英文題一邊收集 Lumina 碎水晶解鎖頭像，學習就像玩遊戲一樣有趣！」</span>
+                        <span class="lang-en">"I love unlocking game levels on LuminaPortal! Entering the 4-digit codes from my MC booklet and unlocking evolving Lumina Companions makes studying so cool!"</span>
+                        <span class="lang-zh hidden">「我很喜歡在 LuminaPortal 解開遊戲關卡！把實體選擇題的 4 位數轉盤密碼輸入進去，解鎖進化型的 Lumina 角色，超有成就感！」</span>
                     </p>
                     <div class="text-[11px] font-bold text-pink-600">
                         — Marcus, Primary 4 Student
@@ -694,8 +604,8 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                             <span class="lang-zh hidden">初階基礎套裝 ($30 HKD)</span>
                         </h4>
                         <p class="text-xs text-slate-500 leading-relaxed">
-                            <span class="lang-en">Phonics cards, visual vocabulary, and simple sentence scrambles.</span>
-                            <span class="lang-zh hidden">包含自然拼讀卡、圖像化視覺詞彙與基礎重組句卡。</span>
+                            <span class="lang-en">Phonics cards, visual vocabulary, and simple sentence scrambles with MC 4-digit LuminaCodes.</span>
+                            <span class="lang-zh hidden">包含自然拼讀卡、圖像化視覺詞彙與 4 位數轉盤密碼工作紙。</span>
                         </p>
                     </div>
                     <button onclick="addToCart('P1-P3 Foundation Kit')" class="w-full py-2.5 bg-sky-400 hover:bg-sky-500 text-white text-xs font-semibold rounded-xl transition shadow-soft-sm">
@@ -745,161 +655,345 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
 
     </main>
 
+    <!-- LUMINA PORTAL AI PLATFORM (CONTAINS MOVED AI TOOLS, CIPHER DIAL, EVOLVING AVATARS & 10+ EXPANDED GAMES) -->
     <main id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
 
+        <!-- HEADER BANNER & SHARD COUNTER -->
         <div class="bg-white rounded-[2.5rem] p-6 sm:p-8 text-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 shadow-soft-md">
             <div class="space-y-1 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-sky-50 rounded-full text-xs font-semibold text-sky-700 border border-sky-100">
                     <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i>
-                    <span>LuminaPortal AI Arcade</span>
+                    <span>LuminaPortal AI Arcade & Platform</span>
                 </div>
                 <h2 class="text-2xl font-bold tracking-tight text-slate-800">
-                    <span class="lang-en">Playable AI Arcade & Avatar Rewards 🎮</span>
-                    <span class="lang-zh hidden">AI 互動遊戲館 & 角色解鎖 🎮</span>
+                    <span class="lang-en">Playable AI Arcade & Multi-Stage Companions 🎮</span>
+                    <span class="lang-zh hidden">AI 互動遊戲館 & 多階段進化角色頭像 🎮</span>
                 </h2>
                 <p class="text-xs text-slate-500">
-                    <span class="lang-en">Solve practice questions or redeem booklet LuminaCodes to collect Lumina Shards!</span>
-                    <span class="lang-zh hidden">回答練習題或兌換實體卡片 LuminaCode，即可累積 Lumina 水晶解鎖夥伴頭像！</span>
+                    <span class="lang-en">Solve practice questions or redeem physical 4-digit LuminaCodes (1-4) from your booklet!</span>
+                    <span class="lang-zh hidden">回答練習題或輸入實體工作紙 MC 題的 4 位數（1-4）轉盤密碼，累積 Lumina 水晶！</span>
                 </p>
             </div>
 
-            <div class="flex items-center gap-3 bg-amber-50 border border-amber-200/60 px-5 py-3 rounded-2xl text-slate-800">
-                <div class="w-10 h-10 rounded-xl bg-amber-200/80 flex items-center justify-center text-xl shadow-soft-sm">💎</div>
+            <div class="flex items-center gap-4 bg-amber-50 border border-amber-200/80 px-6 py-3.5 rounded-2xl text-slate-800 shadow-soft-sm">
+                <div class="w-11 h-11 rounded-2xl bg-amber-200/90 flex items-center justify-center text-2xl shadow-soft-sm animate-glow">💎</div>
                 <div>
-                    <span class="text-[10px] font-semibold text-slate-400 block uppercase">
+                    <span class="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">
                         <span class="lang-en">Lumina Shards</span>
                         <span class="lang-zh hidden">Lumina 碎水晶</span>
                     </span>
-                    <span id="shard-count" class="text-2xl font-bold text-slate-800">120</span>
+                    <span id="shard-count" class="text-3xl font-extrabold text-amber-900">120</span>
                 </div>
             </div>
         </div>
 
-        <section class="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 rounded-[2.5rem] p-6 text-white shadow-soft-md">
-            <div class="max-w-xl space-y-3">
-                <div class="flex items-center gap-2 text-xs font-bold bg-white/20 w-fit px-3 py-1 rounded-full backdrop-blur-sm">
-                    <i data-lucide="key" class="w-3.5 h-3.5"></i>
-                    <span class="lang-en">Physical Booklet Dial Cipher</span>
-                    <span class="lang-zh hidden">實體卡片轉盤 LuminaCode 兌換</span>
+        <!-- 4-DIGIT PHYSICAL BOOKLET LUMINACODE DIAL CIPHER SECTION -->
+        <section class="bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 rounded-[2.5rem] p-6 sm:p-8 text-white shadow-soft-md space-y-6">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                <div class="max-w-xl space-y-2">
+                    <div class="flex items-center gap-2 text-xs font-bold bg-white/20 w-fit px-3 py-1 rounded-full backdrop-blur-sm">
+                        <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                        <span class="lang-en">Booklet 4-Digit Dial Cipher System</span>
+                        <span class="lang-zh hidden">實體工作紙 4 位數轉盤密碼系統</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold">
+                        <span class="lang-en">Enter Booklet MC LuminaCode (+50 💎)</span>
+                        <span class="lang-zh hidden">輸入工作紙選擇題密碼 兌換 50 水晶 💎</span>
+                    </h3>
+                    <p class="text-xs text-white/80 leading-relaxed">
+                        <span class="lang-en">Answer the 4 Multiple Choice questions in your physical booklet. Each option selected (1, 2, 3, or 4) forms a 4-digit code! <br><b>Valid Booklet Codes:</b> <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1234</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">3214</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">4321</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">2413</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1423</code></span>
+                        <span class="lang-zh hidden">回答實體工作紙中的 4 題選擇題，每題選項（1, 2, 3, 4）組合成 4 位數密碼！<br><b>可用實體解密密碼：</b> <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1234</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">3214</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">4321</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">2413</code>, <code class="bg-white/20 px-1.5 py-0.5 rounded text-amber-200 font-mono">1423</code></span>
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold">
-                    <span class="lang-en">Redeem LuminaCode from Booklet</span>
-                    <span class="lang-zh hidden">輸入轉盤密碼 兌換 50 水晶 💎</span>
-                </h3>
-                <p class="text-xs text-white/80">
-                    <span class="lang-en">Turn your LuminaBox card dial to find your unique 4-digit LuminaCode (Try typing: <b>LUMINA2026</b>)</span>
-                    <span class="lang-zh hidden">轉動 LuminaBox 實體卡片轉盤，即可取得 4 位數密碼（測試請輸入：<b>LUMINA2026</b>）</span>
-                </p>
 
-                <div class="flex gap-2 pt-1">
-                    <input type="text" id="code-input" placeholder="Enter LuminaCode..." class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-800 bg-white border-none focus:outline-none focus:ring-2 focus:ring-amber-300 uppercase flex-grow">
-                    <button onclick="redeemLuminaCode()" class="px-5 py-2.5 bg-amber-300 hover:bg-amber-400 text-slate-900 font-bold text-xs rounded-xl transition shadow-soft-sm">
-                        <span class="lang-en">Redeem Code</span>
-                        <span class="lang-zh hidden">立即兌換</span>
+                <!-- 4 Digit Dial Wheel Simulator UI -->
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-3xl border border-white/20 space-y-3 w-full lg:w-auto">
+                    <span class="text-[11px] font-bold text-amber-200 uppercase tracking-wider block text-center">4-Digit Dial Dials (1 to 4)</span>
+                    <div class="flex justify-center items-center gap-2">
+                        <!-- Digit 1 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="changeDigit(1, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
+                            <span id="digit-1" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">1</span>
+                            <button onclick="changeDigit(1, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
+                        </div>
+                        <!-- Digit 2 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="changeDigit(2, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
+                            <span id="digit-2" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">2</span>
+                            <button onclick="changeDigit(2, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
+                        </div>
+                        <!-- Digit 3 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="changeDigit(3, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
+                            <span id="digit-3" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">3</span>
+                            <button onclick="changeDigit(3, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
+                        </div>
+                        <!-- Digit 4 -->
+                        <div class="flex flex-col items-center">
+                            <button onclick="changeDigit(4, 1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-t-lg flex items-center justify-center text-xs">▲</button>
+                            <span id="digit-4" class="w-10 h-12 bg-white text-slate-800 font-extrabold text-xl flex items-center justify-center my-1 rounded-xl shadow-inner font-mono">4</span>
+                            <button onclick="changeDigit(4, -1)" class="w-8 h-6 bg-white/20 hover:bg-white/40 rounded-b-lg flex items-center justify-center text-xs">▼</button>
+                        </div>
+                    </div>
+
+                    <button onclick="redeemDialCode()" class="w-full py-2.5 bg-amber-300 hover:bg-amber-400 text-slate-900 font-bold text-xs rounded-xl transition shadow-soft-sm flex items-center justify-center gap-1.5">
+                        <i data-lucide="key" class="w-4 h-4"></i>
+                        <span class="lang-en">Unlock Booklet Code</span>
+                        <span class="lang-zh hidden">解鎖轉盤密碼</span>
                     </button>
                 </div>
-                <div id="code-feedback" class="text-xs font-semibold min-h-[1.2rem]"></div>
+            </div>
+            <div id="code-feedback" class="text-xs font-semibold text-center min-h-[1.2rem] transition-all"></div>
+        </section>
+
+        <!-- MOVED AI TOOLS SECTION (SPEECH EVALUATOR & HOMEWORK HELPER) -->
+        <section id="ai-tools" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-1">
+                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
+                    <span class="lang-en">Smart AI Digital Platform Tools</span>
+                    <span class="lang-zh hidden">AI 數位平台專屬工具</span>
+                </span>
+                <h3 class="text-2xl font-bold text-slate-800">
+                    <span class="lang-en">AI Speech Pronunciation & SEN Homework Helper</span>
+                    <span class="lang-zh hidden">AI 語音發音評測 與 智能功課解題助手</span>
+                </h3>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-6">
+                <!-- AI SPEECH EVALUATOR -->
+                <div class="p-6 rounded-3xl bg-sky-50/60 border border-sky-100 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="mic" class="w-5 h-5 text-sky-500"></i>
+                            <h4 class="text-sm font-bold text-slate-800">
+                                <span class="lang-en">1. AI Speech Pronunciation Evaluator</span>
+                                <span class="lang-zh hidden">1. AI 英語發音評測與糾錯器</span>
+                            </h4>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Read the target sentence aloud into your microphone. The AI will analyze your speech and award Lumina Shards!</span>
+                            <span class="lang-zh hidden">對著麥克風朗讀目標句子，AI 即時評估發音清晰度並發放碎水晶獎勵！</span>
+                        </p>
+
+                        <div class="p-4 bg-white rounded-2xl space-y-3 shadow-soft-sm">
+                            <p class="text-[10px] font-semibold text-slate-400 uppercase">
+                                <span class="lang-en">Target Sentence:</span>
+                                <span class="lang-zh hidden">目標練習句子：</span>
+                            </p>
+                            <p id="target-speech-text" class="text-xs font-semibold text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                "LuminaBox makes learning English fun and easy."
+                            </p>
+
+                            <div class="flex items-center gap-2 pt-1">
+                                <button onclick="simulateMicRecord()" id="btn-mic-test" class="px-4 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs transition shadow-soft-sm flex items-center gap-2">
+                                    <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                                    <span id="mic-btn-label">
+                                        <span class="lang-en">Start Speaking</span>
+                                        <span class="lang-zh hidden">開始語音測驗</span>
+                                    </span>
+                                </button>
+                                <button onclick="listenTargetSentence()" class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs flex items-center gap-1.5">
+                                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-sky-500"></i>
+                                    <span>
+                                        <span class="lang-en">Listen Standard</span>
+                                        <span class="lang-zh hidden">示範發音</span>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div id="speech-feedback" class="hidden p-3 bg-emerald-50 text-emerald-800 text-xs rounded-xl font-medium">
+                                🎯 <span class="lang-en">Pronunciation Score: 96/100! Excellent clarity! (+15 Shards 💎)</span>
+                                <span class="lang-zh hidden">發音得分：96/100！發音非常清晰！（獲得 +15 碎水晶 💎）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEN HOMEWORK HELPER -->
+                <div class="p-6 rounded-3xl bg-amber-50/60 border border-amber-100 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="help-circle" class="w-5 h-5 text-amber-600"></i>
+                            <h4 class="text-sm font-bold text-slate-800">
+                                <span class="lang-en">2. SEN Smart Homework Helper</span>
+                                <span class="lang-zh hidden">2. SEN 智能功課解題助手</span>
+                            </h4>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <span class="lang-en">Stuck on an English question? Type it below for step-by-step SEN friendly explanation.</span>
+                            <span class="lang-zh hidden">遇到不懂的英文題目嗎？在下方輸入，AI 將為你進行簡化步驟拆解！</span>
+                        </p>
+
+                        <div class="p-4 bg-white rounded-2xl space-y-3 shadow-soft-sm">
+                            <label class="text-[10px] font-semibold text-slate-400 uppercase block">
+                                <span class="lang-en">Ask a Question:</span>
+                                <span class="lang-zh hidden">輸入問題：</span>
+                            </label>
+                            <input type="text" id="hw-input" placeholder="e.g. When do I use 'has' vs 'have'?" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-sky-400">
+                            
+                            <div class="pt-1">
+                                <button onclick="askHomeworkHelper()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs transition shadow-soft-sm flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+                                    <span>
+                                        <span class="lang-en">Explain Step-by-Step</span>
+                                        <span class="lang-zh hidden">步驟拆解說明</span>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div id="hw-response" class="hidden p-3 bg-amber-50 text-slate-800 text-xs rounded-xl font-normal leading-relaxed space-y-1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-4">
-            <div class="border-b border-slate-100 pb-3 flex justify-between items-center">
+        <!-- IMPRESSIVE MULTI-STAGE LUMINA COMPANIONS SECTION -->
+        <section class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <div>
-                    <h3 class="text-lg font-bold text-slate-800">
-                        <span class="lang-en">Unlockable Lumina Companions</span>
-                        <span class="lang-zh hidden">Lumina 專屬角色頭像館</span>
+                    <h3 class="text-xl font-bold text-slate-800">
+                        <span class="lang-en">Evolving Lumina Companions 🌟</span>
+                        <span class="lang-zh hidden">多階段進化 Lumina 夥伴館 🌟</span>
                     </h3>
                     <p class="text-xs text-slate-400">
-                        <span class="lang-en">Spend 100 Shards to unlock rare avatars!</span>
-                        <span class="lang-zh hidden">消耗 100 碎水晶即可解鎖稀有專屬角色頭像！</span>
+                        <span class="lang-en">Evolve your companions through Stage 1 (Baby), Stage 2 (Ascended), and Stage 3 (Supreme)!</span>
+                        <span class="lang-zh hidden">解鎖並培養夥伴從「一階幼體」、「二階覺醒」至「三階至尊型態」！</span>
                     </p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div class="p-4 rounded-2xl bg-sky-50 border border-sky-100 text-center space-y-2 relative">
-                    <span class="absolute top-2 right-2 px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[9px] font-bold rounded-full">UNLOCKED</span>
-                    <div class="w-16 h-16 mx-auto rounded-full bg-sky-200 flex items-center justify-center text-3xl shadow-soft-sm">🐱</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Sparky Cat</h4>
-                    <p class="text-[10px] text-slate-400">Starter Companion</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- COMPANION 1: SPARKY CAT -->
+                <div class="p-5 rounded-3xl bg-gradient-to-b from-sky-50 to-blue-50/80 border border-sky-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
+                    <div id="cat-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold rounded-full">
+                        STAGE 1 ACTIVE
+                    </div>
+
+                    <div id="cat-avatar-display" class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-sky-200 to-blue-300 flex items-center justify-center text-5xl shadow-soft-md mt-2 transition-all duration-300">
+                        🐱
+                    </div>
+
+                    <div>
+                        <h4 id="cat-title" class="font-bold text-slate-800 text-sm">Sparky Kitten</h4>
+                        <p id="cat-desc" class="text-[11px] text-slate-500 font-medium">Stage 1: Energetic Language Learner</p>
+                    </div>
+
+                    <div class="space-y-2 pt-1">
+                        <button id="cat-evolve-btn" onclick="evolveCompanion('cat')" class="w-full py-2 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xs rounded-xl transition shadow-soft-sm">
+                            Evolve to Stage 2 (80 💎)
+                        </button>
+                    </div>
                 </div>
 
-                <div id="avatar-card-owl" class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center space-y-2 relative">
-                    <span id="badge-owl" class="absolute top-2 right-2 px-2 py-0.5 bg-amber-100 text-amber-800 text-[9px] font-bold rounded-full">100 💎</span>
-                    <div class="w-16 h-16 mx-auto rounded-full bg-amber-100 flex items-center justify-center text-3xl shadow-soft-sm">🦉</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Professor Owl</h4>
-                    <button id="btn-unlock-owl" onclick="unlockAvatar('owl', 100)" class="px-3 py-1 bg-amber-300 hover:bg-amber-400 text-slate-900 font-bold text-[10px] rounded-lg transition shadow-soft-sm w-full">
-                        Unlock (100 💎)
-                    </button>
+                <!-- COMPANION 2: PROFESSOR OWL -->
+                <div id="card-owl" class="p-5 rounded-3xl bg-gradient-to-b from-amber-50 to-yellow-50/80 border border-amber-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
+                    <div id="owl-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-amber-200 text-amber-900 text-[10px] font-extrabold rounded-full">
+                        LOCKED (100 💎)
+                    </div>
+
+                    <div id="owl-avatar-display" class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-amber-200 to-yellow-300 flex items-center justify-center text-5xl shadow-soft-md mt-2 transition-all duration-300 opacity-60">
+                        🦉
+                    </div>
+
+                    <div>
+                        <h4 id="owl-title" class="font-bold text-slate-800 text-sm">Fledgling Owl</h4>
+                        <p id="owl-desc" class="text-[11px] text-slate-500 font-medium">Stage 1: Wise Words Apprentice</p>
+                    </div>
+
+                    <div class="space-y-2 pt-1">
+                        <button id="owl-evolve-btn" onclick="evolveCompanion('owl')" class="w-full py-2 bg-amber-300 hover:bg-amber-400 text-amber-950 font-bold text-xs rounded-xl transition shadow-soft-sm">
+                            Unlock Stage 1 (100 💎)
+                        </button>
+                    </div>
                 </div>
 
-                <div id="avatar-card-dragon" class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center space-y-2 relative">
-                    <span id="badge-dragon" class="absolute top-2 right-2 px-2 py-0.5 bg-pink-100 text-pink-800 text-[9px] font-bold rounded-full">150 💎</span>
-                    <div class="w-16 h-16 mx-auto rounded-full bg-pink-100 flex items-center justify-center text-3xl shadow-soft-sm">🐉</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Lumina Dragon</h4>
-                    <button id="btn-unlock-dragon" onclick="unlockAvatar('dragon', 150)" class="px-3 py-1 bg-pink-300 hover:bg-pink-400 text-slate-900 font-bold text-[10px] rounded-lg transition shadow-soft-sm w-full">
-                        Unlock (150 💎)
-                    </button>
+                <!-- COMPANION 3: LUMINA DRAGON -->
+                <div id="card-dragon" class="p-5 rounded-3xl bg-gradient-to-b from-pink-50 to-purple-50/80 border border-pink-100 space-y-4 text-center relative overflow-hidden shadow-soft-sm">
+                    <div id="dragon-badge" class="absolute top-3 right-3 px-2.5 py-1 bg-pink-200 text-pink-900 text-[10px] font-extrabold rounded-full">
+                        LOCKED (150 💎)
+                    </div>
+
+                    <div id="dragon-avatar-display" class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-pink-200 to-purple-300 flex items-center justify-center text-5xl shadow-soft-md mt-2 transition-all duration-300 opacity-60">
+                        🐲
+                    </div>
+
+                    <div>
+                        <h4 id="dragon-title" class="font-bold text-slate-800 text-sm">Hatchling Dragon</h4>
+                        <p id="dragon-desc" class="text-[11px] text-slate-500 font-medium">Stage 1: Mythic Flame Pupil</p>
+                    </div>
+
+                    <div class="space-y-2 pt-1">
+                        <button id="dragon-evolve-btn" onclick="evolveCompanion('dragon')" class="w-full py-2 bg-pink-300 hover:bg-pink-400 text-pink-950 font-bold text-xs rounded-xl transition shadow-soft-sm">
+                            Unlock Stage 1 (150 💎)
+                        </button>
+                    </div>
                 </div>
 
-                <div id="avatar-card-robot" class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center space-y-2 relative">
-                    <span id="badge-robot" class="absolute top-2 right-2 px-2 py-0.5 bg-purple-100 text-purple-800 text-[9px] font-bold rounded-full">200 💎</span>
-                    <div class="w-16 h-16 mx-auto rounded-full bg-purple-100 flex items-center justify-center text-3xl shadow-soft-sm">🤖</div>
-                    <h4 class="font-bold text-slate-800 text-xs">Cyber Bot</h4>
-                    <button id="btn-unlock-robot" onclick="unlockAvatar('robot', 200)" class="px-3 py-1 bg-purple-300 hover:bg-purple-400 text-slate-900 font-bold text-[10px] rounded-lg transition shadow-soft-sm w-full">
-                        Unlock (200 💎)
-                    </button>
-                </div>
             </div>
         </section>
 
+        <!-- ENHANCED AI PRACTICE GAMES SECTION (10+ QUESTIONS PER GAME) -->
         <section id="ai-arcade" class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
-            <div class="border-b border-slate-100 pb-3">
-                <h3 class="text-xl font-bold text-slate-800">
-                    <span class="lang-en">Choose Your AI Practice Game</span>
-                    <span class="lang-zh hidden">選擇你的 AI 練習遊戲</span>
-                </h3>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-3 gap-2">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-800">
+                        <span class="lang-en">AI Practice Games Arcade (10+ Questions Each) 🕹️</span>
+                        <span class="lang-zh hidden">AI 互動練習遊戲館（每館 10+ 題極限挑戰）🕹️</span>
+                    </h3>
+                    <p class="text-xs text-slate-400">
+                        <span class="lang-en">Build streaks, win Lumina Shards, and level up!</span>
+                        <span class="lang-zh hidden">累積連續答對 Streak，贏取更多 Lumina 水晶！</span>
+                    </p>
+                </div>
+                <div id="streak-counter" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-orange-400 text-white rounded-xl text-xs font-extrabold shadow-soft-sm">
+                    🔥 Streak: 0
+                </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
 
-                <div class="p-6 bg-sky-50/50 border border-sky-100 rounded-3xl space-y-4 flex flex-col justify-between">
+                <!-- GAME 1: WORD SCRAMBLE -->
+                <div class="p-6 bg-sky-50/60 border border-sky-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-sky-200 text-sky-800 font-bold text-[10px]">GAME 1: WORD SCRAMBLE</span>
-                            <span id="scramble-progress" class="text-xs font-semibold text-sky-600">Question 1/3</span>
+                            <span id="scramble-progress" class="text-xs font-semibold text-sky-600">Question 1/10</span>
                         </div>
                         
                         <h4 class="font-bold text-slate-800 text-xs">
-                            <span class="lang-en">Unscramble the Target Word!</span>
+                            <span class="lang-en">Unscramble the English Word!</span>
                             <span class="lang-zh hidden">重組英文字母！</span>
                         </h4>
-                        <p id="scramble-hint" class="text-xs text-slate-500">Hint: Loading...</p>
+                        <p id="scramble-hint" class="text-xs text-slate-500 italic">Hint: Loading...</p>
                         
                         <div class="p-4 bg-white rounded-2xl text-center shadow-soft-sm">
-                            <span id="scramble-letters" class="text-2xl font-extrabold tracking-widest text-sky-500">E R O H</span>
+                            <span id="scramble-letters" class="text-2xl font-extrabold tracking-widest text-sky-600 font-mono">E R O H</span>
                         </div>
 
                         <div class="flex gap-2">
-                            <input type="text" id="scramble-input" placeholder="Type word..." class="flex-grow px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold uppercase text-slate-800 focus:outline-none focus:border-sky-400">
-                            <button onclick="checkScramble()" class="px-4 py-2 bg-sky-400 hover:bg-sky-500 text-white text-xs font-semibold rounded-xl transition shadow-soft-sm">Submit</button>
+                            <input type="text" id="scramble-input" placeholder="Type word..." class="flex-grow px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold uppercase text-slate-800 focus:outline-none focus:border-sky-400">
+                            <button onclick="checkScramble()" class="px-4 py-2 bg-sky-400 hover:bg-sky-500 text-white text-xs font-bold rounded-xl transition shadow-soft-sm">Submit</button>
                         </div>
                     </div>
                     <div id="scramble-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <div class="p-6 bg-amber-50/50 border border-amber-100 rounded-3xl space-y-4 flex flex-col justify-between">
+                <!-- GAME 2: GRAMMAR DOCTOR -->
+                <div class="p-6 bg-amber-50/60 border border-amber-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-800 font-bold text-[10px]">GAME 2: GRAMMAR DOCTOR</span>
-                            <span id="grammar-progress" class="text-xs font-semibold text-amber-700">Question 1/3</span>
+                            <span id="grammar-progress" class="text-xs font-semibold text-amber-700">Question 1/10</span>
                         </div>
 
                         <h4 class="font-bold text-slate-800 text-xs">
-                            <span class="lang-en">Fix the Sentence Grammar!</span>
-                            <span class="lang-zh hidden">修復句中的文法錯誤！</span>
+                            <span class="lang-en">Fix the Grammar Doctor Exercise!</span>
+                            <span class="lang-zh hidden">文法診所：選擇最正確的單字！</span>
                         </h4>
-                        <div id="grammar-q-text" class="p-3 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
+                        <div id="grammar-q-text" class="p-4 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
                             Loading...
                         </div>
 
@@ -909,18 +1003,19 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                     <div id="grammar-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <div class="p-6 bg-pink-50/50 border border-pink-100 rounded-3xl space-y-4 flex flex-col justify-between">
+                <!-- GAME 3: VOCAB MATCHER -->
+                <div class="p-6 bg-pink-50/60 border border-pink-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-pink-200 text-pink-800 font-bold text-[10px]">GAME 3: VOCAB MATCHER</span>
-                            <span id="vocab-progress" class="text-xs font-semibold text-pink-600">Question 1/3</span>
+                            <span id="vocab-progress" class="text-xs font-semibold text-pink-600">Question 1/10</span>
                         </div>
 
                         <h4 class="font-bold text-slate-800 text-xs">
-                            <span class="lang-en">Match Definition with Correct Word!</span>
-                            <span class="lang-zh hidden">選擇對應的正確單字！</span>
+                            <span class="lang-en">Match Definition with Correct Vocabulary!</span>
+                            <span class="lang-zh hidden">根據定義配對正確的詞彙！</span>
                         </h4>
-                        <div id="vocab-def" class="p-3 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
+                        <div id="vocab-def" class="p-4 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
                             Loading...
                         </div>
 
@@ -930,18 +1025,19 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
                     <div id="vocab-feedback" class="text-xs font-semibold min-h-[1.5rem]"></div>
                 </div>
 
-                <div class="p-6 bg-purple-50/50 border border-purple-100 rounded-3xl space-y-4 flex flex-col justify-between">
+                <!-- GAME 4: SENTENCE BUILDER -->
+                <div class="p-6 bg-purple-50/60 border border-purple-100 rounded-3xl space-y-4 flex flex-col justify-between hover:shadow-soft-md transition">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-md bg-purple-200 text-purple-800 font-bold text-[10px]">GAME 4: SENTENCE BUILDER</span>
-                            <span id="builder-progress" class="text-xs font-semibold text-purple-700">Question 1/3</span>
+                            <span id="builder-progress" class="text-xs font-semibold text-purple-700">Question 1/10</span>
                         </div>
 
                         <h4 class="font-bold text-slate-800 text-xs">
-                            <span class="lang-en">Complete Missing Word!</span>
-                            <span class="lang-zh hidden">填入最適當的單字！</span>
+                            <span class="lang-en">Complete the Missing Word in Sentence!</span>
+                            <span class="lang-zh hidden">補全句子缺失的關鍵詞！</span>
                         </h4>
-                        <div id="builder-q-text" class="p-3 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
+                        <div id="builder-q-text" class="p-4 bg-white rounded-2xl text-center font-semibold text-xs text-slate-800 shadow-soft-sm">
                             Loading...
                         </div>
 
@@ -967,7 +1063,12 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
         let currentLang = 'en';
         let senModeActive = false;
         let luminaShards = 120;
+        let streakCount = 0;
         let redeemedCodes = new Set();
+
+        // Dial digits for booklet 4-digit code (1 to 4 each)
+        let dialDigits = [1, 2, 3, 4];
+        const validBookletCodes = ["1234", "3214", "4321", "2413", "1423"];
 
         function toggleLanguage() {
             currentLang = (currentLang === 'en') ? 'zh' : 'en';
@@ -1022,46 +1123,123 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             switchSection(isPortalVisible ? 'main-site' : 'lumina-portal');
         }
 
-        function redeemLuminaCode() {
-            const codeInput = document.getElementById('code-input').value.trim().toUpperCase();
+        // 4-DIGIT DIAL CIPHER SYSTEM
+        function changeDigit(index, delta) {
+            let val = dialDigits[index - 1] + delta;
+            if (val > 4) val = 1;
+            if (val < 1) val = 4;
+            dialDigits[index - 1] = val;
+            document.getElementById(`digit-${index}`).innerText = val;
+        }
+
+        function redeemDialCode() {
+            const codeStr = dialDigits.join('');
             const feedback = document.getElementById('code-feedback');
 
-            if (codeInput === 'LUMINA2026') {
-                if (redeemedCodes.has('LUMINA2026')) {
-                    feedback.className = "text-xs font-semibold text-amber-200";
-                    feedback.innerText = (currentLang === 'en') ? "⚠️ LuminaCode already redeemed!" : "⚠️ 此 LuminaCode 已經兌換過囉！";
+            if (validBookletCodes.includes(codeStr)) {
+                if (redeemedCodes.has(codeStr)) {
+                    feedback.className = "text-xs font-semibold text-amber-200 mt-2";
+                    feedback.innerText = (currentLang === 'en') ? `⚠️ Booklet Code ${codeStr} has already been redeemed!` : `⚠️ 轉盤密碼 ${codeStr} 已經兌換過囉！`;
                 } else {
-                    redeemedCodes.add('LUMINA2026');
+                    redeemedCodes.add(codeStr);
                     addShards(50);
-                    feedback.className = "text-xs font-semibold text-emerald-200";
-                    feedback.innerText = (currentLang === 'en') ? "✨ Valid LuminaCode! +50 Lumina Shards unlocked! 💎" : "✨ 驗證成功！獲得 +50 碎水晶獎勵！💎";
+                    feedback.className = "text-xs font-bold text-emerald-300 mt-2";
+                    feedback.innerText = (currentLang === 'en') ? `✨ Booklet Code ${codeStr} verified! +50 Lumina Shards added! 💎` : `✨ 實體轉盤密碼 ${codeStr} 驗證成功！獲得 +50 碎水晶！💎`;
                 }
             } else {
-                feedback.className = "text-xs font-semibold text-rose-200";
-                feedback.innerText = (currentLang === 'en') ? "❌ Invalid LuminaCode! Try typing LUMINA2026" : "❌ 密碼錯誤！可測試輸入 LUMINA2026";
+                feedback.className = "text-xs font-semibold text-rose-200 mt-2";
+                feedback.innerText = (currentLang === 'en') ? `❌ Code ${codeStr} invalid! Try booklet codes: 1234, 3214, 4321, 2413` : `❌ 轉盤密碼 ${codeStr} 錯誤！請嘗試工作紙密碼：1234, 3214, 4321, 2413`;
             }
         }
 
-        function unlockAvatar(avatarId, cost) {
+        // MULTI-STAGE COMPANION EVOLUTION SYSTEM
+        const companions = {
+            cat: {
+                stage: 1,
+                unlocked: true,
+                stages: [
+                    { name: "Sparky Kitten 🐱", desc: "Stage 1: Energetic Language Learner", cost: 0 },
+                    { name: "Cyber Spark Cat ⚡🐱", desc: "Stage 2: Ascended Electro Reader", cost: 80, icon: "⚡🐱" },
+                    { name: "Supreme Astral Lion 🦁✨", desc: "Stage 3: Supreme Celestial Scholar", cost: 160, icon: "🦁" }
+                ]
+            },
+            owl: {
+                stage: 0,
+                unlocked: false,
+                stages: [
+                    { name: "Fledgling Owl 🦉", desc: "Stage 1: Wise Words Apprentice", cost: 100, icon: "🦉" },
+                    { name: "Professor Grand Owl 🎓🦉", desc: "Stage 2: Master Grammar Scholar", cost: 120, icon: "🎓🦉" },
+                    { name: "Archmage Phoenix Owl 🦅🔥", desc: "Stage 3: Supreme Phoenix Sage", cost: 200, icon: "🦅" }
+                ]
+            },
+            dragon: {
+                stage: 0,
+                unlocked: false,
+                stages: [
+                    { name: "Hatchling Dragon 🐲", desc: "Stage 1: Mythic Flame Pupil", cost: 150, icon: "🐲" },
+                    { name: "Flame Lumina Dragon 🐉🔥", desc: "Stage 2: Ascended Vocabulary Guardian", cost: 180, icon: "🐉" },
+                    { name: "Supreme Galaxy Dragon 🌌🐉", desc: "Stage 3: Supreme Cosmic Overlord", cost: 250, icon: "✨🐉" }
+                ]
+            }
+        };
+
+        function evolveCompanion(id) {
+            const comp = companions[id];
+            const nextStageIndex = comp.stage;
+
+            if (nextStageIndex >= comp.stages.length) {
+                alert((currentLang === 'en') ? "Companion is already at MAX Supreme Stage!" : "該夥伴已達到最高【三階至尊型態】！");
+                return;
+            }
+
+            const nextStageData = comp.stages[nextStageIndex];
+            const cost = nextStageData.cost;
+
             if (luminaShards >= cost) {
                 luminaShards -= cost;
                 document.getElementById('shard-count').innerText = luminaShards;
-                
-                const card = document.getElementById(`avatar-card-${avatarId}`);
-                const badge = document.getElementById(`badge-${avatarId}`);
-                const btn = document.getElementById(`btn-unlock-${avatarId}`);
+                comp.stage += 1;
+                comp.unlocked = true;
 
-                card.className = "p-4 rounded-2xl bg-emerald-50 border border-emerald-100 text-center space-y-2 relative";
-                badge.className = "absolute top-2 right-2 px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[9px] font-bold rounded-full";
-                badge.innerText = "UNLOCKED";
-                btn.className = "px-3 py-1 bg-emerald-200 text-emerald-900 font-bold text-[10px] rounded-lg cursor-default w-full";
-                btn.innerText = "Active Companion";
-                btn.disabled = true;
+                // Update UI elements
+                const badge = document.getElementById(`${id}-badge`);
+                const display = document.getElementById(`${id}-avatar-display`);
+                const title = document.getElementById(`${id}-title`);
+                const desc = document.getElementById(`${id}-desc`);
+                const btn = document.getElementById(`${id}-evolve-btn`);
+
+                display.classList.remove('opacity-60');
+                display.innerText = nextStageData.icon || display.innerText;
+
+                if (comp.stage === 1) {
+                    badge.innerText = "STAGE 1 UNLOCKED";
+                    badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold rounded-full";
+                } else if (comp.stage === 2) {
+                    badge.innerText = "STAGE 2 ASCENDED";
+                    badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-sky-200 text-sky-900 text-[10px] font-extrabold rounded-full";
+                } else if (comp.stage === 3) {
+                    badge.innerText = "STAGE 3 SUPREME MAX";
+                    badge.className = "absolute top-3 right-3 px-2.5 py-1 bg-amber-300 text-amber-950 text-[10px] font-extrabold rounded-full animate-pulse";
+                }
+
+                title.innerText = nextStageData.name;
+                desc.innerText = nextStageData.desc;
+
+                if (comp.stage < comp.stages.length) {
+                    const futureStage = comp.stages[comp.stage];
+                    btn.innerText = `Evolve to Stage ${comp.stage + 1} (${futureStage.cost} 💎)`;
+                } else {
+                    btn.innerText = "✨ MAX SUPREME FORM ✨";
+                    btn.disabled = true;
+                    btn.className = "w-full py-2 bg-slate-300 text-slate-600 font-bold text-xs rounded-xl cursor-default";
+                }
+
             } else {
-                alert((currentLang === 'en') ? `You need ${cost} Lumina Shards! Play games or redeem codes to earn more!` : `需要 ${cost} 碎水晶才可解鎖！請多玩遊戲或兌換轉盤密碼！`);
+                alert((currentLang === 'en') ? `You need ${cost} Lumina Shards! Solve practice questions or enter booklet codes to earn more!` : `需要 ${cost} 碎水晶才可進化/解鎖！請多答題或輸入轉盤密碼！`);
             }
         }
 
+        // MOVED AI SPEECH & HOMEWORK
         function simulateMicRecord() {
             const btn = document.getElementById('btn-mic-test');
             const label = document.getElementById('mic-btn-label');
@@ -1113,6 +1291,16 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             document.getElementById('shard-count').innerText = luminaShards;
         }
 
+        function incrementStreak() {
+            streakCount++;
+            document.getElementById('streak-counter').innerText = `🔥 Streak: ${streakCount}`;
+        }
+
+        function resetStreak() {
+            streakCount = 0;
+            document.getElementById('streak-counter').innerText = `🔥 Streak: 0`;
+        }
+
         function addToCart(item) {
             const notif = document.getElementById('cart-notification');
             notif.classList.remove('hidden');
@@ -1120,11 +1308,22 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             setTimeout(() => { notif.classList.add('hidden'); }, 3000);
         }
 
-        // SCRAMBLE GAME
+        // ==========================================
+        // ENHANCED MINI-GAMES (10+ QUESTIONS EACH)
+        // ==========================================
+
+        // 1. SCRAMBLE GAME (10 QUESTIONS)
         const scrambleQ = [
             { scrambled: "E R O H", answer: "HERO", hint: "A brave person with courage" },
             { scrambled: "K O O B", answer: "BOOK", hint: "Something you open and read" },
-            { scrambled: "S T A R", answer: "STAR", hint: "Shines bright in the night sky" }
+            { scrambled: "S T A R", answer: "STAR", hint: "Shines bright in the night sky" },
+            { scrambled: "L I M E", answer: "SMILE", hint: "Express happiness on face (S M I L E)" },
+            { scrambled: "A T E R W", answer: "WATER", hint: "Essential liquid we drink daily" },
+            { scrambled: "L I G H T", answer: "LIGHT", hint: "Illuminates dark spaces" },
+            { scrambled: "D R E A M", answer: "DREAM", hint: "Thoughts during sleep or goals" },
+            { scrambled: "F R I E N D", answer: "FRIEND", hint: "A companion you trust and play with" },
+            { scrambled: "S C H O O L", answer: "SCHOOL", hint: "Where students go to learn" },
+            { scrambled: "L E A R N", answer: "LEARN", hint: "Gain knowledge or skills" }
         ];
         let scrambleIdx = 0;
 
@@ -1140,25 +1339,34 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             const val = document.getElementById('scramble-input').value.trim().toUpperCase();
             const fb = document.getElementById('scramble-feedback');
             if (val === scrambleQ[scrambleIdx].answer) {
-                fb.className = "text-xs font-semibold text-emerald-600 mt-1";
-                fb.innerText = "✨ Correct! Advancing... (+10 Shards 💎)";
+                fb.className = "text-xs font-bold text-emerald-600 mt-1";
+                fb.innerText = "✨ Correct! (+10 Shards 💎)";
                 addShards(10);
+                incrementStreak();
                 setTimeout(() => {
                     scrambleIdx = (scrambleIdx + 1) % scrambleQ.length;
                     fb.innerText = "";
                     renderScramble();
-                }, 1200);
+                }, 1000);
             } else {
                 fb.className = "text-xs font-semibold text-rose-500 mt-1";
                 fb.innerText = "❌ Try again!";
+                resetStreak();
             }
         }
 
-        // GRAMMAR GAME
+        // 2. GRAMMAR GAME (10 QUESTIONS)
         const grammarQ = [
             { text: "She _____ to school every morning.", options: ["walks", "walking"], correct: 0 },
             { text: "They _____ playing soccer now.", options: ["is", "are"], correct: 1 },
-            { text: "I _____ my LuminaBox yesterday.", options: ["opened", "open"], correct: 0 }
+            { text: "I _____ my LuminaBox yesterday.", options: ["opened", "open"], correct: 0 },
+            { text: "He _____ not like spicy food.", options: ["does", "do"], correct: 0 },
+            { text: "We _____ going to the park tomorrow.", options: ["are", "is"], correct: 0 },
+            { text: "The cat _____ sleeping under the chair.", options: ["is", "are"], correct: 0 },
+            { text: "She has _____ her English homework.", options: ["finished", "finish"], correct: 0 },
+            { text: "Look! The birds _____ flying in the sky.", options: ["are", "was"], correct: 0 },
+            { text: "My brother is taller _____ me.", options: ["than", "then"], correct: 0 },
+            { text: "There _____ many books on the shelf.", options: ["are", "is"], correct: 0 }
         ];
         let grammarIdx = 0;
 
@@ -1171,33 +1379,42 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             
             q.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 bg-white border border-slate-200 hover:bg-amber-100/60 rounded-xl font-semibold text-slate-700 transition shadow-soft-sm";
+                btn.className = "p-2.5 bg-white border border-slate-200 hover:bg-amber-100/80 rounded-xl font-semibold text-slate-700 transition shadow-soft-sm";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     const fb = document.getElementById('grammar-feedback');
                     if (idx === q.correct) {
-                        fb.className = "text-xs font-semibold text-emerald-600 mt-1";
-                        fb.innerText = "✨ Correct! Advancing... (+10 Shards 💎)";
+                        fb.className = "text-xs font-bold text-emerald-600 mt-1";
+                        fb.innerText = "✨ Correct! (+10 Shards 💎)";
                         addShards(10);
+                        incrementStreak();
                         setTimeout(() => {
                             grammarIdx = (grammarIdx + 1) % grammarQ.length;
                             fb.innerText = "";
                             renderGrammar();
-                        }, 1200);
+                        }, 1000);
                     } else {
                         fb.className = "text-xs font-semibold text-rose-500 mt-1";
                         fb.innerText = "❌ Try again!";
+                        resetStreak();
                     }
                 };
                 optDiv.appendChild(btn);
             });
         }
 
-        // VOCABULARY GAME
+        // 3. VOCABULARY GAME (10 QUESTIONS)
         const vocabQ = [
-            { def: "A place where kids go to learn subjects", options: ["School", "Park"], correct: 0 },
+            { def: "A place where students go to learn subjects", options: ["School", "Park"], correct: 0 },
             { def: "An animal that barks and wags its tail", options: ["Cat", "Dog"], correct: 1 },
-            { def: "A vehicle that flies in the air", options: ["Airplane", "Bus"], correct: 0 }
+            { def: "A vehicle that flies in the air", options: ["Airplane", "Bus"], correct: 0 },
+            { def: "The large yellow star that lights up the day", options: ["Sun", "Moon"], correct: 0 },
+            { def: "A sweet treat made from cocoa beans", options: ["Chocolate", "Bread"], correct: 0 },
+            { def: "A person who helps sick people in hospitals", options: ["Doctor", "Teacher"], correct: 0 },
+            { def: "A season when leaves fall and weather turns cool", options: ["Autumn", "Summer"], correct: 0 },
+            { def: "An instrument used to measure time", options: ["Clock", "Ruler"], correct: 0 },
+            { def: "A book with words and their meanings", options: ["Dictionary", "Novel"], correct: 0 },
+            { def: "A building where books are kept for reading", options: ["Library", "Market"], correct: 0 }
         ];
         let vocabIdx = 0;
 
@@ -1210,33 +1427,42 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             
             q.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 bg-white border border-slate-200 hover:bg-pink-100/60 rounded-xl font-semibold text-slate-700 transition shadow-soft-sm";
+                btn.className = "p-2.5 bg-white border border-slate-200 hover:bg-pink-100/80 rounded-xl font-semibold text-slate-700 transition shadow-soft-sm";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     const fb = document.getElementById('vocab-feedback');
                     if (idx === q.correct) {
-                        fb.className = "text-xs font-semibold text-emerald-600 mt-1";
-                        fb.innerText = "✨ Correct! Advancing... (+10 Shards 💎)";
+                        fb.className = "text-xs font-bold text-emerald-600 mt-1";
+                        fb.innerText = "✨ Correct! (+10 Shards 💎)";
                         addShards(10);
+                        incrementStreak();
                         setTimeout(() => {
                             vocabIdx = (vocabIdx + 1) % vocabQ.length;
                             fb.innerText = "";
                             renderVocab();
-                        }, 1200);
+                        }, 1000);
                     } else {
                         fb.className = "text-xs font-semibold text-rose-500 mt-1";
                         fb.innerText = "❌ Try again!";
+                        resetStreak();
                     }
                 };
                 optDiv.appendChild(btn);
             });
         }
 
-        // BUILDER GAME
+        // 4. SENTENCE BUILDER GAME (10 QUESTIONS)
         const builderQ = [
             { text: "LuminaBox helps children build _____ in English.", options: ["confidence", "fear"], correct: 0 },
             { text: "Volunteers give 1-to-1 _____ guidance.", options: ["free", "expensive"], correct: 0 },
-            { text: "We collect Lumina Shards to unlock _____.", options: ["rewards", "homework"], correct: 0 }
+            { text: "We collect Lumina Shards to unlock _____.", options: ["rewards", "homework"], correct: 0 },
+            { text: "Practicing English every day makes you _____.", options: ["smarter", "tired"], correct: 0 },
+            { text: "Always _____ kind to your classmates.", options: ["be", "is"], correct: 0 },
+            { text: "Reading storybooks expands your _____.", options: ["vocabulary", "shoes"], correct: 0 },
+            { text: "Bridge to English mentors are very _____.", options: ["helpful", "scary"], correct: 0 },
+            { text: "Water is essential for staying _____.", options: ["healthy", "sleepy"], correct: 0 },
+            { text: "We can achieve our goals through _____ work.", options: ["hard", "no"], correct: 0 },
+            { text: "Learning together with friends is _____.", options: ["fun", "boring"], correct: 0 }
         ];
         let builderIdx = 0;
 
@@ -1249,22 +1475,24 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
             
             q.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 bg-white border border-slate-200 hover:bg-purple-100/60 rounded-xl font-semibold text-slate-700 transition shadow-soft-sm";
+                btn.className = "p-2.5 bg-white border border-slate-200 hover:bg-purple-100/80 rounded-xl font-semibold text-slate-700 transition shadow-soft-sm";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     const fb = document.getElementById('builder-feedback');
                     if (idx === q.correct) {
-                        fb.className = "text-xs font-semibold text-emerald-600 mt-1";
-                        fb.innerText = "✨ Correct! Advancing... (+10 Shards 💎)";
+                        fb.className = "text-xs font-bold text-emerald-600 mt-1";
+                        fb.innerText = "✨ Correct! (+10 Shards 💎)";
                         addShards(10);
+                        incrementStreak();
                         setTimeout(() => {
                             builderIdx = (builderIdx + 1) % builderQ.length;
                             fb.innerText = "";
                             renderBuilder();
-                        }, 1200);
+                        }, 1000);
                     } else {
                         fb.className = "text-xs font-semibold text-rose-500 mt-1";
                         fb.innerText = "❌ Try again!";
+                        resetStreak();
                     }
                 };
                 optDiv.appendChild(btn);
@@ -1280,4 +1508,3 @@ Here is the complete HTML code. All interactivity, language switching, SEN acces
     </script>
 </body>
 </html>
-
