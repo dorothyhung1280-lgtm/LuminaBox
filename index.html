@@ -921,6 +921,75 @@
             </div>
         </section>
 
+
+        <!-- REQUEST A MENTOR SECTION -->
+<section id="request-mentor" class="card shadow-sm mb-4">
+  <div class="card-body">
+    <div class="lang-en">
+      <h3 class="card-title text-primary font-weight-bold">
+        <i class="fas fa-user-graduate me-2"></i>Request a Mentor
+      </h3>
+      <p class="card-text text-muted">
+        Need personalized guidance? Connect 1-on-1 with a dedicated volunteer tutor from Bridge to English to assist with your LuminaBox modules.
+      </p>
+    </div>
+    <div class="lang-zh" style="display: none;">
+      <h3 class="card-title text-primary font-weight-bold">
+        <i class="fas fa-user-graduate me-2"></i>申請導師
+      </h3>
+      <p class="card-text text-muted">
+        需要個人化指導嗎？與 Bridge to English 的志願導師進行一對一連線，協助您完成 LuminaBox 學習單元。
+      </p>
+    </div>
+
+    <form id="mentor-request-form" onsubmit="handleMentorRequest(event)" class="mt-3">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="student-name" class="form-label">
+            <span class="lang-en">Student Name</span>
+            <span class="lang-zh" style="display: none;">學生姓名</span>
+          </label>
+          <input type="text" class="form-control" id="student-name" required placeholder="e.g. Alex Wong">
+        </div>
+        <div class="col-md-6">
+          <label for="contact-email" class="form-label">
+            <span class="lang-en">Contact Email / Phone</span>
+            <span class="lang-zh" style="display: none;">聯絡電郵 / 電話</span>
+          </label>
+          <input type="text" class="form-control" id="contact-email" required placeholder="e.g. alex@example.com">
+        </div>
+        <div class="col-md-6">
+          <label for="learning-focus" class="form-label">
+            <span class="lang-en">Focus Area</span>
+            <span class="lang-zh" style="display: none;">學習焦點</span>
+          </label>
+          <select class="form-select" id="learning-focus">
+            <option value="speaking" class="lang-en">Speaking & Pronunciation</option>
+            <option value="grammar" class="lang-en">Grammar & Writing</option>
+            <option value="reading" class="lang-en">Reading Comprehension</option>
+            <option value="general" class="lang-en">General LuminaBox Support</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="preferred-time" class="form-label">
+            <span class="lang-en">Preferred Time</span>
+            <span class="lang-zh" style="display: none;">首選時間</span>
+          </label>
+          <input type="text" class="form-control" id="preferred-time" placeholder="e.g. Saturday 2:00 PM">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100 mt-2">
+            <i class="fas fa-paper-plane me-2"></i>
+            <span class="lang-en">Submit Request</span>
+            <span class="lang-zh" style="display: none;">提交申請</span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div id="mentor-form-feedback" class="mt-3 alert alert-success d-none" role="alert"></div>
+  </div>
+</section>
+
         <!-- COMPANIONS EVOLUTION SECTION -->
         <section class="bg-white rounded-[2.5rem] p-6 sm:p-8 shadow-soft-md space-y-6">
             <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
