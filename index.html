@@ -384,7 +384,7 @@
             </div>
         </div>
 
-        <!-- PLAYABLE MINI-GAMES ARCADE (10+ QUESTIONS EACH) -->
+        <!-- PLAYABLE MINI-GAMES ARCADE -->
         <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold">Interactive Arcade</span>
@@ -460,7 +460,7 @@
             </div>
         </div>
 
-        <!-- NEW: READING COMPREHENSION HUB -->
+        <!-- READING COMPREHENSION HUB -->
         <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-800 text-[11px] font-semibold">Learning Resources</span>
@@ -489,24 +489,22 @@
             </div>
         </div>
 
-        <!-- AI HOMEWORK HELPER SECTION -->
+        <!-- AI HOMEWORK HELPER SECTION (EMBEDDED CHATBASE IFRAME) -->
         <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-[11px] font-semibold">24/7 AI Tutor Assistance</span>
                 <h3 class="text-2xl font-bold text-slate-800">AI Homework Helper</h3>
+                <p class="text-xs text-slate-500 font-medium">Ask LuminaBox AI any question about your booklets!</p>
             </div>
 
-            <div class="max-w-2xl mx-auto bg-slate-50 rounded-3xl p-6 border border-slate-200 space-y-4">
-                <div class="space-y-3 max-h-60 overflow-y-auto p-2" id="ai-chat-box">
-                    <div class="bg-sky-100/80 p-3 rounded-2xl text-xs text-slate-800 max-w-[85%] font-medium">
-                        🤖 <b>AI Tutor:</b> Hi there! Ask me any question about your Speak, Read, Write, or Connect booklets!
-                    </div>
-                </div>
-
-                <div class="flex gap-2">
-                    <input type="text" id="ai-question-input" placeholder="Ask AI helper anything..." class="flex-1 px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:border-sky-500 bg-white">
-                    <button onclick="sendAIQuestion()" class="px-5 py-2.5 bg-sky-500 hover:bg-sky-600 text-white rounded-xl text-xs font-bold transition">Ask AI</button>
-                </div>
+            <div class="max-w-3xl mx-auto bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-soft-sm">
+                <iframe
+                    src="https://www.chatbase.co/chatbot-iframe/EJLpfsVJzxAHQ9dx8kBBB"
+                    width="100%"
+                    style="height: 100%; min-height: 600px"
+                    frameborder="0"
+                    allow="microphone"
+                ></iframe>
             </div>
         </div>
 
@@ -736,7 +734,7 @@
             }
         }
 
-        /* HELPER TOGGLES & CHAT */
+        /* HELPER TOGGLES */
         let currentLang = 'en';
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'zh' : 'en';
@@ -765,29 +763,6 @@
             const isPortal = !document.getElementById('view-lumina-portal').classList.contains('hidden');
             switchSection(isPortal ? 'main-site' : 'lumina-portal');
         }
-
-        function sendAIQuestion() {
-            const input = document.getElementById('ai-question-input');
-            const chatBox = document.getElementById('ai-chat-box');
-            const text = input.value.trim();
-            if (!text) return;
-
-            const userMsg = document.createElement('div');
-            userMsg.className = "bg-white p-3 rounded-2xl text-xs text-slate-800 max-w-[85%] font-medium ml-auto border border-slate-200";
-            userMsg.innerHTML = `👦 <b>You:</b> ${text}`;
-            chatBox.appendChild(userMsg);
-
-            setTimeout(() => {
-                const aiMsg = document.createElement('div');
-                aiMsg.className = "bg-sky-100/80 p-3 rounded-2xl text-xs text-slate-800 max-w-[85%] font-medium";
-                aiMsg.innerHTML = `🤖 <b>AI Tutor:</b> Great question! Practice saying that sentence out loud to your LuminaCompanion! ✨`;
-                chatBox.appendChild(aiMsg);
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 500);
-
-            input.value = '';
-        }
     </script>
 </body>
 </html>
-
