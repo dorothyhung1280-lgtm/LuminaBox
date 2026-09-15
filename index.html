@@ -14,15 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Chatbase AI Script Integration -->
-    <script>
-        window.embeddedChatbaseConfig = {
-            chatbaseId: "YOUR_CHATBASE_ID_HERE",
-            domain: "www.chatbase.co"
-        }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" chatbaseId="YOUR_CHATBASE_ID_HERE" domain="www.chatbase.co" defer></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -427,7 +418,7 @@
             </div>
         </section>
 
-        <!-- MEET THE TEAM SECTION -->
+        <!-- MEET THE TEAM SECTION (Karina and Dorothy Swapped as Requested) -->
         <section id="team" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8 card-element">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
@@ -446,11 +437,12 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 pt-2">
-                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-lg">💻</div>
+                <!-- SWAPPED: Karina is now 1st (Main Logistics & Website Platform) -->
+                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-lg">💻</div>
                     <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Dorothy</h4>
-                        <p class="text-xs font-semibold text-sky-600">
+                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
+                        <p class="text-xs font-semibold text-pink-600">
                             <span class="lang-en">Main Logistics & Website Platform</span>
                             <span class="lang-zh hidden">主要物流營運與網站開發</span>
                         </p>
@@ -461,6 +453,7 @@
                     </p>
                 </div>
 
+                <!-- Hayley remains 2nd -->
                 <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition">
                     <div class="w-12 h-12 rounded-2xl bg-amber-200/80 flex items-center justify-center text-amber-800 font-extrabold text-lg">🤝</div>
                     <div>
@@ -476,11 +469,12 @@
                     </p>
                 </div>
 
-                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-lg">🎨</div>
+                <!-- SWAPPED: Dorothy is now 3rd (Physical Prototype & Content Design) -->
+                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-lg">🎨</div>
                     <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
-                        <p class="text-xs font-semibold text-pink-600">
+                        <h4 class="font-extrabold text-slate-800 text-base">Dorothy</h4>
+                        <p class="text-xs font-semibold text-sky-600">
                             <span class="lang-en">Physical Prototype & Content Design</span>
                             <span class="lang-zh hidden">實體原型製作與內容設計</span>
                         </p>
@@ -727,43 +721,32 @@
             </div>
         </div>
 
-        <!-- CHATBASE AI ASSISTANT EMBEDDED INTEGRATION -->
+        <!-- CHATBASE AI ASSISTANT EMBEDDED INTEGRATION (IFRAME DIRECT EMBED) -->
         <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6 card-element">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    <span class="lang-en">24/7 Chatbase Interactive AI</span>
+                    <span class="lang-en">24/7 Interactive Lumina AI Buddy</span>
                     <span class="lang-zh hidden">24/7 Chatbase AI 智慧導師</span>
                 </span>
                 <h3 class="text-2xl font-bold text-slate-800">
-                    <span class="lang-en">Ask Chatbase AI Assistant</span>
-                    <span class="lang-zh hidden">Chatbase AI 學習問答</span>
+                    <span class="lang-en">Lumina AI Agent</span>
+                    <span class="lang-zh hidden">Lumina AI 學習問答</span>
                 </h3>
                 <p class="text-xs text-slate-500 font-medium">
-                    <span class="lang-en">Have questions about your Speak, Read, Write, or Connect weekly booklets? Click below to start chatting with your AI learning buddy!</span>
-                    <span class="lang-zh hidden">有關於雙語學習冊的問題嗎？點擊下方即刻開啟 Chatbase AI 智慧對話！</span>
+                    <span class="lang-en">Have questions about your Speak, Read, Write, or Connect weekly booklets? Chat with your AI learning buddy directly below!</span>
+                    <span class="lang-zh hidden">有關於雙語學習冊的問題嗎？直接在下方視窗開啟對話！</span>
                 </p>
             </div>
 
-            <div class="max-w-2xl mx-auto bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-3xl border border-sky-100 text-center space-y-4 shadow-inner">
-                <div class="w-16 h-16 bg-sky-400 rounded-2xl mx-auto flex items-center justify-center text-white text-2xl shadow-soft-sm animate-bounce">
-                    🤖
-                </div>
-                <div>
-                    <h4 class="font-extrabold text-slate-800 text-base">
-                        <span class="lang-en">Chatbase Learning Buddy</span>
-                        <span class="lang-zh hidden">Chatbase AI 雙語小助手</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 mt-1 font-medium">
-                        <span class="lang-en">Direct, safe, and interactive AI assistance trained specifically on LuminaBox curriculum!</span>
-                        <span class="lang-zh hidden">專門為 LuminaBox 課程微調的安全 AI 導師，隨時解答英文難題。</span>
-                    </p>
-                </div>
-
-                <button onclick="openChatbaseWidget()" class="px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition shadow-soft-sm smooth-hover inline-flex items-center gap-2">
-                    <i data-lucide="message-square" class="w-4 h-4"></i>
-                    <span class="lang-en">Open AI Chat Window</span>
-                    <span class="lang-zh hidden">開啟 AI 對話視窗</span>
-                </button>
+            <!-- Chatbase iFrame Integration -->
+            <div class="w-full rounded-3xl overflow-hidden border border-slate-200 shadow-soft-sm bg-slate-50">
+                <iframe
+                    src="https://www.chatbase.co/chatbot-iframe/EJLpfsVJzxAHQ9dx8kBBB"
+                    width="100%"
+                    style="height: 100%; min-height: 700px"
+                    frameborder="0"
+                    allow="microphone"
+                ></iframe>
             </div>
         </div>
 
@@ -808,50 +791,58 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Game 1 -->
-                <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-700 mx-auto text-xl font-bold">
-                        ⚡
+                <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition text-center flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-700 mx-auto text-xl font-bold">
+                            ⚡
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Syntax Rush</h4>
+                        <p class="text-xs text-slate-500 font-medium">Reorder scrambled words into valid sentences across 10 levels!</p>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Syntax Rush</h4>
-                    <p class="text-xs text-slate-500 font-medium">Match sentence order blocks before the timer runs out!</p>
-                    <button onclick="playMiniGame('Syntax Rush')" class="w-full py-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs rounded-xl transition shadow-soft-sm">
-                        Play & Earn 💎
+                    <button onclick="startInteractiveGame('syntaxRush')" class="w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs rounded-xl transition shadow-soft-sm mt-4">
+                        Play (10 Questions) 🎮
                     </button>
                 </div>
 
                 <!-- Game 2 -->
-                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600 mx-auto text-xl font-bold">
-                        🧩
+                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition text-center flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600 mx-auto text-xl font-bold">
+                            🧩
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Logic Maze</h4>
+                        <p class="text-xs text-slate-500 font-medium">Solve 10 riddle challenges to navigate through the maze!</p>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Logic Maze</h4>
-                    <p class="text-xs text-slate-500 font-medium">Guide your companion through a grid using simple logic rules.</p>
-                    <button onclick="playMiniGame('Logic Maze')" class="w-full py-2 bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs rounded-xl transition shadow-soft-sm">
-                        Play & Earn 💎
+                    <button onclick="startInteractiveGame('logicMaze')" class="w-full py-2.5 bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs rounded-xl transition shadow-soft-sm mt-4">
+                        Play (10 Questions) 🎮
                     </button>
                 </div>
 
                 <!-- Game 3 -->
-                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mx-auto text-xl font-bold">
-                        🐛
+                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition text-center flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mx-auto text-xl font-bold">
+                            🐛
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Bug Squasher</h4>
+                        <p class="text-xs text-slate-500 font-medium">Identify and squash spelling or grammar bugs in 10 rounds!</p>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Bug Squasher</h4>
-                    <p class="text-xs text-slate-500 font-medium">Spot spelling errors and squish grammatical bugs!</p>
-                    <button onclick="playMiniGame('Bug Squasher')" class="w-full py-2 bg-pink-400 hover:bg-pink-500 text-white font-bold text-xs rounded-xl transition shadow-soft-sm">
-                        Play & Earn 💎
+                    <button onclick="startInteractiveGame('bugSquasher')" class="w-full py-2.5 bg-pink-400 hover:bg-pink-500 text-white font-bold text-xs rounded-xl transition shadow-soft-sm mt-4">
+                        Play (10 Questions) 🎮
                     </button>
                 </div>
 
                 <!-- Game 4 -->
-                <div class="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mx-auto text-xl font-bold">
-                        🏗️
+                <div class="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-100 space-y-3 hover:shadow-soft-md transition text-center flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mx-auto text-xl font-bold">
+                            🏗️
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Algorithm Builder</h4>
+                        <p class="text-xs text-slate-500 font-medium">Complete logic sequences and fill in missing code words!</p>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Algorithm Builder</h4>
-                    <p class="text-xs text-slate-500 font-medium">Assemble action blocks to build full bilingual stories.</p>
-                    <button onclick="playMiniGame('Algorithm Builder')" class="w-full py-2 bg-emerald-400 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition shadow-soft-sm">
-                        Play & Earn 💎
+                    <button onclick="startInteractiveGame('algoBuilder')" class="w-full py-2.5 bg-emerald-400 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition shadow-soft-sm mt-4">
+                        Play (10 Questions) 🎮
                     </button>
                 </div>
             </div>
@@ -900,18 +891,48 @@
         </div>
     </div>
 
-    <!-- ARCADE INTERACTIVE MINI-GAME SIMULATOR MODAL -->
+    <!-- FULLY PLAYABLE MINI-GAME MODAL -->
     <div id="game-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center space-y-4 shadow-soft-lg border border-amber-200">
-            <div id="game-modal-icon" class="text-5xl">🎮</div>
-            <h3 id="game-modal-title" class="font-extrabold text-slate-800 text-lg">Mini-Game Challenge</h3>
-            <p id="game-modal-desc" class="text-xs text-slate-600 leading-relaxed font-medium">Challenge in progress...</p>
-            <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
-                <div id="game-progress-bar" class="bg-amber-400 h-2.5 rounded-full w-0 transition-all duration-1000"></div>
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-soft-lg border border-amber-200 relative">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2">
+                    <span id="game-modal-icon" class="text-2xl">🎮</span>
+                    <h3 id="game-modal-title" class="font-extrabold text-slate-800 text-base">Mini-Game Challenge</h3>
+                </div>
+                <button onclick="closeGameModal()" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
             </div>
-            <button id="btn-claim-game" onclick="claimGameReward()" class="w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs rounded-xl transition shadow-soft-sm hidden">
-                Claim +25 Shards 💎
-            </button>
+
+            <!-- Score & Progress Bar -->
+            <div class="flex justify-between items-center text-xs font-bold text-slate-600">
+                <span id="game-q-count">Question 1 / 10</span>
+                <span id="game-score-display" class="text-amber-600">Score: 0</span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                <div id="game-progress-bar" class="bg-sky-400 h-2 rounded-full w-0 transition-all duration-300"></div>
+            </div>
+
+            <!-- Question Content View -->
+            <div id="game-question-area" class="space-y-4 py-2">
+                <p id="game-question-text" class="text-sm font-bold text-slate-800 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    Question loading...
+                </p>
+                <div id="game-options-container" class="grid grid-cols-1 gap-2">
+                    <!-- Dynamic option buttons go here -->
+                </div>
+                <div id="game-feedback-msg" class="hidden text-xs font-bold p-3 rounded-xl text-center"></div>
+            </div>
+
+            <!-- Game Completion Screen -->
+            <div id="game-result-area" class="hidden text-center space-y-4 py-4">
+                <div class="text-5xl">🏆</div>
+                <h4 class="text-xl font-extrabold text-slate-800">Game Completed!</h4>
+                <p id="game-final-score-text" class="text-xs text-slate-600 font-semibold">
+                    You answered 10/10 correctly!
+                </p>
+                <button onclick="claimInteractiveGameReward()" class="w-full py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-extrabold text-xs rounded-xl transition shadow-soft-sm">
+                    Claim +50 Lumina Shards 💎
+                </button>
+            </div>
         </div>
     </div>
 
@@ -930,7 +951,7 @@
 
         // Dynamic Image Fallback Generator
         function handleImageError(img, titleText) {
-            img.onerror = null; // Prevent infinite loop
+            img.onerror = null;
             const svgPlaceholder = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                     <rect width="600" height="400" fill="#E0F2FE"/>
@@ -945,7 +966,6 @@
         let currentLang = 'en';
         let senModeActive = false;
         let userShards = 0;
-        let activeMiniGame = '';
 
         // State trackers for pets
         const petLevels = {
@@ -1053,46 +1073,8 @@
                     : `✨ 恭喜！${name} 已成功升級至 Lv. ${currentLv} 並解鎖粒子特效！`);
             } else {
                 alert(currentLang === 'en'
-                    ? `🔒 Not enough Lumina Shards! Enter your 5-digit weekly code to earn more.`
-                    : `🔒 Lumina 晶石不足！請先輸入 5 位數週密碼獲取晶石。`);
-            }
-        }
-
-        function playMiniGame(gameName) {
-            activeMiniGame = gameName;
-            const modal = document.getElementById('game-modal');
-            const title = document.getElementById('game-modal-title');
-            const desc = document.getElementById('game-modal-desc');
-            const pBar = document.getElementById('game-progress-bar');
-            const claimBtn = document.getElementById('btn-claim-game');
-
-            title.textContent = gameName;
-            desc.textContent = `Solving ${gameName} challenges...`;
-            pBar.style.width = '0%';
-            claimBtn.classList.add('hidden');
-            modal.classList.remove('hidden');
-
-            setTimeout(() => { pBar.style.width = '100%'; }, 100);
-            setTimeout(() => {
-                desc.textContent = `Great job! Puzzle complete!`;
-                claimBtn.classList.remove('hidden');
-            }, 1200);
-        }
-
-        function claimGameReward() {
-            document.getElementById('game-modal').classList.add('hidden');
-            userShards += 25;
-            updateShardDisplay();
-            alert(currentLang === 'en'
-                ? `🎮 Completed ${activeMiniGame}! You earned +25 Lumina Shards 💎!`
-                : `🎮 完成 ${activeMiniGame}！獲得 +25 Lumina 晶石 💎！`);
-        }
-
-        function openChatbaseWidget() {
-            if (window.chatbase && typeof window.chatbase === 'function') {
-                window.chatbase('open');
-            } else {
-                alert("Chatbase AI widget is initializing! Make sure to replace YOUR_CHATBASE_ID_HERE with your active Chatbase bot ID.");
+                    ? `🔒 Not enough Lumina Shards! Enter your 5-digit weekly code or play mini-games to earn more.`
+                    : `🔒 Lumina 晶石不足！請先輸入 5 位數週密碼或玩小遊戲獲取晶石。`);
             }
         }
 
@@ -1117,6 +1099,173 @@
             alert(currentLang === 'en'
                 ? 'Order submitted! Our team will contact you shortly.'
                 : '訂單已提交！我們的團隊將儘快與您聯繫。');
+        }
+
+        /* -------------------------------------------------------------------
+           FULL INTERACTIVE MINI-GAME ENGINE (10 QUESTIONS PER GAME)
+        ------------------------------------------------------------------- */
+        const miniGamesData = {
+            syntaxRush: {
+                title: "Syntax Rush",
+                icon: "⚡",
+                questions: [
+                    { q: "Unscramble: [like / I / English / learn / to]", options: ["I like to learn English.", "English learn like I to.", "To learn like I English.", "I learn to English like."], ans: 0 },
+                    { q: "Unscramble: [reading / She / a / book / is]", options: ["She reading is a book.", "She is reading a book.", "A book is reading she.", "Is reading she a book."], ans: 1 },
+                    { q: "Unscramble: [every / We / day / practice]", options: ["Day practice we every.", "Practice we every day.", "We practice every day.", "Every practice day we."], ans: 2 },
+                    { q: "Unscramble: [cat / The / on / sat / mat / the]", options: ["The cat sat on the mat.", "Sat the cat on the mat.", "The mat sat on the cat.", "On the mat cat sat the."], ans: 0 },
+                    { q: "Unscramble: [help / My / me / friends / always]", options: ["Always help my friends me.", "My friends always help me.", "Help me my friends always.", "Friends my help always me."], ans: 1 },
+                    { q: "Unscramble: [you / Where / do / live]", options: ["Where live do you?", "Do you live where?", "Where do you live?", "You live where do?"], ans: 2 },
+                    { q: "Unscramble: [sunny / Today / a / is / day]", options: ["Today is a sunny day.", "A sunny day is today.", "Sunny day today is a.", "Is today sunny day a."], ans: 0 },
+                    { q: "Unscramble: [like / Would / tea / you / some]", options: ["Tea would you like some?", "Would you like some tea?", "You like some tea would?", "Some tea you would like?"], ans: 1 },
+                    { q: "Unscramble: [bird / The / sang / sweetly]", options: ["Sweetly sang the bird.", "Sang bird sweetly the.", "The bird sang sweetly.", "The sang bird sweetly."], ans: 2 },
+                    { q: "Unscramble: [make / Practice / perfect / makes]", options: ["Practice makes perfect.", "Makes practice perfect.", "Perfect makes practice.", "Practice perfect makes."], ans: 0 }
+                ]
+            },
+            logicMaze: {
+                title: "Logic Maze",
+                icon: "🧩",
+                questions: [
+                    { q: "I speak without a mouth and hear without ears. What am I?", options: ["An Echo", "A Shadow", "A Book", "A Mirror"], ans: 0 },
+                    { q: "The more of me you take, the more you leave behind. What am I?", options: ["Money", "Footsteps", "Time", "Food"], ans: 1 },
+                    { q: "What has keys but can't open locks?", options: ["A Map", "A Door", "A Piano", "A Clock"], ans: 2 },
+                    { q: "What has to be broken before you can use it?", options: ["An Egg", "A Nut", "A Promise", "A Code"], ans: 0 },
+                    { q: "I’m tall when I’m young, and I’m short when I’m old. What am I?", options: ["A Tree", "A Candle", "A Pencil", "A Shadow"], ans: 1 },
+                    { q: "What comes down but never goes up?", options: ["Snow", "Elevator", "Rain", "Temperature"], ans: 2 },
+                    { q: "What has hands, but cannot clap?", options: ["A Clock", "A Robot", "A Doll", "A Tree"], ans: 0 },
+                    { q: "What is full of holes but still holds water?", options: ["A Net", "A Sponge", "A Bucket", "A Sieve"], ans: 1 },
+                    { q: "What gets wetter the more it dries?", options: ["A Cloud", "A River", "A Towel", "A Sponge"], ans: 2 },
+                    { q: "What has a head and a tail, but no body?", options: ["A Coin", "A Snake", "A Kite", "A Pin"], ans: 0 }
+                ]
+            },
+            bugSquasher: {
+                title: "Bug Squasher",
+                icon: "🐛",
+                questions: [
+                    { q: "Find the grammatical bug: 'He go to school every day.'", options: ["Change 'go' to 'goes'", "Change 'school' to 'schools'", "Change 'every' to 'ever'", "No bug"], ans: 0 },
+                    { q: "Find the spelling bug: 'She bought a beautifull dress.'", options: ["Change 'bought' to 'buyed'", "Change 'beautifull' to 'beautiful'", "Change 'dress' to 'dres'", "No bug"], ans: 1 },
+                    { q: "Find the bug: 'They was very happy yesterday.'", options: ["Change 'happy' to 'happier'", "Change 'yesterday' to 'tomorrow'", "Change 'was' to 'were'", "No bug"], ans: 2 },
+                    { q: "Find the spelling bug: 'We need to learn english grammar.'", options: ["Capitalize 'english' to 'English'", "Change 'learn' to 'larn'", "Change 'grammar' to 'gramer'", "No bug"], ans: 0 },
+                    { q: "Find the bug: 'She have two dogs and a cat.'", options: ["Change 'two' to 'to'", "Change 'have' to 'has'", "Change 'dogs' to 'dog'", "No bug"], ans: 1 },
+                    { q: "Find the spelling bug: 'The weather is verry warm.'", options: ["Change 'weather' to 'wether'", "Change 'warm' to 'worm'", "Change 'verry' to 'very'", "No bug"], ans: 2 },
+                    { q: "Find the bug: 'I didn't saw the movie yet.'", options: ["Change 'saw' to 'see'", "Change 'movie' to 'movies'", "Change 'didn't' to 'don't'", "No bug"], ans: 0 },
+                    { q: "Find the spelling bug: 'This problem is too difficulte.'", options: ["Change 'problem' to 'probelm'", "Change 'difficulte' to 'difficult'", "Change 'too' to 'to'", "No bug"], ans: 1 },
+                    { q: "Find the bug: 'She is more taller than me.'", options: ["Change 'taller' to 'tall'", "Change 'than' to 'then'", "Remove 'more'", "No bug"], ans: 2 },
+                    { q: "Find the bug: 'There is many books on the shelf.'", options: ["Change 'is' to 'are'", "Change 'many' to 'much'", "Change 'shelf' to 'shelfs'", "No bug"], ans: 0 }
+                ]
+            },
+            algoBuilder: {
+                title: "Algorithm Builder",
+                icon: "🏗️",
+                questions: [
+                    { q: "Complete sequence: IF happy THEN [____] hands.", options: ["clap", "jump", "sleep", "run"], ans: 0 },
+                    { q: "Complete logic step: REPEAT 3 TIMES: [Step 1, Step 2, ____]", options: ["End", "Step 3", "Pause", "Loop"], ans: 1 },
+                    { q: "Which instruction comes FIRST in making tea?", options: ["Add sugar", "Pour into cup", "Boil water", "Drink tea"], ans: 2 },
+                    { q: "Select the missing condition: IF [____] THEN wear a raincoat.", options: ["it rains", "it is sunny", "it is night", "it is windy"], ans: 0 },
+                    { q: "Algorithm loop: FOR EACH student IN class DO [____].", options: ["sleep", "greet student", "close door", "turn off lights"], ans: 1 },
+                    { q: "Bug in logic sequence: 1. Put on shoes 2. Put on socks 3. Walk outside.", options: ["Swap step 3 and 1", "Swap step 1 and 2", "Remove step 2", "No bug"], ans: 1 },
+                    { q: "Find missing action: IF battery < 10% THEN [____].", options: ["Plug in charger", "Turn on speaker", "Open app", "Take photo"], ans: 0 },
+                    { q: "Which step is the STOP condition?", options: ["Start motor", "WHILE goal not reached", "UNTIL target reached", "Speed up"], ans: 2 },
+                    { q: "Sort sequence: [1. Cook food, 2. Wash hands, 3. Eat food]", options: ["2 -> 1 -> 3", "1 -> 2 -> 3", "3 -> 2 -> 1", "2 -> 3 -> 1"], ans: 0 },
+                    { q: "Choose correct boolean statement: 5 > 3 IS [____].", options: ["TRUE", "FALSE", "NULL", "ERROR"], ans: 0 }
+                ]
+            }
+        };
+
+        let activeGameKey = '';
+        let currentQuestionIdx = 0;
+        let gameScore = 0;
+
+        function startInteractiveGame(gameKey) {
+            activeGameKey = gameKey;
+            currentQuestionIdx = 0;
+            gameScore = 0;
+
+            const game = miniGamesData[gameKey];
+            document.getElementById('game-modal-icon').textContent = game.icon;
+            document.getElementById('game-modal-title').textContent = game.title;
+
+            document.getElementById('game-question-area').classList.remove('hidden');
+            document.getElementById('game-result-area').classList.add('hidden');
+            document.getElementById('game-modal').classList.remove('hidden');
+
+            renderCurrentQuestion();
+        }
+
+        function renderCurrentQuestion() {
+            const game = miniGamesData[activeGameKey];
+            const qData = game.questions[currentQuestionIdx];
+
+            document.getElementById('game-q-count').textContent = `Question ${currentQuestionIdx + 1} / 10`;
+            document.getElementById('game-score-display').textContent = `Score: ${gameScore}`;
+            
+            const pBar = document.getElementById('game-progress-bar');
+            pBar.style.width = `${((currentQuestionIdx) / 10) * 100}%`;
+
+            document.getElementById('game-question-text').textContent = qData.q;
+
+            const feedbackMsg = document.getElementById('game-feedback-msg');
+            feedbackMsg.classList.add('hidden');
+
+            const container = document.getElementById('game-options-container');
+            container.innerHTML = '';
+
+            qData.options.forEach((optText, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-3 rounded-xl border border-slate-200 hover:border-sky-400 hover:bg-sky-50 text-xs font-semibold text-slate-700 transition flex items-center justify-between';
+                btn.innerHTML = `<span>${optText}</span> <span class="text-slate-300">➜</span>`;
+                btn.onclick = () => handleAnswerSelect(idx, qData.ans);
+                container.appendChild(btn);
+            });
+        }
+
+        function handleAnswerSelect(selectedIdx, correctIdx) {
+            const feedbackMsg = document.getElementById('game-feedback-msg');
+            feedbackMsg.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-red-100', 'text-red-800');
+
+            if (selectedIdx === correctIdx) {
+                gameScore += 10;
+                feedbackMsg.classList.add('bg-emerald-100', 'text-emerald-800');
+                feedbackMsg.textContent = '✨ Correct! +10 Points!';
+            } else {
+                feedbackMsg.classList.add('bg-red-100', 'text-red-800');
+                feedbackMsg.textContent = '❌ Oops! Incorrect step.';
+            }
+
+            // Disable all option buttons after picking
+            const container = document.getElementById('game-options-container');
+            const buttons = container.querySelectorAll('button');
+            buttons.forEach(btn => btn.disabled = true);
+
+            setTimeout(() => {
+                currentQuestionIdx++;
+                if (currentQuestionIdx < 10) {
+                    renderCurrentQuestion();
+                } else {
+                    finishGame();
+                }
+            }, 800);
+        }
+
+        function finishGame() {
+            document.getElementById('game-progress-bar').style.width = '100%';
+            document.getElementById('game-question-area').classList.add('hidden');
+            document.getElementById('game-result-area').classList.remove('hidden');
+
+            document.getElementById('game-final-score-text').textContent = 
+                `Awesome effort! You scored ${gameScore} out of 100 points!`;
+        }
+
+        function claimInteractiveGameReward() {
+            closeGameModal();
+            userShards += 50;
+            updateShardDisplay();
+            alert(currentLang === 'en'
+                ? `🏆 Game Complete! You earned +50 Lumina Shards 💎!`
+                : `🏆 遊戲完成！獲得 +50 Lumina 晶石 💎！`);
+        }
+
+        function closeGameModal() {
+            document.getElementById('game-modal').classList.add('hidden');
         }
     </script>
 </body>
