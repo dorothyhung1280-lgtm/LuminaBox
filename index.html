@@ -74,17 +74,6 @@
         .animate-glow {
             animation: pulseGlow 2s infinite ease-in-out;
         }
-
-        .digit-picker-btn {
-            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-            border: 2px solid #cbd5e1;
-            box-shadow: 0 4px 0 #94a3b8;
-            transition: all 0.1s ease;
-        }
-        .digit-picker-btn:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #94a3b8;
-        }
     </style>
 </head>
 <body id="app-body" class="min-h-screen text-slate-700 selection:bg-pink-200">
@@ -121,7 +110,7 @@
                 <!-- Lumina Shards Counter -->
                 <div class="px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold flex items-center gap-1.5 shadow-soft-sm">
                     <span>💎</span>
-                    <span id="user-shards-count">120</span>
+                    <span id="user-shards-count">0</span>
                     <span class="text-[10px] text-amber-700 font-normal">Shards</span>
                 </div>
 
@@ -437,7 +426,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 pt-2">
-                <!-- Karina -->
+                <!-- Karina: Swapped Entire Label, Role & Description -->
                 <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
                     <div class="w-12 h-12 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-lg">🎨</div>
                     <div>
@@ -453,7 +442,7 @@
                     </p>
                 </div>
 
-                <!-- Hayley -->
+                <!-- Hayley: Intact -->
                 <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition">
                     <div class="w-12 h-12 rounded-2xl bg-amber-200/80 flex items-center justify-center text-amber-800 font-extrabold text-lg">🤝</div>
                     <div>
@@ -469,7 +458,7 @@
                     </p>
                 </div>
 
-                <!-- Dorothy -->
+                <!-- Dorothy: Swapped Entire Label, Role & Description -->
                 <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
                     <div class="w-12 h-12 rounded-2xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-lg">💻</div>
                     <div>
@@ -532,7 +521,7 @@
             </div>
         </section>
 
-        <!-- SDG SECTION FEATURING SWAPPED SDG 4 & 10 (IMG_5250 = SDG10, IMG_5251 = SDG4, IMG_5259) -->
+        <!-- SDG SECTION FEATURING YOUR SDG IMAGE FILES (IMG_5250, IMG_5251, IMG_5259) -->
         <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
@@ -546,10 +535,10 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Swapped Card 1: SDG 4 uses IMG_5251.png -->
+                <!-- SDG 4 Card with Image IMG_5250.png -->
                 <div class="p-6 rounded-3xl bg-red-50/70 border border-red-100 flex flex-col items-center text-center space-y-4 hover:shadow-soft-md transition">
                     <div class="w-24 h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-red-200 shrink-0">
-                        <img src="IMG_5251.png" onerror="this.onerror=null; this.src='https://sdgs.un.org/sites/default/files/goals/E_SDG_GOALS_FINAL-04.png';" alt="SDG Goal 4 Quality Education" class="w-full h-full object-contain">
+                        <img src="IMG_5250.png" onerror="this.onerror=null; this.src='https://sdgs.un.org/sites/default/files/goals/E_SDG_GOALS_FINAL-04.png';" alt="SDG Goal 4 Quality Education" class="w-full h-full object-contain">
                     </div>
                     <div class="space-y-2">
                         <span class="px-2.5 py-0.5 rounded-full bg-red-200 text-red-900 text-[10px] font-bold">UN Goal 4</span>
@@ -564,10 +553,10 @@
                     </div>
                 </div>
 
-                <!-- Swapped Card 2: SDG 10 uses IMG_5250.png -->
+                <!-- SDG 10 Card with Image IMG_5251.png -->
                 <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 flex flex-col items-center text-center space-y-4 hover:shadow-soft-md transition">
                     <div class="w-24 h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-pink-200 shrink-0">
-                        <img src="IMG_5250.png" onerror="this.onerror=null; this.src='https://sdgs.un.org/sites/default/files/goals/E_SDG_GOALS_FINAL-10.png';" alt="SDG Goal 10 Reduced Inequalities" class="w-full h-full object-contain">
+                        <img src="IMG_5251.png" onerror="this.onerror=null; this.src='https://sdgs.un.org/sites/default/files/goals/E_SDG_GOALS_FINAL-10.png';" alt="SDG Goal 10 Reduced Inequalities" class="w-full h-full object-contain">
                     </div>
                     <div class="space-y-2">
                         <span class="px-2.5 py-0.5 rounded-full bg-pink-200 text-pink-900 text-[10px] font-bold">UN Goal 10</span>
@@ -582,7 +571,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3: SDG Summary with IMG_5259.png -->
+                <!-- SDG Summary Card with Image IMG_5259.png -->
                 <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 flex flex-col items-center text-center space-y-4 hover:shadow-soft-md transition">
                     <div class="w-24 h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-sky-200 shrink-0">
                         <img src="IMG_5259.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDGs Global Goals Alignment" class="w-full h-full object-contain">
@@ -644,263 +633,26 @@
                 <h2 class="text-2xl font-extrabold flex items-center gap-2">
                     <span>🎮 LuminaPortal AI Hub</span>
                 </h2>
-                <p class="text-xs opacity-90 mt-1">Unlock rewards, upgrade companions, track progress, and request 1-to-1 mentorship!</p>
+                <p class="text-xs opacity-90 mt-1">Enter your Lumina Code, talk with AI Assistant, or play educational games to earn Shards!</p>
             </div>
             <button onclick="switchSection('main-site')" class="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-semibold backdrop-blur-md transition">
                 ← Back to Main Site
             </button>
         </div>
 
-        <!-- NEW 1: STUDENT DASHBOARD & DAILY STREAK TRACKER -->
-        <div class="p-6 rounded-[2rem] bg-gradient-to-br from-white to-amber-50/60 border border-amber-200 shadow-soft-sm space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-amber-200/60 pb-4">
-                <div>
-                    <h3 class="text-base font-extrabold text-slate-800 flex items-center gap-2">
-                        <i data-lucide="layout-dashboard" class="w-5 h-5 text-sky-500"></i>
-                        <span>Student Progress Dashboard</span>
-                    </h3>
-                    <p class="text-xs text-slate-500 font-medium">Keep learning daily to increase your streak and earn bonus Lumina Shards!</p>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="px-4 py-2 bg-amber-100 rounded-2xl border border-amber-300 text-amber-900 font-extrabold text-sm flex items-center gap-2 shadow-soft-sm">
-                        <span class="text-lg">🔥</span>
-                        <span><span id="streak-days">5</span> Day Streak!</span>
-                    </div>
-                    <div class="px-4 py-2 bg-sky-100 rounded-2xl border border-sky-300 text-sky-900 font-extrabold text-sm flex items-center gap-2 shadow-soft-sm">
-                        <span class="text-lg">🎯</span>
-                        <span>Level <span id="user-level">2</span> Learner</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Daily Streak Calendar Tracker -->
-            <div class="space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-xs font-bold text-slate-700">This Week's Activity Progress</span>
-                    <span class="text-xs font-semibold text-emerald-600">80% Completed</span>
-                </div>
-                <div class="grid grid-cols-7 gap-2 text-center">
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Mon</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
-                    </div>
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Tue</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
-                    </div>
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Wed</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
-                    </div>
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Thu</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
-                    </div>
-                    <div class="p-3 bg-amber-200 border border-amber-400 rounded-2xl animate-pulse">
-                        <div class="text-[10px] font-bold text-amber-900">Fri (Today)</div>
-                        <div class="text-base font-extrabold text-amber-800">⚡</div>
-                    </div>
-                    <div class="p-3 bg-slate-100 border border-slate-200 rounded-2xl opacity-60">
-                        <div class="text-[10px] font-bold text-slate-500">Sat</div>
-                        <div class="text-base font-extrabold text-slate-400">•</div>
-                    </div>
-                    <div class="p-3 bg-slate-100 border border-slate-200 rounded-2xl opacity-60">
-                        <div class="text-[10px] font-bold text-slate-500">Sun</div>
-                        <div class="text-base font-extrabold text-slate-400">•</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- NEW 2: GRAND ROTATING 5-DIGIT LUMINA CODE PICKER -->
-        <div class="p-8 rounded-[2.5rem] bg-gradient-to-b from-amber-100 via-amber-50 to-white border-2 border-amber-300 shadow-soft-md space-y-6 text-center relative overflow-hidden">
-            <div class="max-w-xl mx-auto space-y-2">
-                <span class="px-3.5 py-1 rounded-full bg-amber-200 text-amber-900 text-xs font-extrabold inline-flex items-center gap-1">
-                    <span>✨ GRAND WEEKLY VAULT</span>
-                </span>
-                <h3 class="text-2xl font-extrabold text-slate-800">Interactive 5-Digit Lumina Code Keypad</h3>
-                <p class="text-xs text-slate-600 font-medium">Use the rotating arrows to dial in your 5-digit code from your weekly Lumina Card!</p>
-            </div>
-
-            <!-- Grand Rotatable 5-Digit Selector -->
-            <div class="flex justify-center items-center gap-3 sm:gap-5 py-2">
-                <!-- Digit 1 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(0, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-0" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">1</div>
-                    <button onclick="rotateDigit(0, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
-                </div>
-                <!-- Digit 2 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(1, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-1" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">2</div>
-                    <button onclick="rotateDigit(1, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
-                </div>
-                <!-- Digit 3 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(2, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-2" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">3</div>
-                    <button onclick="rotateDigit(2, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
-                </div>
-                <!-- Digit 4 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(3, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-3" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">4</div>
-                    <button onclick="rotateDigit(3, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
-                </div>
-                <!-- Digit 5 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(4, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-4" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">5</div>
-                    <button onclick="rotateDigit(4, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
-                </div>
-            </div>
-
-            <div class="pt-2">
-                <button onclick="submitRotatedCode()" class="px-8 py-3.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-extrabold text-sm rounded-2xl shadow-soft-md smooth-hover transition">
-                    🔓 UNLOCK WEEKLY REWARD (+100 SHARDS)
+        <!-- Lumina Code Input Box -->
+        <div class="p-6 rounded-3xl bg-white border border-amber-200 shadow-soft-sm space-y-4">
+            <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <span>🔑 Enter Daily Lumina Code</span>
+                <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-semibold">Earn +50 Shards</span>
+            </h3>
+            <div class="flex gap-2 max-w-md">
+                <input type="number" id="lumina-code-input" placeholder="e.g. 12345" class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-sky-500">
+                <button onclick="submitLuminaCode()" class="px-5 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white text-xs font-bold transition">
+                    Redeem Code
                 </button>
             </div>
-            <p id="rotated-code-feedback" class="text-xs font-bold text-emerald-600 hidden"></p>
-        </div>
-
-        <!-- NEW 3: LUMINA COMPANIONS & AVATAR EVOLUTION SHOP -->
-        <div class="p-6 rounded-[2rem] bg-white border border-pink-200 shadow-soft-sm space-y-6">
-            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
-                <div>
-                    <h3 class="text-lg font-extrabold text-slate-800 flex items-center gap-2">
-                        <span>🐾 Lumina Companions Avatar Evolution</span>
-                    </h3>
-                    <p class="text-xs text-slate-500 font-medium">Use your earned Lumina Shards to level up your pet companion!</p>
-                </div>
-                <div class="px-4 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs font-bold">
-                    Active Companion: <span id="active-companion-name">Sparky the Owl (Lvl 1)</span>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Companion 1 -->
-                <div class="p-5 rounded-3xl bg-amber-50/70 border border-amber-200 text-center space-y-3 relative">
-                    <div class="w-24 h-24 mx-auto rounded-2xl bg-amber-100 flex items-center justify-center text-5xl shadow-inner">
-                        <span id="comp-emoji-1">🦉</span>
-                    </div>
-                    <div>
-                        <h4 class="font-extrabold text-slate-800 text-sm" id="comp-title-1">Sparky the Wise Owl</h4>
-                        <p class="text-[11px] text-slate-500 font-medium" id="comp-stage-1">Stage 1: Apprentice Bird</p>
-                    </div>
-                    <button onclick="upgradeCompanion(1, 50)" id="comp-btn-1" class="w-full py-2.5 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-xs rounded-xl transition">
-                        Evolve (Cost: 50 💎)
-                    </button>
-                </div>
-
-                <!-- Companion 2 -->
-                <div class="p-5 rounded-3xl bg-sky-50/70 border border-sky-200 text-center space-y-3 relative">
-                    <div class="w-24 h-24 mx-auto rounded-2xl bg-sky-100 flex items-center justify-center text-5xl shadow-inner">
-                        <span id="comp-emoji-2">🦊</span>
-                    </div>
-                    <div>
-                        <h4 class="font-extrabold text-slate-800 text-sm" id="comp-title-2">Foxy the Grammatical Fox</h4>
-                        <p class="text-[11px] text-slate-500 font-medium" id="comp-stage-2">Stage 1: Cub Scout</p>
-                    </div>
-                    <button onclick="upgradeCompanion(2, 80)" id="comp-btn-2" class="w-full py-2.5 bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs rounded-xl transition">
-                        Evolve (Cost: 80 💎)
-                    </button>
-                </div>
-
-                <!-- Companion 3 -->
-                <div class="p-5 rounded-3xl bg-pink-50/70 border border-pink-200 text-center space-y-3 relative">
-                    <div class="w-24 h-24 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-5xl shadow-inner">
-                        <span id="comp-emoji-3">🐉</span>
-                    </div>
-                    <div>
-                        <h4 class="font-extrabold text-slate-800 text-base" id="comp-title-3">Lumina Dragon</h4>
-                        <p class="text-[11px] text-slate-500 font-medium" id="comp-stage-3">Stage 1: Hatchling</p>
-                    </div>
-                    <button onclick="upgradeCompanion(3, 120)" id="comp-btn-3" class="w-full py-2.5 bg-pink-400 hover:bg-pink-500 text-white font-bold text-xs rounded-xl transition">
-                        Evolve (Cost: 120 💎)
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- NEW 4: REQUEST A MENTOR SECTION (STUDENT LOGIN & BOOKING SLOTS) -->
-        <div class="p-8 rounded-[2.5rem] bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border border-sky-200 shadow-soft-md space-y-6">
-            <div class="max-w-xl mx-auto text-center space-y-2">
-                <span class="px-3.5 py-1 rounded-full bg-sky-200 text-sky-900 text-xs font-extrabold inline-flex items-center gap-1.5">
-                    <i data-lucide="video" class="w-3.5 h-3.5 text-sky-700"></i>
-                    <span>Bridge to English Mentorship</span>
-                </span>
-                <h3 class="text-2xl font-extrabold text-slate-800">Request a Direct 1-to-1 Zoom Mentor</h3>
-                <p class="text-xs text-slate-600 font-medium">Sign in with your Student ID to book live oral practice or homework help with Diocesan Girls' School student volunteers.</p>
-            </div>
-
-            <!-- Login / Booking Form State -->
-            <div id="mentor-booking-container" class="max-w-md mx-auto bg-white p-6 rounded-3xl border border-sky-100 shadow-soft-sm space-y-4">
-                
-                <!-- Step 1: Student ID Login -->
-                <div id="student-login-box" class="space-y-3">
-                    <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Step 1: Student ID Authentication</h4>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Student ID / Lumina ID</label>
-                        <input type="text" id="student-id-input" placeholder="e.g. STU-2026-88" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-sky-500 font-semibold">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 mb-1">Student Full Name</label>
-                        <input type="text" id="student-name-input" placeholder="e.g. Alex Chan" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-sky-500 font-semibold">
-                    </div>
-                    <button onclick="loginStudent()" class="w-full py-3 bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs rounded-xl shadow-soft-sm transition">
-                        Sign In to Student Account
-                    </button>
-                </div>
-
-                <!-- Step 2: Time Slot Picker (Hidden initially) -->
-                <div id="student-slot-box" class="hidden space-y-4">
-                    <div class="p-3 bg-emerald-50 rounded-2xl border border-emerald-200 flex justify-between items-center text-xs">
-                        <span class="font-bold text-emerald-800">Logged in as: <span id="logged-student-id">STU-2026-88</span></span>
-                        <button onclick="logoutStudent()" class="text-[10px] text-red-500 underline">Sign Out</button>
-                    </div>
-
-                    <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Step 2: Choose Zoom Time Slot</h4>
-                    
-                    <div class="space-y-2">
-                        <label class="block text-xs font-semibold text-slate-600">Select Subject Focus</label>
-                        <select id="mentor-subject" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-sky-500">
-                            <option>🗣️ Speak — Oral English Practice</option>
-                            <option>📖 Read — Reading Comprehension</option>
-                            <option>✍️ Write — Grammar & Essay Review</option>
-                        </select>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="block text-xs font-semibold text-slate-600">Select Date & Time</label>
-                        <div class="grid grid-cols-2 gap-2 text-xs">
-                            <button onclick="selectTimeSlot(this)" class="slot-btn p-2.5 rounded-xl border border-sky-200 bg-sky-50 font-bold text-sky-800 text-left hover:bg-sky-100">
-                                Saturday 10:00 AM
-                            </button>
-                            <button onclick="selectTimeSlot(this)" class="slot-btn p-2.5 rounded-xl border border-slate-200 bg-white font-bold text-slate-700 text-left hover:bg-sky-50">
-                                Saturday 2:30 PM
-                            </button>
-                            <button onclick="selectTimeSlot(this)" class="slot-btn p-2.5 rounded-xl border border-slate-200 bg-white font-bold text-slate-700 text-left hover:bg-sky-50">
-                                Sunday 11:00 AM
-                            </button>
-                            <button onclick="selectTimeSlot(this)" class="slot-btn p-2.5 rounded-xl border border-slate-200 bg-white font-bold text-slate-700 text-left hover:bg-sky-50">
-                                Sunday 4:00 PM
-                            </button>
-                        </div>
-                    </div>
-
-                    <button onclick="confirmMentorBooking()" class="w-full py-3 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold text-xs rounded-xl shadow-soft-sm transition smooth-hover">
-                        Confirm Zoom Mentorship Session
-                    </button>
-                </div>
-
-                <div id="booking-confirmation" class="hidden p-4 bg-emerald-100 text-emerald-900 rounded-2xl text-center space-y-2">
-                    <div class="text-2xl">🎉</div>
-                    <h5 class="font-bold text-sm">Zoom Session Booked!</h5>
-                    <p class="text-xs">Your Zoom link has been generated and sent to your account. See you online!</p>
-                </div>
-
-            </div>
+            <p id="code-feedback" class="text-xs hidden font-semibold"></p>
         </div>
 
         <!-- Chatbase AI Embed Integration -->
@@ -1042,7 +794,7 @@
         lucide.createIcons();
 
         // Shards & User State
-        let totalShards = 120;
+        let totalShards = 0;
         function addShards(amount) {
             totalShards += amount;
             document.getElementById('user-shards-count').innerText = totalShards;
@@ -1089,82 +841,19 @@
             document.getElementById('sen-btn-text').innerText = isSEN ? 'Normal Mode' : 'SEN Mode';
         }
 
-        // Rotatable 5-Digit Lumina Code Picker
-        let currentDigits = [1, 2, 3, 4, 5];
-        function rotateDigit(index, delta) {
-            currentDigits[index] = (currentDigits[index] + delta + 10) % 10;
-            const el = document.getElementById(`digit-${index}`);
-            el.innerText = currentDigits[index];
-            el.classList.add('scale-110');
-            setTimeout(() => el.classList.remove('scale-110'), 150);
-        }
-
-        function submitRotatedCode() {
-            const codeStr = currentDigits.join('');
-            const feedback = document.getElementById('rotated-code-feedback');
-            addShards(100);
-            feedback.innerText = `✨ Lumina Code [${codeStr}] Unlocked Successfully! +100 Shards awarded to your account!`;
-            feedback.classList.remove('hidden');
-        }
-
-        // Companion Upgrade Logic
-        let companionLevels = [1, 1, 1];
-        function upgradeCompanion(id, cost) {
-            if (totalShards < cost) {
-                alert(`You need ${cost} Shards to upgrade this companion! Play games or redeem Lumina codes to earn more.`);
-                return;
+        // Lumina Code Redeem logic
+        function submitLuminaCode() {
+            const input = document.getElementById('lumina-code-input').value.trim();
+            const feedback = document.getElementById('code-feedback');
+            if (input.length === 5) {
+                addShards(50);
+                feedback.innerText = "✨ Valid Lumina Code! You earned 50 Shards!";
+                feedback.className = "text-xs font-semibold text-emerald-600 block";
+                document.getElementById('lumina-code-input').value = "";
+            } else {
+                feedback.innerText = "❌ Please enter a valid 5-digit code from your weekly card.";
+                feedback.className = "text-xs font-semibold text-red-500 block";
             }
-
-            totalShards -= cost;
-            document.getElementById('user-shards-count').innerText = totalShards;
-            companionLevels[id - 1]++;
-
-            if (id === 1) {
-                document.getElementById('comp-emoji-1').innerText = "🧙‍♂️🦉";
-                document.getElementById('comp-stage-1').innerText = `Stage ${companionLevels[0]}: Grand Wizard Owl`;
-                document.getElementById('active-companion-name').innerText = `Grand Wizard Owl (Lvl ${companionLevels[0]})`;
-            } else if (id === 2) {
-                document.getElementById('comp-emoji-2').innerText = "🦊👑";
-                document.getElementById('comp-stage-2').innerText = `Stage ${companionLevels[1]}: Arch-Fox Master`;
-            } else if (id === 3) {
-                document.getElementById('comp-emoji-3').innerText = "🐉🔥";
-                document.getElementById('comp-stage-3').innerText = `Stage ${companionLevels[2]}: Celestial Lumina Dragon`;
-            }
-            alert(`🎉 Companion Evolved to Stage ${companionLevels[id - 1]}!`);
-        }
-
-        // Student Login & Mentor Slot Selection
-        function loginStudent() {
-            const stuId = document.getElementById('student-id-input').value.trim();
-            const stuName = document.getElementById('student-name-input').value.trim();
-            if (!stuId || !stuName) {
-                alert('Please enter both your Student ID and Name.');
-                return;
-            }
-            document.getElementById('student-login-box').classList.add('hidden');
-            document.getElementById('student-slot-box').classList.remove('hidden');
-            document.getElementById('logged-student-id').innerText = `${stuName} (${stuId})`;
-        }
-
-        function logoutStudent() {
-            document.getElementById('student-slot-box').classList.add('hidden');
-            document.getElementById('student-login-box').classList.remove('hidden');
-        }
-
-        let selectedSlotText = "Saturday 10:00 AM";
-        function selectTimeSlot(btn) {
-            document.querySelectorAll('.slot-btn').forEach(b => {
-                b.classList.remove('bg-sky-50', 'border-sky-200', 'text-sky-800');
-                b.classList.add('bg-white', 'border-slate-200', 'text-slate-700');
-            });
-            btn.classList.remove('bg-white', 'border-slate-200', 'text-slate-700');
-            btn.classList.add('bg-sky-50', 'border-sky-200', 'text-sky-800');
-            selectedSlotText = btn.innerText.trim();
-        }
-
-        function confirmMentorBooking() {
-            document.getElementById('student-slot-box').classList.add('hidden');
-            document.getElementById('booking-confirmation').classList.remove('hidden');
         }
 
         /* GAME 1: SPEAK */
@@ -1370,3 +1059,4 @@
     </script>
 </body>
 </html>
+
