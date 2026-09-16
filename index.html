@@ -60,8 +60,292 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
         }
 
-        .smooth-hover {
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-slate-700 antialiased selection:bg-amber-200">
+
+    <!-- Top Accessibility Bar -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center text-white shadow-soft-sm font-bold text-xl">
+                    ✨
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-800">LuminaBox</span>
+                    <span class="text-xs text-amber-600 block -mt-1 font-semibold">光啟盒</span>
+                </div>
+            </div>
+
+            <!-- Accessibility Toggle -->
+            <button id="senToggle" onclick="toggleSENMode()" class="flex items-center space-x-2 bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-bold smooth-transition shadow-sm">
+                <i data-lucide="eye"></i>
+                <span id="senToggleText">Enable SEN Reader Mode</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center space-x-2 bg-sky-100 text-sky-800 px-4 py-1.5 rounded-full text-sm font-bold mb-6">
+            <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+            <span>Gamified English Learning Adventure</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+            Out of the Box, <br class="hidden sm:inline"><span class="text-amber-500">Into the World.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+            LuminaBox transforms English education into an interactive quest system tailored for every unique learning pace.
+        </p>
+    </section>
+
+    <!-- SEN Tailored Design Features Section -->
+    <section class="py-16 bg-white border-y border-amber-100 card-element">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Tailored for Diverse Learning Needs</h2>
+                <p class="text-slate-600">Built from the ground up to reduce cognitive load and spark genuine joy in learning.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- High Contrast Design -->
+                <div class="bg-amber-50/60 p-8 rounded-3xl border border-amber-100 smooth-transition hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-400 text-white rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="sun"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Warm Pastel Palette</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Soft cream backgrounds reduce visual fatigue and help students with dyslexia read without glare.</p>
+                </div>
+
+                <!-- SEN Lexend Font -->
+                <div class="bg-sky-50/60 p-8 rounded-3xl border border-sky-100 smooth-transition hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-sky-400 text-white rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="type"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Lexend Dyslexia Font</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Adjustable letter spacing and line heights proven to significantly boost reading fluency.</p>
+                </div>
+
+                <!-- Gamified Learning -->
+                <div class="bg-emerald-50/60 p-8 rounded-3xl border border-emerald-100 smooth-transition hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-emerald-400 text-white rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Gamified Learning</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">English lessons reframed as quests, reward badges, and leveling up to make practice feel just like playing a game.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Lumina Companions Section -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Progression System</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-4">Lumina Companion Progression</h2>
+            <p class="text-slate-600">Level up your virtual companion by completing daily vocabulary quests and reading challenges!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <!-- Level 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 text-center shadow-soft-sm hover:shadow-soft-md transition">
+                <div class="text-4xl mb-3">🥚</div>
+                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Level 1</span>
+                <h4 class="font-bold text-slate-800 mt-3">Sproutling</h4>
+                <p class="text-xs text-slate-500 mt-2">Unlocks: Basic vocabulary flashcards & audio pronunciation hints.</p>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 text-center shadow-soft-sm hover:shadow-soft-md transition">
+                <div class="text-4xl mb-3">🐣</div>
+                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Level 2</span>
+                <h4 class="font-bold text-slate-800 mt-3">Featherling</h4>
+                <p class="text-xs text-slate-500 mt-2">Unlocks: Daily streak badges & custom avatar hats.</p>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 text-center shadow-soft-sm hover:shadow-soft-md transition">
+                <div class="text-4xl mb-3">🦊</div>
+                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Level 3</span>
+                <h4 class="font-bold text-slate-800 mt-3">Lumina Scout</h4>
+                <p class="text-xs text-slate-500 mt-2">Unlocks: Interactive sentence builder mini-games & story mode.</p>
+            </div>
+
+            <!-- Level 4 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 text-center shadow-soft-sm hover:shadow-soft-md transition">
+                <div class="text-4xl mb-3">🐲</div>
+                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Level 4</span>
+                <h4 class="font-bold text-slate-800 mt-3">Mythic Drake</h4>
+                <p class="text-xs text-slate-500 mt-2">Unlocks: Multiplayer co-op spelling raids & secret quests.</p>
+            </div>
+
+            <!-- Level 5 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 text-center shadow-soft-sm hover:shadow-soft-md transition bg-gradient-to-b from-amber-50/50 to-white">
+                <div class="text-4xl mb-3">👑</div>
+                <span class="text-xs font-bold text-amber-600 bg-amber-100 px-2.5 py-1 rounded-full">Level 5</span>
+                <h4 class="font-bold text-slate-800 mt-3">Lumina Archon</h4>
+                <p class="text-xs text-slate-500 mt-2">Unlocks: World builder mode & custom quest creation!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews / Testimonials Section -->
+    <section class="py-20 bg-white border-y border-amber-100 card-element">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-sky-600 bg-sky-100 px-3 py-1 rounded-full">Community Feedback</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-4">What Our Community Says</h2>
+                <p class="text-slate-600">Hear from the students, parents, and volunteers who use LuminaBox every day.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kid Review -->
+                <div class="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 relative">
+                    <div class="flex items-center space-x-1 text-amber-400 mb-4">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-sm mb-6 leading-relaxed">"Learning English used to feel like doing boring homework. Now I get to level up my Mythic Drake companion when I spell words right!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-amber-200 text-amber-800 rounded-full flex items-center justify-center font-bold">
+                            K
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-800 text-sm">Ka-him (Age 9)</h5>
+                            <p class="text-xs text-slate-500">Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent Review -->
+                <div class="bg-sky-50/50 p-8 rounded-3xl border border-sky-100 relative">
+                    <div class="flex items-center space-x-1 text-amber-400 mb-4">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-sm mb-6 leading-relaxed">"My son has dyslexia and used to get frustrated reading English aloud. The SEN reader font and game mechanics changed his confidence completely."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-sky-200 text-sky-800 rounded-full flex items-center justify-center font-bold">
+                            M
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-800 text-sm">Mrs. Chan</h5>
+                            <p class="text-xs text-slate-500">Parent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Review -->
+                <div class="bg-emerald-50/50 p-8 rounded-3xl border border-emerald-100 relative">
+                    <div class="flex items-center space-x-1 text-amber-400 mb-4">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-sm mb-6 leading-relaxed">"LuminaBox gives us structured, fun toolkits for our weekend tutoring workshops. Kids ask to keep playing even after sessions end!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-emerald-200 text-emerald-800 rounded-full flex items-center justify-center font-bold">
+                            S
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-800 text-sm">Sarah L.</h5>
+                            <p class="text-xs text-slate-500">Community Volunteer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Partners Section -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider">Our Community Partners</h3>
+            <p class="text-sm text-slate-500 mt-1">Working together to create inclusive education for all children</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Partner 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 flex flex-col items-center text-center shadow-soft-sm">
+                <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-700 font-bold mb-3">
+                    <i data-lucide="users"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 text-sm">Bright Sparks SEN Network</h4>
+                <p class="text-xs text-slate-500 mt-1">Inclusive Learning Support</p>
+            </div>
+
+            <!-- Partner 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 flex flex-col items-center text-center shadow-soft-sm">
+                <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center text-sky-700 font-bold mb-3">
+                    <i data-lucide="heart-handshake"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 text-sm">Harmony Youth Foundation</h4>
+                <p class="text-xs text-slate-500 mt-1">Community Outreach Partner</p>
+            </div>
+
+            <!-- Partner 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 flex flex-col items-center text-center shadow-soft-sm">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 font-bold mb-3">
+                    <i data-lucide="book-open-check"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 text-sm">Hope Literacy Alliance</h4>
+                <p class="text-xs text-slate-500 mt-1">Resource Distribution</p>
+            </div>
+
+            <!-- Partner 4 -->
+            <div class="bg-white p-6 rounded-2xl border border-amber-100 flex flex-col items-center text-center shadow-soft-sm">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-700 font-bold mb-3">
+                    <i data-lucide="smile"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 text-sm">Sunshine Children's Center</h4>
+                <p class="text-xs text-slate-500 mt-1">Field Testing Partner</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center space-x-2 mb-4">
+                <span class="text-2xl">✨</span>
+                <span class="text-white font-extrabold text-xl tracking-tight">LuminaBox 光啟盒</span>
+            </div>
+            <p class="text-xs text-slate-500">
+                &copy; LuminaBox Educational Project. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Toggle SEN Reader Mode
+        function toggleSENMode() {
+            const body = document.body;
+            const btnText = document.getElementById('senToggleText');
+            body.classList.toggle('sen-mode');
+
+            if (body.classList.contains('sen-mode')) {
+                btnText.textContent = "Disable SEN Reader Mode";
+            } else {
+                btnText.textContent = "Enable SEN Reader Mode";
+            }
+        }
+    </script>
+</body>
+</html>            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .smooth-hover:hover {
             transform: translateY(-2px);
