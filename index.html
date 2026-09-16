@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LuminaBox 光啟盒 — Out of the Box, Into the World</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -38,12 +38,18 @@
         }
     </script>
     <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #334155;
             background-color: #FEF9C3;
             letter-spacing: -0.01em;
             font-weight: 500;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
 
         .sen-mode {
@@ -63,8 +69,10 @@
         .smooth-hover {
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .smooth-hover:hover {
-            transform: translateY(-2px);
+        @media (hover: hover) {
+            .smooth-hover:hover {
+                transform: translateY(-2px);
+            }
         }
 
         @keyframes pulseGlow {
@@ -85,25 +93,42 @@
             transform: translateY(3px);
             box-shadow: 0 1px 0 #94a3b8;
         }
+
+        /* Hide scrollbars for slick mobile horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body id="app-body" class="min-h-screen text-slate-700 selection:bg-pink-200">
 
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md px-4 lg:px-8 py-3.5 border-b border-amber-200/60 shadow-soft-sm">
-        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md px-3 sm:px-6 lg:px-8 py-3 border-b border-amber-200/60 shadow-soft-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
             
-            <div class="flex items-center gap-3 cursor-pointer" onclick="switchSection('main-site')">
-                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-soft-sm">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchSection('main-site')">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-soft-sm shrink-0">
+                        <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-bold text-slate-800 tracking-tight leading-none">
+                            LuminaBox <span class="text-sky-500 font-semibold text-xs ml-0.5">光啟盒</span>
+                        </h1>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-normal mt-0.5">
+                            <span class="lang-en">Out of the box, into the world</span>
+                            <span class="lang-zh hidden">以光啟智，走出課室，邁向世界</span>
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text-lg font-bold text-slate-800 tracking-tight leading-none">
-                        LuminaBox <span class="text-sky-500 font-semibold text-xs ml-0.5">光啟盒</span>
-                    </h1>
-                    <p class="text-[11px] text-slate-500 font-medium tracking-normal mt-1">
-                        <span class="lang-en">Out of the box, into the world</span>
-                        <span class="lang-zh hidden">以光啟智，走出課室，邁向世界</span>
-                    </p>
+
+                <!-- Shards counter on mobile header right -->
+                <div class="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold shadow-soft-sm">
+                    <span>💎</span>
+                    <span class="mobile-shards-count">120</span>
                 </div>
             </div>
 
@@ -117,25 +142,25 @@
                 <a href="#shop" class="hover:text-sky-500 transition"><span class="lang-en">Get Kit ($30 HKD)</span><span class="lang-zh hidden">訂購套裝</span></a>
             </nav>
 
-            <div class="flex items-center gap-2">
-                <!-- Lumina Shards Counter -->
-                <div class="px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold flex items-center gap-1.5 shadow-soft-sm">
+            <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto no-scrollbar pb-1 md:pb-0">
+                <!-- Desktop Lumina Shards Counter -->
+                <div class="hidden md:flex px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold items-center gap-1.5 shadow-soft-sm shrink-0">
                     <span>💎</span>
                     <span id="user-shards-count">120</span>
                     <span class="text-[10px] text-amber-700 font-normal">Shards</span>
                 </div>
 
-                <button onclick="toggleLanguage()" class="px-3.5 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-slate-800 text-xs font-semibold transition shadow-soft-sm">
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-slate-800 text-xs font-semibold transition shadow-soft-sm shrink-0">
                     <span id="lang-btn-text">繁體中文</span>
                 </button>
 
-                <button onclick="toggleSENMode()" id="sen-toggle-btn" class="px-3.5 py-2 rounded-xl bg-amber-200/70 hover:bg-amber-300 text-amber-900 text-xs font-semibold transition flex items-center gap-1.5 shadow-soft-sm">
+                <button onclick="toggleSENMode()" id="sen-toggle-btn" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-200/70 hover:bg-amber-300 text-amber-900 text-xs font-semibold transition flex items-center gap-1.5 shadow-soft-sm shrink-0">
                     <i data-lucide="eye" class="w-3.5 h-3.5 text-amber-700"></i>
                     <span id="sen-btn-text">SEN Mode</span>
                 </button>
                 
-                <button id="btn-toggle-portal" onclick="togglePortal()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-semibold transition shadow-soft-sm flex items-center gap-2 smooth-hover">
-                    <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                <button id="btn-toggle-portal" onclick="togglePortal()" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-semibold transition shadow-soft-sm flex items-center gap-1.5 shrink-0 smooth-hover">
+                    <i data-lucide="gamepad-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                     <span id="lbl-toggle-portal">
                         <span class="lang-en">LuminaPortal AI</span>
                         <span class="lang-zh hidden">LuminaPortal AI 遊戲館</span>
@@ -145,25 +170,25 @@
         </div>
     </header>
 
-    <main id="view-main-site" class="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-10">
+    <main id="view-main-site" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-10">
 
         <!-- ABOUT SECTION -->
-        <section id="about" class="relative overflow-hidden rounded-[2.5rem] bg-white p-8 lg:p-12 shadow-soft-md">
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <section id="about" class="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-white p-5 sm:p-8 lg:p-12 shadow-soft-md">
+            <div class="grid lg:grid-cols-12 gap-6 sm:gap-10 items-center">
                 
-                <div class="lg:col-span-7 space-y-6">
+                <div class="lg:col-span-7 space-y-4 sm:space-y-6">
                     <div>
-                        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-800 leading-tight tracking-tight">
+                        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight tracking-tight">
                             <span class="lang-en">Out of the box, into the world</span>
                             <span class="lang-zh hidden">走出課室 • 邁向世界</span>
                         </h2>
-                        <p class="text-base font-semibold text-sky-600 mt-2">
+                        <p class="text-xs sm:text-base font-semibold text-sky-600 mt-1.5 sm:mt-2">
                             <span class="lang-en">LuminaBox — Monthly 4-Pillar Bilingual Learning Kit</span>
                             <span class="lang-zh hidden">LuminaBox 光啟盒 — 每月四大核心雙語學習輔助套裝</span>
                         </p>
                     </div>
 
-                    <div class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                    <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                         <p>
                             <span class="lang-en">LuminaBox is a monthly bilingual learning kit and digital platform designed to build English confidence for children through structured weekly goals. Each month delivers four distinct thematic booklets focusing on <b>Speak</b>, <b>Read</b>, <b>Write</b>, and <b>Connect</b>.</span>
                             <span class="lang-zh hidden">LuminaBox 光啟盒是一套結合實體教材與線上 AI 平台的雙語學習套裝。每月按週規劃四本主題冊，分別著重於「口說 (Speak)」、「閱讀 (Read)」、「寫作 (Write)」與「社區連結 (Connect)」，協助兒童全方位建立英語自信。</span>
@@ -174,9 +199,9 @@
                         </p>
                     </div>
 
-                    <div class="grid sm:grid-cols-3 gap-3 pt-2">
-                        <div class="p-3.5 bg-sky-50/80 rounded-2xl flex items-center gap-3 border border-sky-100">
-                            <div class="w-8 h-8 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 text-sm">⭐</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
+                        <div class="p-3 bg-sky-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-sky-100">
+                            <div class="w-8 h-8 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 text-sm shrink-0">⭐</div>
                             <div>
                                 <h4 class="font-bold text-slate-700 text-xs">
                                     <span class="lang-en">4 Weekly Booklets</span>
@@ -188,8 +213,8 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-pink-50/80 rounded-2xl flex items-center gap-3 border border-pink-100">
-                            <div class="w-8 h-8 rounded-xl bg-pink-100 flex items-center justify-center text-pink-500 text-sm">💎</div>
+                        <div class="p-3 bg-pink-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-pink-100">
+                            <div class="w-8 h-8 rounded-xl bg-pink-100 flex items-center justify-center text-pink-500 text-sm shrink-0">💎</div>
                             <div>
                                 <h4 class="font-bold text-slate-700 text-xs">
                                     <span class="lang-en">Lumina Shards</span>
@@ -201,8 +226,8 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="p-3.5 bg-amber-50/80 rounded-2xl flex items-center gap-3 border border-amber-100">
-                            <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-sm">📹</div>
+                        <div class="p-3 bg-amber-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-amber-100">
+                            <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-sm shrink-0">📹</div>
                             <div>
                                 <h4 class="font-bold text-slate-700 text-xs">
                                     <span class="lang-en">Zoom Mentorship</span>
@@ -216,13 +241,13 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap gap-3 pt-2">
-                        <a href="#shop" class="px-6 py-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs shadow-soft-sm transition smooth-hover flex items-center gap-2">
+                    <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+                        <a href="#shop" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs shadow-soft-sm transition smooth-hover flex items-center justify-center gap-2">
                             <span class="lang-en">Get LuminaBox ($30 HKD)</span>
                             <span class="lang-zh hidden">訂購套裝 (港幣 $30)</span>
                             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                         </a>
-                        <button onclick="switchSection('lumina-portal')" class="px-6 py-3 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 font-semibold text-xs transition smooth-hover flex items-center gap-2">
+                        <button onclick="switchSection('lumina-portal')" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 font-semibold text-xs transition smooth-hover flex items-center justify-center gap-2">
                             <span class="lang-en">Enter LuminaPortal AI</span>
                             <span class="lang-zh hidden">進入 LuminaPortal AI 遊戲館</span>
                             <i data-lucide="arrow-right" class="w-4 h-4 text-amber-700"></i>
@@ -231,14 +256,14 @@
                 </div>
 
                 <div class="lg:col-span-5">
-                    <div class="rounded-[2rem] bg-gradient-to-b from-sky-50 to-blue-50/40 p-6 shadow-soft-sm space-y-6 border border-sky-100">
+                    <div class="rounded-2xl sm:rounded-[2rem] bg-gradient-to-b from-sky-50 to-blue-50/40 p-4 sm:p-6 shadow-soft-sm space-y-4 sm:space-y-6 border border-sky-100">
                         
-                        <div class="bg-gradient-to-tr from-blue-300 via-sky-300 to-indigo-200 rounded-2xl p-4 text-center text-slate-800 space-y-3 shadow-soft-sm relative overflow-hidden">
-                            <div class="w-full h-52 rounded-xl overflow-hidden shadow-soft-sm bg-white flex items-center justify-center">
+                        <div class="bg-gradient-to-tr from-blue-300 via-sky-300 to-indigo-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 text-center text-slate-800 space-y-3 shadow-soft-sm relative overflow-hidden">
+                            <div class="w-full h-44 sm:h-52 rounded-xl overflow-hidden shadow-soft-sm bg-white flex items-center justify-center">
                                 <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="Original LuminaBox Physical Kit" class="w-full h-full object-cover">
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-lg text-slate-800">LuminaBox 光啟盒</h3>
+                                <h3 class="font-extrabold text-base sm:text-lg text-slate-800">LuminaBox 光啟盒</h3>
                                 <p class="text-[11px] text-slate-600 font-medium">
                                     <span class="lang-en">4 Weekly Booklets + LuminaPortal AI</span>
                                     <span class="lang-zh hidden">4 週實體小冊 + AI 數位解密平台</span>
@@ -249,7 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="space-y-3 px-1">
+                        <div class="space-y-2.5 px-1">
                             <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">
                                 <span class="lang-en">Monthly 4-Week Cycle</span>
                                 <span class="lang-zh hidden">每月四周主題安排</span>
@@ -257,20 +282,20 @@
                             
                             <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-700">
                                 <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-xs">W1</span>
-                                    <span>🗣️ Speak</span>
+                                    <span class="w-6 h-6 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-xs shrink-0">W1</span>
+                                    <span class="truncate">🗣️ Speak</span>
                                 </div>
                                 <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs">W2</span>
-                                    <span>📖 Read</span>
+                                    <span class="w-6 h-6 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs shrink-0">W2</span>
+                                    <span class="truncate">📖 Read</span>
                                 </div>
                                 <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs">W3</span>
-                                    <span>✍️ Write</span>
+                                    <span class="w-6 h-6 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs shrink-0">W3</span>
+                                    <span class="truncate">✍️ Write</span>
                                 </div>
                                 <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs">W4</span>
-                                    <span>🤝 Connect</span>
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs shrink-0">W4</span>
+                                    <span class="truncate">🤝 Connect</span>
                                 </div>
                             </div>
                         </div>
@@ -282,21 +307,21 @@
         </section>
 
         <!-- WHAT'S IN THE BOX SECTION -->
-        <section id="whats-in-the-box" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
+        <section id="whats-in-the-box" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
                     <span class="lang-en">Unboxing Experience</span>
                     <span class="lang-zh hidden">開箱體驗</span>
                 </span>
-                <h3 class="text-2xl font-bold text-slate-800">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
                     <span class="lang-en">What's Inside Your LuminaBox?</span>
                     <span class="lang-zh hidden">LuminaBox 光啟盒包含什麼？</span>
                 </h3>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-3xl bg-sky-50/60 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-xl">📚</div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/60 border border-sky-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg sm:text-xl">📚</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">4 Thematic Booklets</span>
                         <span class="lang-zh hidden">4 本單週主題小冊</span>
@@ -307,8 +332,8 @@
                     </p>
                 </div>
 
-                <div class="p-6 rounded-3xl bg-amber-50/60 border border-amber-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-xl">🔢</div>
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/60 border border-amber-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg sm:text-xl">🔢</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">5-Digit Lumina Card</span>
                         <span class="lang-zh hidden">5 位數 Lumina 算式卡</span>
@@ -319,8 +344,8 @@
                     </p>
                 </div>
 
-                <div class="p-6 rounded-3xl bg-pink-50/60 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-xl">📹</div>
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/60 border border-pink-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-lg sm:text-xl">📹</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Zoom Mentorship Pass</span>
                         <span class="lang-zh hidden">Zoom 導師一鍵預約卡</span>
@@ -331,8 +356,8 @@
                     </p>
                 </div>
 
-                <div class="p-6 rounded-3xl bg-emerald-50/60 border border-emerald-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xl">🧩</div>
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-emerald-50/60 border border-emerald-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg sm:text-xl">🧩</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Tactile Learning Accessories</span>
                         <span class="lang-zh hidden">觸感互動學習配件</span>
@@ -346,27 +371,27 @@
         </section>
 
         <!-- DEDICATED SEN TAILORED FEATURES SECTION -->
-        <section id="sen-features" class="bg-gradient-to-br from-amber-50 via-sky-50 to-pink-50 rounded-[2.5rem] p-8 lg:p-12 shadow-soft-md space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
+        <section id="sen-features" class="bg-gradient-to-br from-amber-50 via-sky-50 to-pink-50 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-12 shadow-soft-md space-y-6 sm:space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
                 <span class="px-3.5 py-1.5 rounded-full bg-amber-200 text-amber-900 text-xs font-bold inline-flex items-center gap-1.5">
-                    <i data-lucide="heart" class="w-4 h-4 text-amber-700"></i>
+                    <i data-lucide="heart" class="w-3.5 h-3.5 text-amber-700"></i>
                     <span class="lang-en">Special Educational Needs (SEN) Tailored</span>
                     <span class="lang-zh hidden">特殊教育需要 (SEN) 專屬設計</span>
                 </span>
-                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-800">
+                <h3 class="text-xl sm:text-3xl font-extrabold text-slate-800">
                     <span class="lang-en">Inclusive Design for Every Unique Learner</span>
                     <span class="lang-zh hidden">專為多元學習者打造的無障礙體驗</span>
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
                     <span class="lang-en">LuminaBox and LuminaPortal incorporate research-backed tools to support Dyslexia, ADHD, and neurodivergent learning patterns.</span>
                     <span class="lang-zh hidden">結合學術研究驗證的教學工具，全面支援讀寫障礙、專注力不足 (ADHD) 及多元學習需求的學童。</span>
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <!-- SEN Card 1 -->
-                <div class="bg-white p-6 rounded-3xl border border-amber-200/80 shadow-soft-sm space-y-3">
-                    <div class="w-10 h-10 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg">🔤</div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-amber-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg">🔤</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Dyslexia-Friendly Fonts</span>
                         <span class="lang-zh hidden">讀寫障礙友善字體</span>
@@ -378,8 +403,8 @@
                 </div>
 
                 <!-- SEN Card 2 -->
-                <div class="bg-white p-6 rounded-3xl border border-sky-200/80 shadow-soft-sm space-y-3">
-                    <div class="w-10 h-10 rounded-2xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg">🎨</div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-sky-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg">🎨</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Soft Pastel High-Contrast Tint</span>
                         <span class="lang-zh hidden">柔和高對比背景調色</span>
@@ -391,8 +416,8 @@
                 </div>
 
                 <!-- SEN Card 3 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-200/80 shadow-soft-sm space-y-3">
-                    <div class="w-10 h-10 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-600 font-bold text-lg">🧩</div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-pink-200/80 flex items-center justify-center text-pink-600 font-bold text-lg">🧩</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Micro-Chunked Pacing</span>
                         <span class="lang-zh hidden">微型拆解低壓步調</span>
@@ -404,8 +429,8 @@
                 </div>
 
                 <!-- SEN Card 4 -->
-                <div class="bg-white p-6 rounded-3xl border border-emerald-200/80 shadow-soft-sm space-y-3">
-                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg">🔊</div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-emerald-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg">🔊</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Multimodal Audio Cues</span>
                         <span class="lang-zh hidden">多感官音效與視覺輔助</span>
@@ -419,27 +444,26 @@
         </section>
 
         <!-- MEET THE TEAM SECTION -->
-        <section id="team" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
+        <section id="team" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    <span class="lang-en">Diocesan Girls' School (DGS) Team</span>
-                    <span class="lang-zh hidden">拔萃女書院 (DGS) 團隊</span>
+                    <span class="lang-en">Project Team</span>
+                    <span class="lang-zh hidden">專案團隊</span>
                 </span>
-                <h3 class="text-2xl font-bold text-slate-800">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
                     <span class="lang-en">Meet Our Founders & Developers</span>
                     <span class="lang-zh hidden">團隊成員與分工介紹</span>
                 </h3>
             </div>
 
-            <!-- Original Team Photo Preserved -->
-            <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-soft-sm bg-slate-100 border border-slate-200">
-                <img src="48ea0585-db1a-4ab9-a878-6141909f2deb.jpeg" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="LuminaBox DGS Team Photo" class="w-full h-auto object-cover max-h-[420px]">
+            <div class="max-w-3xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft-sm bg-slate-100 border border-slate-200">
+                <img src="48ea0585-db1a-4ab9-a878-6141909f2deb.jpeg" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="LuminaBox Team Photo" class="w-full h-auto object-cover max-h-[420px]">
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 pt-2">
+            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 pt-1 sm:pt-2">
                 <!-- Karina -->
-                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-lg">🎨</div>
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/70 border border-pink-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 rounded-xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-base">🎨</div>
                     <div>
                         <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
                         <p class="text-xs font-semibold text-pink-600">
@@ -454,8 +478,8 @@
                 </div>
 
                 <!-- Hayley -->
-                <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-200/80 flex items-center justify-center text-amber-800 font-extrabold text-lg">🤝</div>
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/70 border border-amber-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 rounded-xl bg-amber-200/80 flex items-center justify-center text-amber-800 font-extrabold text-base">🤝</div>
                     <div>
                         <h4 class="font-extrabold text-slate-800 text-base">Hayley</h4>
                         <p class="text-xs font-semibold text-amber-700">
@@ -470,8 +494,8 @@
                 </div>
 
                 <!-- Dorothy -->
-                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
-                    <div class="w-12 h-12 rounded-2xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-lg">💻</div>
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/70 border border-sky-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 rounded-xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-base">💻</div>
                     <div>
                         <h4 class="font-extrabold text-slate-800 text-base">Dorothy</h4>
                         <p class="text-xs font-semibold text-sky-600">
@@ -488,9 +512,9 @@
         </section>
 
         <!-- IMPACT STATS SECTION -->
-        <section id="impact-stats" class="bg-gradient-to-r from-sky-400 to-blue-600 rounded-[2.5rem] p-8 lg:p-12 text-white shadow-soft-md space-y-8">
+        <section id="impact-stats" class="bg-gradient-to-r from-sky-400 to-blue-600 rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-12 text-white shadow-soft-md space-y-6 sm:space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h3 class="text-2xl sm:text-3xl font-extrabold">
+                <h3 class="text-xl sm:text-3xl font-extrabold">
                     <span class="lang-en">Our Impact in Numbers</span>
                     <span class="lang-zh hidden">影響力成效數據</span>
                 </h3>
@@ -500,31 +524,31 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold">200+</div>
-                    <div class="text-xs mt-1 font-medium opacity-90">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 text-center">
+                <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-2xl sm:text-4xl font-extrabold">200+</div>
+                    <div class="text-[11px] sm:text-xs mt-1 font-medium opacity-90">
                         <span class="lang-en">Active Mentors</span>
                         <span class="lang-zh hidden">熱心志願導師</span>
                     </div>
                 </div>
-                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold">1,500+</div>
-                    <div class="text-xs mt-1 font-medium opacity-90">
+                <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-2xl sm:text-4xl font-extrabold">1,500+</div>
+                    <div class="text-[11px] sm:text-xs mt-1 font-medium opacity-90">
                         <span class="lang-en">Students Reached</span>
                         <span class="lang-zh hidden">受惠學童人數</span>
                     </div>
                 </div>
-                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold">12+</div>
-                    <div class="text-xs mt-1 font-medium opacity-90">
+                <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-2xl sm:text-4xl font-extrabold">12+</div>
+                    <div class="text-[11px] sm:text-xs mt-1 font-medium opacity-90">
                         <span class="lang-en">Community Partners</span>
                         <span class="lang-zh hidden">合作社區中心</span>
                     </div>
                 </div>
-                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold">94%</div>
-                    <div class="text-xs mt-1 font-medium opacity-90">
+                <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-2xl sm:text-4xl font-extrabold">94%</div>
+                    <div class="text-[11px] sm:text-xs mt-1 font-medium opacity-90">
                         <span class="lang-en">Confidence Boost</span>
                         <span class="lang-zh hidden">自信心提升率</span>
                     </div>
@@ -532,26 +556,26 @@
             </div>
         </section>
 
-        <!-- SDG SECTION FEATURING SWAPPED SDG 4 & 10 (IMG_5250 = SDG10, IMG_5251 = SDG4, IMG_5259) -->
-        <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
+        <!-- SDG SECTION -->
+        <section id="sdg" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
                     <span class="lang-en">Global Goals</span>
                     <span class="lang-zh hidden">聯合國永續目標</span>
                 </span>
-                <h3 class="text-2xl font-bold text-slate-800">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
                     <span class="lang-en">Aligned with UN Sustainable Development Goals</span>
                     <span class="lang-zh hidden">響應 UN SDGs 永續發展目標</span>
                 </h3>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Swapped Card 1: SDG 4 uses IMG_5251.png -->
-                <div class="p-6 rounded-3xl bg-red-50/70 border border-red-100 flex flex-col items-center text-center space-y-4 hover:shadow-soft-md transition">
-                    <div class="w-24 h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-red-200 shrink-0">
+            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6">
+                <!-- Card 1: SDG 4 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-red-50/70 border border-red-100 flex flex-col items-center text-center space-y-3 sm:space-y-4 hover:shadow-soft-md transition">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-red-200 shrink-0">
                         <img src="IMG_5251.png" onerror="this.onerror=null; this.src='https://sdgs.un.org/sites/default/files/goals/E_SDG_GOALS_FINAL-04.png';" alt="SDG Goal 4 Quality Education" class="w-full h-full object-contain">
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5 sm:space-y-2">
                         <span class="px-2.5 py-0.5 rounded-full bg-red-200 text-red-900 text-[10px] font-bold">UN Goal 4</span>
                         <h4 class="font-extrabold text-slate-800 text-base">
                             <span class="lang-en">SDG 4: Quality Education</span>
@@ -564,12 +588,12 @@
                     </div>
                 </div>
 
-                <!-- Swapped Card 2: SDG 10 uses IMG_5250.png -->
-                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 flex flex-col items-center text-center space-y-4 hover:shadow-soft-md transition">
-                    <div class="w-24 h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-pink-200 shrink-0">
+                <!-- Card 2: SDG 10 -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/70 border border-pink-100 flex flex-col items-center text-center space-y-3 sm:space-y-4 hover:shadow-soft-md transition">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-pink-200 shrink-0">
                         <img src="IMG_5250.png" onerror="this.onerror=null; this.src='https://sdgs.un.org/sites/default/files/goals/E_SDG_GOALS_FINAL-10.png';" alt="SDG Goal 10 Reduced Inequalities" class="w-full h-full object-contain">
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5 sm:space-y-2">
                         <span class="px-2.5 py-0.5 rounded-full bg-pink-200 text-pink-900 text-[10px] font-bold">UN Goal 10</span>
                         <h4 class="font-extrabold text-slate-800 text-base">
                             <span class="lang-en">SDG 10: Reduced Inequalities</span>
@@ -582,12 +606,12 @@
                     </div>
                 </div>
 
-                <!-- Card 3: SDG Summary with IMG_5259.png -->
-                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 flex flex-col items-center text-center space-y-4 hover:shadow-soft-md transition">
-                    <div class="w-24 h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-sky-200 shrink-0">
+                <!-- Card 3: SDG Summary -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/70 border border-sky-100 flex flex-col items-center text-center space-y-3 sm:space-y-4 hover:shadow-soft-md transition">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-white shadow-soft-sm p-1 border border-sky-200 shrink-0">
                         <img src="IMG_5259.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDGs Global Goals Alignment" class="w-full h-full object-contain">
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5 sm:space-y-2">
                         <span class="px-2.5 py-0.5 rounded-full bg-sky-200 text-sky-900 text-[10px] font-bold">Global Impact</span>
                         <h4 class="font-extrabold text-slate-800 text-base">
                             <span class="lang-en">Community Partnerships</span>
@@ -603,9 +627,9 @@
         </section>
 
         <!-- SHOP / ORDER SECTION -->
-        <section id="shop" class="bg-amber-100/60 rounded-[2.5rem] p-8 lg:p-12 shadow-soft-md space-y-8 border border-amber-200">
-            <div class="max-w-3xl mx-auto text-center space-y-4">
-                <h3 class="text-3xl font-extrabold text-slate-800">
+        <section id="shop" class="bg-amber-100/60 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-12 shadow-soft-md space-y-6 sm:space-y-8 border border-amber-200">
+            <div class="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-800">
                     <span class="lang-en">Get Your LuminaBox Today</span>
                     <span class="lang-zh hidden">預訂 LuminaBox 光啟盒</span>
                 </h3>
@@ -614,7 +638,7 @@
                     <span class="lang-zh hidden">支持自用訂購或配對贊助基層家庭學童，每盒每月僅需港幣 $30！</span>
                 </p>
 
-                <div class="p-6 bg-white rounded-3xl shadow-soft-sm max-w-md mx-auto space-y-4 border border-amber-200/80">
+                <div class="p-5 sm:p-6 bg-white rounded-2xl sm:rounded-3xl shadow-soft-sm max-w-md mx-auto space-y-4 border border-amber-200/80">
                     <div class="flex justify-between items-center text-sm font-bold text-slate-800 border-b border-slate-100 pb-3">
                         <span>LuminaBox Kit (1 Month)</span>
                         <span class="text-sky-600">$30 HKD</span>
@@ -627,7 +651,7 @@
                     </div>
                     <button onclick="alert('Thank you for your interest! Order placement is now processing for next month\'s release.')" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xs shadow-soft-sm transition smooth-hover">
                         <span class="lang-en">Order Now ($30 HKD)</span>
-                        <span class="lang-zh hidden">立即下單 ($30 HKD)</span>
+                        <span class="lang-zh hidden">讀取下單 ($30 HKD)</span>
                     </button>
                 </div>
             </div>
@@ -636,24 +660,24 @@
     </main>
 
     <!-- LUMINA PORTAL / GAMES VIEW SECTION -->
-    <section id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
+    <section id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8">
         
         <!-- Portal Header Bar -->
-        <div class="p-6 rounded-[2rem] bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white shadow-soft-md flex flex-wrap justify-between items-center gap-4">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white shadow-soft-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
-                <h2 class="text-2xl font-extrabold flex items-center gap-2">
+                <h2 class="text-xl sm:text-2xl font-extrabold flex items-center gap-2">
                     <span>🎮 LuminaPortal AI Hub</span>
                 </h2>
                 <p class="text-xs opacity-90 mt-1">Unlock rewards, upgrade companions, track progress, and request 1-to-1 mentorship!</p>
             </div>
-            <button onclick="switchSection('main-site')" class="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-semibold backdrop-blur-md transition">
+            <button onclick="switchSection('main-site')" class="w-full sm:w-auto text-center px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-semibold backdrop-blur-md transition shrink-0">
                 ← Back to Main Site
             </button>
         </div>
 
-        <!-- NEW 1: STUDENT DASHBOARD & DAILY STREAK TRACKER -->
-        <div class="p-6 rounded-[2rem] bg-gradient-to-br from-white to-amber-50/60 border border-amber-200 shadow-soft-sm space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-amber-200/60 pb-4">
+        <!-- DASHBOARD & DAILY STREAK TRACKER -->
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-white to-amber-50/60 border border-amber-200 shadow-soft-sm space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-200/60 pb-3.5">
                 <div>
                     <h3 class="text-base font-extrabold text-slate-800 flex items-center gap-2">
                         <i data-lucide="layout-dashboard" class="w-5 h-5 text-sky-500"></i>
@@ -661,13 +685,13 @@
                     </h3>
                     <p class="text-xs text-slate-500 font-medium">Keep learning daily to increase your streak and earn bonus Lumina Shards!</p>
                 </div>
-                <div class="flex items-center gap-3">
-                    <div class="px-4 py-2 bg-amber-100 rounded-2xl border border-amber-300 text-amber-900 font-extrabold text-sm flex items-center gap-2 shadow-soft-sm">
-                        <span class="text-lg">🔥</span>
+                <div class="flex items-center gap-2">
+                    <div class="flex-1 sm:flex-initial justify-center px-3 py-1.5 bg-amber-100 rounded-xl border border-amber-300 text-amber-900 font-extrabold text-xs sm:text-sm flex items-center gap-1.5 shadow-soft-sm">
+                        <span class="text-base">🔥</span>
                         <span><span id="streak-days">5</span> Day Streak!</span>
                     </div>
-                    <div class="px-4 py-2 bg-sky-100 rounded-2xl border border-sky-300 text-sky-900 font-extrabold text-sm flex items-center gap-2 shadow-soft-sm">
-                        <span class="text-lg">🎯</span>
+                    <div class="flex-1 sm:flex-initial justify-center px-3 py-1.5 bg-sky-100 rounded-xl border border-sky-300 text-sky-900 font-extrabold text-xs sm:text-sm flex items-center gap-1.5 shadow-soft-sm">
+                        <span class="text-base">🎯</span>
                         <span>Level <span id="user-level">2</span> Learner</span>
                     </div>
                 </div>
@@ -679,109 +703,109 @@
                     <span class="text-xs font-bold text-slate-700">This Week's Activity Progress</span>
                     <span class="text-xs font-semibold text-emerald-600">80% Completed</span>
                 </div>
-                <div class="grid grid-cols-7 gap-2 text-center">
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Mon</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
+                <div class="grid grid-cols-7 gap-1.5 sm:gap-2 text-center">
+                    <div class="p-2 sm:p-3 bg-emerald-100 border border-emerald-300 rounded-xl sm:rounded-2xl">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-emerald-800">Mon</div>
+                        <div class="text-sm sm:text-base font-extrabold text-emerald-700">✓</div>
                     </div>
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Tue</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
+                    <div class="p-2 sm:p-3 bg-emerald-100 border border-emerald-300 rounded-xl sm:rounded-2xl">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-emerald-800">Tue</div>
+                        <div class="text-sm sm:text-base font-extrabold text-emerald-700">✓</div>
                     </div>
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Wed</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
+                    <div class="p-2 sm:p-3 bg-emerald-100 border border-emerald-300 rounded-xl sm:rounded-2xl">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-emerald-800">Wed</div>
+                        <div class="text-sm sm:text-base font-extrabold text-emerald-700">✓</div>
                     </div>
-                    <div class="p-3 bg-emerald-100 border border-emerald-300 rounded-2xl">
-                        <div class="text-[10px] font-bold text-emerald-800">Thu</div>
-                        <div class="text-base font-extrabold text-emerald-700">✓</div>
+                    <div class="p-2 sm:p-3 bg-emerald-100 border border-emerald-300 rounded-xl sm:rounded-2xl">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-emerald-800">Thu</div>
+                        <div class="text-sm sm:text-base font-extrabold text-emerald-700">✓</div>
                     </div>
-                    <div class="p-3 bg-amber-200 border border-amber-400 rounded-2xl animate-pulse">
-                        <div class="text-[10px] font-bold text-amber-900">Fri (Today)</div>
-                        <div class="text-base font-extrabold text-amber-800">⚡</div>
+                    <div class="p-2 sm:p-3 bg-amber-200 border border-amber-400 rounded-xl sm:rounded-2xl animate-pulse">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-amber-900 truncate">Fri</div>
+                        <div class="text-sm sm:text-base font-extrabold text-amber-800">⚡</div>
                     </div>
-                    <div class="p-3 bg-slate-100 border border-slate-200 rounded-2xl opacity-60">
-                        <div class="text-[10px] font-bold text-slate-500">Sat</div>
-                        <div class="text-base font-extrabold text-slate-400">•</div>
+                    <div class="p-2 sm:p-3 bg-slate-100 border border-slate-200 rounded-xl sm:rounded-2xl opacity-60">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-slate-500">Sat</div>
+                        <div class="text-sm sm:text-base font-extrabold text-slate-400">•</div>
                     </div>
-                    <div class="p-3 bg-slate-100 border border-slate-200 rounded-2xl opacity-60">
-                        <div class="text-[10px] font-bold text-slate-500">Sun</div>
-                        <div class="text-base font-extrabold text-slate-400">•</div>
+                    <div class="p-2 sm:p-3 bg-slate-100 border border-slate-200 rounded-xl sm:rounded-2xl opacity-60">
+                        <div class="text-[9px] sm:text-[10px] font-bold text-slate-500">Sun</div>
+                        <div class="text-sm sm:text-base font-extrabold text-slate-400">•</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- NEW 2: GRAND ROTATING 5-DIGIT LUMINA CODE PICKER -->
-        <div class="p-8 rounded-[2.5rem] bg-gradient-to-b from-amber-100 via-amber-50 to-white border-2 border-amber-300 shadow-soft-md space-y-6 text-center relative overflow-hidden">
-            <div class="max-w-xl mx-auto space-y-2">
+        <!-- ROTATING 5-DIGIT LUMINA CODE PICKER -->
+        <div class="p-4 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-gradient-to-b from-amber-100 via-amber-50 to-white border-2 border-amber-300 shadow-soft-md space-y-4 sm:space-y-6 text-center relative overflow-hidden">
+            <div class="max-w-xl mx-auto space-y-1.5 sm:space-y-2">
                 <span class="px-3.5 py-1 rounded-full bg-amber-200 text-amber-900 text-xs font-extrabold inline-flex items-center gap-1">
                     <span>✨ GRAND WEEKLY VAULT</span>
                 </span>
-                <h3 class="text-2xl font-extrabold text-slate-800">Interactive 5-Digit Lumina Code Keypad</h3>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-800">Interactive 5-Digit Lumina Code Keypad</h3>
                 <p class="text-xs text-slate-600 font-medium">Use the rotating arrows to dial in your 5-digit code from your weekly Lumina Card!</p>
             </div>
 
-            <!-- Grand Rotatable 5-Digit Selector -->
-            <div class="flex justify-center items-center gap-3 sm:gap-5 py-2">
+            <!-- Mobile-Friendly 5-Digit Selector -->
+            <div class="flex justify-center items-center gap-1.5 sm:gap-4 py-2">
+                <!-- Digit 0 -->
+                <div class="flex flex-col items-center gap-1.5">
+                    <button onclick="rotateDigit(0, 1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▲</button>
+                    <div id="digit-0" class="w-11 h-16 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-xl sm:rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-2xl sm:text-4xl flex items-center justify-center shadow-md">1</div>
+                    <button onclick="rotateDigit(0, -1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▼</button>
+                </div>
                 <!-- Digit 1 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(0, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-0" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">1</div>
-                    <button onclick="rotateDigit(0, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
+                <div class="flex flex-col items-center gap-1.5">
+                    <button onclick="rotateDigit(1, 1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▲</button>
+                    <div id="digit-1" class="w-11 h-16 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-xl sm:rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-2xl sm:text-4xl flex items-center justify-center shadow-md">2</div>
+                    <button onclick="rotateDigit(1, -1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▼</button>
                 </div>
                 <!-- Digit 2 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(1, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-1" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">2</div>
-                    <button onclick="rotateDigit(1, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
+                <div class="flex flex-col items-center gap-1.5">
+                    <button onclick="rotateDigit(2, 1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▲</button>
+                    <div id="digit-2" class="w-11 h-16 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-xl sm:rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-2xl sm:text-4xl flex items-center justify-center shadow-md">3</div>
+                    <button onclick="rotateDigit(2, -1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▼</button>
                 </div>
                 <!-- Digit 3 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(2, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-2" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">3</div>
-                    <button onclick="rotateDigit(2, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
+                <div class="flex flex-col items-center gap-1.5">
+                    <button onclick="rotateDigit(3, 1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▲</button>
+                    <div id="digit-3" class="w-11 h-16 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-xl sm:rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-2xl sm:text-4xl flex items-center justify-center shadow-md">4</div>
+                    <button onclick="rotateDigit(3, -1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▼</button>
                 </div>
                 <!-- Digit 4 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(3, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-3" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">4</div>
-                    <button onclick="rotateDigit(3, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
-                </div>
-                <!-- Digit 5 -->
-                <div class="flex flex-col items-center gap-2">
-                    <button onclick="rotateDigit(4, 1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▲</button>
-                    <div id="digit-4" class="w-14 h-20 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-3xl sm:text-4xl flex items-center justify-center shadow-lg transition-transform duration-200">5</div>
-                    <button onclick="rotateDigit(4, -1)" class="w-10 h-8 rounded-xl digit-picker-btn font-extrabold text-slate-700 hover:bg-sky-100">▼</button>
+                <div class="flex flex-col items-center gap-1.5">
+                    <button onclick="rotateDigit(4, 1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▲</button>
+                    <div id="digit-4" class="w-11 h-16 sm:w-16 sm:h-24 bg-gradient-to-b from-slate-800 to-slate-900 rounded-xl sm:rounded-2xl border-2 border-amber-400 text-amber-300 font-extrabold text-2xl sm:text-4xl flex items-center justify-center shadow-md">5</div>
+                    <button onclick="rotateDigit(4, -1)" class="w-8 sm:w-10 h-7 sm:h-8 rounded-lg sm:rounded-xl digit-picker-btn font-extrabold text-xs sm:text-base text-slate-700">▼</button>
                 </div>
             </div>
 
             <div class="pt-2">
-                <button onclick="submitRotatedCode()" class="px-8 py-3.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-extrabold text-sm rounded-2xl shadow-soft-md smooth-hover transition">
+                <button onclick="submitRotatedCode()" class="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-extrabold text-xs sm:text-sm rounded-xl sm:rounded-2xl shadow-soft-md transition">
                     🔓 UNLOCK WEEKLY REWARD (+100 SHARDS)
                 </button>
             </div>
-            <p id="rotated-code-feedback" class="text-xs font-bold text-emerald-600 hidden"></p>
+            <p id="rotated-code-feedback" class="text-xs font-bold text-emerald-600 hidden leading-relaxed"></p>
         </div>
 
-        <!-- NEW 3: LUMINA COMPANIONS & AVATAR EVOLUTION SHOP -->
-        <div class="p-6 rounded-[2rem] bg-white border border-pink-200 shadow-soft-sm space-y-6">
-            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-100 pb-4">
+        <!-- LUMINA COMPANIONS & AVATAR EVOLUTION SHOP -->
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] bg-white border border-pink-200 shadow-soft-sm space-y-4 sm:space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-100 pb-3.5">
                 <div>
-                    <h3 class="text-lg font-extrabold text-slate-800 flex items-center gap-2">
+                    <h3 class="text-base sm:text-lg font-extrabold text-slate-800 flex items-center gap-2">
                         <span>🐾 Lumina Companions Avatar Evolution</span>
                     </h3>
                     <p class="text-xs text-slate-500 font-medium">Use your earned Lumina Shards to level up your pet companion!</p>
                 </div>
-                <div class="px-4 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs font-bold">
-                    Active Companion: <span id="active-companion-name">Sparky the Owl (Lvl 1)</span>
+                <div class="px-3 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs font-bold">
+                    Active: <span id="active-companion-name">Sparky the Owl (Lvl 1)</span>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6">
                 <!-- Companion 1 -->
-                <div class="p-5 rounded-3xl bg-amber-50/70 border border-amber-200 text-center space-y-3 relative">
-                    <div class="w-24 h-24 mx-auto rounded-2xl bg-amber-100 flex items-center justify-center text-5xl shadow-inner">
+                <div class="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-amber-50/70 border border-amber-200 text-center space-y-3 relative">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl bg-amber-100 flex items-center justify-center text-4xl sm:text-5xl shadow-inner">
                         <span id="comp-emoji-1">🦉</span>
                     </div>
                     <div>
@@ -794,8 +818,8 @@
                 </div>
 
                 <!-- Companion 2 -->
-                <div class="p-5 rounded-3xl bg-sky-50/70 border border-sky-200 text-center space-y-3 relative">
-                    <div class="w-24 h-24 mx-auto rounded-2xl bg-sky-100 flex items-center justify-center text-5xl shadow-inner">
+                <div class="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-sky-50/70 border border-sky-200 text-center space-y-3 relative">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl bg-sky-100 flex items-center justify-center text-4xl sm:text-5xl shadow-inner">
                         <span id="comp-emoji-2">🦊</span>
                     </div>
                     <div>
@@ -808,12 +832,12 @@
                 </div>
 
                 <!-- Companion 3 -->
-                <div class="p-5 rounded-3xl bg-pink-50/70 border border-pink-200 text-center space-y-3 relative">
-                    <div class="w-24 h-24 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-5xl shadow-inner">
+                <div class="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-pink-50/70 border border-pink-200 text-center space-y-3 relative">
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-4xl sm:text-5xl shadow-inner">
                         <span id="comp-emoji-3">🐉</span>
                     </div>
                     <div>
-                        <h4 class="font-extrabold text-slate-800 text-base" id="comp-title-3">Lumina Dragon</h4>
+                        <h4 class="font-extrabold text-slate-800 text-sm" id="comp-title-3">Lumina Dragon</h4>
                         <p class="text-[11px] text-slate-500 font-medium" id="comp-stage-3">Stage 1: Hatchling</p>
                     </div>
                     <button onclick="upgradeCompanion(3, 120)" id="comp-btn-3" class="w-full py-2.5 bg-pink-400 hover:bg-pink-500 text-white font-bold text-xs rounded-xl transition">
@@ -823,19 +847,19 @@
             </div>
         </div>
 
-        <!-- NEW 4: REQUEST A MENTOR SECTION (STUDENT LOGIN & BOOKING SLOTS) -->
-        <div class="p-8 rounded-[2.5rem] bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border border-sky-200 shadow-soft-md space-y-6">
+        <!-- REQUEST A MENTOR SECTION -->
+        <div class="p-5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border border-sky-200 shadow-soft-md space-y-6">
             <div class="max-w-xl mx-auto text-center space-y-2">
                 <span class="px-3.5 py-1 rounded-full bg-sky-200 text-sky-900 text-xs font-extrabold inline-flex items-center gap-1.5">
                     <i data-lucide="video" class="w-3.5 h-3.5 text-sky-700"></i>
                     <span>Bridge to English Mentorship</span>
                 </span>
-                <h3 class="text-2xl font-extrabold text-slate-800">Request a Direct 1-to-1 Zoom Mentor</h3>
-                <p class="text-xs text-slate-600 font-medium">Sign in with your Student ID to book live oral practice or homework help with Diocesan Girls' School student volunteers.</p>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-800">Request a Direct 1-to-1 Zoom Mentor</h3>
+                <p class="text-xs text-slate-600 font-medium leading-relaxed">Sign in with your Student ID to book live oral practice or homework help with student volunteers.</p>
             </div>
 
             <!-- Login / Booking Form State -->
-            <div id="mentor-booking-container" class="max-w-md mx-auto bg-white p-6 rounded-3xl border border-sky-100 shadow-soft-sm space-y-4">
+            <div id="mentor-booking-container" class="max-w-md mx-auto bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-sky-100 shadow-soft-sm space-y-4">
                 
                 <!-- Step 1: Student ID Login -->
                 <div id="student-login-box" class="space-y-3">
@@ -853,18 +877,18 @@
                     </button>
                 </div>
 
-                <!-- Step 2: Time Slot Picker (Hidden initially) -->
+                <!-- Step 2: Time Slot Picker -->
                 <div id="student-slot-box" class="hidden space-y-4">
                     <div class="p-3 bg-emerald-50 rounded-2xl border border-emerald-200 flex justify-between items-center text-xs">
-                        <span class="font-bold text-emerald-800">Logged in as: <span id="logged-student-id">STU-2026-88</span></span>
-                        <button onclick="logoutStudent()" class="text-[10px] text-red-500 underline">Sign Out</button>
+                        <span class="font-bold text-emerald-800 truncate mr-2">Logged in: <span id="logged-student-id">STU-2026-88</span></span>
+                        <button onclick="logoutStudent()" class="text-[10px] text-red-500 underline shrink-0">Sign Out</button>
                     </div>
 
                     <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Step 2: Choose Zoom Time Slot</h4>
                     
                     <div class="space-y-2">
                         <label class="block text-xs font-semibold text-slate-600">Select Subject Focus</label>
-                        <select id="mentor-subject" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-sky-500">
+                        <select id="mentor-subject" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-sky-500">
                             <option>🗣️ Speak — Oral English Practice</option>
                             <option>📖 Read — Reading Comprehension</option>
                             <option>✍️ Write — Grammar & Essay Review</option>
@@ -904,7 +928,7 @@
         </div>
 
         <!-- Chatbase AI Embed Integration -->
-        <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-soft-sm space-y-4">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-soft-sm space-y-4">
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                 <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
                     <i data-lucide="bot" class="w-4 h-4 text-sky-500"></i>
@@ -913,11 +937,11 @@
                 <span class="text-[11px] text-slate-500 font-medium">Powered by Chatbase</span>
             </div>
             
-            <div class="w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 min-h-[700px] shadow-inner">
+            <div class="w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 min-h-[500px] sm:min-h-[700px] shadow-inner">
                 <iframe
                     src="https://www.chatbase.co/chatbot-iframe/EJLpfsVJzxAHQ9dx8kBBB"
                     width="100%"
-                    style="height: 100%; min-height: 700px"
+                    style="height: 100%; min-height: 500px;"
                     frameborder="0"
                     allow="microphone"
                 ></iframe>
@@ -925,16 +949,16 @@
         </div>
 
         <!-- 4 PLAYABLE GAMES SECTION -->
-        <div class="space-y-6 pt-4">
-            <h3 class="text-xl font-extrabold text-slate-800 flex items-center gap-2">
+        <div class="space-y-6 pt-2 sm:pt-4">
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-800 flex flex-wrap items-center gap-2">
                 <span>🧩 Interactive Playable Mini-Games</span>
-                <span class="text-xs font-semibold text-sky-600 bg-sky-100 px-2.5 py-1 rounded-full">10 Questions Each</span>
+                <span class="text-xs font-semibold text-sky-600 bg-sky-100 px-2.5 py-0.5 rounded-full">10 Questions Each</span>
             </h3>
 
-            <div class="grid lg:grid-cols-2 gap-6">
+            <div class="grid lg:grid-cols-2 gap-4 sm:gap-6">
                 
                 <!-- Game 1: Speak -->
-                <div class="p-6 rounded-3xl bg-sky-50/80 border border-sky-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/80 border border-sky-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-full bg-sky-200 text-sky-800 text-[10px] font-bold">GAME 1: SPEAK</span>
@@ -947,7 +971,7 @@
                     <div id="g1-box" class="bg-white p-4 rounded-2xl border border-sky-100 space-y-3">
                         <div class="text-xs font-bold text-sky-600" id="g1-progress">Question 1 / 10</div>
                         <div class="text-sm font-extrabold text-slate-800" id="g1-question">Loading question...</div>
-                        <div class="grid grid-cols-2 gap-2" id="g1-options"></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="g1-options"></div>
                     </div>
 
                     <button onclick="initGame1()" class="w-full py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white text-xs font-bold transition">
@@ -956,7 +980,7 @@
                 </div>
 
                 <!-- Game 2: Read -->
-                <div class="p-6 rounded-3xl bg-amber-50/80 border border-amber-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/80 border border-amber-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-full bg-amber-200 text-amber-800 text-[10px] font-bold">GAME 2: READ</span>
@@ -979,7 +1003,7 @@
                 </div>
 
                 <!-- Game 3: Write -->
-                <div class="p-6 rounded-3xl bg-pink-50/80 border border-pink-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/80 border border-pink-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-full bg-pink-200 text-pink-800 text-[10px] font-bold">GAME 3: WRITE</span>
@@ -1001,7 +1025,7 @@
                 </div>
 
                 <!-- Game 4: Connect -->
-                <div class="p-6 rounded-3xl bg-emerald-50/80 border border-emerald-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-emerald-50/80 border border-emerald-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="px-2.5 py-0.5 rounded-full bg-emerald-200 text-emerald-800 text-[10px] font-bold">GAME 4: CONNECT</span>
@@ -1028,11 +1052,10 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-white border-t border-amber-200/60 mt-16 py-8 px-4 lg:px-8 text-center text-xs text-slate-500">
+    <footer class="bg-white border-t border-amber-200/60 mt-12 sm:mt-16 py-6 sm:py-8 px-4 lg:px-8 text-center text-xs text-slate-500">
         <div class="max-w-7xl mx-auto space-y-2">
             <p class="font-semibold text-slate-700">LuminaBox 光啟盒 — Bridge to English Charity Initiative</p>
-            <p>Designed with ❤️ by Diocesan Girls' School (DGS) Team for inclusive community education.</p>
-            <p class="text-[10px] text-slate-400 pt-2">© 2026 LuminaBox. All rights reserved.</p>
+            <p class="text-[10px] text-slate-400 pt-1">© 2026 LuminaBox. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1046,6 +1069,7 @@
         function addShards(amount) {
             totalShards += amount;
             document.getElementById('user-shards-count').innerText = totalShards;
+            document.querySelectorAll('.mobile-shards-count').forEach(el => el.innerText = totalShards);
         }
 
         // View Switching Logic
@@ -1117,6 +1141,7 @@
 
             totalShards -= cost;
             document.getElementById('user-shards-count').innerText = totalShards;
+            document.querySelectorAll('.mobile-shards-count').forEach(el => el.innerText = totalShards);
             companionLevels[id - 1]++;
 
             if (id === 1) {
@@ -1200,7 +1225,7 @@
             optsContainer.innerHTML = '';
             item.opts.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-xs font-semibold text-slate-700 border border-sky-200 transition text-left";
+                btn.className = "p-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-xs font-semibold text-slate-700 border border-sky-200 transition text-left";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     if (idx === item.ans) {
@@ -1249,7 +1274,7 @@
             optsContainer.innerHTML = '';
             item.opts.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-xs font-semibold text-slate-700 border border-amber-200 transition text-left";
+                btn.className = "p-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-xs font-semibold text-slate-700 border border-amber-200 transition text-left";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     if (idx === item.ans) {
@@ -1297,7 +1322,7 @@
             optsContainer.innerHTML = '';
             item.opts.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-xs font-semibold text-slate-700 border border-pink-200 transition text-left";
+                btn.className = "p-2.5 rounded-xl bg-pink-50 hover:bg-pink-100 text-xs font-semibold text-slate-700 border border-pink-200 transition text-left";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     if (idx === item.ans) {
@@ -1345,7 +1370,7 @@
             optsContainer.innerHTML = '';
             item.opts.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-xs font-semibold text-slate-700 border border-emerald-200 transition text-left";
+                btn.className = "p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-xs font-semibold text-slate-700 border border-emerald-200 transition text-left";
                 btn.innerText = opt;
                 btn.onclick = () => {
                     if (idx === item.ans) {
