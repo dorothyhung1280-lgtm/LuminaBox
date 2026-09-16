@@ -10,15 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Chatbase AI Script Integration -->
-    <script>
-        window.embeddedChatbaseConfig = {
-            chatbaseId: "YOUR_CHATBASE_ID_HERE",
-            domain: "www.chatbase.co"
-        }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" chatbaseId="YOUR_CHATBASE_ID_HERE" domain="www.chatbase.co" defer></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -390,7 +381,7 @@
 
                 <!-- SEN Card 3 -->
                 <div class="bg-white p-6 rounded-3xl border border-pink-200/80 shadow-soft-sm space-y-3">
-                    <div class="w-10 h-10 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-lg">🧩</div>
+                    <div class="w-10 h-10 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-600 font-bold text-lg">🧩</div>
                     <h4 class="font-extrabold text-slate-800 text-sm">
                         <span class="lang-en">Micro-Chunked Pacing</span>
                         <span class="lang-zh hidden">微型拆解低壓步調</span>
@@ -435,10 +426,11 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <!-- Swapped Name Label: Karina is Main Logistics & Website Platform -->
                 <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition">
                     <div class="w-12 h-12 rounded-2xl bg-sky-200/80 flex items-center justify-center text-sky-700 font-extrabold text-lg">💻</div>
                     <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Dorothy</h4>
+                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
                         <p class="text-xs font-semibold text-sky-600">
                             <span class="lang-en">Main Logistics & Website Platform</span>
                             <span class="lang-zh hidden">主要物流營運與網站開發</span>
@@ -465,10 +457,11 @@
                     </p>
                 </div>
 
+                <!-- Swapped Name Label: Dorothy is Physical Prototype & Content Design -->
                 <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition">
                     <div class="w-12 h-12 rounded-2xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-lg">🎨</div>
                     <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
+                        <h4 class="font-extrabold text-slate-800 text-base">Dorothy</h4>
                         <p class="text-xs font-semibold text-pink-600">
                             <span class="lang-en">Physical Prototype & Content Design</span>
                             <span class="lang-zh hidden">實體原型製作與內容設計</span>
@@ -483,554 +476,568 @@
         </section>
 
         <!-- IMPACT STATS SECTION -->
-        <section id="impact-stats" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
+        <section id="impact-stats" class="bg-gradient-to-r from-sky-400 to-blue-600 rounded-[2.5rem] p-8 lg:p-12 text-white shadow-soft-md space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
-                    <span class="lang-en">Measured Learning Impact</span>
-                    <span class="lang-zh hidden">實測學習成效與數據</span>
-                </span>
-                <h3 class="text-2xl font-bold text-slate-800">
-                    <span class="lang-en">Empowering 1,200+ Children Across Hong Kong</span>
-                    <span class="lang-zh hidden">賦能超過 1,200 名香港學童</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold">
+                    <span class="lang-en">Our Impact in Numbers</span>
+                    <span class="lang-zh hidden">影響力成效數據</span>
                 </h3>
-            </div>
-
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-                <div class="p-5 rounded-3xl bg-amber-50/70 border border-amber-100 text-center space-y-1.5">
-                    <div class="text-3xl font-extrabold text-amber-700">+87%</div>
-                    <div class="text-xs font-bold text-slate-800">Reading Confidence</div>
-                </div>
-
-                <div class="p-5 rounded-3xl bg-sky-50/70 border border-sky-100 text-center space-y-1.5">
-                    <div class="text-3xl font-extrabold text-sky-600">3.5x</div>
-                    <div class="text-xs font-bold text-slate-800">Daily Practice Time</div>
-                </div>
-
-                <div class="p-5 rounded-3xl bg-pink-50/70 border border-pink-100 text-center space-y-1.5">
-                    <div class="text-3xl font-extrabold text-pink-600">92%</div>
-                    <div class="text-xs font-bold text-slate-800">Vocabulary Retention</div>
-                </div>
-
-                <div class="p-5 rounded-3xl bg-purple-50/70 border border-purple-100 text-center space-y-1.5">
-                    <div class="text-3xl font-extrabold text-purple-600">200+</div>
-                    <div class="text-xs font-bold text-slate-800">Volunteer Mentors</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SDG SECTION (Original SDG Photos Preserved) -->
-        <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold">
-                        <span class="lang-en">UN Sustainable Development Goals</span>
-                        <span class="lang-zh hidden">聯合國永續發展目標</span>
-                    </span>
-                    <h3 class="text-2xl font-bold text-slate-800 mt-2">
-                        <span class="lang-en">Aligned with Global Social Impact</span>
-                        <span class="lang-zh hidden">踐行聯合國永續使命</span>
-                    </h3>
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-6">
-                <!-- SDG 4 -->
-                <div class="rounded-3xl bg-amber-50/60 p-5 space-y-3 border border-amber-100 hover:shadow-soft-md transition">
-                    <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_5251.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 4 Quality Education Photo" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-7 h-7 rounded-lg bg-red-500 text-white flex items-center justify-center font-extrabold text-xs">4</div>
-                        <h4 class="font-bold text-slate-800 text-xs">SDG 4: Quality Education</h4>
-                    </div>
-                    <p class="text-[11px] text-slate-600 leading-relaxed font-medium">
-                        Inclusive multi-sensory weekly booklets paired with dyslexic-friendly fonts and adaptive speech AI.
-                    </p>
-                </div>
-
-                <!-- SDG 10 -->
-                <div class="rounded-3xl bg-sky-50/60 p-5 space-y-3 border border-sky-100 hover:shadow-soft-md transition">
-                    <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_5250.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 10 Reduced Inequalities Photo" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-7 h-7 rounded-lg bg-amber-500 text-white flex items-center justify-center font-extrabold text-xs">10</div>
-                        <h4 class="font-bold text-slate-800 text-xs">SDG 10: Reduced Inequalities</h4>
-                    </div>
-                    <p class="text-[11px] text-slate-600 leading-relaxed font-medium">
-                        Subsidized at only $30 HKD per kit for grassroots families, eliminating financial barriers to interactive AI learning.
-                    </p>
-                </div>
-
-                <!-- SDG 17 -->
-                <div class="rounded-3xl bg-pink-50/60 p-5 space-y-3 border border-pink-100 hover:shadow-soft-md transition">
-                    <div class="w-full h-48 rounded-2xl overflow-hidden shadow-soft-sm bg-white">
-                        <img src="IMG_5259.png" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="SDG 17 Partnerships for Goals Photo" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-xs">17</div>
-                        <h4 class="font-bold text-slate-800 text-xs">SDG 17: Partnerships for Goals</h4>
-                    </div>
-                    <p class="text-[11px] text-slate-600 leading-relaxed font-medium">
-                        Mobilizing 200+ student volunteers from Bridge to English alongside local NGOs and district community centres.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SHOP SECTION -->
-        <section id="shop" class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-[2.5rem] p-8 lg:p-12 shadow-soft-lg text-white space-y-6 text-center max-w-4xl mx-auto">
-            <div class="max-w-xl mx-auto space-y-3">
-                <span class="px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold backdrop-blur-md">
-                    Order Monthly Subscription / Kit
-                </span>
-                <h3 class="text-3xl font-extrabold">Bring LuminaBox Home Today</h3>
-                <p class="text-xs sm:text-sm text-sky-100 font-medium leading-relaxed">
-                    Get 4 weekly booklets (Speak, Read, Write, Connect), calculation cards for 5-digit daily Lumina Codes, and unlimited access to LuminaPortal AI.
+                <p class="text-xs sm:text-sm opacity-90 font-medium">
+                    <span class="lang-en">Empowering Hong Kong students through accessible bilingual education.</span>
+                    <span class="lang-zh hidden">透過無障礙雙語教育，賦能香港學童全方位成長。</span>
                 </p>
             </div>
 
-            <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl max-w-md mx-auto border border-white/20 space-y-4">
-                <div class="text-4xl font-extrabold">HKD $30 <span class="text-xs font-normal opacity-80">/ month</span></div>
-                <button onclick="alert('Order submitted! Our team will contact you shortly.')" class="w-full py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs transition shadow-soft-md smooth-hover">
-                    Confirm Kit Order
-                </button>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-3xl sm:text-4xl font-extrabold">200+</div>
+                    <div class="text-xs mt-1 font-medium opacity-90">
+                        <span class="lang-en">Active Mentors</span>
+                        <span class="lang-zh hidden">熱心志願導師</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-3xl sm:text-4xl font-extrabold">1,500+</div>
+                    <div class="text-xs mt-1 font-medium opacity-90">
+                        <span class="lang-en">Students Reached</span>
+                        <span class="lang-zh hidden">受惠學童人數</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-3xl sm:text-4xl font-extrabold">12+</div>
+                    <div class="text-xs mt-1 font-medium opacity-90">
+                        <span class="lang-en">Community Partners</span>
+                        <span class="lang-zh hidden">合作社區中心</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+                    <div class="text-3xl sm:text-4xl font-extrabold">94%</div>
+                    <div class="text-xs mt-1 font-medium opacity-90">
+                        <span class="lang-en">Confidence Boost</span>
+                        <span class="lang-zh hidden">自信心提升率</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SDG SECTION -->
+        <section id="sdg" class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
+                    <span class="lang-en">Global Goals</span>
+                    <span class="lang-zh hidden">聯合國永續目標</span>
+                </span>
+                <h3 class="text-2xl font-bold text-slate-800">
+                    <span class="lang-en">Aligned with UN Sustainable Development Goals</span>
+                    <span class="lang-zh hidden">響應 UN SDGs 永續發展目標</span>
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-3xl bg-red-50/70 border border-red-100 flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500 text-white font-extrabold text-xl flex items-center justify-center shrink-0">4</div>
+                    <div class="space-y-1">
+                        <h4 class="font-extrabold text-slate-800 text-base">
+                            <span class="lang-en">SDG 4: Quality Education</span>
+                            <span class="lang-zh hidden">SDG 4: 優質教育</span>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                            <span class="lang-en">Providing equitable, inclusive, and accessible bilingual learning tools for children of all background capabilities.</span>
+                            <span class="lang-zh hidden">提供公平、包容且優質的雙語學習資源，消弭基層學童之教育資源差距。</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white font-extrabold text-xl flex items-center justify-center shrink-0">10</div>
+                    <div class="space-y-1">
+                        <h4 class="font-extrabold text-slate-800 text-base">
+                            <span class="lang-en">SDG 10: Reduced Inequalities</span>
+                            <span class="lang-zh hidden">SDG 10: 減少不平等</span>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                            <span class="lang-en">Subsidized $30 HKD kits and free AI mentorship empower underprivileged and special needs children.</span>
+                            <span class="lang-zh hidden">以 $30 港幣基層資助價與免費 AI 平台導師，為特殊需要及基層家庭提供平等學習機會。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOP / ORDER SECTION -->
+        <section id="shop" class="bg-amber-100/60 rounded-[2.5rem] p-8 lg:p-12 shadow-soft-md space-y-8 border border-amber-200">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <h3 class="text-3xl font-extrabold text-slate-800">
+                    <span class="lang-en">Get Your LuminaBox Today</span>
+                    <span class="lang-zh hidden">立即訂購 LuminaBox 光啟盒</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                    <span class="lang-en">Order a single box or sponsor kits for underprivileged families in local community centers. Only $30 HKD per monthly kit!</span>
+                    <span class="lang-zh hidden">支持自用訂購或配對贊助基層家庭學童，每盒每月僅需港幣 $30！</span>
+                </p>
+
+                <div class="p-6 bg-white rounded-3xl shadow-soft-sm max-w-md mx-auto space-y-4 border border-amber-200/80">
+                    <div class="flex justify-between items-center text-sm font-bold text-slate-800 border-b border-slate-100 pb-3">
+                        <span>LuminaBox Kit (1 Month)</span>
+                        <span class="text-sky-600">$30 HKD</span>
+                    </div>
+                    <div class="space-y-2 text-left text-xs text-slate-600 font-medium">
+                        <div class="flex items-center gap-2">✓ 4 Thematic Weekly Booklets</div>
+                        <div class="flex items-center gap-2">✓ 5-Digit Lumina Calculation Card</div>
+                        <div class="flex items-center gap-2">✓ Full Access to LuminaPortal AI</div>
+                        <div class="flex items-center gap-2">✓ Unlimited 1-to-1 Zoom Mentorship</div>
+                    </div>
+                    <button onclick="alert('Thank you for your interest! Order placement is now processing for next month\'s release.')" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xs shadow-soft-sm transition smooth-hover">
+                        <span class="lang-en">Order Now ($30 HKD)</span>
+                        <span class="lang-zh hidden">立即下單 ($30 HKD)</span>
+                    </button>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- LUMINA PORTAL / CODE DECODER & AI HUB VIEW -->
-    <section id="view-lumina-portal" class="hidden max-w-6xl mx-auto px-4 lg:px-8 py-8 space-y-8">
+    <!-- LUMINA PORTAL / GAMES VIEW SECTION -->
+    <section id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
         
-        <!-- TOP VERIFICATION CARD & LUMINA SHARDS -->
-        <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-sky-400 mx-auto flex items-center justify-center text-white shadow-soft-sm">
-                    <i data-lucide="key-round" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-2xl font-extrabold text-slate-800">
-                    <span class="lang-en">LuminaPortal AI — 5-Digit Code Unlock</span>
-                    <span class="lang-zh hidden">LuminaPortal AI — 5 位數 Lumina 密碼驗證</span>
+        <!-- Portal Header Bar -->
+        <div class="p-6 rounded-[2rem] bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white shadow-soft-md flex flex-wrap justify-between items-center gap-4">
+            <div>
+                <h2 class="text-2xl font-extrabold flex items-center gap-2">
+                    <span>🎮 LuminaPortal AI Hub</span>
+                </h2>
+                <p class="text-xs opacity-90 mt-1">Enter your Lumina Code, talk with AI Assistant, or play educational games to earn Shards!</p>
+            </div>
+            <button onclick="switchSection('main-site')" class="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-semibold backdrop-blur-md transition">
+                ← Back to Main Site
+            </button>
+        </div>
+
+        <!-- Lumina Code Input Box -->
+        <div class="p-6 rounded-3xl bg-white border border-amber-200 shadow-soft-sm space-y-4">
+            <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <span>🔑 Enter Daily Lumina Code</span>
+                <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-semibold">Earn +50 Shards</span>
+            </h3>
+            <div class="flex gap-2 max-w-md">
+                <input type="number" id="lumina-code-input" placeholder="e.g. 12345" class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-sky-500">
+                <button onclick="submitLuminaCode()" class="px-5 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white text-xs font-bold transition">
+                    Redeem Code
+                </button>
+            </div>
+            <p id="code-feedback" class="text-xs hidden font-semibold"></p>
+        </div>
+
+        <!-- Chatbase AI Embed Integration Replacing Old Chatbot -->
+        <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-soft-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                    <i data-lucide="bot" class="w-4 h-4 text-sky-500"></i>
+                    <span>Lumina AI Interactive Tutor</span>
                 </h3>
-                <p class="text-xs text-slate-500 font-medium">
-                    <span class="lang-en">Sum your daily scores from Monday to Friday, enter your code below to earn <b>+100 Lumina Shards 💎</b> to upgrade your companion!</span>
-                    <span class="lang-zh hidden">統計週一至週五的日常得分，在下方輸入 5 位數 Lumina 密碼即可獲得 <b>+100 Lumina 晶石 💎</b> 升級專屬寵物！</span>
-                </p>
+                <span class="text-[11px] text-slate-500 font-medium">Powered by Chatbase</span>
             </div>
-
-            <div class="max-w-md mx-auto bg-slate-50 p-6 rounded-3xl border border-slate-200 space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-2 text-center uppercase tracking-wider">
-                        <span class="lang-en">Enter 5-Digit Weekly Code</span>
-                        <span class="lang-zh hidden">輸入 5 位數週密碼</span>
-                    </label>
-                    <input type="text" id="lumina-code-input" maxlength="5" placeholder="12345" class="w-full text-center text-3xl font-extrabold tracking-[0.3em] py-3 rounded-2xl border-2 border-sky-300 focus:border-sky-500 focus:outline-none bg-white text-slate-800 shadow-inner">
-                </div>
-
-                <button onclick="submitLuminaCode()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xs transition shadow-soft-sm smooth-hover flex items-center justify-center gap-2">
-                    <i data-lucide="unlock" class="w-4 h-4"></i>
-                    <span class="lang-en">Submit Code & Earn +100 Shards 💎</span>
-                    <span class="lang-zh hidden">提交密碼 • 賺取 +100 晶石 💎</span>
-                </button>
-
-                <div id="code-result-msg" class="hidden p-4 rounded-2xl text-center text-xs font-bold"></div>
+            
+            <div class="w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 min-h-[700px] shadow-inner">
+                <iframe
+                    src="https://www.chatbase.co/chatbot-iframe/EJLpfsVJzxAHQ9dx8kBBB"
+                    width="100%"
+                    style="height: 100%; min-height: 700px"
+                    frameborder="0"
+                    allow="microphone"
+                ></iframe>
             </div>
         </div>
 
-        <!-- LUMINA COMPANIONS SECTION (UPGRADE WITH SHARDS) -->
-        <div class="bg-gradient-to-br from-pink-100/80 via-purple-50/80 to-sky-100/80 rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                    <span class="px-3 py-1 rounded-full bg-white text-pink-700 text-[11px] font-bold shadow-soft-sm">
-                        <span class="lang-en">Virtual Pet Buddy Workshop</span>
-                        <span class="lang-zh hidden">AI 數位學習夥伴工作坊</span>
-                    </span>
-                    <h3 class="text-2xl font-extrabold text-slate-800 mt-2">
-                        <span class="lang-en">Upgrade Your LuminaCompanion</span>
-                        <span class="lang-zh hidden">使用 Lumina 晶石升級寵物</span>
-                    </h3>
-                </div>
-                <div class="px-4 py-2 bg-white rounded-2xl shadow-soft-sm text-xs font-bold text-slate-700 flex items-center gap-2">
-                    <span>💎 Current Shards: <span id="portal-shards-display" class="text-amber-600 font-extrabold">0</span></span>
-                </div>
-            </div>
+        <!-- 4 PLAYABLE GAMES SECTION -->
+        <div class="space-y-6 pt-4">
+            <h3 class="text-xl font-extrabold text-slate-800 flex items-center gap-2">
+                <span>🧩 Interactive Playable Mini-Games</span>
+                <span class="text-xs font-semibold text-sky-600 bg-sky-100 px-2.5 py-1 rounded-full">10+ Questions Each</span>
+            </h3>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Companion 1 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-200/80 shadow-soft-sm text-center space-y-3 relative">
-                    <div id="sparky-badge" class="absolute top-4 right-4 px-2.5 py-1 bg-pink-100 text-pink-700 rounded-full text-[10px] font-bold">
-                        Lv. 1 Sparky
+            <div class="grid lg:grid-cols-2 gap-6">
+                
+                <!-- Game 1: Speak - Word Pronunciation & Phonics Dash -->
+                <div class="p-6 rounded-3xl bg-sky-50/80 border border-sky-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-0.5 rounded-full bg-sky-200 text-sky-800 text-[10px] font-bold">GAME 1: SPEAK</span>
+                            <span class="text-xs font-bold text-amber-600">🏆 <span id="g1-score">0</span> Shards</span>
+                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Phonics & Vocabulary Builder</h4>
+                        <p class="text-xs text-slate-600">Match the correct target word sound and fill in the missing phonics blend.</p>
                     </div>
-                    <div id="sparky-icon" class="w-20 h-20 bg-pink-100 rounded-full mx-auto flex items-center justify-center text-4xl">
-                        🦄
+
+                    <div id="g1-box" class="bg-white p-4 rounded-2xl border border-sky-100 space-y-3">
+                        <div class="text-xs font-bold text-sky-600" id="g1-progress">Question 1 / 10</div>
+                        <div class="text-sm font-extrabold text-slate-800" id="g1-question">Loading question...</div>
+                        <div class="grid grid-cols-2 gap-2" id="g1-options"></div>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Sparky the Unicorn</h4>
-                    <p class="text-xs text-slate-500 font-medium">
-                        <span class="lang-en">Loves reading stories! Upgrade to unlock rainbow particle trails and custom voice animations.</span>
-                        <span class="lang-zh hidden">喜歡讀故事！升級解鎖彩虹粒子特效與專屬對話動畫。</span>
-                    </p>
-                    <button onclick="upgradeCompanion('Sparky', 50)" class="w-full py-2.5 bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold rounded-xl transition shadow-soft-sm">
-                        <span class="lang-en">Upgrade (50 Shards) 💎</span>
-                        <span class="lang-zh hidden">升級夥伴 (50 晶石) 💎</span>
+
+                    <button onclick="initGame1()" class="w-full py-2.5 rounded-xl bg-sky-400 hover:bg-sky-500 text-white text-xs font-bold transition">
+                        Restart Game 1
                     </button>
                 </div>
 
-                <!-- Companion 2 -->
-                <div class="bg-white p-6 rounded-3xl border border-sky-200/80 shadow-soft-sm text-center space-y-3 relative">
-                    <div id="draco-badge" class="absolute top-4 right-4 px-2.5 py-1 bg-sky-100 text-sky-700 rounded-full text-[10px] font-bold">
-                        Lv. 1 Draco
+                <!-- Game 2: Read - Reading Comprehension Explorer -->
+                <div class="p-6 rounded-3xl bg-amber-50/80 border border-amber-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-200 text-amber-800 text-[10px] font-bold">GAME 2: READ</span>
+                            <span class="text-xs font-bold text-amber-600">🏆 <span id="g2-score">0</span> Shards</span>
+                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Story Passage Explorer</h4>
+                        <p class="text-xs text-slate-600">Read short story snippets and answer context comprehension questions.</p>
                     </div>
-                    <div id="draco-icon" class="w-20 h-20 bg-sky-100 rounded-full mx-auto flex items-center justify-center text-4xl">
-                        🐲
+
+                    <div id="g2-box" class="bg-white p-4 rounded-2xl border border-amber-100 space-y-3">
+                        <div class="text-xs font-bold text-amber-600" id="g2-progress">Question 1 / 10</div>
+                        <div class="p-2.5 bg-amber-50 rounded-xl text-xs text-slate-700 italic" id="g2-passage">Passage loading...</div>
+                        <div class="text-xs font-bold text-slate-800" id="g2-question">Question loading...</div>
+                        <div class="grid grid-cols-1 gap-2" id="g2-options"></div>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Draco the Dragon</h4>
-                    <p class="text-xs text-slate-500 font-medium">
-                        <span class="lang-en">Master of English grammar! Upgrade to unlock cosmic fire effects and grammar boost cards.</span>
-                        <span class="lang-zh hidden">文法小高手！升級解鎖火焰粒子特效與文法加成卡。</span>
-                    </p>
-                    <button onclick="upgradeCompanion('Draco', 50)" class="w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold rounded-xl transition shadow-soft-sm">
-                        <span class="lang-en">Upgrade (50 Shards) 💎</span>
-                        <span class="lang-zh hidden">升級夥伴 (50 晶石) 💎</span>
+
+                    <button onclick="initGame2()" class="w-full py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-white text-xs font-bold transition">
+                        Restart Game 2
                     </button>
                 </div>
 
-                <!-- Companion 3 -->
-                <div class="bg-white p-6 rounded-3xl border border-amber-200/80 shadow-soft-sm text-center space-y-3 relative">
-                    <div id="ollie-badge" class="absolute top-4 right-4 px-2.5 py-1 bg-amber-100 text-amber-700 rounded-full text-[10px] font-bold">
-                        Lv. 1 Ollie
+                <!-- Game 3: Write - Grammar & Sentence Fixer -->
+                <div class="p-6 rounded-3xl bg-pink-50/80 border border-pink-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-0.5 rounded-full bg-pink-200 text-pink-800 text-[10px] font-bold">GAME 3: WRITE</span>
+                            <span class="text-xs font-bold text-amber-600">🏆 <span id="g3-score">0</span> Shards</span>
+                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Grammar Fixer & Syntax Builder</h4>
+                        <p class="text-xs text-slate-600">Identify grammar mistakes and construct proper English sentence structures.</p>
                     </div>
-                    <div id="ollie-icon" class="w-20 h-20 bg-amber-100 rounded-full mx-auto flex items-center justify-center text-4xl">
-                        🦉
+
+                    <div id="g3-box" class="bg-white p-4 rounded-2xl border border-pink-100 space-y-3">
+                        <div class="text-xs font-bold text-pink-600" id="g3-progress">Question 1 / 10</div>
+                        <div class="text-xs font-bold text-slate-800" id="g3-question">Question loading...</div>
+                        <div class="grid grid-cols-1 gap-2" id="g3-options"></div>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Ollie the Owl</h4>
-                    <p class="text-xs text-slate-500 font-medium">
-                        <span class="lang-en">Vocabulary wizard! Upgrade to unlock wisdom halo and weekly special flashcards.</span>
-                        <span class="lang-zh hidden">單字大師！升級解鎖智慧光環與每週限定英語字詞卡。</span>
-                    </p>
-                    <button onclick="upgradeCompanion('Ollie', 50)" class="w-full py-2.5 bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold rounded-xl transition shadow-soft-sm">
-                        <span class="lang-en">Upgrade (50 Shards) 💎</span>
-                        <span class="lang-zh hidden">升級夥伴 (50 晶石) 💎</span>
-                    </button>
-                </div>
-            </div>
-        </div>
 
-        <!-- CHATBASE AI ASSISTANT EMBEDDED INTEGRATION (REPLACES PREVIOUS HELPER) -->
-        <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    <span class="lang-en">24/7 Chatbase Interactive AI</span>
-                    <span class="lang-zh hidden">24/7 Chatbase AI 智慧導師</span>
-                </span>
-                <h3 class="text-2xl font-bold text-slate-800">
-                    <span class="lang-en">Ask Chatbase AI Assistant</span>
-                    <span class="lang-zh hidden">Chatbase AI 學習問答</span>
-                </h3>
-                <p class="text-xs text-slate-500 font-medium">
-                    <span class="lang-en">Have questions about your Speak, Read, Write, or Connect weekly booklets? Click below to start chatting with your AI learning buddy!</span>
-                    <span class="lang-zh hidden">有關於雙語學習冊的問題嗎？點擊下方即刻開啟 Chatbase AI 智慧對話！</span>
-                </p>
-            </div>
-
-            <div class="max-w-2xl mx-auto bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-3xl border border-sky-100 text-center space-y-4 shadow-inner">
-                <div class="w-16 h-16 bg-sky-400 rounded-2xl mx-auto flex items-center justify-center text-white text-2xl shadow-soft-sm">
-                    🤖
-                </div>
-                <div>
-                    <h4 class="font-extrabold text-slate-800 text-base">
-                        <span class="lang-en">Chatbase Learning Buddy</span>
-                        <span class="lang-zh hidden">Chatbase AI 雙語小助手</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 mt-1 font-medium">
-                        <span class="lang-en">Direct, safe, and interactive AI assistance trained specifically on LuminaBox curriculum!</span>
-                        <span class="lang-zh hidden">專門為 LuminaBox 課程微調的安全 AI 導師，隨時解答英文難題。</span>
-                    </p>
-                </div>
-
-                <button onclick="openChatbaseWidget()" class="px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition shadow-soft-sm smooth-hover inline-flex items-center gap-2">
-                    <i data-lucide="message-square" class="w-4 h-4"></i>
-                    <span class="lang-en">Open AI Chat Window</span>
-                    <span class="lang-zh hidden">開啟 AI 對話視窗</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- 1-ON-1 ZOOM MENTOR REQUEST SECTION -->
-        <div class="bg-gradient-to-br from-amber-100/90 via-sky-100/90 to-blue-100/90 rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <span class="px-3 py-1 rounded-full bg-white text-amber-800 text-[11px] font-bold shadow-soft-sm">
-                        <span class="lang-en">Live Human Support</span>
-                        <span class="lang-zh hidden">真人專屬導師輔導</span>
-                    </span>
-                    <h3 class="text-2xl font-extrabold text-slate-800 mt-2">
-                        <span class="lang-en">Request 1-on-1 Zoom Mentorship</span>
-                        <span class="lang-zh hidden">預約 1對1 Live Zoom 線上輔導</span>
-                    </h3>
-                </div>
-                <button onclick="openMentorModal()" class="px-6 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs transition shadow-soft-md smooth-hover flex items-center gap-2">
-                    <i data-lucide="video" class="w-4 h-4"></i>
-                    <span class="lang-en">Book Free Zoom Session</span>
-                    <span class="lang-zh hidden">立即預約 Zoom 課程</span>
-                </button>
-            </div>
-
-            <p class="text-xs text-slate-600 font-medium leading-relaxed max-w-2xl">
-                <span class="lang-en">Need extra guidance with pronunciation or writing? Request a free 30-minute Zoom session with a dedicated student mentor from Bridge to English (200+ trained volunteers).</span>
-                <span class="lang-zh hidden">需要額外口音糾正或寫作指導嗎？免費預約來自 Bridge to English (200+ 義工團隊) 的專屬導師進行 30 分鐘 Zoom 輔導。</span>
-            </p>
-        </div>
-
-        <!-- GAMIFIED ARCADE MINI-GAMES SECTION -->
-        <div class="bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-soft-md space-y-6">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold">
-                    <span class="lang-en">Gamified Learning Arcade</span>
-                    <span class="lang-zh hidden">線上小遊戲專區</span>
-                </span>
-                <h3 class="text-2xl font-bold text-slate-800">
-                    <span class="lang-en">Lumina Mini-Games Arcade</span>
-                    <span class="lang-zh hidden">互動學習小遊戲</span>
-                </h3>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Game 1 -->
-                <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-700 mx-auto text-xl font-bold">
-                        ⚡
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Syntax Rush</h4>
-                    <p class="text-xs text-slate-500 font-medium">Match sentence order blocks before the timer runs out!</p>
-                    <button onclick="playMiniGame('Syntax Rush')" class="w-full py-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs rounded-xl transition">
-                        Play & Earn 💎
+                    <button onclick="initGame3()" class="w-full py-2.5 rounded-xl bg-pink-400 hover:bg-pink-500 text-white text-xs font-bold transition">
+                        Restart Game 3
                     </button>
                 </div>
 
-                <!-- Game 2 -->
-                <div class="p-6 rounded-3xl bg-sky-50/70 border border-sky-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600 mx-auto text-xl font-bold">
-                        🧩
+                <!-- Game 4: Connect - Community & Culture Quiz -->
+                <div class="p-6 rounded-3xl bg-emerald-50/80 border border-emerald-200 shadow-soft-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-200 text-emerald-800 text-[10px] font-bold">GAME 4: CONNECT</span>
+                            <span class="text-xs font-bold text-amber-600">🏆 <span id="g4-score">0</span> Shards</span>
+                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Community Quest & HK Culture</h4>
+                        <p class="text-xs text-slate-600">Explore Hong Kong heritage, daily etiquette, and social community terms.</p>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Logic Maze</h4>
-                    <p class="text-xs text-slate-500 font-medium">Guide your companion through a grid using simple logic rules.</p>
-                    <button onclick="playMiniGame('Logic Maze')" class="w-full py-2 bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs rounded-xl transition">
-                        Play & Earn 💎
+
+                    <div id="g4-box" class="bg-white p-4 rounded-2xl border border-emerald-100 space-y-3">
+                        <div class="text-xs font-bold text-emerald-600" id="g4-progress">Question 1 / 10</div>
+                        <div class="text-xs font-bold text-slate-800" id="g4-question">Question loading...</div>
+                        <div class="grid grid-cols-1 gap-2" id="g4-options"></div>
+                    </div>
+
+                    <button onclick="initGame4()" class="w-full py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-500 text-white text-xs font-bold transition">
+                        Restart Game 4
                     </button>
                 </div>
 
-                <!-- Game 3 -->
-                <div class="p-6 rounded-3xl bg-pink-50/70 border border-pink-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mx-auto text-xl font-bold">
-                        🐛
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Bug Squasher</h4>
-                    <p class="text-xs text-slate-500 font-medium">Spot spelling errors and squish grammatical bugs!</p>
-                    <button onclick="playMiniGame('Bug Squasher')" class="w-full py-2 bg-pink-400 hover:bg-pink-500 text-white font-bold text-xs rounded-xl transition">
-                        Play & Earn 💎
-                    </button>
-                </div>
-
-                <!-- Game 4 -->
-                <div class="p-6 rounded-3xl bg-emerald-50/70 border border-emerald-100 space-y-3 hover:shadow-soft-md transition text-center">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mx-auto text-xl font-bold">
-                        🏗️
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">Algorithm Builder</h4>
-                    <p class="text-xs text-slate-500 font-medium">Assemble action blocks to build full bilingual stories.</p>
-                    <button onclick="playMiniGame('Algorithm Builder')" class="w-full py-2 bg-emerald-400 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition">
-                        Play & Earn 💎
-                    </button>
-                </div>
-            </div>
-
-            <div class="text-center pt-4">
-                <button onclick="switchSection('main-site')" class="text-xs font-semibold text-sky-600 hover:underline">
-                    ← Back to Main Page
-                </button>
             </div>
         </div>
 
     </section>
 
-    <!-- ZOOM MENTOR MODAL -->
-    <div id="mentor-modal" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-soft-lg border border-slate-100">
-            <div class="flex justify-between items-center">
-                <h3 class="font-extrabold text-slate-800 text-base">Request Zoom Mentorship Session</h3>
-                <button onclick="closeMentorModal()" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
-            </div>
-
-            <div class="space-y-3 text-xs">
-                <div>
-                    <label class="block font-bold text-slate-700 mb-1">Student Name</label>
-                    <input type="text" placeholder="Enter student name" class="w-full p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-400">
-                </div>
-                <div>
-                    <label class="block font-bold text-slate-700 mb-1">Preferred Date & Time</label>
-                    <input type="datetime-local" class="w-full p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-400">
-                </div>
-                <div>
-                    <label class="block font-bold text-slate-700 mb-1">Session Topic Focus</label>
-                    <select class="w-full p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-400 font-medium">
-                        <option>🗣️ Speaking & Pronunciation Practice</option>
-                        <option>📖 Weekly Reading Booklet Review</option>
-                        <option>✍️ Sentence Writing Guidance</option>
-                        <option>🤝 Community Project Feedback</option>
-                    </select>
-                </div>
-            </div>
-
-            <button onclick="confirmMentorBooking()" class="w-full py-3 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xs rounded-xl shadow-soft-sm transition">
-                Confirm & Receive Zoom Link
-            </button>
-        </div>
-    </div>
-
-    <footer class="bg-white border-t border-slate-200/80 mt-16 py-8 px-4 text-center text-xs font-medium text-slate-500">
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-amber-200/60 mt-16 py-8 px-4 lg:px-8 text-center text-xs text-slate-500">
         <div class="max-w-7xl mx-auto space-y-2">
-            <p>© 2026 LuminaBox 光啟盒 • Bridge to English. All Rights Reserved.</p>
-            <p class="text-[10px] text-slate-400">Diocesan Girls' School Student Initiative for Inclusive Community Learning.</p>
+            <p class="font-semibold text-slate-700">LuminaBox 光啟盒 — Bridge to English Charity Initiative</p>
+            <p>Designed with ❤️ by Diocesan Girls' School (DGS) Team for inclusive community education.</p>
+            <p class="text-[10px] text-slate-400 pt-2">© 2026 LuminaBox. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- SCRIPT APPLICATION CONTROLLER & GAME LOGIC -->
     <script>
+        // Lucide Icons Initialization
         lucide.createIcons();
 
-        let currentLang = 'en';
-        let senModeActive = false;
-        let userShards = 0;
-
-        function updateShardDisplay() {
-            document.getElementById('user-shards-count').textContent = userShards;
-            document.getElementById('portal-shards-display').textContent = userShards;
+        // Shards & User State
+        let totalShards = 0;
+        function addShards(amount) {
+            totalShards += amount;
+            document.getElementById('user-shards-count').innerText = totalShards;
         }
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'zh' : 'en';
-            document.getElementById('lang-btn-text').textContent = currentLang === 'en' ? '繁體中文' : 'English';
-            
-            const enElements = document.querySelectorAll('.lang-en');
-            const zhElements = document.querySelectorAll('.lang-zh');
+        // View Switching Logic
+        function switchSection(section) {
+            const mainView = document.getElementById('view-main-site');
+            const portalView = document.getElementById('view-lumina-portal');
+            const portalBtn = document.getElementById('lbl-toggle-portal');
 
-            if (currentLang === 'zh') {
-                enElements.forEach(el => el.classList.add('hidden'));
-                zhElements.forEach(el => el.classList.remove('hidden'));
-            } else {
-                zhElements.forEach(el => el.classList.add('hidden'));
-                enElements.forEach(el => el.classList.remove('hidden'));
-            }
-        }
-
-        function toggleSENMode() {
-            senModeActive = !senModeActive;
-            const body = document.getElementById('app-body');
-            const btn = document.getElementById('sen-toggle-btn');
-            
-            if (senModeActive) {
-                body.classList.add('sen-mode');
-                btn.classList.add('bg-amber-400', 'text-slate-900');
-            } else {
-                body.classList.remove('sen-mode');
-                btn.classList.remove('bg-amber-400', 'text-slate-900');
-            }
-        }
-
-        function switchSection(target) {
-            const mainSite = document.getElementById('view-main-site');
-            const portalSite = document.getElementById('view-lumina-portal');
-
-            if (target === 'lumina-portal') {
-                mainSite.classList.add('hidden');
-                portalSite.classList.remove('hidden');
+            if (section === 'lumina-portal') {
+                mainView.classList.add('hidden');
+                portalView.classList.remove('hidden');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                portalSite.classList.add('hidden');
-                mainSite.classList.remove('hidden');
+                portalView.classList.add('hidden');
+                mainView.classList.remove('hidden');
             }
         }
 
         function togglePortal() {
-            const portalSite = document.getElementById('view-lumina-portal');
-            if (portalSite.classList.contains('hidden')) {
+            const portalView = document.getElementById('view-lumina-portal');
+            if (portalView.classList.contains('hidden')) {
                 switchSection('lumina-portal');
             } else {
                 switchSection('main-site');
             }
         }
 
+        // Language Switcher
+        let isZh = false;
+        function toggleLanguage() {
+            isZh = !isZh;
+            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', isZh));
+            document.querySelectorAll('.lang-zh').forEach(el => el.classList.toggle('hidden', !isZh));
+            document.getElementById('lang-btn-text').innerText = isZh ? 'English' : '繁體中文';
+        }
+
+        // SEN Mode Toggle
+        let isSEN = false;
+        function toggleSENMode() {
+            isSEN = !isSEN;
+            document.body.classList.toggle('sen-mode', isSEN);
+            document.getElementById('sen-btn-text').innerText = isSEN ? 'Normal Mode' : 'SEN Mode';
+        }
+
+        // Lumina Code Redeem logic
         function submitLuminaCode() {
             const input = document.getElementById('lumina-code-input').value.trim();
-            const msgBox = document.getElementById('code-result-msg');
-            msgBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-red-100', 'text-red-800');
-
-            if (input.length === 5 && /^\d+$/.test(input)) {
-                userShards += 100;
-                updateShardDisplay();
-                msgBox.classList.add('bg-emerald-100', 'text-emerald-800');
-                msgBox.innerHTML = currentLang === 'en' 
-                    ? `🎉 <b>Code ${input} Verified!</b> You earned +100 Lumina Shards 💎! Upgrade your companions below!`
-                    : `🎉 <b>密碼 ${input} 驗證成功！</b> 你獲得了 +100 Lumina 晶石 💎！可在下方升級寵物！`;
+            const feedback = document.getElementById('code-feedback');
+            if (input.length === 5) {
+                addShards(50);
+                feedback.innerText = "✨ Valid Lumina Code! You earned 50 Shards!";
+                feedback.className = "text-xs font-semibold text-emerald-600 block";
+                document.getElementById('lumina-code-input').value = "";
             } else {
-                msgBox.classList.add('bg-red-100', 'text-red-800');
-                msgBox.innerHTML = currentLang === 'en'
-                    ? `⚠️ Please enter a valid 5-digit numerical code (e.g., 12345).`
-                    : `⚠️ 請輸入有效的 5 位數純數字密碼（例如 12345）。`;
+                feedback.innerText = "❌ Please enter a valid 5-digit code from your weekly card.";
+                feedback.className = "text-xs font-semibold text-red-500 block";
             }
         }
 
-        function upgradeCompanion(name, cost) {
-            if (userShards >= cost) {
-                userShards -= cost;
-                updateShardDisplay();
+        /* ------------------------------------------------------------------
+           GAME 1: SPEAK - 10 QUESTIONS PHONICS & VOCABULARY
+        ------------------------------------------------------------------ */
+        const g1Data = [
+            { q: "Which word starts with the 'sh' sound?", opts: ["Sun", "Ship", "Cat", "Dog"], ans: 1 },
+            { q: "Complete the blend: '_ _ umbrella' starts with?", opts: ["An", "A", "The", "In"], ans: 0 },
+            { q: "Find the word with long 'ea' sound like 'Tree':", opts: ["Bread", "Beach", "Head", "Bed"], ans: 1 },
+            { q: "Which letters complete '_ _ air' for sitting?", opts: ["ch", "sh", "th", "ph"], ans: 0 },
+            { q: "Which sound matches 'Th' in 'Think'?", opts: ["Voiceless Th", "Hard G", "Soft C", "Silent B"], ans: 0 },
+            { q: "Select the rhyming word for 'Bright':", opts: ["Light", "Brave", "Bring", "Bit"], ans: 0 },
+            { q: "Which blend starts the word 'Frog'?", opts: ["fl", "fr", "fg", "fo"], ans: 1 },
+            { q: "Choose the word with silent 'k':", opts: ["Kite", "Kangaroo", "Knife", "Keep"], ans: 2 },
+            { q: "Find the correct syllable count for 'Butterfly':", opts: ["1", "2", "3", "4"], ans: 2 },
+            { q: "Which word ends with 'ing' sound?", opts: ["Singing", "Single", "Sink", "Sign"], ans: 0 }
+        ];
+        let g1Idx = 0, g1Score = 0;
 
-                const badge = document.getElementById(`${name.toLowerCase()}-badge`);
-                const icon = document.getElementById(`${name.toLowerCase()}-icon`);
+        function initGame1() {
+            g1Idx = 0; g1Score = 0;
+            document.getElementById('g1-score').innerText = g1Score;
+            renderG1();
+        }
 
-                if (badge) badge.textContent = `Lv. 2 ${name} (Evolved ✨)`;
-                if (icon) icon.classList.add('animate-glow');
-
-                alert(currentLang === 'en'
-                    ? `✨ Congratulations! ${name} evolved to Lv. 2 with glowing particle effects!`
-                    : `✨ 恭喜！${name} 已成功升級至 Lv. 2 並解鎖粒子特效！`);
-            } else {
-                alert(currentLang === 'en'
-                    ? `🔒 Not enough Lumina Shards! Enter your 5-digit weekly code to earn more.`
-                    : `🔒 Lumina 晶石不足！請先輸入 5 位數週密碼獲取晶石。`);
+        function renderG1() {
+            if (g1Idx >= g1Data.length) {
+                document.getElementById('g1-box').innerHTML = `<div class="text-center font-bold text-emerald-600">🎉 Game Completed! You scored ${g1Score} Shards!</div>`;
+                return;
             }
+            const item = g1Data[g1Idx];
+            document.getElementById('g1-progress').innerText = `Question ${g1Idx + 1} / ${g1Data.length}`;
+            document.getElementById('g1-question').innerText = item.q;
+            const optsContainer = document.getElementById('g1-options');
+            optsContainer.innerHTML = '';
+            item.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-xs font-semibold text-slate-700 border border-sky-200 transition text-left";
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    if (idx === item.ans) {
+                        g1Score += 10;
+                        addShards(10);
+                        document.getElementById('g1-score').innerText = g1Score;
+                    }
+                    g1Idx++;
+                    renderG1();
+                };
+                optsContainer.appendChild(btn);
+            });
         }
 
-        function playMiniGame(gameName) {
-            userShards += 25;
-            updateShardDisplay();
-            alert(currentLang === 'en'
-                ? `🎮 Completed ${gameName}! You earned +25 Lumina Shards 💎!`
-                : `🎮 完成 ${gameName}！獲得 +25 Lumina 晶石 💎！`);
+        /* ------------------------------------------------------------------
+           GAME 2: READ - 10 QUESTIONS READING COMPREHENSION
+        ------------------------------------------------------------------ */
+        const g2Data = [
+            { passage: "Tim has a small golden dog named Max. Max loves running in Victoria Park.", q: "Where does Max love to run?", opts: ["Central Market", "Victoria Park", "School Gym", "Beach"], ans: 1 },
+            { passage: "Lily went to the bakery to buy fresh bread and strawberry jam for breakfast.", q: "What fruit jam did Lily buy?", opts: ["Apple", "Orange", "Strawberry", "Grape"], ans: 2 },
+            { passage: "The Hong Kong Star Ferry carries passengers across Victoria Harbour every day.", q: "What does Star Ferry carry?", opts: ["Cars only", "Passengers", "Airplanes", "Trains"], ans: 1 },
+            { passage: "In autumn, leaves change color to yellow and brown as the weather turns cool.", q: "What colors do leaves change to in autumn?", opts: ["Blue and Pink", "Yellow and Brown", "Green and Purple", "Red and White"], ans: 1 },
+            { passage: "Ken brought his red umbrella because heavy rain was falling outside.", q: "Why did Ken bring an umbrella?", opts: ["It was sunny", "Heavy rain was falling", "It was snowing", "It was windy"], ans: 1 },
+            { passage: "Amy borrowed three science books from the Central Library on Saturday morning.", q: "How many books did Amy borrow?", opts: ["One", "Two", "Three", "Four"], ans: 2 },
+            { passage: "Pandas at the zoo spend most of their afternoon eating fresh green bamboo.", q: "What do pandas eat in the afternoon?", opts: ["Fresh bamboo", "Fish", "Rice", "Apples"], ans: 0 },
+            { passage: "Leo put on his warm coat and wool hat before stepping into the cold night.", q: "What did Leo wear on his head?", opts: ["Baseball cap", "Wool hat", "Helmet", "Crown"], ans: 1 },
+            { passage: "The school choir sang three cheerful songs during the annual music festival.", q: "How many songs did the choir sing?", opts: ["Two", "Three", "Five", "Ten"], ans: 1 },
+            { passage: "May recycles plastic bottles in the yellow recycling bin near her house.", q: "What color is the recycling bin May uses?", opts: ["Green", "Blue", "Yellow", "Red"], ans: 2 }
+        ];
+        let g2Idx = 0, g2Score = 0;
+
+        function initGame2() {
+            g2Idx = 0; g2Score = 0;
+            document.getElementById('g2-score').innerText = g2Score;
+            renderG2();
         }
 
-        function openChatbaseWidget() {
-            if (window.chatbase && typeof window.chatbase === 'function') {
-                window.chatbase('open');
-            } else {
-                alert("Chatbase AI widget is initializing! Make sure to replace YOUR_CHATBASE_ID_HERE with your active Chatbase bot ID.");
+        function renderG2() {
+            if (g2Idx >= g2Data.length) {
+                document.getElementById('g2-box').innerHTML = `<div class="text-center font-bold text-emerald-600">🎉 Game Completed! You scored ${g2Score} Shards!</div>`;
+                return;
             }
+            const item = g2Data[g2Idx];
+            document.getElementById('g2-progress').innerText = `Question ${g2Idx + 1} / ${g2Data.length}`;
+            document.getElementById('g2-passage').innerText = `"${item.passage}"`;
+            document.getElementById('g2-question').innerText = item.q;
+            const optsContainer = document.getElementById('g2-options');
+            optsContainer.innerHTML = '';
+            item.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-xs font-semibold text-slate-700 border border-amber-200 transition text-left";
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    if (idx === item.ans) {
+                        g2Score += 10;
+                        addShards(10);
+                        document.getElementById('g2-score').innerText = g2Score;
+                    }
+                    g2Idx++;
+                    renderG2();
+                };
+                optsContainer.appendChild(btn);
+            });
         }
 
-        function openMentorModal() {
-            document.getElementById('mentor-modal').classList.remove('hidden');
+        /* ------------------------------------------------------------------
+           GAME 3: WRITE - 10 QUESTIONS GRAMMAR & SYNTAX
+        ------------------------------------------------------------------ */
+        const g3Data = [
+            { q: "Choose the sentence with correct capitalization:", opts: ["i live in hong kong.", "I live in Hong Kong.", "I Live In hong kong.", "i Live in Hong kong."], ans: 1 },
+            { q: "Fix the verb: 'She _____ to school every morning.'", opts: ["walk", "walks", "walking", "walked yesterday"], ans: 1 },
+            { q: "Select the correct plural form of 'Child':", opts: ["Childs", "Children", "Childrens", "Childes"], ans: 1 },
+            { q: "Which sentence uses 'an' correctly?", opts: ["An cat is soft.", "I ate an apple.", "She saw an dog.", "An book is open."], ans: 1 },
+            { q: "Choose the correct past tense of 'Fly':", opts: ["Flied", "Flew", "Flying", "Flown"], ans: 1 },
+            { q: "Identify the correct possessive form: 'The bag belonging to Mary'", opts: ["Mary bag", "Marys bag", "Mary's bag", "Marys' bag"], ans: 2 },
+            { q: "Fill in the blank: 'They _____ playing soccer now.'", opts: ["is", "am", "are", "be"], ans: 2 },
+            { q: "Which punctuation mark ends a question?", opts: ["Period (.)", "Exclamation mark (!)", "Question mark (?)", "Comma (,)"], ans: 2 },
+            { q: "Choose the correct comparative form: 'Fast -> ____'", opts: ["More fast", "Faster", "Fastest", "Fastly"], ans: 1 },
+            { q: "Pick the grammatically correct sentence:", opts: ["He don't like milk.", "He doesn't likes milk.", "He doesn't like milk.", "He not like milk."], ans: 2 }
+        ];
+        let g3Idx = 0, g3Score = 0;
+
+        function initGame3() {
+            g3Idx = 0; g3Score = 0;
+            document.getElementById('g3-score').innerText = g3Score;
+            renderG3();
         }
 
-        function closeMentorModal() {
-            document.getElementById('mentor-modal').classList.add('hidden');
+        function renderG3() {
+            if (g3Idx >= g3Data.length) {
+                document.getElementById('g3-box').innerHTML = `<div class="text-center font-bold text-emerald-600">🎉 Game Completed! You scored ${g3Score} Shards!</div>`;
+                return;
+            }
+            const item = g3Data[g3Idx];
+            document.getElementById('g3-progress').innerText = `Question ${g3Idx + 1} / ${g3Data.length}`;
+            document.getElementById('g3-question').innerText = item.q;
+            const optsContainer = document.getElementById('g3-options');
+            optsContainer.innerHTML = '';
+            item.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-xs font-semibold text-slate-700 border border-pink-200 transition text-left";
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    if (idx === item.ans) {
+                        g3Score += 10;
+                        addShards(10);
+                        document.getElementById('g3-score').innerText = g3Score;
+                    }
+                    g3Idx++;
+                    renderG3();
+                };
+                optsContainer.appendChild(btn);
+            });
         }
 
-        function confirmMentorBooking() {
-            closeMentorModal();
-            alert(currentLang === 'en'
-                ? "✅ Zoom session request sent! A confirmation and Zoom link have been emailed to your account."
-                : "✅ Zoom 課程預約已發送！確認信件與 Zoom 連結已發送至您的電子郵箱。");
+        /* ------------------------------------------------------------------
+           GAME 4: CONNECT - 10 QUESTIONS COMMUNITY & HK CULTURE
+        ------------------------------------------------------------------ */
+        const g4Data = [
+            { q: "What courteous phrase should you say when receiving help?", opts: ["Goodbye", "Thank you", "Excuse me", "Sorry"], ans: 1 },
+            { q: "Which public transportation in HK travels on rails on the road?", opts: ["MTR", "Tram (Ding Ding)", "Ferry", "Taxi"], ans: 1 },
+            { q: "What should you do before crossing the street in HK?", opts: ["Run fast", "Look left, right, and listen", "Close your eyes", "Talk on phone"], ans: 1 },
+            { q: "Which icon represents community recycling in Hong Kong?", opts: ["Waste Bins", "Three chasing arrows", "Red light", "Speed limit sign"], ans: 1 },
+            { q: "What is a famous traditional food served in bamboo steamers in HK?", opts: ["Pizza", "Dim Sum", "Tacos", "Sushi"], ans: 1 },
+            { q: "How do you show respect when someone else is talking?", opts: ["Interrupt loudly", "Listen attentively", "Walk away", "Look at phone"], ans: 1 },
+            { q: "Which card is widely used for public transit and small payments in HK?", opts: ["Octopus Card", "Library Card", "Postcard", "Greeting Card"], ans: 0 },
+            { q: "What emergency telephone number do you call in Hong Kong?", opts: ["911", "999", "112", "000"], ans: 1 },
+            { q: "Which festival in Hong Kong features colorful dragon boat races?", opts: ["Mid-Autumn Festival", "Dragon Boat Festival", "Easter", "Halloween"], ans: 1 },
+            { q: "What is a great way to help your neighborhood community center?", opts: ["Littering", "Volunteering & Sharing", "Ignoring neighbors", "Making noise"], ans: 1 }
+        ];
+        let g4Idx = 0, g4Score = 0;
+
+        function initGame4() {
+            g4Idx = 0; g4Score = 0;
+            document.getElementById('g4-score').innerText = g4Score;
+            renderG4();
         }
+
+        function renderG4() {
+            if (g4Idx >= g4Data.length) {
+                document.getElementById('g4-box').innerHTML = `<div class="text-center font-bold text-emerald-600">🎉 Game Completed! You scored ${g4Score} Shards!</div>`;
+                return;
+            }
+            const item = g4Data[g4Idx];
+            document.getElementById('g4-progress').innerText = `Question ${g4Idx + 1} / ${g4Data.length}`;
+            document.getElementById('g4-question').innerText = item.q;
+            const optsContainer = document.getElementById('g4-options');
+            optsContainer.innerHTML = '';
+            item.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-xs font-semibold text-slate-700 border border-emerald-200 transition text-left";
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    if (idx === item.ans) {
+                        g4Score += 10;
+                        addShards(10);
+                        document.getElementById('g4-score').innerText = g4Score;
+                    }
+                    g4Idx++;
+                    renderG4();
+                };
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        // Initialize All 4 Games on Page Load
+        window.addEventListener('DOMContentLoaded', () => {
+            initGame1();
+            initGame2();
+            initGame3();
+            initGame4();
+        });
     </script>
 </body>
 </html>
