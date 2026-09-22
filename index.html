@@ -1,972 +1,482 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LuminaBox 光啟盒 — Out of the Box, Into the World</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        dyslexic: ['Lexend', 'sans-serif']
-                    },
-                    colors: {
-                        pastel: {
-                            yellowBg: '#FFFDD0',
-                            blueBg: '#EFF6FF',
-                            pinkBg: '#FDF2F8',
-                            slate: '#334155'
-                        }
-                    },
-                    boxShadow: {
-                        'soft-sm': '0 2px 10px rgba(148, 163, 184, 0.08)',
-                        'soft-md': '0 8px 24px rgba(148, 163, 184, 0.12)',
-                        'soft-lg': '0 16px 36px rgba(148, 163, 184, 0.15)',
-                        'glow-amber': '0 0 20px rgba(251, 191, 36, 0.4)',
-                        'glow-sky': '0 0 20px rgba(56, 189, 248, 0.4)'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LuminaBox 光啟盒 — Out of the Box, Into the World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        dyslexic: ['Lexend', 'sans-serif']
+                    },
+                    colors: {
+                        pastel: {
+                            yellowBg: '#FFFDD0',
+                            blueBg: '#EFF6FF',
+                            pinkBg: '#FDF2F8',
+                            slate: '#334155'
+                        }
+                    },
+                    boxShadow: {
+                        'soft-sm': '0 2px 10px rgba(148, 163, 184, 0.08)',
+                        'soft-md': '0 8px 24px rgba(148, 163, 184, 0.12)',
+                        'soft-lg': '0 16px 36px rgba(148, 163, 184, 0.15)',
+                        'glow-amber': '0 0 20px rgba(251, 191, 36, 0.4)',
+                        'glow-sky': '0 0 20px rgba(56, 189, 248, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #334155;
-            background-color: #FEF9C3;
-            letter-spacing: -0.01em;
-            font-weight: 500;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #334155;
+            background-color: #FEF9C3;
+            letter-spacing: -0.01em;
+            font-weight: 500;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
 
-        .sen-mode {
-            font-family: 'Lexend', sans-serif !important;
-            letter-spacing: 0.08em !important;
-            word-spacing: 0.25em !important;
-            line-height: 2.1 !important;
-            background-color: #FFFDD0 !important;
-        }
+        .sen-mode {
+            font-family: 'Lexend', sans-serif !important;
+            letter-spacing: 0.08em !important;
+            word-spacing: 0.25em !important;
+            line-height: 2.1 !important;
+            background-color: #FFFDD0 !important;
+        }
 
-        .sen-mode section, 
-        .sen-mode .card-element {
-            background-color: #FFFFFF !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
-        }
+        .sen-mode section, 
+        .sen-mode .card-element {
+            background-color: #FFFFFF !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+        }
 
-        .smooth-hover {
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @media (hover: hover) {
-            .smooth-hover:hover {
-                transform: translateY(-2px);
-            }
-        }
+        .smooth-hover {
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @media (hover: hover) {
+            .smooth-hover:hover {
+                transform: translateY(-2px);
+            }
+        }
 
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.85; }
-        }
-        .animate-glow {
-            animation: pulseGlow 2s infinite ease-in-out;
-        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.85; }
+        }
+        .animate-glow {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
 
-        .digit-picker-btn {
-            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-            border: 2px solid #cbd5e1;
-            box-shadow: 0 4px 0 #94a3b8;
-            transition: all 0.1s ease;
-        }
-        .digit-picker-btn:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #94a3b8;
-        }
+        .digit-picker-btn {
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            border: 2px solid #cbd5e1;
+            box-shadow: 0 4px 0 #94a3b8;
+            transition: all 0.1s ease;
+        }
+        .digit-picker-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #94a3b8;
+        }
 
-        /* Hide scrollbars for slick mobile horizontal scrolling */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+        /* Hide scrollbars for slick mobile horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 <body id="app-body" class="min-h-screen text-slate-700 selection:bg-pink-200">
 
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md px-3 sm:px-6 lg:px-8 py-3 border-b border-amber-200/60 shadow-soft-sm">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
-            
-            <div class="flex items-center justify-between w-full md:w-auto">
-                <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchSection('main-site')">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-soft-sm shrink-0">
-                        <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-base sm:text-lg font-bold text-slate-800 tracking-tight leading-none">
-                            LuminaBox <span class="text-sky-500 font-semibold text-xs ml-0.5">光啟盒</span>
-                        </h1>
-                        <p class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-normal mt-0.5">
-                            <span class="lang-en">Out of the box, into the world</span>
-                            <span class="lang-zh hidden">以光啟智，走出課室，邁向世界</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Shards counter on mobile header right -->
-                <div class="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold shadow-soft-sm">
-                    <span>💎</span>
-                    <span class="mobile-shards-count">120</span>
-                </div>
-            </div>
-
-            <nav id="nav-main-site" class="hidden xl:flex items-center gap-6 text-xs font-semibold text-slate-600">
-                <a href="#about" class="hover:text-sky-500 transition"><span class="lang-en">About Us</span><span class="lang-zh hidden">關於我們</span></a>
-                <a href="#whats-in-the-box" class="hover:text-sky-500 transition"><span class="lang-en">What's In The Box</span><span class="lang-zh hidden">套裝內容</span></a>
-                <a href="#sen-features" class="hover:text-sky-500 transition"><span class="lang-en">SEN Features</span><span class="lang-zh hidden">SEN 特殊需要支援</span></a>
-                <a href="#team" class="hover:text-sky-500 transition"><span class="lang-en">Meet the Team</span><span class="lang-zh hidden">團隊簡介</span></a>
-                <a href="#impact-stats" class="hover:text-sky-500 transition"><span class="lang-en">Results & Stats</span><span class="lang-zh hidden">成效數據</span></a>
-                <a href="#sdg" class="hover:text-sky-500 transition"><span class="lang-en">SDGs Impact</span><span class="lang-zh hidden">永續目標</span></a>
-                <a href="#shop" class="hover:text-sky-500 transition"><span class="lang-en">Get Kit ($30 HKD)</span><span class="lang-zh hidden">訂購套裝</span></a>
-            </nav>
-
-            <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto no-scrollbar pb-1 md:pb-0">
-                <!-- Desktop Lumina Shards Counter -->
-                <div class="hidden md:flex px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold items-center gap-1.5 shadow-soft-sm shrink-0">
-                    <span>💎</span>
-                    <span id="user-shards-count">120</span>
-                    <span class="text-[10px] text-amber-700 font-normal">Shards</span>
-                </div>
-
-                <button onclick="toggleLanguage()" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-slate-800 text-xs font-semibold transition shadow-soft-sm shrink-0">
-                    <span id="lang-btn-text">繁體中文</span>
-                </button>
-
-                <button onclick="toggleSENMode()" id="sen-toggle-btn" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-200/70 hover:bg-amber-300 text-amber-900 text-xs font-semibold transition flex items-center gap-1.5 shadow-soft-sm shrink-0">
-                    <i data-lucide="eye" class="w-3.5 h-3.5 text-amber-700"></i>
-                    <span id="sen-btn-text">SEN Mode</span>
-                </button>
-                
-                <button id="btn-toggle-portal" onclick="togglePortal()" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-semibold transition shadow-soft-sm flex items-center gap-1.5 shrink-0 smooth-hover">
-                    <i data-lucide="gamepad-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-                    <span id="lbl-toggle-portal">
-                        <span class="lang-en">LuminaPortal AI</span>
-                        <span class="lang-zh hidden">LuminaPortal AI 遊戲館</span>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main id="view-main-site" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-10">
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-white p-5 sm:p-8 lg:p-12 shadow-soft-md">
-            <div class="grid lg:grid-cols-12 gap-6 sm:gap-10 items-center">
-                
-                <div class="lg:col-span-7 space-y-4 sm:space-y-6">
-                    <div>
-                        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight tracking-tight">
-                            <span class="lang-en">Out of the box, into the world</span>
-                            <span class="lang-zh hidden">走出課室 • 邁向世界</span>
-                        </h2>
-                        <p class="text-xs sm:text-base font-semibold text-sky-600 mt-1.5 sm:mt-2">
-                            <span class="lang-en">LuminaBox — Monthly 4-Pillar Bilingual Learning Kit</span>
-                            <span class="lang-zh hidden">LuminaBox 光啟盒 — 每月四大核心雙語學習輔助套裝</span>
-                        </p>
-                    </div>
-
-                    <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                        <p>
-                            <span class="lang-en">LuminaBox is a monthly bilingual learning kit and digital platform designed to build English confidence for children through structured weekly goals. Each month delivers four distinct thematic booklets focusing on <b>Speak</b>, <b>Read</b>, <b>Write</b>, and <b>Connect</b>.</span>
-                            <span class="lang-zh hidden">LuminaBox 光啟盒是一套結合實體教材與線上 AI 平台的雙語學習套裝。每月按週規劃四本主題冊，分別著重於「口說 (Speak)」、「閱讀 (Read)」、「寫作 (Write)」與「社區連結 (Connect)」，協助兒童全方位建立英語自信。</span>
-                        </p>
-                        <p>
-                            <span class="lang-en">Created by Bridge to English, a student-led charity with over 200 volunteers, LuminaBox makes learning structured, actionable, and engaging. Children complete daily exercises across 5 weekdays, calculate a 5-digit <b>Lumina Code</b>, and enter it into LuminaPortal AI to earn <b>Lumina Shards</b>, upgrade companions, and access live Zoom mentorship!</span>
-                            <span class="lang-zh hidden">本計畫由擁有超過 200 名導師的學生慈善機構「Bridge to English」創立。學童完成工作天微任務計算出 5 位數「Lumina 密碼」，即可登入 LuminaPortal AI 賺取 <b>Lumina Shards 晶石</b>，升級 AI 寵物並預約 1對1 Zoom 導師！</span>
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
-                        <div class="p-3 bg-sky-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-sky-100">
-                            <div class="w-8 h-8 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 text-sm shrink-0">⭐</div>
-                            <div>
-                                <h4 class="font-bold text-slate-700 text-xs">
-                                    <span class="lang-en">4 Weekly Booklets</span>
-                                    <span class="lang-zh hidden">每月 4 本主題小冊</span>
-                                </h4>
-                                <p class="text-[10px] text-slate-500 font-medium">
-                                    <span class="lang-en">Speak, Read, Write, Connect</span>
-                                    <span class="lang-zh hidden">說、讀、寫、社區連結</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="p-3 bg-pink-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-pink-100">
-                            <div class="w-8 h-8 rounded-xl bg-pink-100 flex items-center justify-center text-pink-500 text-sm shrink-0">💎</div>
-                            <div>
-                                <h4 class="font-bold text-slate-700 text-xs">
-                                    <span class="lang-en">Lumina Shards</span>
-                                    <span class="lang-zh hidden">Lumina 晶石獎勵</span>
-                                </h4>
-                                <p class="text-[10px] text-slate-500 font-medium">
-                                    <span class="lang-en">Earn shards to upgrade companions</span>
-                                    <span class="lang-zh hidden">解碼獲取晶石，升級專屬夥伴</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="p-3 bg-amber-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-amber-100">
-                            <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-sm shrink-0">📹</div>
-                            <div>
-                                <h4 class="font-bold text-slate-700 text-xs">
-                                    <span class="lang-en">Zoom Mentorship</span>
-                                    <span class="lang-zh hidden">Zoom 導師輔導</span>
-                                </h4>
-                                <p class="text-[10px] text-slate-500 font-medium">
-                                    <span class="lang-en">1-to-1 direct volunteer access</span>
-                                    <span class="lang-zh hidden">一鍵預約免費線上輔導</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
-                        <a href="#shop" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs shadow-soft-sm transition smooth-hover flex items-center justify-center gap-2">
-                            <span class="lang-en">Get LuminaBox ($30 HKD)</span>
-                            <span class="lang-zh hidden">訂購套裝 (港幣 $30)</span>
-                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                        </a>
-                        <button onclick="switchSection('lumina-portal')" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 font-semibold text-xs transition smooth-hover flex items-center justify-center gap-2">
-                            <span class="lang-en">Enter LuminaPortal AI</span>
-                            <span class="lang-zh hidden">進入 LuminaPortal AI 遊戲館</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-700"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5">
-                    <div class="rounded-2xl sm:rounded-[2rem] bg-gradient-to-b from-sky-50 to-blue-50/40 p-4 sm:p-6 shadow-soft-sm space-y-4 sm:space-y-6 border border-sky-100">
-                        
-                        <div class="bg-gradient-to-tr from-blue-300 via-sky-300 to-indigo-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 text-center text-slate-800 space-y-3 shadow-soft-sm relative overflow-hidden">
-                            <div class="w-full h-44 sm:h-52 rounded-xl overflow-hidden shadow-soft-sm bg-white flex items-center justify-center">
-                                <img src="IMG_4789.png" alt="Original LuminaBox Physical Kit" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="font-extrabold text-base sm:text-lg text-slate-800">LuminaBox 光啟盒</h3>
-                                <p class="text-[11px] text-slate-600 font-medium">
-                                    <span class="lang-en">4 Weekly Booklets + LuminaPortal AI</span>
-                                    <span class="lang-zh hidden">4 週實體小冊 + AI 數位解密平台</span>
-                                </p>
-                            </div>
-                            <div class="inline-block px-4 py-1.5 bg-white/90 rounded-full text-slate-800 font-bold text-xs shadow-soft-sm">
-                                HKD $30
-                            </div>
-                        </div>
-
-                        <div class="space-y-2.5 px-1">
-                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                                <span class="lang-en">Monthly 4-Week Cycle</span>
-                                <span class="lang-zh hidden">每月四周主題安排</span>
-                            </h4>
-                            
-                            <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-700">
-                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-xs shrink-0">W1</span>
-                                    <span class="truncate">🗣️ Speak</span>
-                                </div>
-                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs shrink-0">W2</span>
-                                    <span class="truncate">📖 Read</span>
-                                </div>
-                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs shrink-0">W3</span>
-                                    <span class="truncate">✍️ Write</span>
-                                </div>
-                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs shrink-0">W4</span>
-                                    <span class="truncate">🤝 Connect</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- WHAT'S IN THE BOX SECTION -->
-        <section id="whats-in-the-box" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    <span class="lang-en">Unboxing Experience</span>
-                    <span class="lang-zh hidden">開箱體驗</span>
-                </span>
-                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
-                    <span class="lang-en">What's Inside Your LuminaBox?</span>
-                    <span class="lang-zh hidden">LuminaBox 光啟盒包含什麼？</span>
-                </h3>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/60 border border-sky-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg sm:text-xl">📚</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">4 Thematic Booklets</span>
-                        <span class="lang-zh hidden">4 本單週主題小冊</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Booklets for <b>Speak</b>, <b>Read</b>, <b>Write</b>, and <b>Connect</b>, featuring dyslexia-friendly fonts and sensory-rich layouts.</span>
-                        <span class="lang-zh hidden">針對「說、讀、寫、社區連結」設計的單週冊，採用讀寫障礙友善字體與多感官排版。</span>
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/60 border border-amber-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg sm:text-xl">🔢</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">5-Digit Lumina Card</span>
-                        <span class="lang-zh hidden">5 位數 Lumina 算式卡</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Daily calculation card to log weekly progress, sum daily scores, and derive your Lumina Code for online rewards.</span>
-                        <span class="lang-zh hidden">每日進度記錄卡，相加當天數值頂出當週專屬解密金鑰。</span>
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/60 border border-pink-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-lg sm:text-xl">📹</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">Zoom Mentorship Pass</span>
-                        <span class="lang-zh hidden">Zoom 導師一鍵預約卡</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Connect 1-to-1 with student volunteers from Bridge to English for personalized Zoom oral and homework guidance.</span>
-                        <span class="lang-zh hidden">線上一鍵預約 Bridge to English 導師，提供專屬 1對1 Zoom 語音與作業答疑。</span>
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-emerald-50/60 border border-emerald-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg sm:text-xl">🧩</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">Tactile Learning Accessories</span>
-                        <span class="lang-zh hidden">觸感互動學習配件</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Includes visual prompt cards, reward stickers, and community task badges for hands-on sensory learners.</span>
-                        <span class="lang-zh hidden">包含視覺提示卡、獎勵貼紙與社區任務徽章，激發孩子觸感學習興趣。</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- DEDICATED SEN TAILORED FEATURES SECTION -->
-        <section id="sen-features" class="bg-gradient-to-br from-amber-50 via-sky-50 to-pink-50 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-12 shadow-soft-md space-y-6 sm:space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
-                <span class="px-3.5 py-1.5 rounded-full bg-amber-200 text-amber-900 text-xs font-bold inline-flex items-center gap-1.5">
-                    <i data-lucide="heart" class="w-3.5 h-3.5 text-amber-700"></i>
-                    <span class="lang-en">Special Educational Needs (SEN) Tailored</span>
-                    <span class="lang-zh hidden">特殊教育需要 (SEN) 專屬設計</span>
-                </span>
-                <h3 class="text-xl sm:text-3xl font-extrabold text-slate-800">
-                    <span class="lang-en">Inclusive Design for Every Unique Learner</span>
-                    <span class="lang-zh hidden">專為多元學習者打造的無障礙體驗</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                    <span class="lang-en">LuminaBox and LuminaPortal incorporate research-backed tools to support Dyslexia, ADHD, and neurodivergent learning patterns.</span>
-                    <span class="lang-zh hidden">結合學術研究驗證的教學工具，全面支援讀寫障礙、專注力不足 (ADHD) 及多元學習需求的學童。</span>
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <!-- SEN Card 1 -->
-                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-amber-200/80 shadow-soft-sm space-y-2.5">
-                    <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg">🔤</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">Dyslexia-Friendly Fonts</span>
-                        <span class="lang-zh hidden">讀寫障礙友善字體</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Built-in Lexend typography toggle with wide letter-spacing to prevent visual crowding and reading fatigue.</span>
-                        <span class="lang-zh hidden">一鍵開啟 Lexend 專用字體，加寬字距與行距，大幅降低閱讀視覺壓力與字符混淆。</span>
-                    </p>
-                </div>
-
-                <!-- SEN Card 2 -->
-                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-sky-200/80 shadow-soft-sm space-y-2.5">
-                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg">🎨</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">Soft Pastel High-Contrast Tint</span>
-                        <span class="lang-zh hidden">柔和高對比背景調色</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Warm cream-yellow backgrounds eliminate harsh screen glare and decrease visual stress during reading sessions.</span>
-                        <span class="lang-zh hidden">選用柔和乳黃與淡藍底色，減少刺眼強光，有效防範視覺疲勞與對比過敏。</span>
-                    </p>
-                </div>
-
-                <!-- SEN Card 3 -->
-                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-200/80 shadow-soft-sm space-y-2.5">
-                    <div class="w-10 h-10 rounded-xl bg-pink-200/80 flex items-center justify-center text-pink-600 font-bold text-lg">🧩</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">Micro-Chunked Pacing</span>
-                        <span class="lang-zh hidden">微型拆解低壓步調</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Lessons are split into 5-minute daily micro-tasks without high-stress timers, accommodating executive dysfunction.</span>
-                        <span class="lang-zh hidden">每天僅需 5 分鐘微學習，無倒數計時配備，減輕專注力負擔與考前焦慮。</span>
-                    </p>
-                </div>
-
-                <!-- SEN Card 4 -->
-                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-emerald-200/80 shadow-soft-sm space-y-2.5">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg">🔊</div>
-                    <h4 class="font-extrabold text-slate-800 text-sm">
-                        <span class="lang-en">Multimodal Audio Cues</span>
-                        <span class="lang-zh hidden">多感官音效與視覺輔助</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Combines text-to-speech audio with visual prompts to reinforce concept retention for auditory and kinesthetic learners.</span>
-                        <span class="lang-zh hidden">結合語音朗讀與視覺提示雙重回饋，強化聽覺與觸覺型學習者的記憶留存。</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- MEET THE TEAM SECTION -->
-        <section id="team" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
-                    <span class="lang-en">Project Team</span>
-                    <span class="lang-zh hidden">專案團隊</span>
-                </span>
-                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
-                    <span class="lang-en">Meet Our Founders & Developers</span>
-                    <span class="lang-zh hidden">團隊成員與分工介紹</span>
-                </h3>
-            </div>
-
-            <div class="max-w-3xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft-sm bg-slate-100 border border-slate-200">
-                <img src="48ea0585-db1a-4ab9-a878-6141909f2deb.jpeg" alt="LuminaBox Team Photo" class="w-full h-auto object-cover max-h-[420px]">
-            </div>
-
-            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 pt-1 sm:pt-2">
-                <!-- Karina -->
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/70 border border-pink-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 rounded-xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-base">🎨</div>
-                    <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
-                        <p class="text-xs font-semibold text-pink-600">
-                            <span class="lang-en">Physical Prototype & Content Design</span>
-                            <span class="lang-zh hidden">實體原型製作與內容設計</span>
-                        </p>
-                    </div>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Leads the tangible box design, crafts physical activity sheet prototypes, and curates learning contents.</span>
-                        <span class="lang-zh hidden">統籌 LuminaBox 實體外盒與工作紙原型製作，研發適合學童的多感官視覺教材。</span>
-                    </p>
-                </div>
-
-                <!-- Hayley -->
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/70 border border-amber-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 font-extrabold text-base">🌟</div>
-                    <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Hayley</h4>
-                        <p class="text-xs font-semibold text-amber-600">
-                            <span class="lang-en">SEN Pedagogy & Curriculum Director</span>
-                            <span class="lang-zh hidden">SEN 特殊教育教學架構</span>
-                        </p>
-                    </div>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Oversees SEN accessibility features, inclusive literacy frameworks, and volunteer mentorship training.</span>
-                        <span class="lang-zh hidden">專責 SEN 融合教育框架規劃，將雙語教學拆解為低焦慮微任務與導師培訓。</span>
-                    </p>
-                </div>
-
-                <!-- Marcus -->
-                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/70 border border-sky-100 space-y-2.5 hover:shadow-soft-md transition">
-                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 font-extrabold text-base">💻</div>
-                    <div>
-                        <h4 class="font-extrabold text-slate-800 text-base">Marcus</h4>
-                        <p class="text-xs font-semibold text-sky-600">
-                            <span class="lang-en">Digital Portal & AI Lead</span>
-                            <span class="lang-zh hidden">LuminaPortal AI 平台開發</span>
-                        </p>
-                    </div>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Engineered LuminaPortal AI, 5-digit code verification system, companion leveling, and Zoom integrations.</span>
-                        <span class="lang-zh hidden">主導開發 LuminaPortal AI 平台、5位數算式解密機制、晶石寵物系統與 Zoom 預約功能。</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESULTS & STATS SECTION -->
-        <section id="impact-stats" class="bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-soft-lg">
-            <div class="text-center max-w-2xl mx-auto space-y-2 mb-8">
-                <span class="px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold inline-block">
-                    <span class="lang-en">Community Impact & Results</span>
-                    <span class="lang-zh hidden">成效數據與社群影響力</span>
-                </span>
-                <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
-                    <span class="lang-en">Empowering English Learners Across HK</span>
-                    <span class="lang-zh hidden">深耕香港，賦能基層學童英語自信</span>
-                </h3>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-                <div class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-300">200+</div>
-                    <p class="text-xs sm:text-sm font-medium text-sky-100 mt-1">
-                        <span class="lang-en">Volunteer Tutors</span>
-                        <span class="lang-zh hidden">熱心青年導師</span>
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-300">1,200+</div>
-                    <p class="text-xs sm:text-sm font-medium text-sky-100 mt-1">
-                        <span class="lang-en">Students Impacted</span>
-                        <span class="lang-zh hidden">受惠學童人數</span>
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-300">88%</div>
-                    <p class="text-xs sm:text-sm font-medium text-sky-100 mt-1">
-                        <span class="lang-en">Speaking Confidence Gain</span>
-                        <span class="lang-zh hidden">英語口說自信顯著提升</span>
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/20">
-                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-300">94%</div>
-                    <p class="text-xs sm:text-sm font-medium text-sky-100 mt-1">
-                        <span class="lang-en">Weekly Retention Rate</span>
-                        <span class="lang-zh hidden">週任務打卡完成率</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- UN SDGS IMPACT SECTION -->
-        <section id="sdg" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">
-                    <span class="lang-en">United Nations Alignment</span>
-                    <span class="lang-zh hidden">聯合國永續發展目標</span>
-                </span>
-                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
-                    <span class="lang-en">Driven by UN Sustainable Development Goals</span>
-                    <span class="lang-zh hidden">實踐 SDG 永續影響力</span>
-                </h3>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                <!-- SDG 4 -->
-                <div class="p-5 rounded-2xl bg-gradient-to-br from-red-50 to-red-100/50 border border-red-200 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-red-600 text-white font-extrabold flex items-center justify-center text-sm">
-                        SDG 4
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">
-                        <span class="lang-en">Quality Education</span>
-                        <span class="lang-zh hidden">優質教育</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Ensuring inclusive and equitable quality education by removing financial and learning accessibility barriers for SEN learners.</span>
-                        <span class="lang-zh hidden">打破學習障礙與經濟門檻，提供具無障礙支援的優質雙語學習資源。</span>
-                    </p>
-                </div>
-
-                <!-- SDG 10 -->
-                <div class="p-5 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100/50 border border-pink-200 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-pink-600 text-white font-extrabold flex items-center justify-center text-sm">
-                        SDG 10
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">
-                        <span class="lang-en">Reduced Inequalities</span>
-                        <span class="lang-zh hidden">減少不平等</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Subsidizing $30 HKD accessible kits for underprivileged households to bridge the educational resource gap.</span>
-                        <span class="lang-zh hidden">以親民的 30 港幣補貼價格，弭平基層家庭與 SEN 學童的教育資源差距。</span>
-                    </p>
-                </div>
-
-                <!-- SDG 17 -->
-                <div class="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200 space-y-3 sm:col-span-2 lg:col-span-1">
-                    <div class="w-10 h-10 rounded-xl bg-blue-700 text-white font-extrabold flex items-center justify-center text-sm">
-                        SDG 17
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-sm">
-                        <span class="lang-en">Partnerships for the Goals</span>
-                        <span class="lang-zh hidden">多元夥伴關係</span>
-                    </h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Partnering student volunteers, NGOs, and community centers to deliver sustained 1-to-1 mentorship network.</span>
-                        <span class="lang-zh hidden">與青年志工團隊、非營利機構與社區中心深度合作，共建永續陪伴網絡。</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ORDER KIT / GET KIT SECTION -->
-        <section id="shop" class="bg-gradient-to-b from-amber-100/80 to-amber-50 rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 border border-amber-200 shadow-soft-md text-center space-y-6">
-            <div class="max-w-xl mx-auto space-y-3">
-                <span class="px-3.5 py-1.5 rounded-full bg-amber-200 text-amber-900 text-xs font-bold inline-block">
-                    <span class="lang-en">Order LuminaBox</span>
-                    <span class="lang-zh hidden">立即訂購套裝</span>
-                </span>
-                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-800">
-                    <span class="lang-en">Start Your English Journey for $30 HKD</span>
-                    <span class="lang-zh hidden">僅需港幣 $30，開啟專屬英語啟蒙體驗</span>
-                </h3>
-                <p class="text-xs sm:text-sm text-slate-600 font-medium">
-                    <span class="lang-en">Includes 4 weekly booklets, calculation code card, visual prompts, and full access to LuminaPortal AI & live Zoom mentorship.</span>
-                    <span class="lang-zh hidden">包含每月 4 本主題小冊、5位數解密卡、感官配件以及 LuminaPortal AI 與 1對1 Zoom 導師諮詢權益。</span>
-                </p>
-            </div>
-
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-3">
-                <button onclick="alert('Thank you for supporting LuminaBox! Order link is processing.')" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm shadow-soft-md transition smooth-hover flex items-center justify-center gap-2">
-                    <i data-lucide="shopping-cart" class="w-4 h-4"></i>
-                    <span class="lang-en">Order Kit ($30 HKD)</span>
-                    <span class="lang-zh hidden">立即以 $30 訂購</span>
-                </button>
-                <button onclick="switchSection('lumina-portal')" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-sm shadow-soft-sm transition smooth-hover flex items-center justify-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-sky-500"></i>
-                    <span class="lang-en">Try Digital LuminaPortal</span>
-                    <span class="lang-zh hidden">試用 LuminaPortal 數位館</span>
-                </button>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- LUMINAPORTAL AI INTERACTIVE VIEW -->
-    <main id="view-lumina-portal" class="hidden max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8">
-        
-        <div class="bg-gradient-to-r from-sky-500 to-indigo-600 rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-8 text-white shadow-soft-lg flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="space-y-1 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs font-bold backdrop-blur-md">
-                    <span>✨</span>
-                    <span class="lang-en">LuminaPortal AI Student Dashboard</span>
-                    <span class="lang-zh hidden">LuminaPortal AI 學童專屬數位館</span>
-                </div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold">
-                    <span class="lang-en">Decode Weekly Lumina Code</span>
-                    <span class="lang-zh hidden">輸入 5 位數當週解密金鑰</span>
-                </h2>
-                <p class="text-xs sm:text-sm text-sky-100">
-                    <span class="lang-en">Complete daily exercises in your booklet, sum your daily values, and enter the 5 digits below!</span>
-                    <span class="lang-zh hidden">完成每週手冊中的每日小任務，相加算式卡上的數值即可解鎖晶石！</span>
-                </p>
-            </div>
-
-            <button onclick="switchSection('main-site')" class="px-4 py-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white font-semibold text-xs backdrop-blur-md transition flex items-center gap-1.5 shrink-0">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                <span class="lang-en">Back to Main Info</span>
-                <span class="lang-zh hidden">返回主頁</span>
-            </button>
-        </div>
-
-        <div class="grid lg:grid-cols-12 gap-6">
-            
-            <!-- CODE INPUT & CALCULATOR SECTION -->
-            <div class="lg:col-span-7 bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-soft-md space-y-6 border border-slate-100">
-                <div class="flex items-center justify-between">
-                    <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
-                        <i data-lucide="key-round" class="w-5 h-5 text-sky-500"></i>
-                        <span class="lang-en">Enter 5-Digit Code</span>
-                        <span class="lang-zh hidden">輸入 5 位數算式密碼</span>
-                    </h3>
-                    <span class="text-xs font-semibold px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg">
-                        <span class="lang-en">Reward: +50 Shards</span>
-                        <span class="lang-zh hidden">解碼獎勵: +50 晶石</span>
-                    </span>
-                </div>
-
-                <!-- 5 Digit Display -->
-                <div class="grid grid-cols-5 gap-2 sm:gap-3">
-                    <div id="digit-0" class="h-14 sm:h-16 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-xl sm:text-2xl font-extrabold text-slate-800">0</div>
-                    <div id="digit-1" class="h-14 sm:h-16 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-xl sm:text-2xl font-extrabold text-slate-800">0</div>
-                    <div id="digit-2" class="h-14 sm:h-16 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-xl sm:text-2xl font-extrabold text-slate-800">0</div>
-                    <div id="digit-3" class="h-14 sm:h-16 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-xl sm:text-2xl font-extrabold text-slate-800">0</div>
-                    <div id="digit-4" class="h-14 sm:h-16 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-xl sm:text-2xl font-extrabold text-slate-800">0</div>
-                </div>
-
-                <!-- Number Pad Keyboard -->
-                <div class="grid grid-cols-3 gap-2.5 max-w-xs mx-auto">
-                    <button onclick="pressDigit('1')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">1</button>
-                    <button onclick="pressDigit('2')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">2</button>
-                    <button onclick="pressDigit('3')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">3</button>
-                    <button onclick="pressDigit('4')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">4</button>
-                    <button onclick="pressDigit('5')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">5</button>
-                    <button onclick="pressDigit('6')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">6</button>
-                    <button onclick="pressDigit('7')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">7</button>
-                    <button onclick="pressDigit('8')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">8</button>
-                    <button onclick="pressDigit('9')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">9</button>
-                    <button onclick="clearDigits()" class="py-3 rounded-xl font-bold text-rose-600 bg-rose-50 border border-rose-200 text-xs">Clear</button>
-                    <button onclick="pressDigit('0')" class="digit-picker-btn py-3 rounded-xl font-bold text-slate-700 text-lg">0</button>
-                    <button onclick="verifyCode()" class="py-3 rounded-xl font-bold text-emerald-700 bg-emerald-100 border border-emerald-300 text-xs">Submit</button>
-                </div>
-
-                <div id="code-feedback" class="hidden p-3.5 rounded-xl text-center text-xs font-bold"></div>
-            </div>
-
-            <!-- COMPANION & REWARDS PANEL -->
-            <div class="lg:col-span-5 space-y-6">
-                
-                <!-- AI Companion Card -->
-                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-[2rem] shadow-soft-md border border-slate-100 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
-                            <i data-lucide="bot" class="w-4 h-4 text-pink-500"></i>
-                            <span class="lang-en">Lumina Companion</span>
-                            <span class="lang-zh hidden">專屬 AI 夥伴</span>
-                        </h3>
-                        <span id="companion-level" class="text-xs font-bold px-2.5 py-1 bg-sky-100 text-sky-800 rounded-lg">Lv. 2 Lumina Owl</span>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-gradient-to-b from-sky-50 to-pink-50 flex flex-col items-center justify-center space-y-3 relative overflow-hidden">
-                        <div id="companion-avatar" class="text-6xl animate-glow">🦉</div>
-                        <p class="text-xs text-slate-600 font-semibold text-center">
-                            <span class="lang-en">"Great job completing your tasks! Feed me shards to evolve!"</span>
-                            <span class="lang-zh hidden">「太棒了！輸入算式卡密碼賺取晶石，讓我升級進化吧！」</span>
-                        </p>
-                    </div>
-
-                    <button onclick="upgradeCompanion()" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-amber-950 font-bold text-xs shadow-soft-sm transition flex items-center justify-center gap-2">
-                        <span>💎 Upgrade Companion (-50 Shards)</span>
-                    </button>
-                </div>
-
-                <!-- Zoom Mentorship Card -->
-                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-[2rem] shadow-soft-md border border-slate-100 space-y-3">
-                    <div class="flex items-center gap-2 text-slate-800 font-bold text-sm">
-                        <i data-lucide="video" class="w-4 h-4 text-sky-500"></i>
-                        <span class="lang-en">1-on-1 Zoom Mentorship</span>
-                        <span class="lang-zh hidden">1對1 Zoom 導師諮詢</span>
-                    </div>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        <span class="lang-en">Need help with oral speaking or booklets? Book a free 15-minute 1-on-1 session with a Bridge to English volunteer.</span>
-                        <span class="lang-zh hidden">需要口說練習或手冊解惑？免費預約 Bridge to English 青年導師 15 分鐘線上指導。</span>
-                    </p>
-                    <button onclick="openZoomModal()" class="w-full py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-700 font-bold text-xs border border-sky-200 transition flex items-center justify-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
-                        <span class="lang-en">Book Zoom Session</span>
-                        <span class="lang-zh hidden">立即預約 Zoom 導師</span>
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-white border-t border-slate-200 mt-12 py-8 px-4 text-center text-xs text-slate-500 font-medium space-y-2">
-        <p>LuminaBox 光啟盒 © 2026 — Created by Bridge to English (BTE)</p>
-        <p class="text-[11px] text-slate-400">Out of the Box, Into the World • 走出課室，邁向世界</p>
-    </footer>
-
-    <!-- ZOOM BOOKING MODAL -->
-    <div id="zoom-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-6 max-w-md w-full space-y-4 shadow-soft-lg">
-            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
-                <h3 class="font-bold text-slate-800 text-base">Book 1-on-1 Zoom Mentorship</h3>
-                <button onclick="closeZoomModal()" class="text-slate-400 hover:text-slate-600 font-bold text-lg">✕</button>
-            </div>
-            <div class="space-y-3 text-xs">
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Student Name / 學生姓名</label>
-                    <input type="text" placeholder="e.g. Alex Chan" class="w-full p-2.5 rounded-xl border border-slate-200 focus:outline-sky-400">
-                </div>
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Select Topic / 諮詢主題</label>
-                    <select class="w-full p-2.5 rounded-xl border border-slate-200 focus:outline-sky-400 bg-white">
-                        <option>Week 1: Speak Practice (口說練習)</option>
-                        <option>Week 2: Read Guidance (閱讀導讀)</option>
-                        <option>Week 3: Writing Check (寫作批改)</option>
-                        <option>Week 4: Community Connect (社區連結)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Preferred Time / 偏好時段</label>
-                    <input type="datetime-local" class="w-full p-2.5 rounded-xl border border-slate-200 focus:outline-sky-400">
-                </div>
-            </div>
-            <button onclick="submitZoomBooking()" class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-soft-sm transition">
-                Confirm Reservation / 確認預約
-            </button>
-        </div>
-    </div>
-
-    <script>
-        // GLOBAL APP STATE
-        let currentLang = 'en'; // 'en' or 'zh'
-        let isSENMode = false;
-        let shardsCount = 120;
-        let currentCode = ['0', '0', '0', '0', '0'];
-        let codeIndex = 0;
-        let companionLevel = 2;
-
-        // INITIALIZE LUCIDE ICONS
-        lucide.createIcons();
-
-        // LANGUAGE TOGGLE FUNCTION
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'zh' : 'en';
-            
-            const enEls = document.querySelectorAll('.lang-en');
-            const zhEls = document.querySelectorAll('.lang-zh');
-            const langBtnText = document.getElementById('lang-btn-text');
-
-            if (currentLang === 'zh') {
-                enEls.forEach(el => el.classList.add('hidden'));
-                zhEls.forEach(el => el.classList.remove('hidden'));
-                langBtnText.textContent = 'English';
-            } else {
-                zhEls.forEach(el => el.classList.add('hidden'));
-                enEls.forEach(el => el.classList.remove('hidden'));
-                langBtnText.textContent = '繁體中文';
-            }
-        }
-
-        // SEN MODE TOGGLE FUNCTION
-        function toggleSENMode() {
-            isSENMode = !isSENMode;
-            const body = document.getElementById('app-body');
-            const senBtnText = document.getElementById('sen-btn-text');
-
-            if (isSENMode) {
-                body.classList.add('sen-mode');
-                senBtnText.textContent = 'Standard Mode';
-            } else {
-                body.classList.remove('sen-mode');
-                senBtnText.textContent = 'SEN Mode';
-            }
-        }
-
-        // NAVIGATION TOGGLE FUNCTION
-        function switchSection(target) {
-            const mainSite = document.getElementById('view-main-site');
-            const luminaPortal = document.getElementById('view-lumina-portal');
-
-            if (target === 'lumina-portal') {
-                mainSite.classList.add('hidden');
-                luminaPortal.classList.remove('hidden');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                luminaPortal.classList.add('hidden');
-                mainSite.classList.remove('hidden');
-            }
-        }
-
-        function togglePortal() {
-            const luminaPortal = document.getElementById('view-lumina-portal');
-            if (luminaPortal.classList.contains('hidden')) {
-                switchSection('lumina-portal');
-            } else {
-                switchSection('main-site');
-            }
-        }
-
-        // CALCULATOR CODE DIGIT INPUT LOGIC
-        function updateDigitDisplay() {
-            for (let i = 0; i < 5; i++) {
-                document.getElementById(`digit-${i}`).textContent = currentCode[i];
-            }
-        }
-
-        function pressDigit(num) {
-            if (codeIndex < 5) {
-                currentCode[codeIndex] = num;
-                codeIndex++;
-                updateDigitDisplay();
-            }
-        }
-
-        function clearDigits() {
-            currentCode = ['0', '0', '0', '0', '0'];
-            codeIndex = 0;
-            updateDigitDisplay();
-            const feedback = document.getElementById('code-feedback');
-            feedback.classList.add('hidden');
-        }
-
-        function verifyCode() {
-            const feedback = document.getElementById('code-feedback');
-            const codeStr = currentCode.join('');
-
-            if (codeIndex < 5) {
-                feedback.className = 'p-3.5 rounded-xl text-center text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300';
-                feedback.textContent = currentLang === 'en' ? 'Please enter all 5 digits!' : '請完整輸入 5 位數算式密碼！';
-                feedback.classList.remove('hidden');
-                return;
-            }
-
-            // Grant shards
-            shardsCount += 50;
-            updateShardsUI();
-
-            feedback.className = 'p-3.5 rounded-xl text-center text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-300';
-            feedback.textContent = currentLang === 'en' 
-                ? `🎉 Code ${codeStr} Verified! You earned +50 Lumina Shards!` 
-                : `🎉 密碼 ${codeStr} 驗證成功！獲得 +50 Lumina 晶石！`;
-            feedback.classList.remove('hidden');
-
-            // Reset digit index
-            setTimeout(() => {
-                clearDigits();
-            }, 3000);
-        }
-
-        function updateShardsUI() {
-            document.getElementById('user-shards-count').textContent = shardsCount;
-            document.querySelectorAll('.mobile-shards-count').forEach(el => el.textContent = shardsCount);
-        }
-
-        // COMPANION UPGRADE LOGIC
-        function upgradeCompanion() {
-            if (shardsCount >= 50) {
-                shardsCount -= 50;
-                companionLevel++;
-                updateShardsUI();
-
-                const avatars = ['🐣', '🐥', '🦉', '🦅', '鳳凰'];
-                const avatarIndex = Math.min(companionLevel - 1, avatars.length - 1);
-                
-                document.getElementById('companion-level').textContent = `Lv. ${companionLevel} Lumina Companion`;
-                document.getElementById('companion-avatar').textContent = avatars[avatarIndex] || '🦉';
-
-                alert(currentLang === 'en' ? '🌟 Companion Upgraded successfully!' : '🌟 AI 夥伴升級成功！');
-            } else {
-                alert(currentLang === 'en' ? 'Not enough shards! Enter codes to earn more.' : '晶石不足！請繼續輸入每週算式卡密碼賺取晶石。');
-            }
-        }
-
-        // ZOOM MODAL LOGIC
-        function openZoomModal() {
-            document.getElementById('zoom-modal').classList.remove('hidden');
-        }
-
-        function closeZoomModal() {
-            document.getElementById('zoom-modal').classList.add('hidden');
-        }
-
-        function submitZoomBooking() {
-            alert(currentLang === 'en' ? 'Zoom session reserved! Check your email for invitation link.' : 'Zoom 諮詢預約成功！邀請連結已發送至信箱。');
-            closeZoomModal();
-        }
-    </script>
-</body>
-</html>
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md px-3 sm:px-6 lg:px-8 py-3 border-b border-amber-200/60 shadow-soft-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+            
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchSection('main-site')">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-soft-sm shrink-0">
+                        <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-bold text-slate-800 tracking-tight leading-none">
+                            LuminaBox <span class="text-sky-500 font-semibold text-xs ml-0.5">光啟盒</span>
+                        </h1>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-normal mt-0.5">
+                            <span class="lang-en">Out of the box, into the world</span>
+                            <span class="lang-zh hidden">以光啟智，走出課室，邁向世界</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Shards counter on mobile header right -->
+                <div class="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold shadow-soft-sm">
+                    <span>💎</span>
+                    <span class="mobile-shards-count">120</span>
+                </div>
+            </div>
+
+            <nav id="nav-main-site" class="hidden xl:flex items-center gap-6 text-xs font-semibold text-slate-600">
+                <a href="#about" class="hover:text-sky-500 transition"><span class="lang-en">About Us</span><span class="lang-zh hidden">關於我們</span></a>
+                <a href="#whats-in-the-box" class="hover:text-sky-500 transition"><span class="lang-en">What's In The Box</span><span class="lang-zh hidden">套裝內容</span></a>
+                <a href="#sen-features" class="hover:text-sky-500 transition"><span class="lang-en">SEN Features</span><span class="lang-zh hidden">SEN 特殊需要支援</span></a>
+                <a href="#team" class="hover:text-sky-500 transition"><span class="lang-en">Meet the Team</span><span class="lang-zh hidden">團隊簡介</span></a>
+                <a href="#impact-stats" class="hover:text-sky-500 transition"><span class="lang-en">Results & Stats</span><span class="lang-zh hidden">成效數據</span></a>
+                <a href="#sdg" class="hover:text-sky-500 transition"><span class="lang-en">SDGs Impact</span><span class="lang-zh hidden">永續目標</span></a>
+                <a href="#shop" class="hover:text-sky-500 transition"><span class="lang-en">Get Kit ($30 HKD)</span><span class="lang-zh hidden">訂購套裝</span></a>
+            </nav>
+
+            <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto no-scrollbar pb-1 md:pb-0">
+                <!-- Desktop Lumina Shards Counter -->
+                <div class="hidden md:flex px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold items-center gap-1.5 shadow-soft-sm shrink-0">
+                    <span>💎</span>
+                    <span id="user-shards-count">120</span>
+                    <span class="text-[10px] text-amber-700 font-normal">Shards</span>
+                </div>
+
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-slate-800 text-xs font-semibold transition shadow-soft-sm shrink-0">
+                    <span id="lang-btn-text">繁體中文</span>
+                </button>
+
+                <button onclick="toggleSENMode()" id="sen-toggle-btn" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-amber-200/70 hover:bg-amber-300 text-amber-900 text-xs font-semibold transition flex items-center gap-1.5 shadow-soft-sm shrink-0">
+                    <i data-lucide="eye" class="w-3.5 h-3.5 text-amber-700"></i>
+                    <span id="sen-btn-text">SEN Mode</span>
+                </button>
+                
+                <button id="btn-toggle-portal" onclick="togglePortal()" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-semibold transition shadow-soft-sm flex items-center gap-1.5 shrink-0 smooth-hover">
+                    <i data-lucide="gamepad-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                    <span id="lbl-toggle-portal">
+                        <span class="lang-en">LuminaPortal AI</span>
+                        <span class="lang-zh hidden">LuminaPortal AI 遊戲館</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="view-main-site" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-10">
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-white p-5 sm:p-8 lg:p-12 shadow-soft-md">
+            <div class="grid lg:grid-cols-12 gap-6 sm:gap-10 items-center">
+                
+                <div class="lg:col-span-7 space-y-4 sm:space-y-6">
+                    <div>
+                        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight tracking-tight">
+                            <span class="lang-en">Out of the box, into the world</span>
+                            <span class="lang-zh hidden">走出課室 • 邁向世界</span>
+                        </h2>
+                        <p class="text-xs sm:text-base font-semibold text-sky-600 mt-1.5 sm:mt-2">
+                            <span class="lang-en">LuminaBox — Monthly 4-Pillar Bilingual Learning Kit</span>
+                            <span class="lang-zh hidden">LuminaBox 光啟盒 — 每月四大核心雙語學習輔助套裝</span>
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                        <p>
+                            <span class="lang-en">LuminaBox is a monthly bilingual learning kit and digital platform designed to build English confidence for children through structured weekly goals. Each month delivers four distinct thematic booklets focusing on <b>Speak</b>, <b>Read</b>, <b>Write</b>, and <b>Connect</b>.</span>
+                            <span class="lang-zh hidden">LuminaBox 光啟盒是一套結合實體教材與線上 AI 平台的雙語學習套裝。每月按週規劃四本主題冊，分別著重於「口說 (Speak)」、「閱讀 (Read)」、「寫作 (Write)」與「社區連結 (Connect)」，協助兒童全方位建立英語自信。</span>
+                        </p>
+                        <p>
+                            <span class="lang-en">Created by Bridge to English, a student-led charity with over 200 volunteers, LuminaBox makes learning structured, actionable, and engaging. Children complete daily exercises across 5 weekdays, calculate a 5-digit <b>Lumina Code</b>, and enter it into LuminaPortal AI to earn <b>Lumina Shards</b>, upgrade companions, and access live Zoom mentorship!</span>
+                            <span class="lang-zh hidden">本計畫由擁有超過 200 名導師的學生慈善機構「Bridge to English」創立。學童完成工作天微任務計算出 5 位數「Lumina 密碼」，即可登入 LuminaPortal AI 賺取 <b>Lumina Shards 晶石</b>，升級 AI 寵物並預約 1對1 Zoom 導師！</span>
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
+                        <div class="p-3 bg-sky-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-sky-100">
+                            <div class="w-8 h-8 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 text-sm shrink-0">⭐</div>
+                            <div>
+                                <h4 class="font-bold text-slate-700 text-xs">
+                                    <span class="lang-en">4 Weekly Booklets</span>
+                                    <span class="lang-zh hidden">每月 4 本主題小冊</span>
+                                </h4>
+                                <p class="text-[10px] text-slate-500 font-medium">
+                                    <span class="lang-en">Speak, Read, Write, Connect</span>
+                                    <span class="lang-zh hidden">說、讀、寫、社區連結</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-pink-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-pink-100">
+                            <div class="w-8 h-8 rounded-xl bg-pink-100 flex items-center justify-center text-pink-500 text-sm shrink-0">💎</div>
+                            <div>
+                                <h4 class="font-bold text-slate-700 text-xs">
+                                    <span class="lang-en">Lumina Shards</span>
+                                    <span class="lang-zh hidden">Lumina 晶石獎勵</span>
+                                </h4>
+                                <p class="text-[10px] text-slate-500 font-medium">
+                                    <span class="lang-en">Earn shards to upgrade companions</span>
+                                    <span class="lang-zh hidden">解碼獲取晶石，升級專屬夥伴</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-amber-50/80 rounded-xl sm:rounded-2xl flex items-center gap-3 border border-amber-100">
+                            <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-sm shrink-0">📹</div>
+                            <div>
+                                <h4 class="font-bold text-slate-700 text-xs">
+                                    <span class="lang-en">Zoom Mentorship</span>
+                                    <span class="lang-zh hidden">Zoom 導師輔導</span>
+                                </h4>
+                                <p class="text-[10px] text-slate-500 font-medium">
+                                    <span class="lang-en">1-to-1 direct volunteer access</span>
+                                    <span class="lang-zh hidden">一鍵預約免費線上輔導</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+                        <a href="#shop" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-semibold text-xs shadow-soft-sm transition smooth-hover flex items-center justify-center gap-2">
+                            <span class="lang-en">Get LuminaBox ($30 HKD)</span>
+                            <span class="lang-zh hidden">訂購套裝 (港幣 $30)</span>
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        </a>
+                        <button onclick="switchSection('lumina-portal')" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 font-semibold text-xs transition smooth-hover flex items-center justify-center gap-2">
+                            <span class="lang-en">Enter LuminaPortal AI</span>
+                            <span class="lang-zh hidden">進入 LuminaPortal AI 遊戲館</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-700"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="rounded-2xl sm:rounded-[2rem] bg-gradient-to-b from-sky-50 to-blue-50/40 p-4 sm:p-6 shadow-soft-sm space-y-4 sm:space-y-6 border border-sky-100">
+                        
+                        <div class="bg-gradient-to-tr from-blue-300 via-sky-300 to-indigo-200 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 text-center text-slate-800 space-y-3 shadow-soft-sm relative overflow-hidden">
+                            <div class="w-full h-44 sm:h-52 rounded-xl overflow-hidden shadow-soft-sm bg-white flex items-center justify-center">
+                                <img src="IMG_4789.png" onerror="this.onerror=null; this.src='7ee211e2-3346-40d8-902e-c3ccc97bdb76.jpeg';" alt="Original LuminaBox Physical Kit" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-base sm:text-lg text-slate-800">LuminaBox 光啟盒</h3>
+                                <p class="text-[11px] text-slate-600 font-medium">
+                                    <span class="lang-en">4 Weekly Booklets + LuminaPortal AI</span>
+                                    <span class="lang-zh hidden">4 週實體小冊 + AI 數位解密平台</span>
+                                </p>
+                            </div>
+                            <div class="inline-block px-4 py-1.5 bg-white/90 rounded-full text-slate-800 font-bold text-xs shadow-soft-sm">
+                                HKD $30
+                            </div>
+                        </div>
+
+                        <div class="space-y-2.5 px-1">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                                <span class="lang-en">Monthly 4-Week Cycle</span>
+                                <span class="lang-zh hidden">每月四周主題安排</span>
+                            </h4>
+                            
+                            <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-700">
+                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-xs shrink-0">W1</span>
+                                    <span class="truncate">🗣️ Speak</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs shrink-0">W2</span>
+                                    <span class="truncate">📖 Read</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs shrink-0">W3</span>
+                                    <span class="truncate">✍️ Write</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-white border border-sky-100 flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs shrink-0">W4</span>
+                                    <span class="truncate">🤝 Connect</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHAT'S IN THE BOX SECTION -->
+        <section id="whats-in-the-box" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
+                    <span class="lang-en">Unboxing Experience</span>
+                    <span class="lang-zh hidden">開箱體驗</span>
+                </span>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
+                    <span class="lang-en">What's Inside Your LuminaBox?</span>
+                    <span class="lang-zh hidden">LuminaBox 光啟盒包含什麼？</span>
+                </h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-sky-50/60 border border-sky-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg sm:text-xl">📚</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">4 Thematic Booklets</span>
+                        <span class="lang-zh hidden">4 本單週主題小冊</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Booklets for <b>Speak</b>, <b>Read</b>, <b>Write</b>, and <b>Connect</b>, featuring dyslexia-friendly fonts and sensory-rich layouts.</span>
+                        <span class="lang-zh hidden">針對「說、讀、寫、社區連結」設計的單週冊，採用讀寫障礙友善字體與多感官排版。</span>
+                    </p>
+                </div>
+
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/60 border border-amber-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg sm:text-xl">🔢</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">5-Digit Lumina Card</span>
+                        <span class="lang-zh hidden">5 位數 Lumina 算式卡</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Daily calculation card to log weekly progress, sum daily scores, and derive your Lumina Code for online rewards.</span>
+                        <span class="lang-zh hidden">每日進度記錄卡，相加當天數值頂出當週專屬解密金鑰。</span>
+                    </p>
+                </div>
+
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/60 border border-pink-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-lg sm:text-xl">📹</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">Zoom Mentorship Pass</span>
+                        <span class="lang-zh hidden">Zoom 導師一鍵預約卡</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Connect 1-to-1 with student volunteers from Bridge to English for personalized Zoom oral and homework guidance.</span>
+                        <span class="lang-zh hidden">線上一鍵預約 Bridge to English 導師，提供專屬 1對1 Zoom 語音與作業答疑。</span>
+                    </p>
+                </div>
+
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-emerald-50/60 border border-emerald-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg sm:text-xl">🧩</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">Tactile Learning Accessories</span>
+                        <span class="lang-zh hidden">觸感互動學習配件</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Includes visual prompt cards, reward stickers, and community task badges for hands-on sensory learners.</span>
+                        <span class="lang-zh hidden">包含視覺提示卡、獎勵貼紙與社區任務徽章，激發孩子觸感學習興趣。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEDICATED SEN TAILORED FEATURES SECTION -->
+        <section id="sen-features" class="bg-gradient-to-br from-amber-50 via-sky-50 to-pink-50 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-12 shadow-soft-md space-y-6 sm:space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
+                <span class="px-3.5 py-1.5 rounded-full bg-amber-200 text-amber-900 text-xs font-bold inline-flex items-center gap-1.5">
+                    <i data-lucide="heart" class="w-3.5 h-3.5 text-amber-700"></i>
+                    <span class="lang-en">Special Educational Needs (SEN) Tailored</span>
+                    <span class="lang-zh hidden">特殊教育需要 (SEN) 專屬設計</span>
+                </span>
+                <h3 class="text-xl sm:text-3xl font-extrabold text-slate-800">
+                    <span class="lang-en">Inclusive Design for Every Unique Learner</span>
+                    <span class="lang-zh hidden">專為多元學習者打造的無障礙體驗</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                    <span class="lang-en">LuminaBox and LuminaPortal incorporate research-backed tools to support Dyslexia, ADHD, and neurodivergent learning patterns.</span>
+                    <span class="lang-zh hidden">結合學術研究驗證的教學工具，全面支援讀寫障礙、專注力不足 (ADHD) 及多元學習需求的學童。</span>
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- SEN Card 1 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-amber-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg">🔤</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">Dyslexia-Friendly Fonts</span>
+                        <span class="lang-zh hidden">讀寫障礙友善字體</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Built-in Lexend typography toggle with wide letter-spacing to prevent visual crowding and reading fatigue.</span>
+                        <span class="lang-zh hidden">一鍵開啟 Lexend 專用字體，加寬字距與行距，大幅降低閱讀視覺壓力與字符混淆。</span>
+                    </p>
+                </div>
+
+                <!-- SEN Card 2 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-sky-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 font-bold text-lg">🎨</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">Soft Pastel High-Contrast Tint</span>
+                        <span class="lang-zh hidden">柔和高對比背景調色</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Warm cream-yellow backgrounds eliminate harsh screen glare and decrease visual stress during reading sessions.</span>
+                        <span class="lang-zh hidden">選用柔和乳黃與淡藍底色，減少刺眼強光，有效防範視覺疲勞與對比過敏。</span>
+                    </p>
+                </div>
+
+                <!-- SEN Card 3 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-pink-200/80 flex items-center justify-center text-pink-600 font-bold text-lg">🧩</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">Micro-Chunked Pacing</span>
+                        <span class="lang-zh hidden">微型拆解低壓步調</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Lessons are split into 5-minute daily micro-tasks without high-stress timers, accommodating executive dysfunction.</span>
+                        <span class="lang-zh hidden">每天僅需 5 分鐘微學習，無倒數計時配備，減輕專注力負擔與考前焦慮。</span>
+                    </p>
+                </div>
+
+                <!-- SEN Card 4 -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-emerald-200/80 shadow-soft-sm space-y-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-lg">🔊</div>
+                    <h4 class="font-extrabold text-slate-800 text-sm">
+                        <span class="lang-en">Multimodal Audio Cues</span>
+                        <span class="lang-zh hidden">多感官音效與視覺輔助</span>
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Combines text-to-speech audio with visual prompts to reinforce concept retention for auditory and kinesthetic learners.</span>
+                        <span class="lang-zh hidden">結合語音朗讀與視覺提示雙重回饋，強化聽覺與觸覺型學習者的記憶留存。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEET THE TEAM SECTION -->
+        <section id="team" class="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-soft-md space-y-6 sm:space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-[11px] font-semibold">
+                    <span class="lang-en">Project Team</span>
+                    <span class="lang-zh hidden">專案團隊</span>
+                </span>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-800">
+                    <span class="lang-en">Meet Our Founders & Developers</span>
+                    <span class="lang-zh hidden">團隊成員與分工介紹</span>
+                </h3>
+            </div>
+
+            <div class="max-w-3xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft-sm bg-slate-100 border border-slate-200">
+                <img src="48ea0585-db1a-4ab9-a878-6141909f2deb.jpeg" onerror="this.onerror=null; this.src='IMG_4789.png';" alt="LuminaBox Team Photo" class="w-full h-auto object-cover max-h-[420px]">
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 pt-1 sm:pt-2">
+                <!-- Karina -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-pink-50/70 border border-pink-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-10 rounded-xl bg-pink-200/80 flex items-center justify-center text-pink-700 font-extrabold text-base">🎨</div>
+                    <div>
+                        <h4 class="font-extrabold text-slate-800 text-base">Karina</h4>
+                        <p class="text-xs font-semibold text-pink-600">
+                            <span class="lang-en">Physical Prototype & Content Design</span>
+                            <span class="lang-zh hidden">實體原型製作與內容設計</span>
+                        </p>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        <span class="lang-en">Leads the tangible box design, crafts physical activity sheet prototypes, and curates learning contents.</span>
+                        <span class="lang-zh hidden">統籌 LuminaBox 實體外盒與工作紙原型製作，研發適合學童的多感官視覺教材。</span>
+                    </p>
+                </div>
+
+                <!-- Hayley -->
+                <div class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-amber-50/70 border border-amber-100 space-y-2.5 hover:shadow-soft-md transition">
+                    <div class="w-10 h-1
